@@ -1,0 +1,13 @@
+# Replace path with the absolute PRIVATE dataset root supplied by member 03.
+# Each image needs a label file, including empty files for verified empty scenes.
+# Split physical scenes BEFORE augmentation. Never use sealed tests here.
+path: REPLACE_WITH_ABSOLUTE_DATASET_ROOT
+train: images/train
+val: images/val
+names:
+  0: non_catalogue
+  1: long_screw
+  2: thick_screw
+  3: thin_screw
+  4: hex_nut
+  5: flat_washer
