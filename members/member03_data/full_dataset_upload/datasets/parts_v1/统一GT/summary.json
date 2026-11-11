@@ -1,0 +1,19 @@
+{
+  "images_by_split": {
+    "train": 112,
+    "val": 24,
+    "test": 24
+  },
+  "total_images": 160,
+  "total_objects": 1599,
+  "class_counts": {
+    "0": 0,
+    "1": 320,
+    "2": 319,
+    "3": 320,
+    "4": 320,
+    "5": 320
+  },
+  "source_annotations_unchanged": true,
+  "flat_washer_specification_verified": false
+}

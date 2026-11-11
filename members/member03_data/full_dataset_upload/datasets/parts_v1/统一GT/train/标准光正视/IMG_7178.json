@@ -1,0 +1,141 @@
+{
+  "schema_version": "member03.gt.v1",
+  "image_id": "IMG_7178.png",
+  "image_relative_path": "train/标准光正视/IMG_7178.png",
+  "split": "train",
+  "capture_condition": "标准光正视",
+  "image_width": 3024,
+  "image_height": 4032,
+  "bbox_convention": "original_pixel_xyxy_continuous_half_open",
+  "source_annotation_sha256": "aa2d17ea765ec1b64ab1dc0115e9e764b3ed27c52ed1010a6f99b2d8f4a075ad",
+  "objects": [
+    {
+      "object_id": 0,
+      "class_id": 2,
+      "class_name": "thick_screw",
+      "source_label": "M5x10",
+      "bbox": [
+        897.12,
+        917.28,
+        1236.48,
+        1162.56
+      ]
+    },
+    {
+      "object_id": 1,
+      "class_id": 1,
+      "class_name": "long_screw",
+      "source_label": "M4x25",
+      "bbox": [
+        1394.4,
+        1078.56,
+        2012.64,
+        1286.88
+      ]
+    },
+    {
+      "object_id": 2,
+      "class_id": 4,
+      "class_name": "hex_nut",
+      "source_label": "M4_hex_nut",
+      "bbox": [
+        631.68,
+        1176.0,
+        833.28,
+        1364.16
+      ]
+    },
+    {
+      "object_id": 3,
+      "class_id": 4,
+      "class_name": "hex_nut",
+      "source_label": "M4_hex_nut",
+      "bbox": [
+        1942.08,
+        1468.32,
+        2133.6,
+        1649.76
+      ]
+    },
+    {
+      "object_id": 4,
+      "class_id": 3,
+      "class_name": "thin_screw",
+      "source_label": "M4x10",
+      "bbox": [
+        1041.6,
+        1481.76,
+        1280.16,
+        1764.0
+      ]
+    },
+    {
+      "object_id": 5,
+      "class_id": 5,
+      "class_name": "flat_washer",
+      "source_label": "flat_washer",
+      "bbox": [
+        685.44,
+        1764.0,
+        964.32,
+        2039.52
+      ]
+    },
+    {
+      "object_id": 6,
+      "class_id": 3,
+      "class_name": "thin_screw",
+      "source_label": "M4x10",
+      "bbox": [
+        1911.84,
+        1908.48,
+        2194.08,
+        2136.96
+      ]
+    },
+    {
+      "object_id": 7,
+      "class_id": 1,
+      "class_name": "long_screw",
+      "source_label": "M4x25",
+      "bbox": [
+        719.04,
+        2059.68,
+        1263.36,
+        2509.92
+      ]
+    },
+    {
+      "object_id": 8,
+      "class_id": 2,
+      "class_name": "thick_screw",
+      "source_label": "M5x10",
+      "bbox": [
+        1330.56,
+        2402.4,
+        1663.2,
+        2620.8
+      ]
+    },
+    {
+      "object_id": 9,
+      "class_id": 5,
+      "class_name": "flat_washer",
+      "source_label": "flat_washer",
+      "bbox": [
+        1747.2,
+        2523.36,
+        2026.08,
+        2798.88
+      ]
+    }
+  ],
+  "actual_counts": {
+    "0": 0,
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 2
+  }
+}

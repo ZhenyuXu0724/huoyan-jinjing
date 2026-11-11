@@ -1,0 +1,210 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          198.24,
+          0.0
+        ],
+        [
+          487.2,
+          174.72
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. ",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          1199.52,
+          312.48
+        ],
+        [
+          1753.92,
+          762.72
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. ",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          1118.88,
+          1031.52
+        ],
+        [
+          1397.76,
+          1310.4
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. ",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          591.36,
+          1454.88
+        ],
+        [
+          907.2,
+          1757.28
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. ",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          238.56,
+          1575.84
+        ],
+        [
+          584.64,
+          1831.2
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. ",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          1982.4,
+          1602.72
+        ],
+        [
+          2177.28,
+          1777.44
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. ",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          359.52,
+          2405.76
+        ],
+        [
+          960.96,
+          2772.0
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. ",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          1377.6,
+          2432.64
+        ],
+        [
+          1666.56,
+          2644.32
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. ",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          947.52,
+          2761.92
+        ],
+        [
+          1149.1200000000001,
+          2946.72
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. ",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          1750.56,
+          2940.0
+        ],
+        [
+          2036.16,
+          3134.88
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. inventory_adjusted",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    }
+  ],
+  "imagePath": "IMG_7189.png",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}
