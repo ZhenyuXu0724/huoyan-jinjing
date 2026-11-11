@@ -1,0 +1,210 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          2293.2000000000003,
+          378.0
+        ],
+        [
+          2557.8,
+          567.0
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. box_count,similar_scores",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          3240.7200000000003,
+          509.04
+        ],
+        [
+          3462.48,
+          735.84
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. box_count",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          1048.3200000000002,
+          541.8000000000001
+        ],
+        [
+          1214.64,
+          758.5200000000001
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. box_count,similar_scores",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          2520.0,
+          856.8000000000001
+        ],
+        [
+          2678.76,
+          1025.64
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. box_count",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          244.44000000000003,
+          1020.6
+        ],
+        [
+          750.96,
+          1426.3200000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. box_count",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          1088.64,
+          1035.72
+        ],
+        [
+          1380.96,
+          1234.8000000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. box_count",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          1655.64,
+          1169.28
+        ],
+        [
+          1902.6000000000001,
+          1375.92
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. box_count",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          3384.36,
+          1426.3200000000002
+        ],
+        [
+          3898.44,
+          1837.0800000000002
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. box_count",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          3003.84,
+          1620.3600000000001
+        ],
+        [
+          3268.44,
+          1844.64
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. box_count",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          1280.16,
+          1990.8000000000002
+        ],
+        [
+          1459.0800000000002,
+          2187.36
+        ]
+      ],
+      "group_id": null,
+      "description": "Automatic draft; human review required. box_count",
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "mask": null
+    }
+  ],
+  "imagePath": "IMG_7301.png",
+  "imageData": null,
+  "imageHeight": 3024,
+  "imageWidth": 4032
+}

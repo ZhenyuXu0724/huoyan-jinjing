@@ -1,0 +1,200 @@
+{
+  "version": "5.5.0",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          3250.8,
+          456.12
+        ],
+        [
+          3480.1200000000003,
+          632.52
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          2540.1600000000003,
+          665.2800000000001
+        ],
+        [
+          2802.2400000000002,
+          864.36
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. similar_scores"
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          1078.5600000000002,
+          756.0
+        ],
+        [
+          1270.0800000000002,
+          960.12
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. similar_scores,inventory_adjusted"
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          2071.44,
+          763.5600000000001
+        ],
+        [
+          2300.76,
+          950.0400000000001
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          3160.0800000000004,
+          1023.12
+        ],
+        [
+          3323.88,
+          1189.44
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          2658.6000000000004,
+          1199.52
+        ],
+        [
+          3197.88,
+          1441.44
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          3646.44,
+          1441.44
+        ],
+        [
+          3936.2400000000002,
+          1632.96
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. similar_scores"
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          1340.64,
+          1499.4
+        ],
+        [
+          1567.44,
+          1970.64
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          420.84000000000003,
+          1635.48
+        ],
+        [
+          682.9200000000001,
+          1884.96
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          3666.6000000000004,
+          1973.16
+        ],
+        [
+          3853.0800000000004,
+          2162.1600000000003
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    }
+  ],
+  "imagePath": "IMG_7285.png",
+  "imageData": null,
+  "imageHeight": 3024,
+  "imageWidth": 4032
+}

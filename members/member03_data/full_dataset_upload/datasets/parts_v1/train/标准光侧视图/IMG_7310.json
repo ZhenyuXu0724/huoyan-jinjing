@@ -1,0 +1,200 @@
+{
+  "version": "5.5.0",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          2134.44,
+          393.12
+        ],
+        [
+          2280.6,
+          556.9200000000001
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          2356.2000000000003,
+          491.40000000000003
+        ],
+        [
+          2580.48,
+          665.2800000000001
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          3510.36,
+          559.44
+        ],
+        [
+          3790.0800000000004,
+          766.08
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          808.9200000000001,
+          955.08
+        ],
+        [
+          1343.16,
+          1161.72
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          2338.56,
+          1297.8000000000002
+        ],
+        [
+          2625.84,
+          1559.88
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          1310.4,
+          1408.68
+        ],
+        [
+          1567.44,
+          1625.4
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          1695.96,
+          1423.8000000000002
+        ],
+        [
+          2222.6400000000003,
+          1796.76
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          3734.6400000000003,
+          1761.48
+        ],
+        [
+          4004.28,
+          1990.8000000000002
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          3167.6400000000003,
+          1993.3200000000002
+        ],
+        [
+          3356.6400000000003,
+          2184.84
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. similar_scores"
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          466.20000000000005,
+          2111.76
+        ],
+        [
+          748.44,
+          2381.4
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. similar_scores,inventory_adjusted"
+    }
+  ],
+  "imagePath": "IMG_7310.png",
+  "imageData": null,
+  "imageHeight": 3024,
+  "imageWidth": 4032
+}
