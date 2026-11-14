@@ -1,0 +1,43 @@
+test_adapter_runs_without_importing_torch (test_member06.AdapterTests.test_adapter_runs_without_importing_torch) ... ok
+test_bad_counts (test_member06.AdapterTests.test_bad_counts) ... ok
+test_batch_preserves_order_and_errors (test_member06.AdapterTests.test_batch_preserves_order_and_errors) ... ok
+test_shared_entry_point_does_not_invent_predictions (test_member06.AdapterTests.test_shared_entry_point_does_not_invent_predictions) ... ok
+test_smoke_status_and_invalid_backend (test_member06.AdapterTests.test_smoke_status_and_invalid_backend) ... ok
+test_unsupported_counts_rejected_before_model_or_image (test_member06.AdapterTests.test_unsupported_counts_rejected_before_model_or_image) ... ok
+test_fail_metrics_follow_explicit_label_mapping (test_member06.DataAndConfigTests.test_fail_metrics_follow_explicit_label_mapping) ... ok
+test_identical_pixels_under_different_filename_rejected (test_member06.DataAndConfigTests.test_identical_pixels_under_different_filename_rejected) ... ok
+test_invalid_configuration (test_member06.DataAndConfigTests.test_invalid_configuration) ... ok
+test_invalid_label_and_missing_file (test_member06.DataAndConfigTests.test_invalid_label_and_missing_file) ... ok
+test_manifest_labels_and_shapes (test_member06.DataAndConfigTests.test_manifest_labels_and_shapes) ... ok
+test_reject_test_role_and_smoke_real_mixing (test_member06.DataAndConfigTests.test_reject_test_role_and_smoke_real_mixing) ... ok
+test_scene_overlap_is_rejected (test_member06.DataAndConfigTests.test_scene_overlap_is_rejected) ... ok
+test_ambiguous_and_border_cases (test_member06.GeometryTests.test_ambiguous_and_border_cases) ... ok
+test_empty_and_abnormal_geometry_fail_safely (test_member06.GeometryTests.test_empty_and_abnormal_geometry_fail_safely) ... ok
+test_exact_and_fractional_roi (test_member06.GeometryTests.test_exact_and_fractional_roi) ... ok
+test_invalid_bbox_and_image_fail_safely (test_member06.GeometryTests.test_invalid_bbox_and_image_fail_safely) ... ok
+test_invalid_segmentation_settings (test_member06.GeometryTests.test_invalid_segmentation_settings) ... ok
+test_pixel_geometry_known_rectangle (test_member06.GeometryTests.test_pixel_geometry_known_rectangle) ... ok
+test_cuda_forward (test_member06.ModelTests.test_cuda_forward) ... skipped 'CUDA hardware/build unavailable; CPU is tested'
+test_device_selection (test_member06.ModelTests.test_device_selection) ... ok
+test_local_cnn_uses_features_and_explicit_smoke_status (test_member06.ModelTests.test_local_cnn_uses_features_and_explicit_smoke_status) ... ok
+test_model_rejects_malformed_inputs (test_member06.ModelTests.test_model_rejects_malformed_inputs) ... ok
+test_only_head_updates_and_bn_buffers_stay_fixed (test_member06.ModelTests.test_only_head_updates_and_bn_buffers_stay_fixed) ... ok
+test_output_and_local_feature_dimensions (test_member06.ModelTests.test_output_and_local_feature_dimensions) ... ok
+test_preprocessing_keeps_both_horizontal_edges (test_member06.ModelTests.test_preprocessing_keeps_both_horizontal_edges) ... ok
+test_pretrained_failure_never_falls_back (test_member06.ModelTests.test_pretrained_failure_never_falls_back) ... ok
+SMOKE_ONLY epoch=1 train_loss=0.784925 val_loss=0.684327
+SMOKE_ONLY epoch=2 train_loss=0.706262 val_loss=0.660178
+test_actual_train_val_and_artifacts (test_member06.PipelineTests.test_actual_train_val_and_artifacts) ... ok
+test_checkpoint_load_no_download_and_reproducible_inference (test_member06.PipelineTests.test_checkpoint_load_no_download_and_reproducible_inference) ... ok
+test_epoch_rejects_invalid_targets (test_member06.PipelineTests.test_epoch_rejects_invalid_targets) ... ok
+test_existing_output_refused (test_member06.PipelineTests.test_existing_output_refused) ... ok
+test_readme_cli_integration (test_member06.PipelineTests.test_readme_cli_integration) ... ok
+test_same_seed_repeats_training (test_member06.PipelineTests.test_same_seed_repeats_training) ... SMOKE_ONLY epoch=1 train_loss=0.784925 val_loss=0.684327
+SMOKE_ONLY epoch=2 train_loss=0.706262 val_loss=0.660178
+ok
+test_smoke_checkpoint_refused_by_default (test_member06.PipelineTests.test_smoke_checkpoint_refused_by_default) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 20.969s
+
+OK (skipped=1)

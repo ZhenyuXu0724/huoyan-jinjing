@@ -1,0 +1,36 @@
+{
+  "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+  "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.39",
+  "git_head": "39585381d017d9b3e631c6f0e8396e6142f86ea2",
+  "git_working_tree": "may contain uncommitted changes; source hashes below identify module files",
+  "source_sha256": {
+    "adapter.py": "76240d9863ad48f3a57ff9051f41a7bac77b1efd4bdca06f228ef1eb8516949c",
+    "baseline2.py": "e9925e563a6df1a910f1840ef8db35a704d0165ecd81e0ed53996fd9be29e98c",
+    "config.py": "d36972bfba55e7b72c8a88ed2dae9392304636e5497a7d806e0f3008791752d3",
+    "data.py": "34947f3dd3de054b1f1f5ae43053df9f53e4be2bba10eadb4f48f7b69e4caeed",
+    "final_model.py": "895709e0cabd6723534a96ed4c121a348df7559e9e6660fda7b99e5e6732d31a",
+    "image_io.py": "4beef5695f0ec978162297a8b3510e3407fa3b3e0edafb5e5785318934bb665e",
+    "inference.py": "0d0d7b3dbdd79bae835e9a3e95ab26a9a3aa012272cfe56b66616d888e173672",
+    "model.py": "823e588508f3bc7a20eb5895d5f2c2f489f7f969b722ec643603fcd32adc5d09",
+    "plot_history.py": "df13732853524ee0403bcb668d1c9c1c4f6fd143550bbdf9f166b3afbc52e85b",
+    "research_demo.py": "95b043b20cafc5943899173b1a0bafbe2b8fde1690319aed4c0860274413aa8d",
+    "research_tools.py": "ca1cf536c987f01773b69cc38908ebacfa105624b855e8f12f19a986d72a63fe",
+    "runtime.py": "94d3a9710afbc6e8ed647fac53187648c85a4ce4b7f6f114b6961c540857dc16",
+    "smoke_data.py": "2a65b9d59e7e9127420c563fafba34aaf992ba24f76e392288e15930324a1b6a",
+    "train.py": "d2c5da7f9da9a8c4c99dd42ec5d1a142ac327804d2dac719142b465a9d882869",
+    "validate.py": "25005b6cd798a6629656c3913a9b07b586856a7cfc67a2f562e0eeb99e050a4d"
+  },
+  "packages": {
+    "torch": "2.7.1+cpu",
+    "torchvision": "0.22.1+cpu",
+    "numpy": "2.2.6",
+    "Pillow": "11.2.1",
+    "opencv-python-headless": "4.11.0.86",
+    "matplotlib": "3.10.3"
+  },
+  "device": "cpu",
+  "cuda_available": false,
+  "torch_cuda": null,
+  "device_name": "x86_64",
+  "deterministic_algorithms": true
+}

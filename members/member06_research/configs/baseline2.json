@@ -1,0 +1,23 @@
+{
+  "class_to_idx": {"PASS": 0, "FAIL": 1},
+  "fail_label": "FAIL",
+  "weights": "IMAGENET1K_V1",
+  "data_kind": "REAL",
+  "image_size": 224,
+  "resize_mode": "letterbox",
+  "mean": [0.485, 0.456, 0.406],
+  "std": [0.229, 0.224, 0.225],
+  "pad_rgb": [0, 0, 0],
+  "supported_counts": [2, 2, 2, 2, 2],
+  "counts_rule_status": "PROVISIONAL_PENDING_PILOT",
+  "train_manifest": "data/member06/train.csv",
+  "val_manifest": "data/member06/val.csv",
+  "seed": 42,
+  "epochs": 10,
+  "batch_size": 16,
+  "learning_rate": 0.001,
+  "weight_decay": 0.0,
+  "num_workers": 0,
+  "cpu_threads": 2,
+  "device": "auto"
+}
