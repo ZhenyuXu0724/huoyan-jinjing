@@ -1,0 +1,209 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          2355.2,
+          512.0
+        ],
+        [
+          2549.76,
+          780.8
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          1943.04,
+          796.16
+        ],
+        [
+          2170.88,
+          1024.0
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          878.08,
+          821.76
+        ],
+        [
+          1149.44,
+          1003.52
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          1556.48,
+          1064.96
+        ],
+        [
+          1707.52,
+          1216.0
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          2378.24,
+          1082.88
+        ],
+        [
+          2792.96,
+          1500.16
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          780.8,
+          1497.6
+        ],
+        [
+          1041.92,
+          1991.68
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "non_catalogue",
+      "points": [
+        [
+          1451.52,
+          1600.0
+        ],
+        [
+          1712.64,
+          1861.12
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          2319.36,
+          1697.28
+        ],
+        [
+          2478.08,
+          1835.52
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          2083.84,
+          2191.36
+        ],
+        [
+          2316.8,
+          2385.92
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          1505.28,
+          2211.84
+        ],
+        [
+          1730.56,
+          2434.56
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          2373.12,
+          2542.08
+        ],
+        [
+          2603.52,
+          2767.36
+        ]
+      ],
+      "group_id": null,
+      "description": "预标注，待人工检查；non_catalogue=干扰件",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "IMG_20261114_160421.jpg",
+  "imageData": null,
+  "imageHeight": 4096,
+  "imageWidth": 3072,
+  "description": "验证集预标注，待人工复核。"
+}

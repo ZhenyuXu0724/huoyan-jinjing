@@ -1,0 +1,212 @@
+{
+  "version": "6.3.1",
+  "flags": {
+    "reviewed": false
+  },
+  "shapes": [
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          1835.52,
+          437.76
+        ],
+        [
+          2019.84,
+          952.32
+        ]
+      ],
+      "group_id": null,
+      "description": "Draft: OpenCV proposal + AI visual class review; user review required.",
+      "shape_type": "rectangle",
+      "flags": {
+        "needs_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          2391.04,
+          801.28
+        ],
+        [
+          2575.36,
+          1054.72
+        ]
+      ],
+      "group_id": null,
+      "description": "Draft: OpenCV proposal + AI visual class review; user review required.",
+      "shape_type": "rectangle",
+      "flags": {
+        "needs_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          1356.8,
+          842.24
+        ],
+        [
+          1538.56,
+          1113.6
+        ]
+      ],
+      "group_id": null,
+      "description": "Draft: OpenCV proposal + AI visual class review; user review required.",
+      "shape_type": "rectangle",
+      "flags": {
+        "needs_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          2611.2,
+          862.72
+        ],
+        [
+          2839.04,
+          1088.0
+        ]
+      ],
+      "group_id": null,
+      "description": "Draft: OpenCV proposal + AI visual class review; user review required.",
+      "shape_type": "rectangle",
+      "flags": {
+        "needs_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          1075.2,
+          1169.92
+        ],
+        [
+          1226.24,
+          1318.4
+        ]
+      ],
+      "group_id": null,
+      "description": "Draft: OpenCV proposal + AI visual class review; user review required.",
+      "shape_type": "rectangle",
+      "flags": {
+        "needs_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          1751.04,
+          1489.92
+        ],
+        [
+          1963.52,
+          1702.4
+        ]
+      ],
+      "group_id": null,
+      "description": "Draft: OpenCV proposal + AI visual class review; user review required.",
+      "shape_type": "rectangle",
+      "flags": {
+        "needs_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          2304.0,
+          1664.0
+        ],
+        [
+          2462.72,
+          1884.16
+        ]
+      ],
+      "group_id": null,
+      "description": "Draft: OpenCV proposal + AI visual class review; user review required.",
+      "shape_type": "rectangle",
+      "flags": {
+        "needs_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          1948.16,
+          1968.64
+        ],
+        [
+          2101.76,
+          2106.88
+        ]
+      ],
+      "group_id": null,
+      "description": "Draft: OpenCV proposal + AI visual class review; user review required.",
+      "shape_type": "rectangle",
+      "flags": {
+        "needs_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          980.48,
+          2145.28
+        ],
+        [
+          1203.2,
+          2368.0
+        ]
+      ],
+      "group_id": null,
+      "description": "Draft: OpenCV proposal + AI visual class review; user review required.",
+      "shape_type": "rectangle",
+      "flags": {
+        "needs_review": true
+      },
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          1766.4,
+          2357.76
+        ],
+        [
+          2135.04,
+          2798.08
+        ]
+      ],
+      "group_id": null,
+      "description": "Draft: OpenCV proposal + AI visual class review; user review required.",
+      "shape_type": "rectangle",
+      "flags": {
+        "needs_review": true
+      },
+      "mask": null
+    }
+  ],
+  "imagePath": "IMG_20261114_160944.jpg",
+  "imageData": null,
+  "imageHeight": 4096,
+  "imageWidth": 3072
+}
