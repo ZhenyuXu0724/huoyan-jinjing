@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "source": "https://github.com/ZhenyuXu0724/huoyan-jinjing/blob/main/shared/catalogue.json",
+  "classes": [
+    {"id": 0, "name": "non_catalogue", "labelme_label": "non_catalogue", "catalogue_specification": "不符合任何目标类型或规格"},
+    {"id": 1, "name": "long_screw", "labelme_label": "M4x25", "catalogue_specification": "M4x25"},
+    {"id": 2, "name": "thick_screw", "labelme_label": "M5x10", "catalogue_specification": "M5x10"},
+    {"id": 3, "name": "thin_screw", "labelme_label": "M4x10", "catalogue_specification": "M4x10"},
+    {"id": 4, "name": "hex_nut", "labelme_label": "M4_hex_nut", "catalogue_specification": "M4"},
+    {"id": 5, "name": "flat_washer", "labelme_label": "flat_washer", "catalogue_specification": "M5", "physical_specification_verified": false}
+  ],
+  "notes": [
+    "ID 是仓库公共类别编号，不是 Labelme 标签列表的行号，也不是 group_id。",
+    "保留原始 Labelme 标签名称；统一 GT 使用明确的 class_id 和 class_name。",
+    "平垫片 M5 为仓库要求，实物规格尚未确认。",
+    "目录外类别编号保留为0；不凭空生成干扰件标注。"
+  ]
+}
