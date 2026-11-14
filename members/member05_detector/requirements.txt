@@ -1,1 +1,8 @@
-# 仅填写本模块实际需要的依赖与已验证版本；组长集成到根目录环境。
+# Python 3.11; Windows RTX 5060. Install CUDA wheels first (README).
+torch==2.9.1+cu128
+torchvision==0.24.1+cu128
+ultralytics==8.3.230
+numpy==2.2.6
+opencv-python==4.12.0.88
+PyYAML==6.0.3
+pillow==11.3.0
