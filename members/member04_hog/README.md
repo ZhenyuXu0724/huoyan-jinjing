@@ -1,37 +1,67 @@
-# 成员 4 · HOG 基线与统一图像级评价
+# 成员 4 · HOG 基线交付指南
 
-## 职责
+本模块交付 baseline1 整图 PASS/FAIL 判定、训练消融和共同图像级评价。按照用户确认的“训练只使用 PASS”，当前方法为 **HOG + MLP 自编码器**，不再是需要两类训练标签的监督分类 MLP。FAIL 仅进入验证阈值选择和冻结后的评测；没有合成 FAIL。
 
-baseline1 的特征、训练与推理；三个系统共同任务上的图像级评价器。
+## 从哪里开始
 
-**交付物：** HOG+MLP 模型及配置；固定数量支持说明；FAIL 混淆矩阵/P/R/F1；人工评价样例；错误分析。
+本次接手诊断见 [第一阶段报告](docs/STAGE1.md)。保持 A2 seed42 权重与阈值不变；新增诊断和真实接口自检，不新增正式训练。上传与验收状态见 progress.md。
 
-**协作：** 接收成员 3 的开发数据和派生标签；与成员 6 共用评价器；与成员 7 对齐固定数量不支持状态。
+| 需要了解的内容 | 说明文件 |
+|---|---|
+| 有哪些数据、标签如何产生、哪些内容待审核 | [数据说明](docs/DATA.md) |
+| 安装、训练、冻结、测试的完整顺序 | [复现步骤](docs/WORKFLOW.md) |
+| 每个实验改了什么、为什么比较 | [实验分组](configs/groups/README.md) |
+| 指标怎么读、如何理解模型限制 | [方法与结果解读](docs/INTERPRETATION.md) |
+| 完整实测表、消融和冻结后失败记录 | [2026-11-15 结果报告](docs/RESULTS.md) |
+| 本轮实际数值、选择依据、待办 | [进度与交接](progress.md) |
+| 交哪些文件、如何确认接收成功 | [交付清单](docs/DELIVERY.md) |
 
-**验收：** 新摄像头图像可预测；不支持数量返回明确状态；三基线共用评价口径、输入和固定规则。
+## 文件与产物位置
 
-**边界：** 不负责 ResNet18 训练；不替其他成员修改对象指标；分类器不伪造框或任意数量能力。
+```text
+members/member04_hog/
+  features.py          # 方向校正、补白、变换、HOG
+  data.py              # 清单及跨分区重复检查
+  train.py             # 训练入口
+  one_class/           # 数据准备、训练、重建得分、报告
+  model.py             # 加载模型与单图 predict
+  inference.py         # 接收数量要求的批量推理
+  evaluate.py          # 指标、冻结、冻结后测试
+  compare.py           # 多模型共同图像级评价
+  delivery.py          # 生成与校验便携交付包
+  configs/             # 上游文件校验索引、实验分组
+  examples/            # 清单及推理请求样例
+  tests/               # 数据隔离、指标与接口回归检查
+  docs/                # 数据、复现与解释
+data/member04_hog/dataset/          # 原始数据、相对路径清单、来源记录
+weights/member04_hog/experiments/   # 按组/seed 保存的模型
+weights/member04_hog/baseline1.joblib
+outputs/member04_hog/experiments/   # 按组/seed 保存配置、历史、验证预测
+outputs/member04_hog/assessment/    # 冻结、访问记录、提供分区评测
+```
 
-## 提交方式
+后三类目录均为本地忽略目录，Git 克隆不会自动附带权重或图片。运行记录入口为 `outputs/member04_hog/experiments/REPORT.md`，原始数字在相邻的 `ablation_table.csv` 与各组 `metrics.json`。迁移时应连同这些本地产物复制，或按复现步骤重新生成。
 
-任务分支 `member04/简短任务名`，仅修改 `members/member04_hog/`。公共接口/跨目录变更交组长整合。时间线见 [progress.md](progress.md)。
+本轮完成 11 组 × 3 种子 × 200 轮，选择 A2 seed42。验证平均 FAIL F1 为 0.9417；提供的 test 仅 1 张 FAIL，漏放 1 张、误拒 10 张，F1 为 0。当前是可复现的实验基线，尚不具备可靠现场检测的证据，不能只引用验证分数。
 
-## 本模块运行说明（首次代码交付时补齐）
+## 最小安装与预测
 
-- 当前状态：框架待实现，尚无已完成模型或结果。
-- 环境与新增依赖：填写本目录 requirements.txt。
-- 最小运行命令：待填写。
-- 输入、输出和样例：遵守 [公共接口](../../shared/CONTRACT.md)。
-- 模型/数据版本、访问方式与 SHA256：待填写；不提交大文件和封存 GT。
-- 验证命令与真实结果：待填写。
-- 已知限制/失败状态：待填写。
+以下命令均从仓库根目录执行，使用 Python 3.11。迁移后重建虚拟环境，不要复制旧 `.venv/`。
 
-## 交接记录
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r members/member04_hog/requirements.txt
+.\.venv\Scripts\python.exe -m members.member04_hog.evaluate predict --model weights/member04_hog/baseline1.joblib --image "data/member04_hog/dataset/new/补强数据(训练）/example.jpg"
+```
 
-| 日期 | PR/版本 | 交付内容 | 验证证据 | 接收人 | 状态 |
-|---|---|---|---|---|---|
-| 待填写 | | | | | 未开始 |
+将最后的示例图片路径替换成实际文件。程序也可调用 `from members.member04_hog.model import predict`，再执行 `predict(image_path)`。
 
-## 个人贡献与来源
+返回 `status`、`predicted_label`、`prediction_score`、`score_type`。正常状态为 `OK`；图片失败为 `INPUT_ERROR`；默认权重缺失为 `MODEL_UNAVAILABLE`。得分是 HOG 重建均方误差，**不是 FAIL 概率**，越高越支持 FAIL。
 
-记录自己负责的代码提交、公开可分享的实验 ID、技术决策、失败案例及外部来源/许可证/AI 辅助。个人报告、同伴评分、私人信息与封存测试真值在课程提交渠道单独管理，不放公开仓库。
+批量入口缺失权重时抛出 FileNotFoundError 并非零退出，不生成输出；这与单图默认入口的 MODEL_UNAVAILABLE 返回方式不同。当前公共 predict.py 仅注册模型，批量联通仍由成员 7 完成。
+
+## 数量与协作边界
+
+当前模型只支持类别 1–5 各 2 个的候选规则；最终规格与数量仍需组长确认。单图 `predict` 默认使用模型内置数量，批量入口检查请求数量，不支持时返回 `UNSUPPORTED_COUNTS`。不输出零件框或实际数量，不能把空值当作“没有目录外零件”。
+
+成员 3 负责场景、规格和标注审核；成员 4 负责基线与图像评价；成员 6 对齐共同指标；成员 7 接入摄像头并测端到端耗时。公共接口及其他成员目录由组长整合。提交前更新本说明与进度。
