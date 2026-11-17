@@ -1,0 +1,3 @@
+image_path,scene_id,label
+images/case01.jpg,scene01,PASS
+images/case02.jpg,scene02,FAIL
