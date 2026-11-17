@@ -1,6 +1,7 @@
 """Train and select on validation loss only. No test-manifest argument exists."""
 import argparse
 import csv
+import json
 from pathlib import Path
 
 import torch
@@ -8,8 +9,8 @@ from torch import nn
 from torch.utils.data import DataLoader
 
 from .config import Config
-from .data import ManifestDataset, check_disjoint
 from .model import FrozenResNet18
+from .preflight import check_training_inputs
 from .runtime import choose_device, environment, file_sha256, seed_everything, seed_worker, write_json
 
 
@@ -69,21 +70,21 @@ def make_loader(dataset, config, shuffle=False):
 def fit(config, output):
     seed_everything(config.seed, config.cpu_threads)
     device = choose_device(config.device)
-    train = ManifestDataset(config.train_manifest, config, "train")
-    val = ManifestDataset(config.val_manifest, config, "val")
-    check_disjoint(train, val)
+    train, val, preflight = check_training_inputs(config)
     output = Path(output)
     if output.exists() and any(output.iterdir()):
         raise ValueError("output directory must be empty (no overwriting experiments)")
     model = FrozenResNet18(config.weights).to(device)
     output.mkdir(parents=True, exist_ok=True)
-    metadata = {"evidence_status": config.evidence_status, "environment": environment(device),
+    metadata = {"evidence_status": config.evidence_status, "environment": environment(device), "data_preflight": preflight,
                 "selection": "minimum validation cross-entropy; earliest epoch wins ties",
                 "decision_rule": "argmax of uncalibrated softmax; ties choose class index 0",
                 "test_data_used": False, "weights_source": config.weights,
                 "datasets": {split: {"manifest": str(ds.manifest), "manifest_sha256": file_sha256(ds.manifest),
                                      "images": [{**row, "path": str(row["path"])} for row in ds.rows]}
                              for split, ds in (("train", train), ("val", val))}}
+    if config.data_provenance:
+        metadata["data_provenance_sha256"] = file_sha256(config.data_provenance)
     if config.weights == "IMAGENET1K_V1":
         cached = Path(torch.hub.get_dir()) / "checkpoints" / "resnet18-f37072fd.pth"
         metadata["pretrained_source"] = {"url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
@@ -129,12 +130,24 @@ def fit(config, output):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", required=True)
-    parser.add_argument("--output", required=True)
+    parser.add_argument("--output")
+    parser.add_argument("--check-only", action="store_true", help="check config/data/batch only; never initialize or train the CNN")
     args = parser.parse_args()
     try:
-        fit(Config.load(args.config), args.output)
-    except (ValueError, RuntimeError, OSError) as exc:
-        parser.exit(2, f"TRAIN_FAILED: {exc}\n")
+        config = Config.load(args.config)
+        if args.check_only:
+            _, _, summary = check_training_inputs(config)
+            summary["device"] = str(choose_device(config.device))
+            print(json.dumps(summary, ensure_ascii=False, indent=2))
+        else:
+            if not args.output:
+                parser.error("--output is required for training")
+            fit(config, args.output)
+    except KeyboardInterrupt:
+        parser.exit(130, "INTERRUPTED: completed best checkpoint is preserved if present; no automatic resume. Use a new output directory for a new run.\n")
+    except (ValueError, RuntimeError, OSError, TypeError, KeyError) as exc:
+        prefix = "PRECHECK_FAILED" if args.check_only else "TRAIN_FAILED"
+        parser.exit(2, f"{prefix}: {exc}\n")
 
 
 if __name__ == "__main__":

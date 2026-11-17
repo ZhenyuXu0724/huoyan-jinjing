@@ -1,5 +1,7 @@
 # 成员 6 学习指南：从图像到可复现的 PASS/FAIL 基线
 
+2026-11-14 更新：真实数据接入与当前可执行步骤请优先阅读 [TRAINING_GUIDE_CN.md](TRAINING_GUIDE_CN.md)。下文的合成数据例子用于学习；11-05 的验收是历史 SMOKE_ONLY 证据。当前真实数据缺可信双类标签、场景/规格与数量批准，尚未训练。
+
 这份指南对应本目录的实际代码。现有实跑全部是 **SMOKE_ONLY**；工程能训练不等于已经学会检查真实机械零件。先读懂和复现工程，再接成员 3 的正式 Train/Val。
 
 ## 1. 先知道每个文件负责什么
@@ -125,33 +127,15 @@ print(adapter.predict("members/member06_research/data/acceptance/val/synthetic_0
 
 先取得成员 3 冻结的场景级 Train/Val，确认数量规则和整图真值。不要自行把相邻视频帧随机分到两个集合；同一场景增强后的图也应属于同一分区。测试集由成员 3 独立封存，不能传进训练/选型脚本。
 
-推荐本地布局：
+2026-11-14 已有真实包：`members/member03_data/full_dataset_upload/datasets/parts_v1/`，Train=112、Val=24，但目前只有对象标注，没有可信整图两类标签和 scene_id。数量仍待确认，标注复核与平垫片规格尚未完成。使用新增 `team_data.py` 审查；取得真实批准和逐图审核后才转换为本地 `data/team_parts_v1/` 下的清单和 provenance。
 
-```text
-data/member06/
-  train.csv
-  val.csv
-  train/scene001.jpg ...
-  val/scene101.jpg ...
-```
-
-train.csv 例子（这只是格式，不是已存在的数据）：
-
-```csv
-image_path,label,scene_id,split,data_kind
-train/scene001.jpg,PASS,scene001,train,REAL
-train/scene002.jpg,FAIL,scene002,train,REAL
-```
-
-val.csv 使用 val 路径、独立 scene_id、split=val、data_kind=REAL。图像相对路径以清单目录为基准；配置中清单路径以启动时工作目录为基准。每份至少包含 PASS 和 FAIL。
-
-复制 `configs/baseline2.json` 建本地新配置，检查 class_to_idx、train_manifest、val_manifest、image_size、supported_counts 和 counts_rule_status。保持 IMAGENET1K_V1 / REAL，然后：
+当前可以运行不更新权重的检查：
 
 ```bash
-$M6_PY -m members.member06_research.train --config members/member06_research/configs/baseline2.json --output members/member06_research/runs/real_v1
+$M6_PY -m members.member06_research.train --config members/member06_research/configs/baseline2.json --check-only
 ```
 
-现阶段这条命令会因缺真实清单失败，这是正确行为。不能通过把合成清单标成 REAL 来“完成”真实基线。代码会检查场景、路径、完全相同 RGB 像素的重叠，但无法自动判断近重复或被错误标记的场景，仍需数据负责人管理。
+现阶段会以 WAITING_UPSTREAM 拒绝训练，这是待批准状态。不能通过把合成清单标成 REAL 或把默认数量标成已确认来绕过。完整的审批交接、实际路径和由你手动执行的训练操作见 TRAINING_GUIDE_CN.md。图片按 scene_id 隔离，原划分保持；无法自动判断的近重复和错误场景归属仍需成员 3 管理。
 
 默认 letterbox：先保持宽高比缩小/放大，再放到方形画布中填边，桌面两侧不会被中心裁掉。stretch 也保留整图，但会改变长宽比。`data.py:Preprocess` 的 mean/std 与 padding 都可配置。几何长度必须在缩放前原图/ROI 测量，不能用 letterbox 后的像素当原图尺寸。
 

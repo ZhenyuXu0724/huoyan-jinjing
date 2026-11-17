@@ -32,6 +32,7 @@ class Config:
     counts_rule_status: str = "PROVISIONAL_PENDING_PILOT"
     train_manifest: str = "data/member06/train.csv"
     val_manifest: str = "data/member06/val.csv"
+    data_provenance: str | None = None
     seed: int = 42
     epochs: int = 10
     batch_size: int = 16
@@ -70,6 +71,8 @@ class Config:
         if self.weights == "RANDOM_SMOKE_ONLY" and self.data_kind != "SMOKE_ONLY":
             raise ValueError("random weights require SMOKE_ONLY data_kind")
         self.supported_counts = normalize_counts(self.supported_counts)
+        if self.data_provenance is not None and (not isinstance(self.data_provenance, str) or not self.data_provenance.strip()):
+            raise ValueError("data_provenance must be a nonempty path or null")
         if self.device not in {"auto", "cpu", "cuda"}:
             raise ValueError("device must be auto/cpu/cuda")
         for name in ("learning_rate", "weight_decay"):
