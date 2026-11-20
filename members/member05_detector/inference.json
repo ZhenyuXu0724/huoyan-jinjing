@@ -1,0 +1,12 @@
+{
+  "weights": null,
+  "weights_sha256": null,
+  "imgsz": 640,
+  "conf": 0.25,
+  "iou": 0.7,
+  "max_det": 300,
+  "device": 0,
+  "settings_status": "PILOT_DEFAULTS_NOT_VALIDATION_SELECTED",
+  "coordinate_convention": "original pixels, top-left origin, continuous half-open xyxy",
+  "rejection_status": "NOT_IMPLEMENTED"
+}

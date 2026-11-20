@@ -1,0 +1,28 @@
+{
+  "training": {
+    "epochs": 40,
+    "seed": 42,
+    "imgsz": 640,
+    "batch": 8,
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "momentum": 0.9,
+    "warmup_bias_lr": 0.0,
+    "device": 0,
+    "workers": 0,
+    "cache": "ram",
+    "amp": false,
+    "plots": false,
+    "deterministic": true
+  },
+  "initial_sha256": "f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36",
+  "dataset": "dataset.yaml",
+  "dataset_yaml_sha256": "57deb1e1371281e2e72718f585322eead736fd0287b3c3bc89392c0d7587c3ec",
+  "inference": {
+    "confidence": 0.5,
+    "nms_iou": 0.7,
+    "max_det": 300,
+    "selection": "best on development split"
+  },
+  "paired_evaluation": "Same selected YOLO weights for A and B; B adds fixed OpenCV foreground matching."
+}
