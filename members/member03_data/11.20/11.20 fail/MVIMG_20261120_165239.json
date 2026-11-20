@@ -1,0 +1,154 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          1597.44,
+          365.23
+        ],
+        [
+          1928.53,
+          853.33
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          1184.43,
+          1198.08
+        ],
+        [
+          1457.49,
+          1501.87
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          2457.6,
+          1235.63
+        ],
+        [
+          2638.51,
+          1389.23
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          1157.12,
+          1774.93
+        ],
+        [
+          1457.49,
+          2030.93
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          177.49,
+          2157.23
+        ],
+        [
+          576.85,
+          2720.43
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          1167.36,
+          2286.93
+        ],
+        [
+          1368.75,
+          2563.41
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          604.16,
+          2304.0
+        ],
+        [
+          819.2,
+          2577.07
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          1703.25,
+          2727.25
+        ],
+        [
+          1894.4,
+          2904.75
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "MVIMG_20261120_165239.jpg",
+  "imageData": null,
+  "imageWidth": 3072,
+  "imageHeight": 4096
+}
