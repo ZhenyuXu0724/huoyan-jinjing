@@ -1,0 +1,131 @@
+{
+  "version": "Baseline1_HOGMLP_v3_Stability_Capacity_L2_EpochSelection",
+  "frozen": {
+    "created_at": "2026-11-20T04:15:16.635536+00:00",
+    "group": "R2",
+    "seed": 42,
+    "model_path": "weights/member04_hog/supervised_v3_study/experiments/R2/seed42/best.joblib",
+    "model_sha256": "335996ce0d965ff00076a38f2febb9f665d455bc87463df7232e52f8876fd54a",
+    "epoch": 1,
+    "threshold": 0.010291523765772581,
+    "code_sha256": {
+      "members/member04_hog/supervised_v3_study/__init__.py": "de3a9694876c6c37708b387d1a3ff3101c79129c222652e578c42104f39d79c7",
+      "members/member04_hog/supervised_v3_study/assess.py": "f557a76699ed5019d62ba26d08e38d54fa4da4745171c2c09eababea4b9e70d4",
+      "members/member04_hog/supervised_v3_study/common.py": "4343478037294299452e111736031f6f819daf7fdd9e682ef32c4a6f07f43a13",
+      "members/member04_hog/supervised_v3_study/inference.py": "398da12d0968bdd56c9fc5741dd1d1245062ec833980b066d8b8c32e7d19120b",
+      "members/member04_hog/supervised_v3_study/package.py": "c65f754504e4bf912be7e1936577f95390fdcec58d1aa8fed2e6fff523da4f9e",
+      "members/member04_hog/supervised_v3_study/report.py": "742da53c5323c5d59f48d11226122c0855860af945ac97b5eec32f9cc7957572",
+      "members/member04_hog/supervised_v3_study/stability.py": "782f053f5a0bd5a50a8acf1643109012ad79391b46804450f89584aad7c2045c",
+      "members/member04_hog/supervised_v3_study/train.py": "73cdbb2e9b66e303a0cb68d95ffc0ef5c109c49a3c4fe5b22daa94267a5d4736"
+    },
+    "protocol_sha256": "5652b6101d740d7f2bc07939acc7688b3592e38335b36dfd8b9e7f153de14a52",
+    "scope": "development validation selection; historical test only after freeze; no default replacement"
+  },
+  "groups": {
+    "R0": [
+      {
+        "epoch": 1,
+        "fn": 12,
+        "fp": 1,
+        "tp": 65,
+        "tn": 23,
+        "f1": 0.9090909090909091,
+        "balanced_accuracy": 0.9012445887445888,
+        "threshold": 0.010281709488481283,
+        "model_sha256": "b949fc7dbaba00c2061695c725e5faf69841f0c22ff1348244a3c81bf2279c5e"
+      },
+      {
+        "epoch": 3,
+        "fn": 5,
+        "fp": 5,
+        "tp": 72,
+        "tn": 19,
+        "f1": 0.935064935064935,
+        "balanced_accuracy": 0.8633658008658008,
+        "threshold": 0.01166249392554164,
+        "model_sha256": "7ca63bec3e9af889b1ceea26f73e96428ae1bbc526181a62a9093ae7c89d88e4"
+      },
+      {
+        "epoch": 197,
+        "fn": 11,
+        "fp": 3,
+        "tp": 66,
+        "tn": 21,
+        "f1": 0.9041095890410958,
+        "balanced_accuracy": 0.8660714285714286,
+        "threshold": 8.102630602024874e-07,
+        "model_sha256": "d27b5c1f6b6e54a36c801d9cf42411dc3eadbf09364415b43438ee3dc0315a06"
+      }
+    ],
+    "R1": [
+      {
+        "epoch": 6,
+        "fn": 2,
+        "fp": 4,
+        "tp": 75,
+        "tn": 20,
+        "f1": 0.9615384615384616,
+        "balanced_accuracy": 0.9036796536796536,
+        "threshold": 0.003960086265578866,
+        "model_sha256": "a338042085c7da7bce651d60b9b1e3e0a0248651b1886280d7e96adb50418812"
+      },
+      {
+        "epoch": 5,
+        "fn": 15,
+        "fp": 5,
+        "tp": 62,
+        "tn": 19,
+        "f1": 0.8611111111111112,
+        "balanced_accuracy": 0.7984307359307359,
+        "threshold": 0.0005099730333313346,
+        "model_sha256": "80a51d2e495f30fdf809692f182639420931d06e327b0a96c6b179714107c2a1"
+      },
+      {
+        "epoch": 21,
+        "fn": 17,
+        "fp": 3,
+        "tp": 60,
+        "tn": 21,
+        "f1": 0.8571428571428571,
+        "balanced_accuracy": 0.8271103896103896,
+        "threshold": 0.0006932590331416577,
+        "model_sha256": "7792003ecccb76157c374031c6b142f05f73ea264e82ad5854bcf7fc8c33c830"
+      }
+    ],
+    "R2": [
+      {
+        "epoch": 1,
+        "fn": 12,
+        "fp": 1,
+        "tp": 65,
+        "tn": 23,
+        "f1": 0.9090909090909091,
+        "balanced_accuracy": 0.9012445887445888,
+        "threshold": 0.010291523765772581,
+        "model_sha256": "335996ce0d965ff00076a38f2febb9f665d455bc87463df7232e52f8876fd54a"
+      },
+      {
+        "epoch": 119,
+        "fn": 3,
+        "fp": 4,
+        "tp": 74,
+        "tn": 20,
+        "f1": 0.9548387096774194,
+        "balanced_accuracy": 0.8971861471861472,
+        "threshold": 0.00010482639117981307,
+        "model_sha256": "8d69cce45c3612ab673328c12b0f2426e280d5f1d296485028b9fe0d13a6d282"
+      },
+      {
+        "epoch": 13,
+        "fn": 8,
+        "fp": 4,
+        "tp": 69,
+        "tn": 20,
+        "f1": 0.92,
+        "balanced_accuracy": 0.8647186147186148,
+        "threshold": 5.578804803008097e-06,
+        "model_sha256": "58e2eb3182f6118288ff88b4cca576296d515cc5ce9a0e7ceef59e4b4819d4cb"
+      }
+    ]
+  }
+}

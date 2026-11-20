@@ -1,5 +1,18 @@
 # 成员 4 · 进度与交接
 
+## 新研究：Baseline1_HOGMLP_v3_Stability_Capacity_L2_EpochSelection（2026-11-20）
+
+- 分支member04/hog-v3-stability-capacity，从已合并PR #7的最新main建立；只修改成员4目录。版本名称映射见[版本说明](docs/VERSIONS.md)。
+- 稳定性诊断完成：训练185图、验证101图，每图21设置、两个冻结模型，共12012条预测。原图对照逐一匹配实际单图入口。旧模型在20种验证变体上全部判FAIL，不能把零位置翻转解释为鲁棒；v2固定240尺寸、边缘灰度填充，居中与右移90/101判定翻转。
+- 按计划执行R0原配置、R1小网络、R2强L2，各3种子、200轮；逐轮验证选检查点和阈值，误拒预算5/24。R0三种子末轮精确复现v2 B2。9次训练全部完成；按三种子平均漏放选中R2，固定seed42第1轮，阈值0.010291523765772581。
+- v3代表模型验证漏放12/77、误拒1/24；历史test漏放1/1、误拒4/23。旧默认仍为验证漏放4/77、误拒5/24，不替换默认。结果见[完整报告](docs/Baseline1_HOGMLP_v3_Stability_Capacity_L2_EpochSelection.md)与[分析](docs/Baseline1_HOGMLP_v3_Analysis.md)。
+- 18份检查点在全部101张验证图上的单图重载判定与训练记录一致；坏图、缺图、缺权重和批量数量约束检查通过。旧版及v2全部冻结实验摘要检查通过。
+- 本轮21项模块测试、6项公共测试通过。最新main框架检查被成员3已跟踪JPG阻断，未修改其他成员数据或公共规则。
+
+- 上传完成：[PR #8](https://github.com/ZhenyuXu0724/huoyan-jinjing/pull/8)待组长审核；[v3 Release](https://github.com/ZhenyuXu0724/huoyan-jinjing/releases/tag/Baseline1_HOGMLP_v3_Stability_Capacity_L2_EpochSelection)已公开预发布，5个附件均完成远端大小与SHA256核验。v1/v2 Release仅更新展示标题，旧附件和地址不变。
+- 独立交付包143481501字节、171个文件，SHA256为1098e3ba1ac955958fc0391a0d33441eca334f6c08baa33a4cb8f7164c24e699；代表权重SHA256为335996ce0d965ff00076a38f2febb9f665d455bc87463df7232e52f8876fd54a。解压逐文件摘要、21项模块测试及新旧入口验证通过，使用现有Python3.11与锁定依赖，非全新机器安装验证。ZIP保留打包时快照，最新交接状态以Git为准。
+- 远端框架检查仍被main已有成员3 JPG阻断：[日志](https://github.com/ZhenyuXu0724/huoyan-jinjing/actions/runs/44683925232/job/136113622856)。实验、模型核验和上传已完成，公共检查与PR审核尚未通过；不据此宣布现场效果达标。
+
 ## 新版监督对照：2026-11-19
 
 - 当前分支：member04/hog-supervised-v2。本轮在成员4目录新增独立监督学习版本，公共入口及旧默认模型保持不变。旧PR #5已合并；下方11.15记录为当时历史状态。
