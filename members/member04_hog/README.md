@@ -6,6 +6,7 @@
 
 - [新旧完整对比报告](docs/COMPARISON_V2.md)：同组对照、误拒/漏放、分组错误、消融和同机计时。
 - [分区识别结果与解释](docs/SPLIT_RESULTS_V2.md)：train/valid/test百分比、分子分母，以及学习、选型、检验的区别。
+- [错误分析与改进建议](docs/IMPROVEMENT_ANALYSIS_V2.md)：阈值诊断、新旧组合候选及有限单因素实验建议，尚未部署或重训。
 - [新版运行与交付说明](supervised_v2/README.md)：独立入口、数据合并、冻结和完整复现命令。
 - [GitHub上传位置与目录关系](docs/UPLOAD_V2.md)：代码与Release附件的对应位置及解压层次。
 

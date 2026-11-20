@@ -16,6 +16,7 @@ members/member04_hog/
   docs/
     COMPARISON_V2.md            # 11组新旧对比与分析
     SPLIT_RESULTS_V2.md         # train/valid/test百分比、分子分母与解释
+    IMPROVEMENT_ANALYSIS_V2.md  # 发布后诊断与待验证改进
     UPLOAD_V2.md                # 本说明
   tests/test_supervised_v2.py   # 新版回归检查
 ```
