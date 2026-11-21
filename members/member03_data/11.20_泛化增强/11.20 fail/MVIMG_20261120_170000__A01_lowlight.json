@@ -111,7 +111,7 @@
       "mask": null
     },
     {
-      "label": "flat_washer",
+      "label": "non_catalogue",
       "points": [
         [
           238.93,
@@ -165,7 +165,7 @@
       "mask": null
     },
     {
-      "label": "flat_washer",
+      "label": "non_catalogue",
       "points": [
         [
           1430.19,

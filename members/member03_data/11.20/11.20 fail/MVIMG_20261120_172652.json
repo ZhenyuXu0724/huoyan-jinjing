@@ -3,7 +3,7 @@
   "flags": {},
   "shapes": [
     {
-      "label": "flat_washer",
+      "label": "non_catalogue",
       "points": [
         [
           723.63,
@@ -57,7 +57,7 @@
       "mask": null
     },
     {
-      "label": "flat_washer",
+      "label": "non_catalogue",
       "points": [
         [
           1655.47,
