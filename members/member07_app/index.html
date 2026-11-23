@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>火眼金睛 · 现场检查台</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eef2f5;color:#16332f;font:16px/1.6 "Microsoft YaHei",sans-serif}header{padding:18px 4%;background:#16332f;color:white}h1{margin:0;font-size:26px}main{max-width:1400px;margin:auto;padding:24px;display:grid;grid-template-columns:1.5fr 1fr;gap:20px}section{background:white;padding:20px;border-radius:12px}button,select,input{font:inherit;padding:8px;border:1px solid #b5c7c0;border-radius:6px;margin:4px 0}button{cursor:pointer;background:#e8f2ef}button:disabled{opacity:.5;cursor:default}.controls{display:flex;gap:8px;flex-wrap:wrap}video,canvas{display:block;width:100%;max-height:55vh;object-fit:contain;background:#182a29;margin-top:12px}video[hidden]{display:none}table{width:100%;border-collapse:collapse}td,th{padding:8px 3px;text-align:left;border-bottom:1px solid #e1e6e4}input[type=number]{width:70px}#decision{font-size:28px;font-weight:bold}#notice{min-height:50px;color:#85400a}small{color:#53675f}#history{white-space:pre-wrap}summary{cursor:pointer}label{display:block}@media(max-width:850px){main{grid-template-columns:1fr}}
+</style>
+<header><h1>火眼金睛 · 现场检查台</h1><span>摄像头采集、零件核对与演示记录</span></header>
+<main><section>
+<div class="controls"><button id="open">打开摄像头</button><button id="close">关闭摄像头</button><button id="capture">拍照检测</button><button id="live">连续检测</button><button id="stop">停止检测</button></div>
+<label>摄像头 <select id="device"><option value="">默认摄像头</option></select></label>
+<label>或选择本地照片 <input id="upload" type="file" accept="image/*"></label>
+<details open><summary>摄像头实时预览</summary><video id="video" autoplay muted playsinline></video></details>
+<p id="notice" aria-live="polite">请打开摄像头，或选择一张照片。</p>
+<strong>最近一次检测画面</strong><canvas id="canvas" width="960" height="540"></canvas>
+<div class="controls"><button id="photo">保存原始照片</button><button id="save">导出检测记录 JSON</button><button id="csv">导出数量核对 CSV</button></div>
+</section><section>
+<label>选择模型 <select id="model"><option value="baseline1">HOG · baseline1</option><option value="baseline2">ResNet · baseline2</option><option value="baseline3" selected>YOLO · baseline3</option><option value="final">改进模型 · final</option></select></label>
+<p id="availability"></p><button id="rerun">用当前照片检测</button>
+<p id="decision" aria-live="polite">待检测</p><p id="score"></p>
+<table><thead><tr><th>零件</th><th>预期</th><th>检测数</th><th>差异</th></tr></thead><tbody id="rows"></tbody></table>
+<p>目录外零件 <strong id="unknown">—</strong></p>
+<p id="timing">耗时待测</p><div id="history"></div><button id="latency">导出耗时记录 CSV</button>
+<details><summary>100 秒演示顺序</summary><p>前 35 秒，摆放五类零件各 2 个，切换 HOG、ResNet 和 YOLO，展示实际结果。</p><p>接着 25 秒，暂停连续检测，保持桌面不动，把螺母预期从 2 改为 3，展示少 1 个和 FAIL。</p><p>最后 40 秒，预期改回 2，加入一个目录外零件，重新检测并展示实际定位和判定。若漏检，也应如实记录。</p></details>
+</section></main>
+<script>
+const $=id=>document.getElementById(id),names=['目录外','长螺钉','粗螺钉','细螺钉','六角螺母','平垫片'];
+const canvas=$('canvas'),ctx=canvas.getContext('2d'),video=$('video');
+let stream=null,frame=null,result=null,sequence=0,busy=false,running=false,models={},records=[],lastSource='photo',frameId='',started=0;
+for(let i=1;i<=5;i++){const row=$('rows').insertRow();row.insertCell().textContent=names[i];row.insertCell().innerHTML='<input type="number" min="0" step="1" value="2" aria-label="'+names[i]+'预期数量">';row.insertCell();row.insertCell()}
+function expected(){return [...document.querySelectorAll('input[type=number]')].map(e=>e.valueAsNumber)}
+function decision(){
+ const exp=expected();if(exp.some(n=>!Number.isSafeInteger(n)||n<0))return {label:'请输入非负整数',counts:null};
+ if(!result)return {label:'待检测',counts:null};
+ if(result.kind==='image')return {label:exp.every((n,i)=>n===result.fixed_expected[i])?result.decision:'清单超出该模型支持范围',counts:null};
+ const counts=[0,0,0,0,0,0];for(const obj of result.objects)counts[obj.class_id]++;
+ const fail=counts[0]>0||exp.some((n,i)=>counts[i+1]!==n);
+ return {label:fail?'FAIL':result.review_required?'需复核':'PASS',counts};
+}
+function render(){
+ const state=decision();$('decision').textContent=state.label;$('decision').style.color=state.label==='PASS'?'#087744':'#9a3a17';
+ [...$('rows').rows].forEach((r,i)=>{r.cells[2].textContent=state.counts?.[i+1]??'—';const d=state.counts?state.counts[i+1]-expected()[i]:null;r.cells[3].textContent=d===null?'—':d===0?'相符':d>0?'多 '+d:'少 '+(-d)});
+ $('unknown').textContent=state.counts?.[0]??'—';
+ $('score').textContent=result?.kind==='image'?'整图分数 '+(result.score??'未提供')+'；支持的固定清单 '+result.fixed_expected.join(' / '):'';
+ ctx.clearRect(0,0,canvas.width,canvas.height);if(!frame)return;
+ ctx.drawImage(frame,0,0,canvas.width,canvas.height);
+ if(result?.kind!=='objects')return;
+ ctx.lineWidth=Math.max(2,canvas.width/450);ctx.font=Math.max(16,canvas.width/60)+'px sans-serif';
+ for(const obj of result.objects){
+  const [x,y,x2,y2]=obj.bbox,label=names[obj.class_id]+' '+obj.score.toFixed(2);
+  ctx.strokeStyle=obj.class_id===0?'#ff334b':'#fca636';ctx.strokeRect(x,y,x2-x,y2-y);
+  const h=Math.max(22,canvas.width/45),top=Math.max(h,y);ctx.fillStyle='#162d29';ctx.fillRect(x,top-h,ctx.measureText(label).width+10,h);ctx.fillStyle='white';ctx.fillText(label,x+4,top-4);
+ }
+}
+function stop(){running=false;$('live').textContent='连续检测'}
+function invalidate(){stop();sequence++;result=null;$('timing').textContent='耗时待测';render()}
+async function openCamera(){
+ invalidate();stream?.getTracks().forEach(t=>t.stop());stream=null;video.srcObject=null;
+ const token=sequence;
+ try{
+ const media=await navigator.mediaDevices.getUserMedia({video:$('device').value?{deviceId:{exact:$('device').value}}:true,audio:false});
+ if(token!==sequence){media.getTracks().forEach(t=>t.stop());return}
+ stream=media;video.srcObject=media;await video.play();
+ const devices=await navigator.mediaDevices.enumerateDevices(),selected=$('device').value;
+ $('device').replaceChildren(new Option('默认摄像头',''));
+ for(const item of devices.filter(d=>d.kind==='videoinput'))$('device').add(new Option(item.label||'摄像头',item.deviceId));
+ $('device').value=selected;$('notice').textContent='摄像头已打开。拍照检测会保存当前新画面。';
+ }catch(e){$('notice').textContent='摄像头打开失败，请检查浏览器权限和设备连接。'+e.message}
+}
+function capture(){
+ if(!stream||!video.videoWidth)throw Error('请先打开摄像头');
+ started=performance.now();lastSource='camera';frameId=new Date().toISOString();
+ frame=document.createElement('canvas');frame.width=canvas.width=video.videoWidth;frame.height=canvas.height=video.videoHeight;
+ frame.getContext('2d').drawImage(video,0,0);result=null;render();
+}
+async function infer(fresh=false){
+ if(busy)return;
+ const token=sequence,model=$('model').value;
+ try{
+ if(fresh)capture();else started=performance.now();
+ if(!frame)throw Error('请先拍照或选择图片');
+ if(!models[model]?.ready)throw Error('该模型尚未接入。照片已经保留，可以保存或稍后检测。');
+ busy=true;$('notice').textContent='正在检测…';
+ const response=await fetch('/predict',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model,image:frame.toDataURL('image/jpeg',0.95).split(',')[1]}),signal:AbortSignal.timeout(120000)});
+ const data=await response.json();if(!response.ok)throw Error(data.error||'检测失败');
+ if(token!==sequence)return;
+ result=data;render();
+ await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+ if(token!==sequence)return;
+ const elapsed=performance.now()-started;
+ const record={time:new Date().toISOString(),frame_id:frameId,source:fresh?'camera_new_frame':'image_reuse',model,version:data.version,width:canvas.width,height:canvas.height,inference_ms:data.inference_ms,end_to_end_ms:+elapsed.toFixed(2),decision:decision().label};
+ records.push(record);$('timing').textContent='本次总耗时 '+elapsed.toFixed(0)+' ms · 模型推理 '+data.inference_ms+' ms';
+ $('notice').textContent='已完成 '+model+' 检测。';stats();
+ }catch(e){if(token===sequence){result=null;render();$('notice').textContent=e.message;stop()}}
+ finally{busy=false}
+ if(running&&token===sequence)setTimeout(()=>{if(running&&token===sequence)infer(true)},100);
+}
+function stats(){
+ const groups={};for(const r of records.filter(r=>r.source==='camera_new_frame')){const key=r.model+' '+r.version+' '+r.width+'×'+r.height;(groups[key]??=[]).push(r.end_to_end_ms)}
+ $('history').textContent=Object.entries(groups).map(([k,values])=>{values.sort((a,b)=>a-b);const n=values.length,median=n%2?values[(n-1)/2]:(values[n/2-1]+values[n/2])/2;return k+' 新帧 '+n+'/20，中位数 '+median.toFixed(0)+' ms，P95 '+values[Math.ceil(n*.95)-1].toFixed(0)+' ms'}).join('\n');
+}
+function download(name,data,type){const url=URL.createObjectURL(new Blob([data],{type})),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+function csv(rows){return '\uFEFF'+rows.map(row=>row.map(x=>'"'+String(x??'').replaceAll('"','""')+'"').join(',')).join('\r\n')}
+$('open').onclick=openCamera;$('device').onchange=openCamera;
+$('close').onclick=()=>{invalidate();stream?.getTracks().forEach(t=>t.stop());stream=null;video.srcObject=null;$('notice').textContent='摄像头已关闭'};
+$('capture').onclick=()=>{stop();infer(true)};
+$('rerun').onclick=()=>{stop();infer()};
+$('live').onclick=()=>{if(busy)return;running=true;$('live').textContent='检测中';infer(true)};
+$('stop').onclick=()=>{stop();sequence++;$('notice').textContent='连续检测已停止'};
+$('model').onchange=()=>{invalidate();$('availability').textContent=models[$('model').value]?.ready?'已配置模型 · 点击用当前照片检测':'未接入模型 · 摄像头和保存照片可用'};
+$('rows').oninput=render;
+$('upload').onchange=async event=>{
+ if(busy){$('notice').textContent='请等待当前检测完成再选图片';return}
+ invalidate();const token=sequence,file=event.target.files[0];if(!file)return;
+ try{const im=await createImageBitmap(file);if(token!==sequence){im.close();return}frame=document.createElement('canvas');frame.width=canvas.width=im.width;frame.height=canvas.height=im.height;frame.getContext('2d').drawImage(im,0,0);im.close();lastSource='photo';frameId=file.name;render();$('notice').textContent='照片已加载，点击用当前照片检测。'}catch(e){$('notice').textContent='图片读取失败 '+e.message}
+};
+$('photo').onclick=()=>{if(!frame){$('notice').textContent='请先拍照';return}frame.toBlob(blob=>download('现场照片.png',blob,'image/png'))};
+$('save').onclick=()=>{if(!result){$('notice').textContent='等待模型检测结果';return}download('检测记录.json',JSON.stringify({frame_id:frameId,source:lastSource,result,expected:expected(),...decision()},null,2),'application/json')};
+$('csv').onclick=()=>{const s=decision();if(!s.counts){$('notice').textContent='当前模型没有逐类计数结果';return}download('核对表.csv',csv([['画面','模型','类别','预期','检测数','差值','目录外','判定'],...names.slice(1).map((name,i)=>[frameId,result.model,name,expected()[i],s.counts[i+1],s.counts[i+1]-expected()[i],s.counts[0],s.label])]),'text/csv;charset=utf-8')};
+$('latency').onclick=()=>{const keys=['time','frame_id','source','model','version','width','height','inference_ms','end_to_end_ms','decision'];download('耗时记录.csv',csv([keys,...records.map(r=>keys.map(k=>r[k]))]),'text/csv;charset=utf-8')};
+window.addEventListener('beforeunload',()=>stream?.getTracks().forEach(t=>t.stop()));
+fetch('/models').then(r=>r.json()).then(data=>{models=data;$('model').onchange()}).catch(()=>{$('notice').textContent='请双击 start.bat 启动，再使用浏览器打开本地网址。'});
+render();
+</script></html>

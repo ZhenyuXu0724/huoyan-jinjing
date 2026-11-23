@@ -4,7 +4,7 @@
 
 版本 `member04-stage1-20261115`，归档名 `member04_hog_stage1_20261115.zip`。包含新增开发集诊断、阈值取舍表和真实接口验证；原始图片、诊断缩略图、虚拟环境均排除。默认模型仍为 A2 seed42，SHA256：`57714c697df9c102f27a21d26e71b6ee1907f8f4dd2613d46803f5d313b9fbab`。
 
-计划发布到本仓库同名 GitHub Release；实际上传状态见 progress.md。压缩包 SHA256 随 `.sha256` 附件提供，解压后另有逐文件 `DELIVERY_SHA256.json`，避免将归档自身摘要写回归档形成循环。
+发布入口：[第一阶段预发布包](https://github.com/ZhenyuXu0724/huoyan-jinjing/releases/tag/member04-stage1-20261115)，实际上传状态见 progress.md。归档 SHA256 为 `d65d130ccd6027a5eae99faf2c56f0eb197bc81a67d6c0181d0c0465e91867c2`，另附 `.sha256` 与逐文件 `DELIVERY_SHA256.json`。归档是提交 e5a11c8 的交付快照，后续上传及公共 CI 阻塞状态以 PR 和当前 progress.md 为准。
 
 模块 `.gitattributes` 保留历史文件字节，防止 Git 换行转换使冻结代码摘要失效。冻结检查基于实际字节，不应格式化已冻结的推理代码。
 

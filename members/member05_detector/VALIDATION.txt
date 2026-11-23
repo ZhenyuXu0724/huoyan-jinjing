@@ -1,0 +1,40 @@
+Validation date: 2026-11-05 (Asia/Shanghai)
+Scope: local member05/detector-foundation; no GitHub push/PR.
+Base commit: 39585381d017d9b3e631c6f0e8396e6142f86ea2
+
+Environment:
+Python 3.11.18, torch 2.9.1+cu128, torchvision 0.24.1+cu128,
+ultralytics 8.3.230, NVIDIA RTX 5060 Laptop GPU 8GB, capability 12.0.
+36 installed packages checked compatible by uv pip check.
+Exact installed packages are recorded in environment.lock.txt.
+Official torch wheel SHA256 checked:
+633005a3700e81b5be0df2a7d3c1d48aced23ed927653797a3bd2b144a3aeeb6
+
+PASS: CUDA convolution forward + backward with finite outputs/gradients.
+PASS: packaged YOLOv8n architecture inference on CUDA with synthetic white image.
+PASS: real inference adapter with an explicitly UNTRAINED six-class checkpoint
+      fixture; REVIEW_REQUIRED preserved and counts derived from object list.
+      Fixture is local-only and is not a deliverable model.
+PASS: 19 member05 unit tests, including corrupt images, duplicate pixels and evaluation flags.
+PASS: 6 original shared-contract tests.
+PASS: training command help and dependency check.
+
+The first filesystem fixture test run failed because the sandbox TEMP directory
+denied writes. Re-run with TEMP/TMP set to a writable workspace directory passed.
+
+NOT DONE: project training, physical-size rejection, candidate recovery,
+real-data evaluation, live camera validation, latency/accuracy benchmarking.
+Official yolov8n.pt download SUCCEEDED on retry via Python requests and the existing system HTTP proxy.
+Size: 6549796 bytes (matches GitHub release metadata).
+Recorded SHA256: f59b3d833e2ff32e194b5bb8e08d211dc7c5bdf144b90d2c8412c47ccfc83b36
+The release digest field is null; this hash is a recorded fingerprint, not a publisher signature.
+PASS: pretrained YOLOv8n GPU inference on synthetic input.
+PASS: one-epoch CUDA fine-tuning with 6 synthetic training images and 2 synthetic validation images.
+PASS: saved synthetic-training checkpoint reload through predict(); REVIEW_REQUIRED preserved.
+PASS: check-only dataset audit and evaluation JSON CLI on explicit synthetic fixtures.
+PASS: repository framework/scope checks.
+Synthetic shapes are engineering fixtures, NOT actual fasteners or course performance evidence.
+Import/inference never downloads weights; download_weights.py is an explicit opt-in command.
+
+These checks demonstrate program and GPU execution, NOT part recognition quality.
+No course test data or ground truth was read. No project performance is claimed.

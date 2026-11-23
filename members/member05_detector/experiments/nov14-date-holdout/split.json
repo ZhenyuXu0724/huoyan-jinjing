@@ -1,0 +1,2482 @@
+[
+  {
+    "id": "f870f13fa86c_IMG_7256",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "982488be70e00ef30b359cb478c643b6a9412a810f30987d4f681ee33cc2e5f9",
+    "unknown_count": 0
+  },
+  {
+    "id": "8d6fcbaa8d13_IMG_7257",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "7b9bc739af1e3fc5413b851eb791bf9a528182f5c91ecbc19bc69fe0356f9c6a",
+    "unknown_count": 0
+  },
+  {
+    "id": "d495e5d25c72_IMG_7258",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "9375730bc1a1a0272f21c7058b257a86645c58afbc7a6436662904eb417e42d6",
+    "unknown_count": 0
+  },
+  {
+    "id": "da83bd4b1178_IMG_7259",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "5df225fd598534829c092589085751b18003103dc0f66cb1cf6b1d9dc8964fd8",
+    "unknown_count": 0
+  },
+  {
+    "id": "801467fa2932_IMG_7260",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "cd70a28860e27c9626fd8300b33f90c8ed1cec1cf60120de3211c06b80457d4b",
+    "unknown_count": 0
+  },
+  {
+    "id": "eaa4e13f5912_IMG_7261",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "0bd5d9154ec17b455a8082a51ce1f01a63bb6569e933432237d0b17e3e05e2e7",
+    "unknown_count": 0
+  },
+  {
+    "id": "d1ead9c71ecd_IMG_7262",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "b2b6e73021941b90631d74f7023f6a74157a5e148ae496552315376ed8f18fbb",
+    "unknown_count": 0
+  },
+  {
+    "id": "72a47dd27267_IMG_7263",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "576b01c7d57ed5a9426106cba65ca7c67ec42ef17eb7c9d03577a291e22ee557",
+    "unknown_count": 0
+  },
+  {
+    "id": "5e903992e789_IMG_7264",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "6907582d20d3d53d61be9c47540c13787b3b00d86b0aef47625f36b8e7489f33",
+    "unknown_count": 0
+  },
+  {
+    "id": "8b43cf5dfd31_IMG_7265",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "838d234c97947b0ed8bc92c6d4d95c2615f74b2bbc9f570060fd71924ffa328b",
+    "unknown_count": 0
+  },
+  {
+    "id": "f2f2be9462e0_IMG_7266",
+    "split": "val",
+    "group": "11.11原始_暗光侧视图_7256-7266",
+    "source": "11.11原始",
+    "image_sha256": "6d7b0091480950fac8ced5012c6da15264f993d866b5f2e4bf66e2576f647f27",
+    "unknown_count": 0
+  },
+  {
+    "id": "890a7a1aa2d6_IMG_7267",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7267-7272",
+    "source": "11.11原始",
+    "image_sha256": "db0ef24257dcb42885100908ecfed7fa786f8fc434da356027765fbfca2a1fc8",
+    "unknown_count": 0
+  },
+  {
+    "id": "33a59446220d_IMG_7268",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7267-7272",
+    "source": "11.11原始",
+    "image_sha256": "e27927764fa24436e2e0ef1372735b5bfbf1012f0cdf320165a5ec20190f55b5",
+    "unknown_count": 0
+  },
+  {
+    "id": "385f2651e51d_IMG_7269",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7267-7272",
+    "source": "11.11原始",
+    "image_sha256": "a5da8866510b50b0a0138c510d23df328c06376f600f77c123e1dc587f9665ab",
+    "unknown_count": 0
+  },
+  {
+    "id": "4b4def162297_IMG_7270",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7267-7272",
+    "source": "11.11原始",
+    "image_sha256": "a0d4cbe341722858b0057c6d52d4406017b59452217517d873ce9142160bda07",
+    "unknown_count": 0
+  },
+  {
+    "id": "47c9c0fe36e6_IMG_7271",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7267-7272",
+    "source": "11.11原始",
+    "image_sha256": "60b749017fc0a6814cad4952d263193bb9384912f307236b4d02906a0a41cd21",
+    "unknown_count": 0
+  },
+  {
+    "id": "b550229bcfe9_IMG_7272",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7267-7272",
+    "source": "11.11原始",
+    "image_sha256": "2ee1d9958f4d8704bad7aee995217c7d36d7938adc81e22807e1b2427cf56fd4",
+    "unknown_count": 0
+  },
+  {
+    "id": "5f2e4dcafb6b_IMG_7273",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "b2c08e625647ea5440471588405eddc05d1b390ad7084a8c48a74850658fec92",
+    "unknown_count": 0
+  },
+  {
+    "id": "8e8b7d3397d6_IMG_7274",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "b2f286d211637170cbf91ab838c329a1ed6ecf49f45172be52ff413b29baf7a5",
+    "unknown_count": 0
+  },
+  {
+    "id": "c57a60bc746d_IMG_7275",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "5f47aa25a4dbe65a6d6d9001c2dd315bb49fdb86e3a129bf5b1d1c99da57decd",
+    "unknown_count": 0
+  },
+  {
+    "id": "097fde96084f_IMG_7276",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "4d453b12326616528062a16d45f13f2fbd1b3869770233d403506534c3f91526",
+    "unknown_count": 0
+  },
+  {
+    "id": "4cf5db99adab_IMG_7277",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "a1bdfad61d2f8d4d3dce2d23abb7642d29b45e8cadb23efe88225d3be8b1adaa",
+    "unknown_count": 0
+  },
+  {
+    "id": "a9edf41b2e2c_IMG_7278",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "f8a1ccdccdcae0b21a686f0c9c3c34c020e1981790f062454586eaca265c8927",
+    "unknown_count": 0
+  },
+  {
+    "id": "55df17fbb0f6_IMG_7279",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "c4760d9d5bddae263de048a74660fa26cfb2b29decd55a350fd9eeb2c62b9845",
+    "unknown_count": 0
+  },
+  {
+    "id": "90941050d868_IMG_7280",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "6bd6f9e7f2729e6012fd0235565ff5d8e5524d5f76b0330e7492d049d492bcd3",
+    "unknown_count": 0
+  },
+  {
+    "id": "999d76b6859c_IMG_7281",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "97cec84598dea546b3b7658423f1bfd5d355f68e43c590832245a07e70e13ddb",
+    "unknown_count": 0
+  },
+  {
+    "id": "b476c0f54fd6_IMG_7282",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "f4ffa75afab7c45f25409dafd1d711c42d1bf07de4d6055164b70b096631aa1e",
+    "unknown_count": 0
+  },
+  {
+    "id": "d4800bef3574_IMG_7283",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "25a41417e6b687b6c55eef8149dd04a8c3f290abe30b9dc519e4eb73e46c0ed8",
+    "unknown_count": 0
+  },
+  {
+    "id": "e80ca87ff9d7_IMG_7284",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "5224e094baa7bec4a7e39cbab74efc5f8425b1177bd90ec948ab9c20411b7b25",
+    "unknown_count": 0
+  },
+  {
+    "id": "6f56b2d06bda_IMG_7285",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "dc9a9ed163085c89493b72844e8045cc6caafdb0a9ca6dbfb4ecac3abab92672",
+    "unknown_count": 0
+  },
+  {
+    "id": "514bca32c825_IMG_7286",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "0a9537682dcc764c187a4f4dc6038093dd715ca2b3e57291eea7c3b446703046",
+    "unknown_count": 0
+  },
+  {
+    "id": "31f1e3b43865_IMG_7287",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "1f13b57c8f9ec9d29c865e44354de755db12f7ad337029cf793d67ad8ab63ee1",
+    "unknown_count": 0
+  },
+  {
+    "id": "b89dab30eb56_IMG_7288",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "c6c27871c00dcab0cae84b41e5ed70118fccb169b7e7b82d01f116d72a13386a",
+    "unknown_count": 0
+  },
+  {
+    "id": "9b3e31dc4a8f_IMG_7289",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7273-7289",
+    "source": "11.11原始",
+    "image_sha256": "7cee19d2c4419564e25c3f425f9c281c834e8d904e0682f9e4f69b15d0528aa8",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7290",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7290-7295",
+    "source": "11.11原始",
+    "image_sha256": "fb59ec29c2916e0c0f9cfadc0310464c1177b916be3af9a4f540ea2d6a5cb0a5",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7291",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7290-7295",
+    "source": "11.11原始",
+    "image_sha256": "632c689fb333777dd26ac0eb21c46e5d398036e11869a5efa61a9255e4b2b457",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7292",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7290-7295",
+    "source": "11.11原始",
+    "image_sha256": "7d07eb0e414af45d004097c69d520345f6a648b94e205552716f5ffeb7f4a032",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7293",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7290-7295",
+    "source": "11.11原始",
+    "image_sha256": "1b0732624cf37c7361571829c1651773f4341a63f3f72008f493ff04c493545f",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7294",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7290-7295",
+    "source": "11.11原始",
+    "image_sha256": "ca1985b49860230a132bc3e0a0116ff229032518c1a9cf9da8e55c715a4c0c10",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7295",
+    "split": "train",
+    "group": "11.11原始_暗光侧视图_7290-7295",
+    "source": "11.11原始",
+    "image_sha256": "bf4bf3cd107b18f96a731c573ce92eed69184de6b39b6bdbdc93b1cd891a5a29",
+    "unknown_count": 0
+  },
+  {
+    "id": "1eb350fd418b_IMG_7216",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "8c708f52eed00e27d0084055175a4dd15e1aae66697679482c0bc581b3b9948e",
+    "unknown_count": 0
+  },
+  {
+    "id": "a5c1fb96479e_IMG_7217",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "bfae193ae74050a75f69af8dc9bf04ead2d682a3b23fe910e609b0f5a9d57019",
+    "unknown_count": 0
+  },
+  {
+    "id": "2df38ebbe042_IMG_7218",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "cd001012d5588ae9204b5738274aefbe763bcae7cd5c02f126d891179fef70e9",
+    "unknown_count": 0
+  },
+  {
+    "id": "b98f2aa29507_IMG_7219",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "dbb513d616659c51a4d768b171e7f46ba7f4a745de7b60ae2dc11adc75646083",
+    "unknown_count": 0
+  },
+  {
+    "id": "cfe9388c4f9d_IMG_7220",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "e61cbcff3c544e8cd279db30a7da34cb35304aa4b3b49417046412ebe27989bd",
+    "unknown_count": 0
+  },
+  {
+    "id": "e1fec949c60f_IMG_7221",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "946c79c7b146905670cff4bf06ccee16d1671dbdb6147da54dd79c22db523b08",
+    "unknown_count": 0
+  },
+  {
+    "id": "7764d45826b6_IMG_7222",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "fae2861d3669aefa39310fbb44028cb2ca80dd63b22905d765e81defb43e9c79",
+    "unknown_count": 0
+  },
+  {
+    "id": "cde3d27013ee_IMG_7223",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "c15906915133dc63c26fdb260c6f948f16860f4c0adb4be43ee4a3ed894ff878",
+    "unknown_count": 0
+  },
+  {
+    "id": "2aed6b15fa37_IMG_7224",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "7cfd3a76a60e678f5e4d1b8413909f9ab7a7afae39005293e13c41b0ef7e2cde",
+    "unknown_count": 0
+  },
+  {
+    "id": "bc61b44d1bf4_IMG_7225",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "6d5780b497b4595ab96c36b100ca6823120e0743a38b200c355e6d5de7493750",
+    "unknown_count": 0
+  },
+  {
+    "id": "113bdd2ea27b_IMG_7226",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "47e3dff9263a0c48cf702aa8a079af31936d3a1eb31bd094b10a971b03df649e",
+    "unknown_count": 0
+  },
+  {
+    "id": "65e8c57f8f8d_IMG_7227",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "c7ce2c2698715c2c9915eaf654182092b753959beb9dca2a746dfa8ac7e256a7",
+    "unknown_count": 0
+  },
+  {
+    "id": "386f3007d995_IMG_7228",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "e1f108f0faf5dd4c00581d34072ef77602426f3d554f7c9eb8607f392babb465",
+    "unknown_count": 0
+  },
+  {
+    "id": "723fc8ebca5d_IMG_7229",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "3d130be065fe40bb4a830eb7f8f911fe7397d51a13ee6e9a89733cdd276e11d9",
+    "unknown_count": 0
+  },
+  {
+    "id": "9337f5af5727_IMG_7230",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "d3107e85ec916d1c9b91482eb84845b5b6f6079dfd403de45b82c33dabd8bc1b",
+    "unknown_count": 0
+  },
+  {
+    "id": "6dab9c330c24_IMG_7231",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "8f18ec3a870b128d87086e7258c6f493ead7aefc2c6fc5d1d57366af33441508",
+    "unknown_count": 0
+  },
+  {
+    "id": "53604751dedd_IMG_7232",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "b7d631a3f2308c8cf1376eafd72775283858c3fb3fcb2859ab5743dbbba21ad3",
+    "unknown_count": 0
+  },
+  {
+    "id": "54cb90042f99_IMG_7233",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "9e22e2d5e1a446f8833fc993c556354771fab54c98ac6245932a01d62d30a7b5",
+    "unknown_count": 0
+  },
+  {
+    "id": "3dd0b3cce390_IMG_7234",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "7caee485b5b6a2a91c2e81bc935e6993cfd170d16e9a1db1ab5bda97fa1b19fa",
+    "unknown_count": 0
+  },
+  {
+    "id": "748664223cca_IMG_7235",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "08898e2e783582489746937574d5c863078749cdf2590d4c118183e0e5ad45e1",
+    "unknown_count": 0
+  },
+  {
+    "id": "f32abfa3f8a6_IMG_7236",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "6a8066e78dfdac7508377c64c8631d604018c7af8f82a0073bddef6a8f8ad305",
+    "unknown_count": 0
+  },
+  {
+    "id": "9ed64139d47a_IMG_7237",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "89fe80edb72174846d4ebd322b0163e1002d6c4380e2f5174f522ecc3b740f49",
+    "unknown_count": 0
+  },
+  {
+    "id": "2ac6eb1411d6_IMG_7238",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "5d6137c65cdc9067a77f6683cd9fceb79a0b6c72d2cf1274da925fd2d0467f34",
+    "unknown_count": 0
+  },
+  {
+    "id": "83d620b3a9eb_IMG_7239",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "9d0fb680317956b59a54d561123efbe738b68c82b4d1462e876e27598dda2127",
+    "unknown_count": 0
+  },
+  {
+    "id": "11abcef4574b_IMG_7240",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "61a22b5f70c2412a23ab72f2b5e55ca76885709c56e7101634a5864821ec10ec",
+    "unknown_count": 0
+  },
+  {
+    "id": "410a461f229a_IMG_7241",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "0f0df87ec35a0a951964932c6ac2a4c9772e520d791039fe4eeaa574ed6262fd",
+    "unknown_count": 0
+  },
+  {
+    "id": "865a2c3b8a86_IMG_7242",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "2ce3726815c7ae007c48aaddb166264d72f3657fb5726060c7004cce00230ecf",
+    "unknown_count": 0
+  },
+  {
+    "id": "b5d6bcebad6d_IMG_7243",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "f02db4a60618b63391d0818f931386733b290408b83a0032730a3d4773b9f5f9",
+    "unknown_count": 0
+  },
+  {
+    "id": "af8bb75a4692_IMG_7244",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "e87f94b8a1d91a665e3017fb58732482323932597e0730e86a6be0d800551b9e",
+    "unknown_count": 0
+  },
+  {
+    "id": "d8767ef16cff_IMG_7245",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "6d894f137b5bed22db42be6fc28dbe77e918fcca5e8dd318e84512ee08c86332",
+    "unknown_count": 0
+  },
+  {
+    "id": "383df483e895_IMG_7246",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "6a99b60cac7871ce10e15bf8b039d02427ea566bcc2b03f9c4fdb83e4b7b5786",
+    "unknown_count": 0
+  },
+  {
+    "id": "07756e6fef20_IMG_7247",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "dfafb348193eec4f697732cd8ab33be2c3cb9d67afbdccc85cbfd00749198b50",
+    "unknown_count": 0
+  },
+  {
+    "id": "6620fd276ae8_IMG_7248",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "326070aefaba70934dfc16955cd67a76d4a927376239ecd1ab142bf929fb16f9",
+    "unknown_count": 0
+  },
+  {
+    "id": "fa977a7d1d3f_IMG_7249",
+    "split": "train",
+    "group": "11.11原始_暗光正视图_7216-7249",
+    "source": "11.11原始",
+    "image_sha256": "6b83f9dc871c969e4b5c651002ae5e60ed684fbe87390631e3a19041a38b498e",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7250",
+    "split": "val",
+    "group": "11.11原始_暗光正视图_7250-7255",
+    "source": "11.11原始",
+    "image_sha256": "9789551b377011f9cdf02026d70e0b08553fcee68942e9dc2246b71e06d5fd4e",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7251",
+    "split": "val",
+    "group": "11.11原始_暗光正视图_7250-7255",
+    "source": "11.11原始",
+    "image_sha256": "279816c7bc66d4119dd84dd3b380012864559e0b6a0f1f61192dcc95e59c2897",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7252",
+    "split": "val",
+    "group": "11.11原始_暗光正视图_7250-7255",
+    "source": "11.11原始",
+    "image_sha256": "81bb74249630a73f07dafcfff447ce2d9e388b83d8a9ca07f68b8607e4a4e0d1",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7253",
+    "split": "val",
+    "group": "11.11原始_暗光正视图_7250-7255",
+    "source": "11.11原始",
+    "image_sha256": "23578ccb2136a4e1a4a71a7894db83c59ad16cd2bbca52160280783747c413d7",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7254",
+    "split": "val",
+    "group": "11.11原始_暗光正视图_7250-7255",
+    "source": "11.11原始",
+    "image_sha256": "4310ae40bae9e52d8b0c31d68595c692e3232dc54a0b04f01b26cd6a872baf12",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7255",
+    "split": "val",
+    "group": "11.11原始_暗光正视图_7250-7255",
+    "source": "11.11原始",
+    "image_sha256": "1b20144dabb63238530cc1d20defafbe57e6402b3bfc2b84faca6358e90b4b48",
+    "unknown_count": 0
+  },
+  {
+    "id": "413d3b787a5c_IMG_7296",
+    "split": "val",
+    "group": "11.11原始_标准光侧视图_7296-7299",
+    "source": "11.11原始",
+    "image_sha256": "090ec116c6af4c5e9e392ea10d8562dd6320f07c31bf65fbd0410b13a4b5e6b5",
+    "unknown_count": 0
+  },
+  {
+    "id": "7e5d60e470c2_IMG_7297",
+    "split": "val",
+    "group": "11.11原始_标准光侧视图_7296-7299",
+    "source": "11.11原始",
+    "image_sha256": "2e315fd77c8606a1ffbbdfdfda89f04b28c7bafab1c45b344625eee96516d77e",
+    "unknown_count": 0
+  },
+  {
+    "id": "1f353bdf9882_IMG_7298",
+    "split": "val",
+    "group": "11.11原始_标准光侧视图_7296-7299",
+    "source": "11.11原始",
+    "image_sha256": "f041e9dd0e1ba2c254643d60d5c95d9a18b7538f4fd6e24372ebab8f22828c4b",
+    "unknown_count": 0
+  },
+  {
+    "id": "b864a33ef0f3_IMG_7299",
+    "split": "val",
+    "group": "11.11原始_标准光侧视图_7296-7299",
+    "source": "11.11原始",
+    "image_sha256": "d6eaa6cc7e064c776a412086f975d5c4961b11a7a764c5e1dd189c9208ad0fed",
+    "unknown_count": 0
+  },
+  {
+    "id": "0942c8776532_IMG_7300",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7300-7305",
+    "source": "11.11原始",
+    "image_sha256": "f3ddba2683146169c01011346866e3511986d90bd707e49f7802f33e356f5e5e",
+    "unknown_count": 0
+  },
+  {
+    "id": "42c2f4847739_IMG_7301",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7300-7305",
+    "source": "11.11原始",
+    "image_sha256": "304ebeee1443ae285b4cbc447a6303efe22a379486050686847ce8937dc2c348",
+    "unknown_count": 0
+  },
+  {
+    "id": "ffaf156c8066_IMG_7302",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7300-7305",
+    "source": "11.11原始",
+    "image_sha256": "bf8297a6fda05187975ed109e2b128ed2ac5dec5f00a3f8fb6840b8ef54c8a8c",
+    "unknown_count": 0
+  },
+  {
+    "id": "6d95e78e0cdb_IMG_7303",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7300-7305",
+    "source": "11.11原始",
+    "image_sha256": "0d67ce0b9b36fddccfcfd4bca4f7a1dd8681bf7b78327f53b9d10636870949d4",
+    "unknown_count": 0
+  },
+  {
+    "id": "faacf0fc6042_IMG_7304",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7300-7305",
+    "source": "11.11原始",
+    "image_sha256": "e263f1b1c5f3747e8f73ce0fba85861f8d2f6de036111b8532af978d28e97d8d",
+    "unknown_count": 0
+  },
+  {
+    "id": "4dd52e072afb_IMG_7305",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7300-7305",
+    "source": "11.11原始",
+    "image_sha256": "b199e0643a7d33645a6e0207947caaf258ebf87d5c46f5fcf46909bc90ed3694",
+    "unknown_count": 0
+  },
+  {
+    "id": "7a5baa47a3b6_IMG_7306",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "4037481cf16a4e71d2428de001d4a9d9e46bb6758a14cda59108b9ac0b63cf16",
+    "unknown_count": 0
+  },
+  {
+    "id": "d0b7a90359ae_IMG_7307",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "038c71e2ce7972851201682087fc0d429dda4d6a6140517c148bec3ad24138fa",
+    "unknown_count": 0
+  },
+  {
+    "id": "9dbf97128516_IMG_7308",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "bc223244b6fdbc826c7fa2a2ee1f9e9560d5c7861e38fe5232f7fdc4fcafdb63",
+    "unknown_count": 0
+  },
+  {
+    "id": "e9daac7f3414_IMG_7309",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "5b9a2e6120657b12c2bf52f8ff8d902dffe5e3b0cb60e2f2c15d218c3a159756",
+    "unknown_count": 0
+  },
+  {
+    "id": "7ea15a8117a0_IMG_7310",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "2762cda7e0b6c386ad82e088f6873d3ca1e26b61c6217bb601fe3132f16f7298",
+    "unknown_count": 0
+  },
+  {
+    "id": "270078a77837_IMG_7311",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "b038502095a593a97cacb139290b2320d1d60a44c88812a6e4718098f4c53f9b",
+    "unknown_count": 0
+  },
+  {
+    "id": "3a44a6318887_IMG_7312",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "1886c73c10b97238e0669fada8e1e87a1d83d547e5eef0b6f130fe0eb780c85b",
+    "unknown_count": 0
+  },
+  {
+    "id": "03e9d83c0637_IMG_7313",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "43b0b321f54eff690d036adaa3bf61e27351f8794c1e2e210a2f91f7ba724619",
+    "unknown_count": 0
+  },
+  {
+    "id": "2e7781f8e1a0_IMG_7314",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "903515727fb88c7baa2d886c2e0ee16e79c9b29b4b241af159c03a7cb7182b70",
+    "unknown_count": 0
+  },
+  {
+    "id": "d26b8c2411af_IMG_7315",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "14b118e4a7d0e3309a1b3ef1ee14c0b8289f5deb88358dcce85ce1c9f2f738ce",
+    "unknown_count": 0
+  },
+  {
+    "id": "61701e9ad818_IMG_7316",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "0e30508837c4cdbdb2cfac79e9ed69373a8c91c032a398c5d99d65d9ab67c079",
+    "unknown_count": 0
+  },
+  {
+    "id": "ec5c8e0d1856_IMG_7317",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "f6b9d635a6d16b470d46558a2eca9409b75836b4b9be7a1c8d68eb927f042673",
+    "unknown_count": 0
+  },
+  {
+    "id": "0cb95c38d59d_IMG_7318",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "beb5b30a7ec87f201d1b814d4d54f094d2ab24c4d4d65c9c376b41bc896f8d1f",
+    "unknown_count": 0
+  },
+  {
+    "id": "d40678605f66_IMG_7319",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "0217ad4c80c2eef716f14d5939acc57c57bf17f84a54d80a901166d25857e753",
+    "unknown_count": 0
+  },
+  {
+    "id": "681b8652f718_IMG_7320",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "a040fd5a3e72f1378554cbb12f6c0ef756e4b9e04c7b7b70bdb63ecce2852cc7",
+    "unknown_count": 0
+  },
+  {
+    "id": "189ac13dd8f4_IMG_7321",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "7d12aeed71c53a147046a37a5c434cbb85d936f81cc7c16b009b20cf471c3c66",
+    "unknown_count": 0
+  },
+  {
+    "id": "1e015df40ed6_IMG_7322",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "be49ade7abb738c8fe8bfbaaa6559d963d75d315b640841ecb4c5483878f5656",
+    "unknown_count": 0
+  },
+  {
+    "id": "4c003d2114d9_IMG_7323",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "5cc74b5ad3dbdaaa1902c2aa68f940b0d17f20da10b40d76313e70d536c5f51e",
+    "unknown_count": 0
+  },
+  {
+    "id": "3437375ccdfe_IMG_7324",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "a741f3912c544e6172f65bb986f4d48cf1389ca7ef54fd03b51f565ec2c281eb",
+    "unknown_count": 0
+  },
+  {
+    "id": "901d178b61e8_IMG_7325",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "ee0a7fc0b33379c8053672a0bac872e9e48874da9f96504d9e8056270dc3059e",
+    "unknown_count": 0
+  },
+  {
+    "id": "a98d69bc3a01_IMG_7326",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "bd4d0e3145a446b66ef2594ac34084abc8c544218e8baf1b3933ff9820947d33",
+    "unknown_count": 0
+  },
+  {
+    "id": "8f0aaf90c351_IMG_7327",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "73464494d3cc682b897882ddcc579537e35b3ca817ff817d0d54dc0cedb57378",
+    "unknown_count": 0
+  },
+  {
+    "id": "20c4b398d00e_IMG_7328",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "706b9917aebddd32f5b6c34c68365db0fe41a0676decd0e657ede4d0d0034f28",
+    "unknown_count": 0
+  },
+  {
+    "id": "10e6a48c0239_IMG_7329",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "9cd9e542d7209a0bb38d6be84ce27e85d595456bd7aff4c1d863da8e5d08cd8a",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7330",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "738adf48395e2ee8653eb1376371b98aa6e3894b8657ec6c1c1253083a9b1ed1",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7331",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "869ade0711c4a964bbeaefd7d0007065b6a4e6dec42b37e6fb1a53d3a3629992",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7332",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "17c55134322c9a0b14b8e25c2836a8f57072945bd699b810770138db70047782",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7333",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "8594d5fece3fc4a837c58674c5487fb50e5738fe4f797712ced7b39c2f92cc80",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7334",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "2fefac1caade009128c35730568b4b39744e677a2f33588df74bd6b8dd7260b9",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7335",
+    "split": "train",
+    "group": "11.11原始_标准光侧视图_7306-7335",
+    "source": "11.11原始",
+    "image_sha256": "b14521dc0bfcd8bc9c89dd08666d36f0ba5e31f9d7327d08b4fe72424c8d431f",
+    "unknown_count": 0
+  },
+  {
+    "id": "c21fa4f846da_IMG_7174",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7174-7179",
+    "source": "11.11原始",
+    "image_sha256": "378999a68763033802095f1f5aed190785d16ce59586215c9d0076ceefdf4e4f",
+    "unknown_count": 0
+  },
+  {
+    "id": "2f12bf64ca51_IMG_7175",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7174-7179",
+    "source": "11.11原始",
+    "image_sha256": "ccaf215bccb7e9a6a7f4d91b3db202f344926caac851efe97b5762b55f8cb30f",
+    "unknown_count": 0
+  },
+  {
+    "id": "f4a4d9de60c8_IMG_7176",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7174-7179",
+    "source": "11.11原始",
+    "image_sha256": "d6ed896919ec1dab5f06aa1c5ea0622d8622e9b08c59f440e44c8749a337a5a8",
+    "unknown_count": 0
+  },
+  {
+    "id": "1dd1ba0bcc17_IMG_7178",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7174-7179",
+    "source": "11.11原始",
+    "image_sha256": "dbae49526ba6237a5fcfe6063292852038036a96b29966dd8d4c3870954d710d",
+    "unknown_count": 0
+  },
+  {
+    "id": "140b6764ad0b_IMG_7179",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7174-7179",
+    "source": "11.11原始",
+    "image_sha256": "a4c72514631a7d5c93c6042a6d770ce7d4da7a1ce72201d98b15437119061f44",
+    "unknown_count": 0
+  },
+  {
+    "id": "1cff1d3a0b47_IMG_7180",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7180-7185",
+    "source": "11.11原始",
+    "image_sha256": "650e496dc1b2496c59fce05bdd9e20c47440dece4b961ab23a576e4f67fa9d71",
+    "unknown_count": 0
+  },
+  {
+    "id": "27b341b072bb_IMG_7181",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7180-7185",
+    "source": "11.11原始",
+    "image_sha256": "d2e43d307b46ddeaabdafce50cf1284e45019ab6fd36ef44c8c0e35c0b93ffe5",
+    "unknown_count": 0
+  },
+  {
+    "id": "04ca47a88a35_IMG_7182",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7180-7185",
+    "source": "11.11原始",
+    "image_sha256": "0204d51868521499c08a74c8e95f62091d43f1e1b251590c24b55d0ce0c7a129",
+    "unknown_count": 0
+  },
+  {
+    "id": "99f5d24e09a0_IMG_7183",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7180-7185",
+    "source": "11.11原始",
+    "image_sha256": "98014096ca2789fb32dc608608f02a6d8538fcd0a533a001f2392cfb36afd308",
+    "unknown_count": 0
+  },
+  {
+    "id": "1d82add7f746_IMG_7184",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7180-7185",
+    "source": "11.11原始",
+    "image_sha256": "c4300714a7cc7359e32843e037dfa8a8102db928345615141d861c85dae739d5",
+    "unknown_count": 0
+  },
+  {
+    "id": "47c2eb05864a_IMG_7185",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7180-7185",
+    "source": "11.11原始",
+    "image_sha256": "69899c582b88707c07a746d693b0ac36fe338a153d19f008156d34070fd0d14a",
+    "unknown_count": 0
+  },
+  {
+    "id": "09963554583d_IMG_7186",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "bde5e02dcc72630b07750fad563cb9088a703e5a2b5ac26eb20f915dde181daa",
+    "unknown_count": 0
+  },
+  {
+    "id": "76c31420295c_IMG_7187",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "1352bfd59b568e697228a98d5a0b2da8bd5a1fdd798cbcac7c63499d9d6904ee",
+    "unknown_count": 0
+  },
+  {
+    "id": "02b408832ce7_IMG_7188",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "aad7b6ac73e3a5f5d4b04b8416f8b91dd9e5d301eb47414e318ceb4c2ed4c10c",
+    "unknown_count": 0
+  },
+  {
+    "id": "52d3a7ecb735_IMG_7189",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "1480c59dd3efc634182590f01e81972059fa8a990c303e61330055eaf762f1f4",
+    "unknown_count": 0
+  },
+  {
+    "id": "d5944c35e88e_IMG_7190",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "cd7443175e46523cb154675cb0711c816d3738eaed6a606cf2e9517a8ab86400",
+    "unknown_count": 0
+  },
+  {
+    "id": "ea86d0fd8819_IMG_7191",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "303c61b9bca47ff07353c65d155a95af071d2604aa46bad8b84d4ad428488103",
+    "unknown_count": 0
+  },
+  {
+    "id": "90ed351edcd2_IMG_7192",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "601b727ceab39a3fac4261a90de0433139bc85dfbafd6fb9ef977c0e3b7943f6",
+    "unknown_count": 0
+  },
+  {
+    "id": "ee8ac5319dbd_IMG_7193",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "fe86a52eb12b3084497eef2caf9c504ed3bf3b6dc42defc52b89f4c05dce4dca",
+    "unknown_count": 0
+  },
+  {
+    "id": "33c25473c547_IMG_7194",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "8cba6f1c623e001a1f89b2e9475bb0d184540f7d0e98675e7cbea3ea5fb9abf6",
+    "unknown_count": 0
+  },
+  {
+    "id": "d59f956606de_IMG_7195",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "283c4c9bffab6141f74c5ea15ded730fc8bd7bfe9887545177deb5dcb3710350",
+    "unknown_count": 0
+  },
+  {
+    "id": "f9be908fc0b4_IMG_7196",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "5dcb363f0d7db3e337bce49c4c880173f03bbd3baeea8f11ae48010eab8d3a39",
+    "unknown_count": 0
+  },
+  {
+    "id": "d831ecf4f717_IMG_7197",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7186-7197",
+    "source": "11.11原始",
+    "image_sha256": "7b060f3ae25f21b3d2dd025972571b278762ab74cacffc296616693edabd7639",
+    "unknown_count": 0
+  },
+  {
+    "id": "607280201f24_IMG_7198",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7198-7203",
+    "source": "11.11原始",
+    "image_sha256": "83a4d9bc84baea046a6746eda0ee0d608ae5b8620b3336461b9cc2328a72893b",
+    "unknown_count": 0
+  },
+  {
+    "id": "b13df241659d_IMG_7199",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7198-7203",
+    "source": "11.11原始",
+    "image_sha256": "09f688c06037900c2c9c78a54c5c51ee52dd1eb4c4db75858935c17a3ad753ad",
+    "unknown_count": 0
+  },
+  {
+    "id": "8153fc70df2b_IMG_7200",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7198-7203",
+    "source": "11.11原始",
+    "image_sha256": "250d0e039ae56a97d8ae4bb1c0e83230236677bf28286b9a0a7356d5b82de208",
+    "unknown_count": 0
+  },
+  {
+    "id": "4b2454fb2957_IMG_7201",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7198-7203",
+    "source": "11.11原始",
+    "image_sha256": "3ae9b4f22f18b71807871853b6bc3286d41223d515b3def2f03d6494090d44a5",
+    "unknown_count": 0
+  },
+  {
+    "id": "bf1b5d95e94d_IMG_7202",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7198-7203",
+    "source": "11.11原始",
+    "image_sha256": "00c0e128e949dd8fad3843fbc90e662125b9cf723bfa78ad22c9f1d1ed860f2a",
+    "unknown_count": 0
+  },
+  {
+    "id": "f8d9604e4169_IMG_7203",
+    "split": "train",
+    "group": "11.11原始_标准光正视_7198-7203",
+    "source": "11.11原始",
+    "image_sha256": "bded04373a6e56174a184fb6d2e9cd75c1a2ffc6988f5b16d74761aa61fafa0a",
+    "unknown_count": 0
+  },
+  {
+    "id": "439acad0082b_IMG_7204",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "75bb6b2de84eaf100e2d2e676cf264b45cf2c7338c08027a6c2897acff0b2ce4",
+    "unknown_count": 0
+  },
+  {
+    "id": "de711fa1464c_IMG_7205",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "f215457265e4762b81645131e2a5ca13d866bc9c5e402f071251cf8064b47ea7",
+    "unknown_count": 0
+  },
+  {
+    "id": "d3bcbc902096_IMG_7206",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "f9c7ad0824c3aada68446950a21a1056b0238c34944168864b91782dfbbb15a2",
+    "unknown_count": 0
+  },
+  {
+    "id": "a45f639d1b15_IMG_7207",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "3e6fcfa291f34f3cc2ee8ae4b40bafb0ae7d90fe29f4c9d5e7d692a3bd0009f7",
+    "unknown_count": 0
+  },
+  {
+    "id": "1aef8f6f6b39_IMG_7208",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "ba7375af576a8056cb7e3dc254d28fa25af16819b2ede2501cf611256adda5f0",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7209",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "ebc5bca41459adf735a5d054b5e4ba824096830c4544bc82316b73b5ccdeea38",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7210",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "3596c808fa301798035608ea0ffd45ac89fe6bde0d2a8134084141fda3bdae8b",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7211",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "5323666a334b34d795436338143181fd8d74fabc98e8ed698173e12f1aeb5d13",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7212",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "6df2b7317d7708997c688e0378cc9d5282c422f59714074c9ad75264d5ea632b",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7213",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "68290e06699bf55fec4a7dab8f4e3f79a0fec9ea3de53ecffeecfe28462f60cb",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov11_IMG_7214",
+    "split": "val",
+    "group": "11.11原始_标准光正视_7204-7214",
+    "source": "11.11原始",
+    "image_sha256": "ead28e3cf4276a6941cb3a9288aad304c01b1f5317a4020dff6c5c2b2276b4b1",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160244",
+    "split": "test",
+    "group": "11.14补强与干扰_稀疏干扰_160244-160444",
+    "source": "11.14补强与干扰",
+    "image_sha256": "23e99658a3b6f6b0ac97b053a821269af4efd45f937561b3264989e4ab33528e",
+    "unknown_count": 1
+  },
+  {
+    "id": "nov14_IMG_20261114_160352",
+    "split": "test",
+    "group": "11.14补强与干扰_稀疏干扰_160244-160444",
+    "source": "11.14补强与干扰",
+    "image_sha256": "40d7b66b5df411d20c495ebdb12336a8210e0e7ec4d089726e039e76f4cd81f4",
+    "unknown_count": 1
+  },
+  {
+    "id": "nov14_IMG_20261114_160411",
+    "split": "test",
+    "group": "11.14补强与干扰_稀疏干扰_160244-160444",
+    "source": "11.14补强与干扰",
+    "image_sha256": "98daa3d5834f55b9b26eab54d0d6f7037301498789983ad3db631ba442afbd84",
+    "unknown_count": 1
+  },
+  {
+    "id": "nov14_IMG_20261114_160421",
+    "split": "test",
+    "group": "11.14补强与干扰_稀疏干扰_160244-160444",
+    "source": "11.14补强与干扰",
+    "image_sha256": "71b31d17406a68689344e82a5df72599e77857c55c070d07e82564a2a55a51db",
+    "unknown_count": 1
+  },
+  {
+    "id": "nov14_IMG_20261114_160430",
+    "split": "test",
+    "group": "11.14补强与干扰_稀疏干扰_160244-160444",
+    "source": "11.14补强与干扰",
+    "image_sha256": "d1ed4fd0400d85acb8e44f347588f15b13415f47d24aaebeed42cb1bb6788924",
+    "unknown_count": 1
+  },
+  {
+    "id": "nov14_IMG_20261114_160444",
+    "split": "test",
+    "group": "11.14补强与干扰_稀疏干扰_160244-160444",
+    "source": "11.14补强与干扰",
+    "image_sha256": "236eb03acc03b63cff65e2884fea823f331179d03b1a6f802be769d37a287b72",
+    "unknown_count": 1
+  },
+  {
+    "id": "nov14_IMG_20261114_160608",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "f0959812b4ce0317d8b2715c5473d44c06fb760f74501eddf46da685b737edde",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160617",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "904b8ca76530531bcbf079a96d7e3be4efb5bf5e8912e8e15c5c3222fb0e5a24",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160625",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "5b35f261527e0cb79dc485ff2204925e2f3c6e9fb8abdc92a8a6cf73f73a7ffe",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160639",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "f5aab2648b72d117b023ca2ebef6ed9e12bce3b12dabc52efa636503e995a93c",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160648",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "d8c98ff2467bfc9af07928f349b45119b539e2358551f1bceaeeb51ea41b6342",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160702",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "bbc905402c3c7660cd12fa830be2a68a9879e74ef2e739c9ae25a2383a29df2d",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160715",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "4feb97359a52ba60f3d2f15c2dc1e42f548884dc001c319462627ae8480bab5d",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160727",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "4f729bf0bb0613c4c6941cca8f89a230a5686667787a4c3b97b1fe12bbef1427",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160740",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "6b56315ddcfbd99dc7396eaee734d871897b9f3ae052aefbb9f4c91f36db0fc3",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160754",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "5406ea05a6eb9d10bf48b930e97fed6d135db8c2b6d034e70b223d4901961b42",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160808",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "e4874dfa0813783e9b90e70c77d5e834b67530c03c99a03db87a78850647f44c",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160820",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "fcf44a4e8b6235c69e0880bf620798e7f0a562ae2163f118a7c194a1f3e140f8",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160838",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "ba4e3a593e9fba2f773c9045a1f941a8deca864ecc05f99b694f315fe5c279c8",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160850",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "39281af62c74ca5e3217d527d8dfedcca931edd96ac7388fafe7249f4ee1ee6a",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160903",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "4f539e783ec91137d5fe46fdd2631dfc1cb3db7f64abd58ed0898db405421138",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160915",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "24af7cf0759e495369bb292acb995f33d93a0bf038949fe4e2b91b8e3c1e184a",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160929",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "d211a7e4c3a80510a97053c3a586ba4ae5759ae8da36b09a40166018b7b56176",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_160944",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "232252fe6ab5dce6e3001b478b935d8b245d5e8f2744811b6238aec9338b1cd9",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_161000",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "ff394e243723b9a96a44cf0b3f3cae414b82946a54657e1ca579dc96f3c85b27",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_161013",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "fcb59731af231d1fa2b9b422d272d5d285e29a7968c9ab3c273ae3d60b581a09",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_161025",
+    "split": "test",
+    "group": "11.14补强与干扰_纯正常补拍_160608-161025",
+    "source": "11.14补强与干扰",
+    "image_sha256": "10a0d8a1e7fa50ed3359d55e10559b1ab98a365b3bddbaf8e491a5e9fcfa6bbe",
+    "unknown_count": 0
+  },
+  {
+    "id": "nov14_IMG_20261114_161207",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "c4be66273bc16b46e548022fc3c3b96bcb0344dfb3515ced9f02318d7b7147e5",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161242",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "11c51b61b6995b53c03719ccb6b26f7ffe20f384f6b848bb8e0a7240900b8018",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161317",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "8200cfdb17b8a099db81f2c2f9ab6c0cdc6d0c2a26db6dcb31f7ea19c59b8d20",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161323",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "7fef2f3b6838c79d241a93a918c6cfe16732312f4e68574082eed0b132357b4d",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161327",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "fc0f9a5b569f1839b2755c6abaaf249727f6ad9f5471bf8a5a061597fccc33ba",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161338",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "a187154905c741907068dee3a0b6f71bf51b7831ce7e7792434918dfe94aa77d",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161340",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "35000f6838754d656680db5aedfafe771e300a6dc6b7ff1354f66969eb9ecd43",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161354",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "4822004c8567801ecab44d3defcade3e94aaccccd54fb166bd96d46ec0532a79",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161357",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "ba1b7e7595527c37deecd779956bbcceae3567de85d831ebfae66ec59c4431e3",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161400",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "d3f0f9ee4dbbfb5c7591f75d8445f1e2f9ac0215ab8de8f7369f477689a3d7cb",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161404",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "b011ba6048d03621af39b8685613c65b859b5e191109cf095bccf26b39e54612",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161410",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "345f96a7f1bd0b08c27c4e5e1a11c3294c928587cdf90090b00de03dfb65c3da",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161412",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "97bee812dc2931c1c391ef4bad0161db6facf8a13501589429f5ec6087688779",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161414",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "77a7072dede90c80c3cc4ac393ec15dbaad43616014afdf8224be3d1b8ce90c7",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161449",
+    "split": "test",
+    "group": "11.14补强与干扰_密集前段_161207-161449",
+    "source": "11.14补强与干扰",
+    "image_sha256": "112229ba7a74f6d98e016aa800a6cd854c3208ad8282fce2b298647b594ccd1e",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161520",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "89b70cc07f62132c6115743be8311be8e006996436afdff10cbd2e90b73cb72c",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161523",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "dd83f542c65ef90c58d2a10a165bb851076ac88d49650b27d0730194a9b69f98",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161527",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "312ca0f509f09670fb579b0263e5cf4407c9ce0976f618ca1e5578c4d42887dd",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161529",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "9bebc691704c9f4305b72d7c271aea3273cd3f7f952bd1ebdab75cb7e1376f42",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161534",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "d741b4c11b4251b1b8c2a9a8fe05f00088d4afd21832dbae525ab88cb01bc4eb",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161538",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "aaccb1c426bc8fa6742e47e576725123c3d22cd1e4fb3e804a4ada732ce2ea23",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161543",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "bbf9ac9850a83239e67be897d9fd7dd55a9db8b76de99b18ed776e1a2329f50a",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161545",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "f0b5fb4a48f84059c436065b7eafa3af5b1b15757180671604a4c34a1acf0fe7",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161550",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "674ba04a9f5accf0d5cb6c38f566729d7409a6b9d276204b31b6bdfad07dfcc4",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161554",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "d2c87826eb14418bccb144628517cd5fb22d16dbc869df83bd72f79a909b401f",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161557",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "1668d85a3fe9f82c00ba30003c77801d80ac80d286a302f26487375babc83236",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161600",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "e116e0e693c2fe22c906f43e4ece965183a8c86c99d1d65956c7d530335576c0",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161604",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "63679758b4cc38b3daa9e6d4bd4471efd3ec1a41c7d11db8dac496b1c16c9f99",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161611",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "168b8a28b46aa263f8d4d5baf81199e2b67ce0b6045441511542b099e339a65f",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161614",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "ae255f31e04ec19a7ce98dda429e154d44081c7a24b334eaa10f68ddb5053e5e",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161618",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "7f95c04b89a358b22026d17be675330f8b0f2bab0555158aa8d83d78daeff48e",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161625",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "02ec97ebbf1a6eb5c0ccc1458d7b902dbab3f068017f1e427057244ae358bbc9",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161651",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "077ff0c29fe09969318ed84392ca7eb2197c405fc46f7c0fcd496d9e6759cd2c",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161656",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "022874bd2e920c8db02d2bebbae1ded95fe8fb22fd08339f12056fa4e5dcfca1",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161706",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "75efdaabc48972c0d74029095622832449d6c9b82eb17cac310a49cff5209ffc",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161711",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "52b41fe3db7e8a390df5a66b121a8715bffb8ba2f08e82d9cc3dc8182d25c96d",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161714",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "dcd6eee45740bb238501a24ce2884953aad50c10432be1146e489f6dd78b9c49",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161719",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "ae3692c17cbcb4f641aa325fb8da391b21a3e964292032134efefccd394fe22b",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161722",
+    "split": "test",
+    "group": "11.14补强与干扰_密集中段_161520-161722",
+    "source": "11.14补强与干扰",
+    "image_sha256": "16fbc7c7fa7cdeeeabaa6c8d77dd34a84594f0d569d17c8cf3a27ce290edaa44",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161752",
+    "split": "test",
+    "group": "11.14补强与干扰_密集后段_161752-161827",
+    "source": "11.14补强与干扰",
+    "image_sha256": "347ae41daee3edab4f7250373ce21d350c7abac181d3ce1a17ae202481beccb7",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161755",
+    "split": "test",
+    "group": "11.14补强与干扰_密集后段_161752-161827",
+    "source": "11.14补强与干扰",
+    "image_sha256": "468c30d4580cc95c89e143a27ce28b5aea2842b17bb7358c6eb1c9e0ead47320",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161759",
+    "split": "test",
+    "group": "11.14补强与干扰_密集后段_161752-161827",
+    "source": "11.14补强与干扰",
+    "image_sha256": "03a165e4a1bc124c5283f35c0a8b803a4bb001642b42d3911f52f3398bc91d2b",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161803",
+    "split": "test",
+    "group": "11.14补强与干扰_密集后段_161752-161827",
+    "source": "11.14补强与干扰",
+    "image_sha256": "498721023f2fb8ba522e45b40194870e10474c33e5a3581308a7cea32e1bf813",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161808",
+    "split": "test",
+    "group": "11.14补强与干扰_密集后段_161752-161827",
+    "source": "11.14补强与干扰",
+    "image_sha256": "8710d797460f1d8e5e9fae3834ae3e1801f9c07ece00e02d6a2a01373e5a56d0",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161811",
+    "split": "test",
+    "group": "11.14补强与干扰_密集后段_161752-161827",
+    "source": "11.14补强与干扰",
+    "image_sha256": "8c5f7868916d6a0e8a55da93360383f55d8f22398f4603bb8f842dda633e16be",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161816",
+    "split": "test",
+    "group": "11.14补强与干扰_密集后段_161752-161827",
+    "source": "11.14补强与干扰",
+    "image_sha256": "4526697cccefc88d35b75c4314ca7fe9d6185dc9f6f935024668c11ecab20ae6",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161819",
+    "split": "test",
+    "group": "11.14补强与干扰_密集后段_161752-161827",
+    "source": "11.14补强与干扰",
+    "image_sha256": "558f85e6869763dc56f366bba7551eea4eb60a781b57ef489f6d6392b15abc7a",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161823",
+    "split": "test",
+    "group": "11.14补强与干扰_密集后段_161752-161827",
+    "source": "11.14补强与干扰",
+    "image_sha256": "196056cd5f275339fc56f8231aa178302abc47ea7ae5fcf8566e78923edfd5fe",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_161827",
+    "split": "test",
+    "group": "11.14补强与干扰_密集后段_161752-161827",
+    "source": "11.14补强与干扰",
+    "image_sha256": "9ef0ec947d0839eb8a565e8f6bdf5891c22fb05127f8e145027fd589479e8e7e",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_162115",
+    "split": "test",
+    "group": "11.14补强与干扰_七件前段_162115-162356",
+    "source": "11.14补强与干扰",
+    "image_sha256": "55560a09c5d810383a17a9da56f091a4877787bdc4e3ad823efd30a9a7db071a",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162206",
+    "split": "test",
+    "group": "11.14补强与干扰_七件前段_162115-162356",
+    "source": "11.14补强与干扰",
+    "image_sha256": "31b24114e43ec271b691ab69f1309e36f3b88ce77ba964c2219afdc1b4d6e3d7",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162230",
+    "split": "test",
+    "group": "11.14补强与干扰_七件前段_162115-162356",
+    "source": "11.14补强与干扰",
+    "image_sha256": "7e3bd0f1abfebea4aa09413165b0f20ebd4c4c1ee56b57fea5d3f986c9784110",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162246",
+    "split": "test",
+    "group": "11.14补强与干扰_七件前段_162115-162356",
+    "source": "11.14补强与干扰",
+    "image_sha256": "ab588a2937c50e0a6236d1eead2a353218943640b874c7efafb9760956e4202d",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162307",
+    "split": "test",
+    "group": "11.14补强与干扰_七件前段_162115-162356",
+    "source": "11.14补强与干扰",
+    "image_sha256": "e3f9c3f1bc1175fbd345e315137cd303db8d5c82cabb153f6fb1cefc2675aa32",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162326",
+    "split": "test",
+    "group": "11.14补强与干扰_七件前段_162115-162356",
+    "source": "11.14补强与干扰",
+    "image_sha256": "bdae8e9a3a1cf269e2da457e98915fbe5ab2d8e6212ee8e771dd9e2e790dd478",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162342",
+    "split": "test",
+    "group": "11.14补强与干扰_七件前段_162115-162356",
+    "source": "11.14补强与干扰",
+    "image_sha256": "8149764fd907e86865e1301949891afe61029111fe06361286dd068dacdfb330",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162356",
+    "split": "test",
+    "group": "11.14补强与干扰_七件前段_162115-162356",
+    "source": "11.14补强与干扰",
+    "image_sha256": "a6c579b4813a4413a7dbb66ffd385aff5380ed6c4a07f7a055b194c26ffa2d8f",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162413",
+    "split": "test",
+    "group": "11.14补强与干扰_六七件中段_162413-162628",
+    "source": "11.14补强与干扰",
+    "image_sha256": "35a1c0bfd843033354b3dce38323e22506d34c18e0d98b7389790a4db091fb76",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162432",
+    "split": "test",
+    "group": "11.14补强与干扰_六七件中段_162413-162628",
+    "source": "11.14补强与干扰",
+    "image_sha256": "2662165bfbd8b6dad46f15f111c59b24dceaaa6ccac90c5d859a7273bc5e09b3",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162451",
+    "split": "test",
+    "group": "11.14补强与干扰_六七件中段_162413-162628",
+    "source": "11.14补强与干扰",
+    "image_sha256": "24e560857c8fd714a11be334c0621be35a35d35bcc39c4da83d4a69df748b75f",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162500",
+    "split": "test",
+    "group": "11.14补强与干扰_六七件中段_162413-162628",
+    "source": "11.14补强与干扰",
+    "image_sha256": "70865ab9d5c9fbdc0e05e5f495da1292a17068ae871f953db3f653a175e42b5f",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162521",
+    "split": "test",
+    "group": "11.14补强与干扰_六七件中段_162413-162628",
+    "source": "11.14补强与干扰",
+    "image_sha256": "eb7eb5ae232f85f1c1813ed373303912ecc6ccdb0347051d04ec58525fdde4fa",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_162544",
+    "split": "test",
+    "group": "11.14补强与干扰_六七件中段_162413-162628",
+    "source": "11.14补强与干扰",
+    "image_sha256": "6b1957c602721acc9b666522e252e2552b0dbf88f45e32c78f3d2af87f9268d4",
+    "unknown_count": 6
+  },
+  {
+    "id": "nov14_IMG_20261114_162610",
+    "split": "test",
+    "group": "11.14补强与干扰_六七件中段_162413-162628",
+    "source": "11.14补强与干扰",
+    "image_sha256": "5cc1de9a11f1e8dd0b33ecbd5c3da949edaa1ff88e66ba487d24ee98f6169029",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162628",
+    "split": "test",
+    "group": "11.14补强与干扰_六七件中段_162413-162628",
+    "source": "11.14补强与干扰",
+    "image_sha256": "92eb05f98d12056563e0d64c15e506ee720d26994ef1f7be13e0dac03a226e67",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162702",
+    "split": "test",
+    "group": "11.14补强与干扰_七件后段_162702-162732",
+    "source": "11.14补强与干扰",
+    "image_sha256": "04f2a54331bbf4e5e404d0d1f485312aff942bd3043b549d137eaa7ad356f3b4",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162707",
+    "split": "test",
+    "group": "11.14补强与干扰_七件后段_162702-162732",
+    "source": "11.14补强与干扰",
+    "image_sha256": "2f5892f4f92935694257f1f417558469b1bca000c6eb72021ee37e738057206c",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162711",
+    "split": "test",
+    "group": "11.14补强与干扰_七件后段_162702-162732",
+    "source": "11.14补强与干扰",
+    "image_sha256": "184df494c237ff62ccb60ad212b0dd08631bd86c0e82b1c98c5b25f7c5dbd6ff",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162716",
+    "split": "test",
+    "group": "11.14补强与干扰_七件后段_162702-162732",
+    "source": "11.14补强与干扰",
+    "image_sha256": "642c6054f1d1cda18d42275d343b6c99bde53c4c59a1dc87c6cc39003f38584e",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162729",
+    "split": "test",
+    "group": "11.14补强与干扰_七件后段_162702-162732",
+    "source": "11.14补强与干扰",
+    "image_sha256": "4f3d7cc6b26662e35b896560c33dbcac1da4e45ff03483ac4a132287bf54932f",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov14_IMG_20261114_162732",
+    "split": "test",
+    "group": "11.14补强与干扰_七件后段_162702-162732",
+    "source": "11.14补强与干扰",
+    "image_sha256": "3ca75df37017d51d67d7cd92a3be795eb85d05556aa8291c717035ca5cf87c2a",
+    "unknown_count": 7
+  },
+  {
+    "id": "nov18_IMG_20261118_222627",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222627-222803",
+    "source": "11.18新增",
+    "image_sha256": "11079a64112e1365b66a8721d41c70ee314200348470ca587fde3c21e43dc6ad",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222634",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222627-222803",
+    "source": "11.18新增",
+    "image_sha256": "081130bc7a4966317a5355f5fe7ebb9addc83ff5aa9c80366b3f14954d3550d6",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222642",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222627-222803",
+    "source": "11.18新增",
+    "image_sha256": "4a19ee8dea4b5106df368144dc71f8764b58057ea25659ddd9d409e0cbb2798b",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222656",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222627-222803",
+    "source": "11.18新增",
+    "image_sha256": "11d1274ebd3a889ca447d6f82e58125ab0db86ca85ff8be100f40fa65cbb6fec",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222707",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222627-222803",
+    "source": "11.18新增",
+    "image_sha256": "f9c266fbb976999cf97d7f3e215ceca3aed1da97f46163a5776d61e70270c84c",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222720",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222627-222803",
+    "source": "11.18新增",
+    "image_sha256": "8e6cd05238f18aed7ee62eedfd6bdffdac55a0002a2f19bae30147f339b0ae6e",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222734",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222627-222803",
+    "source": "11.18新增",
+    "image_sha256": "9915135c3911dd8c6e9c21601e5b1c6feccff7bbc304910f3116b4394dccb0c7",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222749",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222627-222803",
+    "source": "11.18新增",
+    "image_sha256": "a8c484828c9d15e8c4c90ff808f534c789164484d2bb137ef66888e52457c322",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222803",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222627-222803",
+    "source": "11.18新增",
+    "image_sha256": "b40d3a093a77c361c787f9a57ec6e8db0aaefcfb0aa06cd9f763cc58520f21ea",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222824",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222824-223015",
+    "source": "11.18新增",
+    "image_sha256": "91d9e368ec904153618814fd3f15bfa886808f575bbd0dd7ea6d0729dddcb9f9",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222836",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222824-223015",
+    "source": "11.18新增",
+    "image_sha256": "bf768d3fda7646421cf709dfdb882ea85e575ea1fc86e7ed37a5fd77954e7379",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222857",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222824-223015",
+    "source": "11.18新增",
+    "image_sha256": "0bef64c3611bd6f29ece10e066af3c892618b4ae0ecdd20fb9b884e9c65b6046",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222926",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222824-223015",
+    "source": "11.18新增",
+    "image_sha256": "74675ddd2d9d0d954a46d202aeefd879ed71e4256bc7ee268b11292dc5f9333f",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_222947",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222824-223015",
+    "source": "11.18新增",
+    "image_sha256": "698dd20c8d588edc7a679bce4b6accd8142949124294958a69d485911eb38790",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223001",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222824-223015",
+    "source": "11.18新增",
+    "image_sha256": "debe73c414a1723233df7fda1767872df83e342d87d85ab006b7969f0ddd4ad5",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223015",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_222824-223015",
+    "source": "11.18新增",
+    "image_sha256": "c02981d1ecea36f58ea57523c2bfbb2e2ba0c8ae3836849ca705afc6f65b747a",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223032",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "45b9f35c3b78efb1b8de793d16f5d0c478792f4a6a00bf52c49146b2a357ddb1",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223055",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "98e294b59c4bc2c4e3fbe14e9105cfa966c650618665557ae86c0b5c4ff3167c",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223115",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "2a99a56a56b07546daee99a410266a6b8a1f6341c4eaafb739c64fc532e28272",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223128",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "154812414e2a2e7429cbf85f0edfebaed932545cdbd7b51ee5a2c5ee8a071cf7",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223146",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "def7f2b9d08c809a99c06d8976e336d146123763dce1fd1857ea150329415c79",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223201",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "dc3bfaf74f2081d03ea001865ad96848f6cb315da297853625144694146059c4",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223216",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "1a99ed9644837211a555b61df50dee61ba325ca15a178beecfcc8a5be0ba2172",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223237",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "41f360e2607dcb52bbbf4683bd9a333473921251cc86c25b42f68b9b54a140df",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223305",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "30906a717245dd87ecba5e4ff9919579a87e0ef07ecafe2624468303a28b8203",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223319",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "52daabaca0c473802c54f51e890c50bf5390bc0f91f6729effae507f352f09f3",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223332",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "433025ab4fe46cdcf54e7664e184284c77b1e87ddf22564795a524f4f2793137",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223345",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "addae0faf7a9d71636ca977c08e29203d0f1bee73e63c73926fd676b783c2be4",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223404",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "8a46e0b254da99731d18fa76c1c75f249a224bf00739b18c3af5795be9280a63",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223424",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "19c9df69eb351180d17b3f60e2e09bcefdfb6def5c6f0f3f7ece83fd267ab5ec",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223445",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223032-223445",
+    "source": "11.18新增",
+    "image_sha256": "25cb54db19d9fb68f2c7965d22a9ac46f76e160fd1657218a4cf80de895a75ef",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223502",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "1cddf7edf48d35f6763ed1c5c031e52b0a83d4d76b05a7f58fa73faaa926d21e",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223518",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "59d3098f1f51da77cfbc3aabaacf54ddc7ea812fd4130078808055d683979b96",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223533",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "08d655115461cd172d031eda365a8e313575baf19147e82285f28fd862934568",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223547",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "8b3d3c19190fbfe501edf94d57dec1122b3e5881664cfe52c4c8c5d10d427a6d",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223557",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "840b72a41b1fb019db56a171d3ad21badbd3154feedf86595a93870a95b44dd6",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223632",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "e00e3e433b028d390317d405b6a21b0c36fe31c02770fb175194d461fe77ec13",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223644",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "a7ef9260aa5b9b1141b8279f85c2122d9aa49ec177915350027acfde16ddcdae",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223658",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "6a8bb541ff2bc2dbd2fcf26a12193e2951280c682e01f07266f494067de5dfdd",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223714",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "55cacdb1ce493f23dea7dc2ab6175afda71cec2722c2da97e9687f5379a663c1",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223724",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "820826f3a589ce8366705b390d06af7a64986b1e028e1bb73cd7adc4706ac822",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223742",
+    "split": "train",
+    "group": "11.18新增_11.18连续拍摄_223502-223742",
+    "source": "11.18新增",
+    "image_sha256": "785e986d41a6aaae760b7dccfb85c652234023901b19a2813af89169e7519e93",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223758",
+    "split": "val",
+    "group": "11.18新增_11.18连续拍摄_223758-224042",
+    "source": "11.18新增",
+    "image_sha256": "deb924f8952db114345351c4123b41b7030b723a6f8f41201386dfc869a542e5",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223819",
+    "split": "val",
+    "group": "11.18新增_11.18连续拍摄_223758-224042",
+    "source": "11.18新增",
+    "image_sha256": "e8405e6ac48ae80cca394291583ced63b4f0c9cd3942cd598a40d852703cafc4",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223848",
+    "split": "val",
+    "group": "11.18新增_11.18连续拍摄_223758-224042",
+    "source": "11.18新增",
+    "image_sha256": "916ffcc7b476873e46215f3ff8ec48e12b152df93302d131ee047e26f97d7821",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223903",
+    "split": "val",
+    "group": "11.18新增_11.18连续拍摄_223758-224042",
+    "source": "11.18新增",
+    "image_sha256": "247cd702daff21b8564b42fa93b3adff4a1026bc81066828cd97b4bfb8a428a6",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223921",
+    "split": "val",
+    "group": "11.18新增_11.18连续拍摄_223758-224042",
+    "source": "11.18新增",
+    "image_sha256": "0c9b35c604cb4f42916009fe8cc092d3374fbe122cb625479c4c403cc71f30e9",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223939",
+    "split": "val",
+    "group": "11.18新增_11.18连续拍摄_223758-224042",
+    "source": "11.18新增",
+    "image_sha256": "20ff3a5a6f71f71f19f8c190ca82b0069f30a8f9b3b4e0adf3aec375b7fea641",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_223955",
+    "split": "val",
+    "group": "11.18新增_11.18连续拍摄_223758-224042",
+    "source": "11.18新增",
+    "image_sha256": "a1e164c5b0c15c86697bf480903189f45eadf2b7ec8ad81707fc523dae3cb0d3",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_224009",
+    "split": "val",
+    "group": "11.18新增_11.18连续拍摄_223758-224042",
+    "source": "11.18新增",
+    "image_sha256": "a67e9c88eb3f7544210e3490a5b6ea274313b23e73fd7433c4deec914b6b9eb3",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_224025",
+    "split": "val",
+    "group": "11.18新增_11.18连续拍摄_223758-224042",
+    "source": "11.18新增",
+    "image_sha256": "f479d33b480eae722378dfc75595180e37c3a34aefa79a0f63e051742f8dc769",
+    "unknown_count": 3
+  },
+  {
+    "id": "nov18_IMG_20261118_224042",
+    "split": "val",
+    "group": "11.18新增_11.18连续拍摄_223758-224042",
+    "source": "11.18新增",
+    "image_sha256": "f8b6a0cf8be3d1747b3b2e55d6d1b4468611ae51f212c8bdbdd32de965fbd1f8",
+    "unknown_count": 3
+  }
+]
