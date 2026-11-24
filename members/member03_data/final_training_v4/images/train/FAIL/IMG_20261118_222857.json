@@ -1,0 +1,244 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          1137.6,
+          619.2
+        ],
+        [
+          1353.6,
+          993.6
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          1137.6,
+          1272.0
+        ],
+        [
+          1363.2,
+          1507.2
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          1963.2,
+          1281.6
+        ],
+        [
+          2328.0,
+          1632.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "non_catalogue",
+      "points": [
+        [
+          2467.2,
+          1612.8
+        ],
+        [
+          2860.8,
+          1977.6
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          1785.6,
+          1636.8
+        ],
+        [
+          2092.8,
+          1948.8
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          2980.8,
+          1699.2
+        ],
+        [
+          3532.8,
+          2294.4
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          2784.0,
+          2356.8
+        ],
+        [
+          3254.4,
+          2995.2
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          2136.0,
+          3470.4
+        ],
+        [
+          2395.2,
+          3806.4
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          1156.8,
+          3672.0
+        ],
+        [
+          1483.2,
+          4041.6
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "non_catalogue",
+      "points": [
+        [
+          3014.4,
+          3859.2
+        ],
+        [
+          3388.8,
+          4233.6
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          2092.8,
+          4296.0
+        ],
+        [
+          2318.4,
+          4507.2
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "non_catalogue",
+      "points": [
+        [
+          1502.4,
+          4387.2
+        ],
+        [
+          1718.4,
+          4603.2
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          2683.2,
+          4560.0
+        ],
+        [
+          2980.8,
+          4862.4
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "IMG_20261118_222857.jpg",
+  "imageData": null,
+  "imageHeight": 5760,
+  "imageWidth": 4320
+}

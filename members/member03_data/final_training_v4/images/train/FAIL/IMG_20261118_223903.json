@@ -1,0 +1,244 @@
+{
+  "version": "6.3.1",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          2007.04,
+          853.33
+        ],
+        [
+          2228.91,
+          1102.51
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "non_catalogue",
+      "points": [
+        [
+          2474.67,
+          979.63
+        ],
+        [
+          2744.32,
+          1245.87
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          1184.43,
+          1109.33
+        ],
+        [
+          1450.67,
+          1317.55
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          812.37,
+          1290.24
+        ],
+        [
+          986.45,
+          1566.72
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "non_catalogue",
+      "points": [
+        [
+          1901.23,
+          1351.68
+        ],
+        [
+          2051.41,
+          1508.69
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "non_catalogue",
+      "points": [
+        [
+          566.61,
+          1498.45
+        ],
+        [
+          826.03,
+          1768.11
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          2443.95,
+          1634.99
+        ],
+        [
+          2689.71,
+          2109.44
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          1597.44,
+          1641.81
+        ],
+        [
+          1754.45,
+          1792.0
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          965.97,
+          1894.4
+        ],
+        [
+          1187.84,
+          2112.85
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          2085.55,
+          1942.19
+        ],
+        [
+          2372.27,
+          2409.81
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          1044.48,
+          2324.48
+        ],
+        [
+          1266.35,
+          2556.59
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          1556.48,
+          2549.76
+        ],
+        [
+          1716.91,
+          2771.63
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          2123.09,
+          2761.39
+        ],
+        [
+          2283.52,
+          2911.57
+        ]
+      ],
+      "group_id": null,
+      "description": "",
+      "shape_type": "rectangle",
+      "flags": {},
+      "mask": null
+    }
+  ],
+  "imagePath": "IMG_20261118_223903.jpg",
+  "imageData": null,
+  "imageHeight": 4096,
+  "imageWidth": 3072
+}

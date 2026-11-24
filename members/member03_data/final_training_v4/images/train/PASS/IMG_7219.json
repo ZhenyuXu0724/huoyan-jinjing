@@ -1,0 +1,200 @@
+{
+  "version": "5.5.0",
+  "flags": {},
+  "shapes": [
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          1861.44,
+          409.92
+        ],
+        [
+          2150.4,
+          672.0
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. similar_scores"
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          396.48,
+          591.36
+        ],
+        [
+          591.36,
+          782.88
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          840.0,
+          735.84
+        ],
+        [
+          1122.24,
+          1024.8
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4x10",
+      "points": [
+        [
+          2002.56,
+          1176.0
+        ],
+        [
+          2288.16,
+          1434.72
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          631.68,
+          1374.24
+        ],
+        [
+          964.32,
+          1643.04
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M5x10",
+      "points": [
+        [
+          2399.04,
+          1646.4
+        ],
+        [
+          2724.96,
+          1861.44
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4_hex_nut",
+      "points": [
+        [
+          1901.76,
+          2392.32
+        ],
+        [
+          2083.2,
+          2587.2
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          591.36,
+          2856.0
+        ],
+        [
+          1206.24,
+          3071.04
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "M4x25",
+      "points": [
+        [
+          907.2,
+          3158.4
+        ],
+        [
+          1525.44,
+          3447.36
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    },
+    {
+      "label": "flat_washer",
+      "points": [
+        [
+          2039.52,
+          3225.6
+        ],
+        [
+          2325.12,
+          3511.2
+        ]
+      ],
+      "group_id": null,
+      "shape_type": "rectangle",
+      "flags": {
+        "auto_label_review": true
+      },
+      "description": "Automatic draft; human review required. "
+    }
+  ],
+  "imagePath": "IMG_7219.png",
+  "imageData": null,
+  "imageHeight": 4032,
+  "imageWidth": 3024
+}
