@@ -9,10 +9,22 @@ from shared.contracts import validate_expected_counts
 
 from .data import sha256
 from .evaluate import write_json
-from .model import MODEL_PATH, load_model, predict_with_model
+from .model import MODEL_PATH, load_active_model, load_model, predict_with_model
 
 
-def batch(input_dir, counts_file, output, model_path=MODEL_PATH):
+def _bundle(model_path):
+    if model_path is None:
+        return load_active_model(), None
+    bundle = load_model(model_path)
+    from .final_v4.common import validate_bundle
+
+    ok, reason = validate_bundle(bundle)
+    if not ok:
+        raise ValueError(f"unsupported model bundle: {reason}")
+    return bundle, model_path
+
+
+def batch(input_dir, counts_file, output, model_path=None):
     cases = json.loads(Path(counts_file).read_text(encoding="utf-8-sig"))
     if not isinstance(cases, list) or not cases:
         raise ValueError("counts_file must be a nonempty list")
@@ -26,7 +38,7 @@ def batch(input_dir, counts_file, output, model_path=MODEL_PATH):
                 or image_id in (".", "..")):
             raise ValueError("Each image_id must be a unique filename")
         requests[image_id] = validate_expected_counts(case["expected_counts"])
-    bundle = load_model(model_path)
+    bundle, explicit = _bundle(model_path)
     paths = {}
     for path in Path(input_dir).rglob("*"):
         if path.is_file() and path.name in requests:
@@ -55,14 +67,21 @@ def batch(input_dir, counts_file, output, model_path=MODEL_PATH):
         writer.writerows(rows)
     classes = json.loads((Path(__file__).resolve().parents[2] /
                           "shared/catalogue.json").read_text(encoding="utf-8"))["classes"]
+    config = bundle["config"]
     write_json(output / "run_config.json", {
-        "model_id": "baseline1", "model_sha256": sha256(model_path),
-        "method": "HOG + PASS-only MLP autoencoder", "class_catalogue": classes,
-        "preprocessing": bundle["config"], "capabilities": bundle["capabilities"],
-        "supported_expected_counts": bundle["config"]["expected_counts"],
+        "model_id": "baseline1",
+        "model_version": bundle.get("version"),
+        "method": bundle.get("method"),
+        "model_sha256": sha256(explicit or MODEL_PATH),
+        "class_catalogue": classes,
+        "preprocessing": {key: config[key] for key in
+                          ("size", "cell", "threshold", "expected_counts")},
+        "capabilities": bundle["capabilities"],
+        "supported_expected_counts": config["expected_counts"],
         "input_expected_counts": requests, "dependencies": bundle["dependencies"],
-        "score_type": "hog_reconstruction_mse", "higher_score_supports": "FAIL",
-        "offline_processing_ms": timings, "timing_scope": "offline processing, excludes camera and display"})
+        "score_type": bundle["score_type"], "higher_score_supports": "FAIL",
+        "offline_processing_ms": timings,
+        "timing_scope": "offline processing, excludes camera and display"})
     return rows
 
 
@@ -71,7 +90,7 @@ def main():
     parser.add_argument("--input_dir", type=Path, required=True)
     parser.add_argument("--counts_file", type=Path, required=True)
     parser.add_argument("--output_dir", type=Path, required=True)
-    parser.add_argument("--model_path", type=Path, default=MODEL_PATH)
+    parser.add_argument("--model_path", type=Path, default=None)
     args = parser.parse_args()
     batch(args.input_dir, args.counts_file, args.output_dir, args.model_path)
 

@@ -1,91 +1,80 @@
 # 成员 4 · 进度与交接
 
-## 新研究：Baseline1_HOGMLP_v3_Stability_Capacity_L2_EpochSelection（2026-11-20）
+## 当前状态：Baseline1_HOGMLP_v4_FinalDataset_Rebuild（2026-11-24）
 
-- 分支member04/hog-v3-stability-capacity，从已合并PR #7的最新main建立；只修改成员4目录。版本名称映射见[版本说明](docs/VERSIONS.md)。
-- 稳定性诊断完成：训练185图、验证101图，每图21设置、两个冻结模型，共12012条预测。原图对照逐一匹配实际单图入口。旧模型在20种验证变体上全部判FAIL，不能把零位置翻转解释为鲁棒；v2固定240尺寸、边缘灰度填充，居中与右移90/101判定翻转。
-- 按计划执行R0原配置、R1小网络、R2强L2，各3种子、200轮；逐轮验证选检查点和阈值，误拒预算5/24。R0三种子末轮精确复现v2 B2。9次训练全部完成；按三种子平均漏放选中R2，固定seed42第1轮，阈值0.010291523765772581。
-- v3代表模型验证漏放12/77、误拒1/24；历史test漏放1/1、误拒4/23。旧默认仍为验证漏放4/77、误拒5/24，不替换默认。结果见[完整报告](docs/Baseline1_HOGMLP_v3_Stability_Capacity_L2_EpochSelection.md)与[分析](docs/Baseline1_HOGMLP_v3_Analysis.md)。
-- 18份检查点在全部101张验证图上的单图重载判定与训练记录一致；坏图、缺图、缺权重和批量数量约束检查通过。旧版及v2全部冻结实验摘要检查通过。
-- 本轮21项模块测试、6项公共测试通过。最新main框架检查被成员3已跟踪JPG阻断，未修改其他成员数据或公共规则。
+在固定数据版本 `final_training_v4` 上完整重建 HOG+MLP 基线。旧版先归档到仓库同级 `Project/delivery/member04_history_before_v4_20261124/`，逐文件 SHA256 核对后清理活动目录；新流程 75 次正式训练、冻结、诊断、一次性 test 评价和本地交付均已完成。**本轮尚未取得 GitHub 上传许可，未 push、未建 PR、未发布 Release。**
 
-- 上传完成：[PR #8](https://github.com/ZhenyuXu0724/huoyan-jinjing/pull/8)待组长审核；[v3 Release](https://github.com/ZhenyuXu0724/huoyan-jinjing/releases/tag/Baseline1_HOGMLP_v3_Stability_Capacity_L2_EpochSelection)已公开预发布，5个附件均完成远端大小与SHA256核验。v1/v2 Release仅更新展示标题，旧附件和地址不变。
-- 独立交付包143481501字节、171个文件，SHA256为1098e3ba1ac955958fc0391a0d33441eca334f6c08baa33a4cb8f7164c24e699；代表权重SHA256为335996ce0d965ff00076a38f2febb9f665d455bc87463df7232e52f8876fd54a。解压逐文件摘要、21项模块测试及新旧入口验证通过，使用现有Python3.11与锁定依赖，非全新机器安装验证。ZIP保留打包时快照，最新交接状态以Git为准。
-- 远端框架检查仍被main已有成员3 JPG阻断：[日志](https://github.com/ZhenyuXu0724/huoyan-jinjing/actions/runs/44683925232/job/136113622856)。实验、模型核验和上传已完成，公共检查与PR审核尚未通过；不据此宣布现场效果达标。
+| 阶段 | 当前状态 | 放行条件 |
+|---|---|---|
+| 规划/元数据审计 | 已完成 | 本文件＋dataset_audit.json＋START_HERE.md |
+| 归档/清理 | 已完成 | 归档逐文件摘要全部通过、只清理成员4范围 |
+| 新代码/开发数据审计 | 已完成 | 数据/接口/隔离测试通过、协议锁定 |
+| 66次主实验 | 已完成 | 全部真实完成、重复组一致 |
+| 9次有限改进 | 已完成 | R0末轮复现、固定规则选型 |
+| 冻结/开发诊断 | 已完成 | 3代表＋新默认冻结、无test选型 |
+| 最终评价/迁移验证 | 已完成 | test按门槛访问、指标可追溯、真实接口和包可用 |
+| 本地交付/等待上传 | 进行中 | 提供完整成果清单，等待用户本次上传许可 |
 
-## 新版监督对照：2026-11-19
+- 数据：训练 249（166 PASS、83 FAIL）、验证 34（20/14）、test 30（15/15）；开发范围 862 文件、全量 1260 文件，`verify_dataset.py` 与自有 54+ 项审计均通过。
+- 66 次主实验：AE 入选 A1（平均验证漏放 2.33、误拒 4.00）；监督入选 A2（0.33、2.67）。两对等价组 B2/C_without_geometry、A2/C_without_clahe 逐位一致。
+- 9 次改进：R0 三个种子第 200 轮精确复现监督 A2 对应种子（权重、标准化器、预测、最大概率差 0）；按三种子最佳平均漏放/误拒选中 R0。
+- 冻结：默认 `Baseline1_HOGMLP_v4_FinalDataset_Supervised_Capacity_L2_EpochSelection`（R0 seed42、第 4 轮、阈值 0.9850894510746002）；代表 SHA256 记录在 `freeze.json`。
+- val：默认 R0 漏放 0、误拒 4；监督 A2 漏放 1、误拒 1；AE A1 漏放 2、误拒 4。
+- 冻结后 test（只评价 3 个代表）：AE 漏放 4、误拒 7、FAIL F1 0.6667；监督 A2 漏放 10、误拒 3、F1 0.4348；默认 R0 漏放 6、误拒 4、F1 0.6429。11 张 S/H 未见件图中，三种方法分别漏放 2/7/4，仅图像级，非陌生件定位或分类。
+- 稳定性：21 设置、283 图、3 模型共 17,829 条预测；原图翻转比例高，AE 在缩小居中设置下会把全部 train PASS 判 FAIL，不能把零翻转宣称为鲁棒。
+- 成本：单图中位约 93–95ms，P95 约 216–229ms；监督模型文件约为 AE 的一半。
 
-- 当前分支：member04/hog-supervised-v2。本轮在成员4目录新增独立监督学习版本，公共入口及旧默认模型保持不变。旧PR #5已合并；下方11.15记录为当时历史状态。
-- 来源固定为12c85c23bc3a57dea51f39915278f31d9133ce74，原684份源文件及新增104份文件已校验。训练185图（133 PASS、52 FAIL）、验证101图（24 PASS、77 FAIL）、历史test24图（23 PASS、1 FAIL），保持原分区，无跨分区精确重复。
-- 33次新版正式训练全部完成，每次200轮，保存配置、历史、逐图预测、错误ID及模型摘要。包括原版全部几何、Gamma、CLAHE及组合/移除组；不额外扩大参数搜索。
-- 新版按三种子平均平衡准确率选中B2，固定seed42，阈值6.294548882124218e-07。先冻结后执行历史test，未以test调参。
-- 新版seed42验证TP=61、FP=2、FN=16、TN=22，F1=0.8714、平衡准确率0.8544；旧A2 seed42为TP=73、FP=5、FN=4、TN=19。新版历史test漏放1、误拒3，两版FAIL F1均为0。
-- 11组同组对照的新平均F1和平衡准确率均低于旧版；新版主要减少误拒而增加漏放，保留旧默认模型。详见 [完整报告](docs/COMPARISON_V2.md)。
-- 18项模块测试、6项公共测试、依赖与框架检查通过。33次权重及历史校验通过，101张验证图模型重载判定全部一致，最大得分差3.5763e-07；真实输入/坏图/缺图/缺权重/不支持数量/禁止真值输入检查通过。
-- 两对等价配置的逐图预测完全一致；旧推理代码、默认权重、33次旧实验及旧assessment文件的全量摘要检查通过。计时使用同机共同20图、单线程、预热后3遍；旧Median/P95为158.31/191.84 ms，新为152.71/192.60 ms，不能将轻微差异解读为稳定提速。
-- 新独立交付包为仓库同级delivery/member04_hog_supervised_v2_20261119.zip；包含全部33次新模型、旧默认模型及新旧实验记录，排除原始图片。旧Release不修改。
-- 新版代码及分区结果说明已推送，审核入口为 [PR #7](https://github.com/ZhenyuXu0724/huoyan-jinjing/pull/7)，所有变更均在成员4目录。2026-11-20新版Release已公开预发布，5个附件均上传完成，远端大小与SHA256核对一致；目录与下载位置见 [上传说明](docs/UPLOAD_V2.md)。
-- PR远端检查仍受main已有成员3原始JPG阻断，失败文件为members/member03_data/11.14训练补强＋干扰验证/补强数据(训练）/IMG_20261114_160608.jpg。[本次检查日志](https://github.com/ZhenyuXu0724/huoyan-jinjing/actions/runs/44543773667/job/135628730262)。本地18项模块测试、6项公共测试和范围检查通过；未绕过公共检查或修改成员3目录，待组长统一数据存储与检查政策。
-- 交付包已完成逐文件摘要及解压迁移验证：18项模块测试通过，新旧默认入口独立运行通过，使用现有Python 3.11.18及锁定依赖，非全新机器重装测试。归档282271822字节，SHA256为68dd8271e5dc2d3eae5c3d684e9f7910aaad0c0f54b1f80c47550e30a886b807；详细证据在同级delivery/member04_v2_relocation_verification.json及member04_v2_relocation_tests.txt。本条是打包后的验收记录，归档保留打包时快照。
+完整数字与限制见 [结果报告](docs/RESULTS.md)、[方法对照](docs/COMPARISON.md)、[分区结果](docs/SPLIT_RESULTS.md)、[错误分析](docs/ERROR_ANALYSIS.md)、[稳定性与成本](docs/STABILITY_COST.md)。
 
-- 已补充[改进分析](docs/IMPROVEMENT_ANALYSIS_V2.md)：仅复算已有验证预测，记录阈值限制、双模型互补和9次单因素候选计划；未启动新训练或改变默认入口。上传完成，PR待组长审核；远端公共检查阻碍仍待处理。
+## 已验证产物
 
-## 旧版记录：2026-11-15（保留）
-
-### 第一阶段接手验收
-
-- 已复核 33 次正式实验权重及 200 轮历史、开发清单、A0/A2 冻结记录与默认模型；权重和阈值未修改。
-- 已复算两模型的 133 张训练、101 张验证得分，按来源、标签、光照、视角和条件分组；完整阈值取舍表保存在 assessment/diagnosis_stage1。
-- 已查看典型漏放、误拒及正常参考图，解释与局限见 [第一阶段报告](docs/STAGE1.md)。不新增采集，不使用 FAIL 训练，不新增正式训练实验。
-- 模块测试 12 项通过（原 10 项加统计检查 2 项）；真实权重接口检查通过，依赖一致性检查通过。
-- 代码已提交并推送，审核 PR 为 [#5](https://github.com/ZhenyuXu0724/huoyan-jinjing/pull/5)。本地公共测试 6 项、范围检查和解压迁移验证通过；迁移使用现有 Python 3.11.18 与锁定依赖，未声称全新机器安装验证。
-- [第一阶段 Release](https://github.com/ZhenyuXu0724/huoyan-jinjing/releases/tag/member04-stage1-20261115) 已公开预发布，包含默认模型、47,150,851 字节交付包、SHA256 和验证附件。已核实全部 5 个附件上传完成，远端模型与 ZIP 的 SHA256 与本地一致；归档保留上传前快照，最新交接状态以本文件为准。
-- 远端合并态 CI 被公共主分支已有成员 3 JPG 阻断：[失败日志](https://github.com/ZhenyuXu0724/huoyan-jinjing/actions/runs/43668919764/job/132674382511)。`.github/check_scope.py` 要求原始媒体走产物存储，而 main 已包含这些图片。需组长处理公共数据存储与检查政策的一致性，不在成员 4 分支中删除他人数据或修改公共规则。
-- 第一阶段尚未满足“检查全部通过”的完成门槛，第二阶段未启动。其他模型预测、公共入口集成和端到端计时仍待协作。
-
-方法为 HOG + 仅 PASS 训练的 MLP 自编码器。已固定上游 `127eeded2d9e7ceebb802b26f6ab9f3ccac9ef26`，接入旧 train 112 张与新增 train 21 张，共 133 PASS；验证为旧 val 24 PASS 与新增验证 77 FAIL。未把验证加入权重学习，未生成合成 FAIL。
-
-## 本轮状态
-
-| 工作 | 状态与证据 |
+| 内容 | 位置 |
 |---|---|
-| 开发数据下载、源文件校验 | 完成，604 文件；清单与 provenance 在 `data/member04_hog/dataset/` |
-| A0–A5、B1–B2 | 3 种子、200 轮完成；记录在 `outputs/member04_hog/experiments/` |
-| C 组合与逐项移除 | 完成 C0、C_without_geometry、C_without_clahe；总计 11 组、33 次正式训练 |
-| 测试前冻结与提供分区评测 | 完成；冻结 A0/A2 seed42 后才下载 test，记录在 `outputs/member04_hog/assessment/` |
-| 模块单元检查 | 10 项通过；仓库标准库检查 6 项通过 |
-| 模型注册、依赖与修改范围 | 通过；公共目录未修改 |
-| 文档统一 | 已替换过时的监督模型与 21 图旧结果说明，见下方入口 |
-| 全部交付数据审计 | 完成，258 图、3031 对象、684 源文件；分区间精确重复为 0，物理场景仍未核实 |
-| 模型重载一致性 | 101 张验证图判定全部一致，最大得分差约 0.0000015 |
-| 清理 | 已移除重复开发副本、旧 21 图实验、废弃代码/文档及安装缓存；释放约 1.3 GB |
+| 来源锁与 75 次任务单 | `configs/final_v4/{source_lock,protocol}.json` |
+| 开发/全量审计、test 访问 | `outputs/member04_hog/final_v4/audit/` |
+| 66 次主实验记录 | `outputs/member04_hog/final_v4/experiments/`、`weights/member04_hog/final_v4/{ae,supervised}/` |
+| 9 次改进记录 | `outputs/member04_hog/final_v4/refinement/`、`weights/member04_hog/final_v4/refinement/` |
+| 冻结与默认指针 | `outputs/member04_hog/final_v4/freeze.json`、`configs/active_model.json` |
+| 诊断/评价/报告 | `outputs/member04_hog/final_v4/{diagnosis,evaluation,reports}/` |
+| 验证证据 | `outputs/member04_hog/final_v4/verification/` |
+| 历史归档与清单 | 仓库同级 `Project/delivery/member04_history_before_v4_20261124/` |
 
-## 现阶段结论
+归档共 1489 个文件、2,926,577,008 字节，复制后逐文件复核通过；清理 1419 个旧文件，删除后归档复查通过。`v3_relocation_3cyz5ths` 因 ACL 拒绝读取未移动，作为未处理项保留在原位。
 
-选择 A2（上下镜像）seed42，阈值 `0.7710705694665725`。A2 三种子验证平均 FAIL F1 `0.9417 ± 0.0004`，比 A0 高约 0.0043；平均漏放由 7.00 降到 4.33，误拒由 2.33 增至 4.67。组合未超过 A2，按规则不保留 CLAHE；其他项不纳入默认模型。差异小，不能据此宣称普遍收益。
+## 验证状态（2026-11-24）
 
-| 提供的 test：23 PASS、1 FAIL | 漏放 | 误拒 | TP | TN | FAIL F1 | 覆盖率 |
-|---|---:|---:|---:|---:|---:|---:|
-| A0 seed42 | 1 | 5 | 0 | 18 | 0 | 100% |
-| A2 seed42（默认） | 1 | 10 | 0 | 13 | 0 | 100% |
+- `final_v4.verify` 通过：84 份正式检查点（66 末轮 + 9×2）逐份摘要与重载校验通过；3 个代表在 val 34 图上单图判定与保存记录一致，最大得分差 3.58e-7（浮点路径差，不是标签差）。
+- 模块测试 21 项、公共测试 6 项通过；依赖版本与 `requirements.txt` 一致；改动范围仅 `members/member04_hog/`。
+- `.github/check_scope.py` 以 exit 1 结束，原因为 main 已跟踪成员3媒体；本地记录“成员范围通过、仓库框架未通过”，未修改他人数据或公共规则。
+- 单图 OK/INPUT_ERROR/MODEL_UNAVAILABLE、批量 OK/INPUT_ERROR/UNSUPPORTED_COUNTS、缺权重启动失败且不建输出目录、旧 bundle 拒载均通过。
+- 交付包 `Project/delivery/Baseline1_HOGMLP_v4_FinalDataset_Rebuild.zip`：928,957,751 字节、592 个条目，SHA256 `4449706dba29d50deb5ae745a84dc71224e63cdd6fd0479f81110955411223a3`；ZIP 内逐文件校验与解压迁移（模块测试、单图、批量、缺权重）全部通过，证据在同名 `_verification.json`、`_tests.txt`。ZIP 为打包时快照；打包后的 progress 变更不再重打包，最新交接状态以 Git 为准。
+- 三个代表权重已作为拟上传附件放在 `Project/delivery/`（各带 `.sha256`）：AE `1ab77d31…87e4`、监督 `62436641…d916`、改进 `cc24c24b…037e`。本轮未上传。
 
-未根据 test 改阈值、重训或换回 A0。唯一 FAIL 按标注为 `IMG_7209.png`，类 2 缺 1，仍待人工复核；验证 FAIL 则主要为目录外干扰。本轮说明当前模型泛化不足，交付的是实验基线与失败证据，不能宣称已达到现场检测要求。
+## 失败与修复记录
 
-完整分析见 [实测报告](docs/RESULTS.md)。默认模型在 `weights/member04_hog/baseline1.joblib`，33 次模型保存在 `weights/member04_hog/experiments/`；配置、历史、逐图预测、错误索引和消融汇总在对应 `outputs/`。
+- 归档前置检查发现 Git 对 428 个文本文件 LF→CRLF 检出，而 provider 的 image/json SHA256 锁定 CRLF 物理字节；数据审计同时核验 Git blob 规范化摘要与 provider 原始摘要，未改数据。
+- 第一次改进汇总在 `refinement_key` 使用顶层 `fn/fp`，触发 `KeyError`；修正为 `best.fn/best.fp` 后重跑 9 次改进，R0 仍精确复现。原失败汇总移入 `outputs/member04_hog/final_v4/failed_attempts/refine_summary_keyerror_20261124/`。
+- 第一次 test 评价的分组统计误用 HOG 清单（无 batch/condition 列），触发 `KeyError: filename`；改用 `split_manifest.csv` 后重跑，失败的首次评价目录移入 `failed_attempts/evaluate_grouped_keyerror_20261124/`，没有用 test 结果改模型。
+- 全量审计最初把 102 张可选训练增强计入 train 标签/框，导致与原图总账不符；改为只统计 `usage=primary` 的原图后通过。该修复只影响审计统计，不改变数据、模型、阈值或选型；协议/冻结/检查点的代码摘要与 freeze 指针做了带记录的一致性刷新。
+- test 的 S/H 子集最初把 63 张评价增强计入，修正为 11 张原始 test 图；只从已保存预测重算，未重新预测 test。
 
-## 查阅顺序
+## test 访问记录
 
-1. [入口与接口](README.md)：文件布局、最小安装、预测返回值与协作边界。
-2. [数据说明](docs/DATA.md)：1599 个对象的来源、分区与待审核项。
-3. [复现步骤](docs/WORKFLOW.md)：准备、训练、报告、冻结、测试与打包命令。
-4. [实验分组](configs/groups/README.md)：单项对照、组合进入条件与移除逻辑。
-5. [方法和指标](docs/INTERPRETATION.md)：算法解释、混淆矩阵、覆盖率与能力边界。
+- `freeze.json` 创建于任何 test 解码之前，`test_accessed=false`。
+- `prepare --scope full` 恢复 test/增强后写 `audit/test_access.json`（类型 restore）。
+- `audit --scope full` 解码 30 张 test 并核验 415 组三联，`verify_dataset.py --all` 通过。
+- `evaluate --frozen` 只评价三个冻结代表一次；`evaluation/test_access.json` 记录时间与冻结摘要。之后没有重训、换阈值、换种子或利用 test 选型。
 
-## 尚待组内交接
+## 下一条命令
 
-- 成员 3：按真实摆放核对场景独立性，确认规格、标注和数据来源许可；提供后续独立新采样。
-- 组长：确认五类各 2 的固定数量及公共接口整合。
-- 成员 6：交付其他模型在共同图像集上的预测后，使用同一图像级评价器比较。
-- 成员 7：接入默认模型，检查数量不支持与图片失败状态，测摄像头端到端耗时。
+```powershell
+python -m members.member04_hog.final_v4.verify
+python -m members.member04_hog.final_v4.package --out ../delivery/Baseline1_HOGMLP_v4_FinalDataset_Rebuild.zip
+```
 
-现有公开 test 不等于正式封存测试；没有真实少件、多件等充分支持的类别不能声称已验证。新测试后的调整需另建版本。
+## 待交接
+
+- 组长：本轮上传许可；公共 `baseline1` 注册映射不变，新默认由本模块 `configs/active_model.json` 指向。main 已跟踪成员3媒体，`.github/check_scope.py` 预期仍被公共媒体规则阻断；本地记录“成员范围通过/框架未通过”。
+- 成员3：物理场景独立性与标签来源；本模块未修改划分或标注。
+- 成员6/7：共同图像级评价和摄像头端到端耗时；本轮只做离线开发评价，不伪造其他成员预测。
+- 旧 Release/PR：#5、#7、#8 与三个旧 Release 保持原地址、附件名和摘要；归档映射见 [ARCHIVE_MAPPING](docs/ARCHIVE_MAPPING.md)。
