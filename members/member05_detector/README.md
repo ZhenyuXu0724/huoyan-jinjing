@@ -6,7 +6,7 @@
 
 验证集整图判对 34/34，测试集整图判对 29/30。15 张 FAIL 中误放行 1 张，15 张 PASS 全部通过。测试集六类数量全对 17/30，干扰件正确检出 26/41。现场展示仍需验收。
 
-权重包已打包并通过解压推理验证，GitHub Release 附件待发布。包名 `member05-final-v4-pure-yolo.zip`，发布状态见[仓库 Releases](https://github.com/ZhenyuXu0724/huoyan-jinjing/releases)。解压后在 Python 3.11 和 ultralytics 8.3.230 环境运行以下命令。
+[下载纯 YOLO 权重包（ZIP）](https://github.com/user-attachments/files/35330452/member05-final-v4-pure-yolo.zip)。压缩包包含 `best.pt`、推理脚本和配置，已完成解压推理验证，并核对了从 GitHub 下载的 ZIP 的 SHA-256。[附件发布记录](https://github.com/ZhenyuXu0724/huoyan-jinjing/pull/13#issuecomment-7131284012)。解压后在 Python 3.11 和 ultralytics 8.3.230 环境运行以下命令。
 
 ```sh
 python predict.py --image example.jpg
