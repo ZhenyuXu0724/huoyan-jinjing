@@ -1,0 +1,1746 @@
+{
+  "links": [
+    {
+      "a": "IMG_7187.png",
+      "b": "IMG_7188.png",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_160608.jpg",
+      "b": "IMG_20261114_160617.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_160608.jpg",
+      "b": "IMG_20261114_160444.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_160639.jpg",
+      "b": "IMG_20261114_160648.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_160648.jpg",
+      "b": "IMG_20261114_160702.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_160421.jpg",
+      "b": "IMG_20261114_160430.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161242.jpg",
+      "b": "IMG_20261114_161317.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161323.jpg",
+      "b": "IMG_20261114_161338.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161323.jpg",
+      "b": "IMG_20261114_161340.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161323.jpg",
+      "b": "IMG_20261114_161354.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161338.jpg",
+      "b": "IMG_20261114_161340.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161338.jpg",
+      "b": "IMG_20261114_161357.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161340.jpg",
+      "b": "IMG_20261114_161354.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161404.jpg",
+      "b": "IMG_20261114_161412.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161410.jpg",
+      "b": "IMG_20261114_161412.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161527.jpg",
+      "b": "IMG_20261114_161543.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161527.jpg",
+      "b": "IMG_20261114_161545.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161527.jpg",
+      "b": "IMG_20261114_161550.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161527.jpg",
+      "b": "IMG_20261114_161618.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161538.jpg",
+      "b": "IMG_20261114_161543.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161538.jpg",
+      "b": "IMG_20261114_161550.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161538.jpg",
+      "b": "IMG_20261114_161618.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161538.jpg",
+      "b": "IMG_20261114_161651.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161538.jpg",
+      "b": "IMG_20261114_161722.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161543.jpg",
+      "b": "IMG_20261114_161550.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161543.jpg",
+      "b": "IMG_20261114_161618.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161543.jpg",
+      "b": "IMG_20261114_161651.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161543.jpg",
+      "b": "IMG_20261114_161722.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161550.jpg",
+      "b": "IMG_20261114_161611.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161550.jpg",
+      "b": "IMG_20261114_161618.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161550.jpg",
+      "b": "IMG_20261114_161651.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161554.jpg",
+      "b": "IMG_20261114_161557.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161557.jpg",
+      "b": "IMG_20261114_161711.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161557.jpg",
+      "b": "IMG_20261114_161714.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161557.jpg",
+      "b": "IMG_20261114_161719.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161600.jpg",
+      "b": "IMG_20261114_161651.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161604.jpg",
+      "b": "IMG_20261114_161651.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161604.jpg",
+      "b": "IMG_20261114_161706.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161651.jpg",
+      "b": "IMG_20261114_161706.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161651.jpg",
+      "b": "IMG_20261114_161722.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161706.jpg",
+      "b": "IMG_20261114_161714.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161706.jpg",
+      "b": "IMG_20261114_161722.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161711.jpg",
+      "b": "IMG_20261114_161714.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161711.jpg",
+      "b": "IMG_20261114_161719.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161714.jpg",
+      "b": "IMG_20261114_161719.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161752.jpg",
+      "b": "IMG_20261114_161755.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161752.jpg",
+      "b": "IMG_20261114_161808.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161752.jpg",
+      "b": "IMG_20261114_161811.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161752.jpg",
+      "b": "IMG_20261114_161823.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161755.jpg",
+      "b": "IMG_20261114_161803.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161755.jpg",
+      "b": "IMG_20261114_161808.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161755.jpg",
+      "b": "IMG_20261114_161823.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161803.jpg",
+      "b": "IMG_20261114_161823.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161808.jpg",
+      "b": "IMG_20261114_161823.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_161811.jpg",
+      "b": "IMG_20261114_161827.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_162451.jpg",
+      "b": "IMG_20261114_162500.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_162702.jpg",
+      "b": "IMG_20261114_162716.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_162729.jpg",
+      "b": "IMG_20261114_162732.jpg",
+      "basis": "one_to_one_iou_gt_035_candidate"
+    },
+    {
+      "a": "IMG_20261114_160444.jpg",
+      "b": "IMG_20261114_160608.jpg",
+      "basis": "historical_candidate_not_all_confirmed"
+    },
+    {
+      "a": "IMG_7247.png",
+      "b": "IMG_7223.png",
+      "basis": "historical_candidate_not_all_confirmed"
+    },
+    {
+      "a": "IMG_7285.png",
+      "b": "IMG_7277.png",
+      "basis": "historical_candidate_not_all_confirmed"
+    },
+    {
+      "a": "IMG_7284.png",
+      "b": "IMG_7273.png",
+      "basis": "historical_candidate_not_all_confirmed"
+    },
+    {
+      "a": "IMG_7246.png",
+      "b": "IMG_7233.png",
+      "basis": "historical_candidate_not_all_confirmed"
+    },
+    {
+      "a": "IMG_7244.png",
+      "b": "IMG_7243.png",
+      "basis": "historical_candidate_not_all_confirmed"
+    },
+    {
+      "a": "IMG_20261114_162451.jpg",
+      "b": "IMG_20261114_162500.jpg",
+      "basis": "historical_candidate_not_all_confirmed"
+    },
+    {
+      "a": "IMG_20261114_161242.jpg",
+      "b": "IMG_20261114_161317.jpg",
+      "basis": "historical_candidate_not_all_confirmed"
+    },
+    {
+      "a": "IMG_20261114_161714.jpg",
+      "b": "IMG_20261114_161719.jpg",
+      "basis": "historical_candidate_not_all_confirmed"
+    },
+    {
+      "a": "MVIMG_20261120_171811.jpg",
+      "b": "MVIMG_20261120_172012.jpg",
+      "basis": "targeted_visual_partial_layout_and_changed_unknown_objects; UNCONFIRMED_CAPTURE_HISTORY"
+    }
+  ],
+  "families": [
+    {
+      "candidate_family_id": "CF004",
+      "members": [
+        "IMG_20261114_160421.jpg",
+        "IMG_20261114_160430.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1114_FAIL_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF005",
+      "members": [
+        "IMG_20261114_160444.jpg",
+        "IMG_20261114_160608.jpg",
+        "IMG_20261114_160617.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1114_FAIL_B02",
+        "G_1114_PASS_TRAIN"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF007",
+      "members": [
+        "IMG_20261114_160639.jpg",
+        "IMG_20261114_160648.jpg",
+        "IMG_20261114_160702.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1114_PASS_TRAIN"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF024",
+      "members": [
+        "IMG_20261114_161242.jpg",
+        "IMG_20261114_161317.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1114_FAIL_B04",
+        "G_1114_FAIL_B05"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF025",
+      "members": [
+        "IMG_20261114_161323.jpg",
+        "IMG_20261114_161338.jpg",
+        "IMG_20261114_161340.jpg",
+        "IMG_20261114_161354.jpg",
+        "IMG_20261114_161357.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1114_FAIL_B05"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF028",
+      "members": [
+        "IMG_20261114_161404.jpg",
+        "IMG_20261114_161410.jpg",
+        "IMG_20261114_161412.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1114_FAIL_B05"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF033",
+      "members": [
+        "IMG_20261114_161527.jpg",
+        "IMG_20261114_161538.jpg",
+        "IMG_20261114_161543.jpg",
+        "IMG_20261114_161545.jpg",
+        "IMG_20261114_161550.jpg",
+        "IMG_20261114_161554.jpg",
+        "IMG_20261114_161557.jpg",
+        "IMG_20261114_161600.jpg",
+        "IMG_20261114_161604.jpg",
+        "IMG_20261114_161611.jpg",
+        "IMG_20261114_161618.jpg",
+        "IMG_20261114_161651.jpg",
+        "IMG_20261114_161706.jpg",
+        "IMG_20261114_161711.jpg",
+        "IMG_20261114_161714.jpg",
+        "IMG_20261114_161719.jpg",
+        "IMG_20261114_161722.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1114_FAIL_B07"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF039",
+      "members": [
+        "IMG_20261114_161752.jpg",
+        "IMG_20261114_161755.jpg",
+        "IMG_20261114_161803.jpg",
+        "IMG_20261114_161808.jpg",
+        "IMG_20261114_161811.jpg",
+        "IMG_20261114_161823.jpg",
+        "IMG_20261114_161827.jpg"
+      ],
+      "splits": [
+        "val"
+      ],
+      "original_group_ids": [
+        "G_1114_FAIL_B08"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF053",
+      "members": [
+        "IMG_20261114_162451.jpg",
+        "IMG_20261114_162500.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1114_FAIL_B10"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF058",
+      "members": [
+        "IMG_20261114_162702.jpg",
+        "IMG_20261114_162716.jpg"
+      ],
+      "splits": [
+        "val"
+      ],
+      "original_group_ids": [
+        "G_1114_FAIL_B11"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF061",
+      "members": [
+        "IMG_20261114_162729.jpg",
+        "IMG_20261114_162732.jpg"
+      ],
+      "splits": [
+        "val"
+      ],
+      "original_group_ids": [
+        "G_1114_FAIL_B11"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF126",
+      "members": [
+        "IMG_7187.png",
+        "IMG_7188.png"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1111_标准光正视_TRAIN"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF160",
+      "members": [
+        "IMG_7223.png",
+        "IMG_7247.png"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1111_暗光正视图_TRAIN"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF170",
+      "members": [
+        "IMG_7233.png",
+        "IMG_7246.png"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1111_暗光正视图_TRAIN"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF180",
+      "members": [
+        "IMG_7243.png",
+        "IMG_7244.png"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1111_暗光正视图_TRAIN"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF207",
+      "members": [
+        "IMG_7273.png",
+        "IMG_7284.png"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1111_暗光侧视图_TRAIN"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF211",
+      "members": [
+        "IMG_7277.png",
+        "IMG_7285.png"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1111_暗光侧视图_TRAIN"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF268",
+      "members": [
+        "MVIMG_20261120_164644.jpg",
+        "MVIMG_20261120_164644__A01_lowlight.jpg",
+        "MVIMG_20261120_164644__A02_warm.jpg",
+        "MVIMG_20261120_164644__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF269",
+      "members": [
+        "MVIMG_20261120_164656.jpg",
+        "MVIMG_20261120_164656__A01_lowlight.jpg",
+        "MVIMG_20261120_164656__A02_warm.jpg",
+        "MVIMG_20261120_164656__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF270",
+      "members": [
+        "MVIMG_20261120_164711.jpg",
+        "MVIMG_20261120_164711__A01_lowlight.jpg",
+        "MVIMG_20261120_164711__A02_warm.jpg",
+        "MVIMG_20261120_164711__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF271",
+      "members": [
+        "MVIMG_20261120_164722.jpg",
+        "MVIMG_20261120_164722__A01_lowlight.jpg",
+        "MVIMG_20261120_164722__A02_warm.jpg",
+        "MVIMG_20261120_164722__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF272",
+      "members": [
+        "MVIMG_20261120_164734.jpg",
+        "MVIMG_20261120_164734__A01_lowlight.jpg",
+        "MVIMG_20261120_164734__A02_warm.jpg",
+        "MVIMG_20261120_164734__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF273",
+      "members": [
+        "MVIMG_20261120_164745.jpg",
+        "MVIMG_20261120_164745__A01_lowlight.jpg",
+        "MVIMG_20261120_164745__A02_warm.jpg",
+        "MVIMG_20261120_164745__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF274",
+      "members": [
+        "MVIMG_20261120_164757.jpg",
+        "MVIMG_20261120_164757__A01_lowlight.jpg",
+        "MVIMG_20261120_164757__A02_warm.jpg",
+        "MVIMG_20261120_164757__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF275",
+      "members": [
+        "MVIMG_20261120_164811.jpg",
+        "MVIMG_20261120_164811__A01_lowlight.jpg",
+        "MVIMG_20261120_164811__A02_warm.jpg",
+        "MVIMG_20261120_164811__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF276",
+      "members": [
+        "MVIMG_20261120_164824.jpg",
+        "MVIMG_20261120_164824__A01_lowlight.jpg",
+        "MVIMG_20261120_164824__A02_warm.jpg",
+        "MVIMG_20261120_164824__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF277",
+      "members": [
+        "MVIMG_20261120_164843.jpg",
+        "MVIMG_20261120_164843__A01_lowlight.jpg",
+        "MVIMG_20261120_164843__A02_warm.jpg",
+        "MVIMG_20261120_164843__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF278",
+      "members": [
+        "MVIMG_20261120_164902.jpg",
+        "MVIMG_20261120_164902__A01_lowlight.jpg",
+        "MVIMG_20261120_164902__A02_warm.jpg",
+        "MVIMG_20261120_164902__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF279",
+      "members": [
+        "MVIMG_20261120_164918.jpg",
+        "MVIMG_20261120_164918__A01_lowlight.jpg",
+        "MVIMG_20261120_164918__A02_warm.jpg",
+        "MVIMG_20261120_164918__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B01"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF280",
+      "members": [
+        "MVIMG_20261120_165106.jpg",
+        "MVIMG_20261120_165106__A01_lowlight.jpg",
+        "MVIMG_20261120_165106__A02_warm.jpg",
+        "MVIMG_20261120_165106__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF281",
+      "members": [
+        "MVIMG_20261120_165126.jpg",
+        "MVIMG_20261120_165126__A01_lowlight.jpg",
+        "MVIMG_20261120_165126__A02_warm.jpg",
+        "MVIMG_20261120_165126__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF282",
+      "members": [
+        "MVIMG_20261120_165139.jpg",
+        "MVIMG_20261120_165139__A01_lowlight.jpg",
+        "MVIMG_20261120_165139__A02_warm.jpg",
+        "MVIMG_20261120_165139__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF283",
+      "members": [
+        "MVIMG_20261120_165154.jpg",
+        "MVIMG_20261120_165154__A01_lowlight.jpg",
+        "MVIMG_20261120_165154__A02_warm.jpg",
+        "MVIMG_20261120_165154__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF284",
+      "members": [
+        "MVIMG_20261120_165205.jpg",
+        "MVIMG_20261120_165205__A01_lowlight.jpg",
+        "MVIMG_20261120_165205__A02_warm.jpg",
+        "MVIMG_20261120_165205__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF285",
+      "members": [
+        "MVIMG_20261120_165217.jpg",
+        "MVIMG_20261120_165217__A01_lowlight.jpg",
+        "MVIMG_20261120_165217__A02_warm.jpg",
+        "MVIMG_20261120_165217__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF286",
+      "members": [
+        "MVIMG_20261120_165227.jpg",
+        "MVIMG_20261120_165227__A01_lowlight.jpg",
+        "MVIMG_20261120_165227__A02_warm.jpg",
+        "MVIMG_20261120_165227__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF287",
+      "members": [
+        "MVIMG_20261120_165239.jpg",
+        "MVIMG_20261120_165239__A01_lowlight.jpg",
+        "MVIMG_20261120_165239__A02_warm.jpg",
+        "MVIMG_20261120_165239__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF288",
+      "members": [
+        "MVIMG_20261120_165255.jpg",
+        "MVIMG_20261120_165255__A01_lowlight.jpg",
+        "MVIMG_20261120_165255__A02_warm.jpg",
+        "MVIMG_20261120_165255__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF289",
+      "members": [
+        "MVIMG_20261120_165309.jpg",
+        "MVIMG_20261120_165309__A01_lowlight.jpg",
+        "MVIMG_20261120_165309__A02_warm.jpg",
+        "MVIMG_20261120_165309__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B02"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF290",
+      "members": [
+        "MVIMG_20261120_165941.jpg",
+        "MVIMG_20261120_165941__A01_lowlight.jpg",
+        "MVIMG_20261120_165941__A02_warm.jpg",
+        "MVIMG_20261120_165941__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B03"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF291",
+      "members": [
+        "MVIMG_20261120_170000.jpg",
+        "MVIMG_20261120_170000__A01_lowlight.jpg",
+        "MVIMG_20261120_170000__A02_warm.jpg",
+        "MVIMG_20261120_170000__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B03"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF292",
+      "members": [
+        "MVIMG_20261120_170018.jpg",
+        "MVIMG_20261120_170018__A01_lowlight.jpg",
+        "MVIMG_20261120_170018__A02_warm.jpg",
+        "MVIMG_20261120_170018__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B03"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF293",
+      "members": [
+        "MVIMG_20261120_170042.jpg",
+        "MVIMG_20261120_170042__A01_lowlight.jpg",
+        "MVIMG_20261120_170042__A02_warm.jpg",
+        "MVIMG_20261120_170042__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B03"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF294",
+      "members": [
+        "MVIMG_20261120_170120.jpg",
+        "MVIMG_20261120_170120__A01_lowlight.jpg",
+        "MVIMG_20261120_170120__A02_warm.jpg",
+        "MVIMG_20261120_170120__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B03"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF295",
+      "members": [
+        "MVIMG_20261120_170149.jpg",
+        "MVIMG_20261120_170149__A01_lowlight.jpg",
+        "MVIMG_20261120_170149__A02_warm.jpg",
+        "MVIMG_20261120_170149__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B03"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF296",
+      "members": [
+        "MVIMG_20261120_170308.jpg",
+        "MVIMG_20261120_170308__A01_lowlight.jpg",
+        "MVIMG_20261120_170308__A02_warm.jpg",
+        "MVIMG_20261120_170308__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B04"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF297",
+      "members": [
+        "MVIMG_20261120_170342.jpg",
+        "MVIMG_20261120_170342__A01_lowlight.jpg",
+        "MVIMG_20261120_170342__A02_warm.jpg",
+        "MVIMG_20261120_170342__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B04"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF298",
+      "members": [
+        "MVIMG_20261120_170415.jpg",
+        "MVIMG_20261120_170415__A01_lowlight.jpg",
+        "MVIMG_20261120_170415__A02_warm.jpg",
+        "MVIMG_20261120_170415__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B04"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF299",
+      "members": [
+        "MVIMG_20261120_170457.jpg",
+        "MVIMG_20261120_170457__A01_lowlight.jpg",
+        "MVIMG_20261120_170457__A02_warm.jpg",
+        "MVIMG_20261120_170457__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B04"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF300",
+      "members": [
+        "MVIMG_20261120_170513.jpg",
+        "MVIMG_20261120_170513__A01_lowlight.jpg",
+        "MVIMG_20261120_170513__A02_warm.jpg",
+        "MVIMG_20261120_170513__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B04"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF301",
+      "members": [
+        "MVIMG_20261120_170533.jpg",
+        "MVIMG_20261120_170533__A01_lowlight.jpg",
+        "MVIMG_20261120_170533__A02_warm.jpg",
+        "MVIMG_20261120_170533__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B04"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF302",
+      "members": [
+        "MVIMG_20261120_170548.jpg",
+        "MVIMG_20261120_170548__A01_lowlight.jpg",
+        "MVIMG_20261120_170548__A02_warm.jpg",
+        "MVIMG_20261120_170548__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B04"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF303",
+      "members": [
+        "MVIMG_20261120_170654.jpg",
+        "MVIMG_20261120_170654__A01_lowlight.jpg",
+        "MVIMG_20261120_170654__A02_warm.jpg",
+        "MVIMG_20261120_170654__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B05"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF304",
+      "members": [
+        "MVIMG_20261120_170908.jpg",
+        "MVIMG_20261120_170908__A01_lowlight.jpg",
+        "MVIMG_20261120_170908__A02_warm.jpg",
+        "MVIMG_20261120_170908__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B06"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF305",
+      "members": [
+        "MVIMG_20261120_170932.jpg",
+        "MVIMG_20261120_170932__A01_lowlight.jpg",
+        "MVIMG_20261120_170932__A02_warm.jpg",
+        "MVIMG_20261120_170932__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B06"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF306",
+      "members": [
+        "MVIMG_20261120_170945.jpg",
+        "MVIMG_20261120_170945__A01_lowlight.jpg",
+        "MVIMG_20261120_170945__A02_warm.jpg",
+        "MVIMG_20261120_170945__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B06"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF307",
+      "members": [
+        "MVIMG_20261120_171002.jpg",
+        "MVIMG_20261120_171002__A01_lowlight.jpg",
+        "MVIMG_20261120_171002__A02_warm.jpg",
+        "MVIMG_20261120_171002__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B06"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF308",
+      "members": [
+        "MVIMG_20261120_171019.jpg",
+        "MVIMG_20261120_171019__A01_lowlight.jpg",
+        "MVIMG_20261120_171019__A02_warm.jpg",
+        "MVIMG_20261120_171019__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B06"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF309",
+      "members": [
+        "MVIMG_20261120_171108.jpg",
+        "MVIMG_20261120_171108__A01_lowlight.jpg",
+        "MVIMG_20261120_171108__A02_warm.jpg",
+        "MVIMG_20261120_171108__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B06"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF310",
+      "members": [
+        "MVIMG_20261120_171312.jpg",
+        "MVIMG_20261120_171312__A01_lowlight.jpg",
+        "MVIMG_20261120_171312__A02_warm.jpg",
+        "MVIMG_20261120_171312__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "val"
+      ],
+      "original_group_ids": [
+        "G_1120_B07"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF311",
+      "members": [
+        "MVIMG_20261120_171327.jpg",
+        "MVIMG_20261120_171327__A01_lowlight.jpg",
+        "MVIMG_20261120_171327__A02_warm.jpg",
+        "MVIMG_20261120_171327__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "val"
+      ],
+      "original_group_ids": [
+        "G_1120_B07"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF312",
+      "members": [
+        "MVIMG_20261120_171345.jpg",
+        "MVIMG_20261120_171345__A01_lowlight.jpg",
+        "MVIMG_20261120_171345__A02_warm.jpg",
+        "MVIMG_20261120_171345__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "val"
+      ],
+      "original_group_ids": [
+        "G_1120_B07"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF313",
+      "members": [
+        "MVIMG_20261120_171358.jpg",
+        "MVIMG_20261120_171358__A01_lowlight.jpg",
+        "MVIMG_20261120_171358__A02_warm.jpg",
+        "MVIMG_20261120_171358__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "val"
+      ],
+      "original_group_ids": [
+        "G_1120_B07"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF314",
+      "members": [
+        "MVIMG_20261120_171414.jpg",
+        "MVIMG_20261120_171414__A01_lowlight.jpg",
+        "MVIMG_20261120_171414__A02_warm.jpg",
+        "MVIMG_20261120_171414__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "val"
+      ],
+      "original_group_ids": [
+        "G_1120_B07"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF315",
+      "members": [
+        "MVIMG_20261120_171423.jpg",
+        "MVIMG_20261120_171423__A01_lowlight.jpg",
+        "MVIMG_20261120_171423__A02_warm.jpg",
+        "MVIMG_20261120_171423__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "val"
+      ],
+      "original_group_ids": [
+        "G_1120_B07"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF316",
+      "members": [
+        "MVIMG_20261120_171618.jpg",
+        "MVIMG_20261120_171618__A01_lowlight.jpg",
+        "MVIMG_20261120_171618__A02_warm.jpg",
+        "MVIMG_20261120_171618__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B08"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF317",
+      "members": [
+        "MVIMG_20261120_171632.jpg",
+        "MVIMG_20261120_171632__A01_lowlight.jpg",
+        "MVIMG_20261120_171632__A02_warm.jpg",
+        "MVIMG_20261120_171632__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B08"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF318",
+      "members": [
+        "MVIMG_20261120_171652.jpg",
+        "MVIMG_20261120_171652__A01_lowlight.jpg",
+        "MVIMG_20261120_171652__A02_warm.jpg",
+        "MVIMG_20261120_171652__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B08"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF319",
+      "members": [
+        "MVIMG_20261120_171704.jpg",
+        "MVIMG_20261120_171704__A01_lowlight.jpg",
+        "MVIMG_20261120_171704__A02_warm.jpg",
+        "MVIMG_20261120_171704__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B08"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF320",
+      "members": [
+        "MVIMG_20261120_171757.jpg",
+        "MVIMG_20261120_171757__A01_lowlight.jpg",
+        "MVIMG_20261120_171757__A02_warm.jpg",
+        "MVIMG_20261120_171757__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B08"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF321",
+      "members": [
+        "MVIMG_20261120_171811.jpg",
+        "MVIMG_20261120_171811__A01_lowlight.jpg",
+        "MVIMG_20261120_171811__A02_warm.jpg",
+        "MVIMG_20261120_171811__A03_softnoise.jpg",
+        "MVIMG_20261120_172012.jpg",
+        "MVIMG_20261120_172012__A01_lowlight.jpg",
+        "MVIMG_20261120_172012__A02_warm.jpg",
+        "MVIMG_20261120_172012__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B08",
+        "G_1120_B09"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF322",
+      "members": [
+        "MVIMG_20261120_172032.jpg",
+        "MVIMG_20261120_172032__A01_lowlight.jpg",
+        "MVIMG_20261120_172032__A02_warm.jpg",
+        "MVIMG_20261120_172032__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B09"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF323",
+      "members": [
+        "MVIMG_20261120_172048.jpg",
+        "MVIMG_20261120_172048__A01_lowlight.jpg",
+        "MVIMG_20261120_172048__A02_warm.jpg",
+        "MVIMG_20261120_172048__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B09"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF324",
+      "members": [
+        "MVIMG_20261120_172104.jpg",
+        "MVIMG_20261120_172104__A01_lowlight.jpg",
+        "MVIMG_20261120_172104__A02_warm.jpg",
+        "MVIMG_20261120_172104__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B09"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF325",
+      "members": [
+        "MVIMG_20261120_172132.jpg",
+        "MVIMG_20261120_172132__A01_lowlight.jpg",
+        "MVIMG_20261120_172132__A02_warm.jpg",
+        "MVIMG_20261120_172132__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B09"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF326",
+      "members": [
+        "MVIMG_20261120_172155.jpg",
+        "MVIMG_20261120_172155__A01_lowlight.jpg",
+        "MVIMG_20261120_172155__A02_warm.jpg",
+        "MVIMG_20261120_172155__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B09"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF327",
+      "members": [
+        "MVIMG_20261120_172317.jpg",
+        "MVIMG_20261120_172317__A01_lowlight.jpg",
+        "MVIMG_20261120_172317__A02_warm.jpg",
+        "MVIMG_20261120_172317__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B10"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF328",
+      "members": [
+        "MVIMG_20261120_172336.jpg",
+        "MVIMG_20261120_172336__A01_lowlight.jpg",
+        "MVIMG_20261120_172336__A02_warm.jpg",
+        "MVIMG_20261120_172336__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B10"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF329",
+      "members": [
+        "MVIMG_20261120_172352.jpg",
+        "MVIMG_20261120_172352__A01_lowlight.jpg",
+        "MVIMG_20261120_172352__A02_warm.jpg",
+        "MVIMG_20261120_172352__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B10"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF330",
+      "members": [
+        "MVIMG_20261120_172407.jpg",
+        "MVIMG_20261120_172407__A01_lowlight.jpg",
+        "MVIMG_20261120_172407__A02_warm.jpg",
+        "MVIMG_20261120_172407__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B10"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF331",
+      "members": [
+        "MVIMG_20261120_172550.jpg",
+        "MVIMG_20261120_172550__A01_lowlight.jpg",
+        "MVIMG_20261120_172550__A02_warm.jpg",
+        "MVIMG_20261120_172550__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B11"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF332",
+      "members": [
+        "MVIMG_20261120_172557.jpg",
+        "MVIMG_20261120_172557__A01_lowlight.jpg",
+        "MVIMG_20261120_172557__A02_warm.jpg",
+        "MVIMG_20261120_172557__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B11"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF333",
+      "members": [
+        "MVIMG_20261120_172608.jpg",
+        "MVIMG_20261120_172608__A01_lowlight.jpg",
+        "MVIMG_20261120_172608__A02_warm.jpg",
+        "MVIMG_20261120_172608__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B11"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF334",
+      "members": [
+        "MVIMG_20261120_172624.jpg",
+        "MVIMG_20261120_172624__A01_lowlight.jpg",
+        "MVIMG_20261120_172624__A02_warm.jpg",
+        "MVIMG_20261120_172624__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B11"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF335",
+      "members": [
+        "MVIMG_20261120_172638.jpg",
+        "MVIMG_20261120_172638__A01_lowlight.jpg",
+        "MVIMG_20261120_172638__A02_warm.jpg",
+        "MVIMG_20261120_172638__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B11"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    },
+    {
+      "candidate_family_id": "CF336",
+      "members": [
+        "MVIMG_20261120_172652.jpg",
+        "MVIMG_20261120_172652__A01_lowlight.jpg",
+        "MVIMG_20261120_172652__A02_warm.jpg",
+        "MVIMG_20261120_172652__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test"
+      ],
+      "original_group_ids": [
+        "G_1120_B11"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    }
+  ],
+  "cross_partition_families": [
+    {
+      "candidate_family_id": "CF321",
+      "members": [
+        "MVIMG_20261120_171811.jpg",
+        "MVIMG_20261120_171811__A01_lowlight.jpg",
+        "MVIMG_20261120_171811__A02_warm.jpg",
+        "MVIMG_20261120_171811__A03_softnoise.jpg",
+        "MVIMG_20261120_172012.jpg",
+        "MVIMG_20261120_172012__A01_lowlight.jpg",
+        "MVIMG_20261120_172012__A02_warm.jpg",
+        "MVIMG_20261120_172012__A03_softnoise.jpg"
+      ],
+      "splits": [
+        "test",
+        "train"
+      ],
+      "original_group_ids": [
+        "G_1120_B08",
+        "G_1120_B09"
+      ],
+      "status": "CANDIDATE_NOT_PHYSICAL_CERTIFICATION"
+    }
+  ]
+}

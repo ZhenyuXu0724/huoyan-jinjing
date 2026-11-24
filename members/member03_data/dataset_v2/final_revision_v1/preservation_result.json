@@ -1,0 +1,14 @@
+{
+  "historical_files_checked": 43,
+  "historical_changes": [],
+  "outside_files_before": 26913,
+  "outside_files_after": 26913,
+  "outside_changed": [],
+  "outside_added": [],
+  "outside_missing": [],
+  "dataset_files_before": 1218,
+  "dataset_files_after": 1218,
+  "dataset_data_bytes_unchanged": true,
+  "scope": "repository files incl ignored files and .git; regular-file bytes/size and file symlink targets; not filesystem timestamps; proves this run only",
+  "result": "PASS"
+}

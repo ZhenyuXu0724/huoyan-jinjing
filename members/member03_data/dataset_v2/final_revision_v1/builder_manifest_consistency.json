@@ -1,0 +1,14 @@
+{
+  "checked_records": 609,
+  "compared_fields": [
+    "split",
+    "label",
+    "data_tier",
+    "parent_image_id",
+    "scene_group_id",
+    "augmentation_type",
+    "quality_notes"
+  ],
+  "mismatches": [],
+  "result": "PASS"
+}

@@ -1,0 +1,11 @@
+{
+  "result": "PASS",
+  "authorized_data_files_moved": 4,
+  "data_files": 1218,
+  "other_data_changes": 0,
+  "outside_files_unchanged": 26913,
+  "historical_files_unchanged": 84,
+  "builder_records_match": 609,
+  "builder_groups_match": 56,
+  "source_lock_bytes_unchanged": true
+}

@@ -1,0 +1,120 @@
+{
+  "all_original_pairs": 79401,
+  "scored_pairs": 79003,
+  "empty_pairs_not_evaluable": 398,
+  "cross_split_pairs": 32264,
+  "cross_batch_cross_split_pairs": 25275,
+  "high_absolute_cross_pairs": [],
+  "crossing_candidate_components": [],
+  "known_pairs": [
+    {
+      "a": "IMG_20261114_160444.jpg",
+      "b": "IMG_20261114_160608.jpg",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1114_FAIL_B02",
+      "group_b": "G_1114_PASS_TRAIN",
+      "score": [
+        0.35542539634067877,
+        0.3909679359747466
+      ]
+    },
+    {
+      "a": "IMG_7247.png",
+      "b": "IMG_7223.png",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1111_暗光正视图_TRAIN",
+      "group_b": "G_1111_暗光正视图_TRAIN",
+      "score": [
+        0.0202325735489001,
+        0.0202325735489001
+      ]
+    },
+    {
+      "a": "IMG_7285.png",
+      "b": "IMG_7277.png",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1111_暗光侧视图_TRAIN",
+      "group_b": "G_1111_暗光侧视图_TRAIN",
+      "score": [
+        0.04548672738217764,
+        0.04548672738217764
+      ]
+    },
+    {
+      "a": "IMG_7284.png",
+      "b": "IMG_7273.png",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1111_暗光侧视图_TRAIN",
+      "group_b": "G_1111_暗光侧视图_TRAIN",
+      "score": [
+        0.11447615996960367,
+        0.11447615996960367
+      ]
+    },
+    {
+      "a": "IMG_7246.png",
+      "b": "IMG_7233.png",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1111_暗光正视图_TRAIN",
+      "group_b": "G_1111_暗光正视图_TRAIN",
+      "score": [
+        0.019827443047671166,
+        0.019827443047671166
+      ]
+    },
+    {
+      "a": "IMG_7244.png",
+      "b": "IMG_7243.png",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1111_暗光正视图_TRAIN",
+      "group_b": "G_1111_暗光正视图_TRAIN",
+      "score": [
+        0.07761427648314301,
+        0.07761427648314301
+      ]
+    },
+    {
+      "a": "IMG_20261114_162451.jpg",
+      "b": "IMG_20261114_162500.jpg",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1114_FAIL_B10",
+      "group_b": "G_1114_FAIL_B10",
+      "score": [
+        0.9238458455402714,
+        0.9238458455402714
+      ]
+    },
+    {
+      "a": "IMG_20261114_161242.jpg",
+      "b": "IMG_20261114_161317.jpg",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1114_FAIL_B04",
+      "group_b": "G_1114_FAIL_B05",
+      "score": [
+        0.8858227456302575,
+        0.8858227456302575
+      ]
+    },
+    {
+      "a": "IMG_20261114_161714.jpg",
+      "b": "IMG_20261114_161719.jpg",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1114_FAIL_B07",
+      "group_b": "G_1114_FAIL_B07",
+      "score": [
+        0.5701214617083152,
+        0.5701214617083152
+      ]
+    }
+  ],
+  "qualification": "INCONCLUSIVE; scores are screening heuristics, no automatically confirmed physical families"
+}

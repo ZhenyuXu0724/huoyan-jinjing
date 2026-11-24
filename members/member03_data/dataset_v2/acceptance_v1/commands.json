@@ -1,0 +1,95 @@
+[
+  {
+    "name": "regression",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "members/member03_data/dataset_v2",
+      "-p",
+      "test_acceptance.py",
+      "-v"
+    ],
+    "cwd": "/home/grace/projects/AI/member06",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 0.292,
+    "passed": true,
+    "log": "regression.log"
+  },
+  {
+    "name": "plan",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "members/member03_data/dataset_v2/build_dataset_v2.py",
+      "--plan"
+    ],
+    "cwd": "/home/grace/projects/AI/member06",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 1.882,
+    "passed": true,
+    "log": "plan.log"
+  },
+  {
+    "name": "existing_build_refusal",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "members/member03_data/dataset_v2/build_dataset_v2.py",
+      "--build"
+    ],
+    "cwd": "/home/grace/projects/AI/member06",
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "seconds": 0.099,
+    "passed": true,
+    "log": "existing_build_refusal.log"
+  },
+  {
+    "name": "independent_plan",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "members/member03_data/dataset_v2/plan_recheck.py"
+    ],
+    "cwd": "/home/grace/projects/AI/member06",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 0.073,
+    "passed": true,
+    "log": "independent_plan.log"
+  },
+  {
+    "name": "final_verifier",
+    "command": [
+      "/usr/bin/python3",
+      "-B",
+      "members/member03_data/dataset_v2/verify_dataset_v2.py"
+    ],
+    "cwd": "/home/grace/projects/AI/member06",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 87.901,
+    "passed": true,
+    "log": "final_verifier.log"
+  },
+  {
+    "name": "sha256sum",
+    "command": [
+      "sha256sum",
+      "-c",
+      "SHA256SUMS.txt"
+    ],
+    "cwd": "/home/grace/projects/AI/member06/members/member03_data/dataset_v2",
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "seconds": 1.499,
+    "passed": true,
+    "log": "sha256sum.log"
+  }
+]

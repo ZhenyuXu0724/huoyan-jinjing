@@ -1,0 +1,823 @@
+{
+  "result": "PASS",
+  "source_images": 609,
+  "source_jsons": 609,
+  "checked_files": 1218,
+  "approved_git_blob_matches": 1218,
+  "physical_independent_files": 1218,
+  "matrix": {
+    "11/11_parts_v1": {
+      "train_PASS": 127,
+      "train_FAIL": 0,
+      "val_PASS": 32,
+      "val_FAIL": 1,
+      "test_PASS": 0,
+      "test_FAIL": 0,
+      "total_originals": 160
+    },
+    "11/14_PASS": {
+      "train_PASS": 16,
+      "train_FAIL": 0,
+      "val_PASS": 5,
+      "val_FAIL": 0,
+      "test_PASS": 0,
+      "test_FAIL": 0,
+      "total_originals": 21
+    },
+    "11/14_FAIL": {
+      "train_PASS": 0,
+      "train_FAIL": 59,
+      "val_PASS": 0,
+      "val_FAIL": 18,
+      "test_PASS": 0,
+      "test_FAIL": 0,
+      "total_originals": 77
+    },
+    "11/18_FAIL": {
+      "train_PASS": 0,
+      "train_FAIL": 40,
+      "val_PASS": 0,
+      "val_FAIL": 12,
+      "test_PASS": 0,
+      "test_FAIL": 0,
+      "total_originals": 52
+    },
+    "11/20": {
+      "train_PASS": 2,
+      "train_FAIL": 46,
+      "val_PASS": 0,
+      "val_FAIL": 6,
+      "test_PASS": 0,
+      "test_FAIL": 16,
+      "total_originals": 70
+    },
+    "11/23_PASS": {
+      "train_PASS": 6,
+      "train_FAIL": 0,
+      "val_PASS": 0,
+      "val_FAIL": 0,
+      "test_PASS": 13,
+      "test_FAIL": 0,
+      "total_originals": 19
+    }
+  },
+  "splits": {
+    "train": {
+      "partition_status": "DEVELOPMENT_TRAIN",
+      "total_images": 440,
+      "original_images": 296,
+      "augmented_images": 144,
+      "original_PASS": 151,
+      "original_FAIL": 145,
+      "augmented_PASS": 6,
+      "augmented_FAIL": 138,
+      "total_PASS": 157,
+      "total_FAIL": 283,
+      "original_by_source_batch": {
+        "11/11_parts_v1": 127,
+        "11/14_PASS": 16,
+        "11/14_FAIL": 59,
+        "11/18_FAIL": 40,
+        "11/20": 48,
+        "11/23_PASS": 6
+      },
+      "original_anomaly_categories": {
+        "none": 151,
+        "non_catalogue_only_1": 5,
+        "non_catalogue_only_6": 40,
+        "non_catalogue_only_7": 14,
+        "non_catalogue_plus_missing": 54,
+        "non_catalogue_only_3": 31,
+        "pure_missing": 1
+      },
+      "augmented_by_type": {
+        "A01_lowlight": 48,
+        "A02_warm": 48,
+        "A03_softnoise": 48
+      },
+      "object_instances_original_only": {
+        "0": 571,
+        "1": 567,
+        "2": 585,
+        "3": 585,
+        "4": 589,
+        "5": 502
+      },
+      "object_instances_including_augmented": {
+        "0": 895,
+        "1": 807,
+        "2": 852,
+        "3": 852,
+        "4": 868,
+        "5": 520
+      }
+    },
+    "val": {
+      "partition_status": "DEVELOPMENT_VAL",
+      "total_images": 92,
+      "original_images": 74,
+      "augmented_images": 18,
+      "original_PASS": 37,
+      "original_FAIL": 37,
+      "augmented_PASS": 0,
+      "augmented_FAIL": 18,
+      "total_PASS": 37,
+      "total_FAIL": 55,
+      "original_by_source_batch": {
+        "11/11_parts_v1": 33,
+        "11/14_PASS": 5,
+        "11/14_FAIL": 18,
+        "11/18_FAIL": 12,
+        "11/20": 6
+      },
+      "original_anomaly_categories": {
+        "none": 37,
+        "pure_missing": 1,
+        "non_catalogue_only_1": 1,
+        "non_catalogue_only_6": 11,
+        "non_catalogue_only_7": 6,
+        "non_catalogue_only_3": 12,
+        "non_catalogue_plus_missing": 6
+      },
+      "augmented_by_type": {
+        "A01_lowlight": 6,
+        "A02_warm": 6,
+        "A03_softnoise": 6
+      },
+      "object_instances_original_only": {
+        "0": 164,
+        "1": 148,
+        "2": 147,
+        "3": 148,
+        "4": 140,
+        "5": 136
+      },
+      "object_instances_including_augmented": {
+        "0": 221,
+        "1": 184,
+        "2": 183,
+        "3": 184,
+        "4": 152,
+        "5": 136
+      }
+    },
+    "test": {
+      "partition_status": "PROVISIONAL_HOLDOUT",
+      "total_images": 77,
+      "original_images": 29,
+      "augmented_images": 48,
+      "original_PASS": 13,
+      "original_FAIL": 16,
+      "augmented_PASS": 0,
+      "augmented_FAIL": 48,
+      "total_PASS": 13,
+      "total_FAIL": 64,
+      "original_by_source_batch": {
+        "11/20": 16,
+        "11/23_PASS": 13
+      },
+      "original_anomaly_categories": {
+        "non_catalogue_plus_missing": 14,
+        "empty_scene": 1,
+        "pure_missing": 1,
+        "none": 13
+      },
+      "augmented_by_type": {
+        "A01_lowlight": 16,
+        "A02_warm": 16,
+        "A03_softnoise": 16
+      },
+      "object_instances_original_only": {
+        "0": 44,
+        "1": 50,
+        "2": 45,
+        "3": 48,
+        "4": 49,
+        "5": 26
+      },
+      "object_instances_including_augmented": {
+        "0": 176,
+        "1": 122,
+        "2": 102,
+        "3": 114,
+        "4": 118,
+        "5": 26
+      }
+    }
+  },
+  "augmentation_types": {
+    "A01_lowlight": 70,
+    "A02_warm": 70,
+    "A03_softnoise": 70
+  },
+  "parents": 70,
+  "parent_split_mismatches": 0,
+  "nongeometric_coordinate_mismatches": 0,
+  "warnings": [
+    {
+      "file": "MVIMG_20261120_164644.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164656.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164711.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164722.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164734.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164745.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164757.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164811.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164824.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164843.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164902.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_164918.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165106.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165126.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165139.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165154.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165205.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165217.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165227.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165239.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165255.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165309.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_165941.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170000.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170018.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170042.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170120.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170149.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170308.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170342.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170415.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170457.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170513.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170533.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170548.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170654.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170908.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170932.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_170945.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171002.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171019.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171108.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171312.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171327.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171345.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171358.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171414.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171423.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171618.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171632.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171757.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171811.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172012.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172032.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172048.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172104.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172132.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172155.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172317.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172336.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172352.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172407.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172550.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172557.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172608.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172624.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172638.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_172652.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171652.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261120_171704.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182036.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182054.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182108.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182122.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182138.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182155.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182326.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182340.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182355.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182407.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182428.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182438.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182449.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182459.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182535.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182550.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182603.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182619.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    },
+    {
+      "file": "MVIMG_20261123_182630.jpg",
+      "issue": "EXIF_orientation",
+      "value": 0
+    }
+  ],
+  "conditions_1111": {
+    "暗光侧视图|val|PASS": 8,
+    "暗光正视图|val|PASS": 8,
+    "标准光侧视图|val|PASS": 8,
+    "标准光正视|val|FAIL": 1,
+    "标准光正视|val|PASS": 8,
+    "暗光侧视图|train|PASS": 32,
+    "暗光正视图|train|PASS": 32,
+    "标准光侧视图|train|PASS": 32,
+    "标准光正视|train|PASS": 31
+  },
+  "non_catalogue_distribution": {
+    "11/11_parts_v1|val|0": 33,
+    "11/11_parts_v1|train|0": 127,
+    "11/14_PASS|train|0": 16,
+    "11/14_PASS|val|0": 5,
+    "11/14_FAIL|val|1": 1,
+    "11/14_FAIL|train|1": 5,
+    "11/14_FAIL|val|6": 11,
+    "11/14_FAIL|train|6": 40,
+    "11/14_FAIL|train|7": 14,
+    "11/14_FAIL|val|7": 6,
+    "11/18_FAIL|train|3": 40,
+    "11/18_FAIL|val|3": 12,
+    "11/20|train|2": 28,
+    "11/20|train|1": 3,
+    "11/20|train|0": 3,
+    "11/20|train|3": 7,
+    "11/20|train|4": 7,
+    "11/20|val|3": 5,
+    "11/20|val|4": 1,
+    "11/20|test|3": 6,
+    "11/20|test|5": 4,
+    "11/20|test|2": 2,
+    "11/20|test|0": 2,
+    "11/20|test|1": 2,
+    "11/23_PASS|train|0": 6,
+    "11/23_PASS|test|0": 13
+  },
+  "nov20_fail_washer_distribution": {
+    "0": 66,
+    "1": 2
+  },
+  "nov18_compound": [
+    "IMG_20261118_222627.jpg:train",
+    "IMG_20261118_222634.jpg:train",
+    "IMG_20261118_222642.jpg:train",
+    "IMG_20261118_222656.jpg:train",
+    "IMG_20261118_222707.jpg:train",
+    "IMG_20261118_222720.jpg:train",
+    "IMG_20261118_222734.jpg:train",
+    "IMG_20261118_222749.jpg:train",
+    "IMG_20261118_222803.jpg:train"
+  ],
+  "historical_IMG_7209": {
+    "name": "IMG_7209.png",
+    "source": "full_dataset_upload/datasets/parts_v1/test/标准光正视/IMG_7209.png",
+    "batch": "11/11_parts_v1",
+    "split": "val",
+    "label": "FAIL",
+    "tier": "original",
+    "counts": [
+      0,
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "boxes": [
+      [
+        "M4x25",
+        [
+          0.26666666666666666,
+          0.09333333333333334,
+          0.37000000000000005,
+          0.2425
+        ]
+      ],
+      [
+        "flat_washer",
+        [
+          0.4388888888888889,
+          0.15416666666666667,
+          0.5322222222222223,
+          0.225
+        ]
+      ],
+      [
+        "M4x10",
+        [
+          0.36333333333333334,
+          0.35750000000000004,
+          0.4388888888888889,
+          0.425
+        ]
+      ],
+      [
+        "M4x25",
+        [
+          0.5588888888888889,
+          0.3891666666666667,
+          0.7077777777777778,
+          0.5208333333333334
+        ]
+      ],
+      [
+        "M4_hex_nut",
+        [
+          0.16777777777777778,
+          0.5750000000000001,
+          0.23666666666666664,
+          0.6208333333333332
+        ]
+      ],
+      [
+        "M5x10",
+        [
+          0.3233333333333333,
+          0.5750000000000001,
+          0.42333333333333334,
+          0.6491666666666667
+        ]
+      ],
+      [
+        "M4x10",
+        [
+          0.43333333333333335,
+          0.6383333333333334,
+          0.5133333333333333,
+          0.7075
+        ]
+      ],
+      [
+        "M4_hex_nut",
+        [
+          0.14222222222222222,
+          0.6641666666666667,
+          0.21222222222222223,
+          0.71
+        ]
+      ],
+      [
+        "flat_washer",
+        [
+          0.27111111111111114,
+          0.7366666666666667,
+          0.36333333333333334,
+          0.8058333333333333
+        ]
+      ]
+    ],
+    "size": [
+      3024,
+      4032
+    ],
+    "group": "G_1111_标准光正视_VAL",
+    "anomaly": "pure_missing",
+    "image_sha256": "ebc5bca41459adf735a5d054b5e4ba824096830c4544bc82316b73b5ccdeea38"
+  }
+}

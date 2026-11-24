@@ -1,0 +1,27 @@
+{
+  "source": "用户本轮聊天中的四项明确事实与裁决；非Agent自行推断、非模型预测",
+  "scope": "Dataset v2 final freeze",
+  "facts": [
+    "同意新版划分及旧验证/历史评价数据用于新版开发训练",
+    "11/23正常照片每次拍摄前均重新打乱零件，属于不同物理摆放；允许从Train六张选两张",
+    "171811与172012不属同一关联摆放，保留它们及其增强分区",
+    "11/20、11/23新增数据未被参评模型用于训练、验证、选型、调参或模型错误分析"
+  ],
+  "limitations": [
+    "不把共享背景会话等同同一摆放",
+    "本轮未获对11/20全部16张Test候选互相独立及与全部开发场景无关联的逐场景确认"
+  ],
+  "selection_rule": "sort exact filenames of the six current Nov23 Train originals ascending; take first two",
+  "eligible_six": [
+    "MVIMG_20261123_182036.jpg",
+    "MVIMG_20261123_182054.jpg",
+    "MVIMG_20261123_182108.jpg",
+    "MVIMG_20261123_182122.jpg",
+    "MVIMG_20261123_182138.jpg",
+    "MVIMG_20261123_182155.jpg"
+  ],
+  "selected": [
+    "MVIMG_20261123_182036.jpg",
+    "MVIMG_20261123_182054.jpg"
+  ]
+}
