@@ -1,0 +1,2 @@
+SMOKE_ONLY epoch=1 train_loss=0.613655 val_loss=0.442967
+SMOKE_ONLY epoch=2 train_loss=0.467771 val_loss=0.342936

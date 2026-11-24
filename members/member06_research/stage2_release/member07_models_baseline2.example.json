@@ -1,0 +1,21 @@
+{
+  "baseline1": {
+    "adapter": null,
+    "version": ""
+  },
+  "baseline2": {
+    "adapter": "../member06_research/stage2_adapter.py",
+    "version": "baseline2_final_v4_seed42_ep7",
+    "weights": "../member06_research/stage2_release/weights/baseline2_v4_seed42_best_within_20.pt",
+    "sha256": "c38c270ae8eb5ab1dd02d4903c553a7d11fa47735b46bff55302413826b2e7a4",
+    "device": "auto"
+  },
+  "baseline3": {
+    "adapter": null,
+    "version": ""
+  },
+  "final": {
+    "adapter": null,
+    "version": ""
+  }
+}

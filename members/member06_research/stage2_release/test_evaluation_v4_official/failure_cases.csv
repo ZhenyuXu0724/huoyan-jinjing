@@ -1,0 +1,10 @@
+image_id,source_batch,scene_group,source_scene_group,true_label,predicted_label,status,fail_probability,pass_probability,correct,outcome,primary_scenario,primary_scenario_cn,reason_cn,unseen_distractors_cn,seen_distractors_cn,target_counts,S_unseen_screw,H_unseen_hex_standoff,N_seen_nut,W_seen_washer,B_seen_bearing,non_catalogue_total,prior_v1_split,prior_v2_split,prior_v3_split
+IMG_7209.png,11/11,V3G18,G_1111_标准光正视_VAL,FAIL,PASS,OK,0.111764,0.888236,False,FN,pure_missing,纯缺件场景（无任何目录外干扰件）,仅缺目标件,无,无,2|1|2|2|2,0,0,0,0,0,0,val,val,train
+MVIMG_20261120_170018.jpg,11/20,V3G27,G_1120_B03,FAIL,PASS,OK,0.454659,0.545341,False,FN,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×1,目录外垫圈×2,2|1|2|2|0,1,0,0,2,0,3,train,train,train
+MVIMG_20261120_170042.jpg,11/20,V3G27,G_1120_B03,FAIL,PASS,OK,0.410281,0.589719,False,FN,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×2,目录外垫圈×2,2|0|2|2|0,2,0,0,2,0,4,train,train,train
+MVIMG_20261120_170120.jpg,11/20,V3G27,G_1120_B03,FAIL,PASS,OK,0.445816,0.554184,False,FN,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×1,目录外垫圈×2,1|2|2|2|0,1,0,0,2,0,3,train,train,train
+MVIMG_20261120_171652.jpg,11/20,V3G32,G_1120_B08,PASS,FAIL,OK,0.691063,0.308937,False,FP,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,train,train,test
+MVIMG_20261120_171704.jpg,11/20,V3G32,G_1120_B08,PASS,FAIL,OK,0.677892,0.322108,False,FP,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,train,train,test
+MVIMG_20261123_182155.jpg,11/23,V3G41,U1123_MVIMG_20261123_182155,PASS,FAIL,OK,0.671046,0.328954,False,FP,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,train,train,train
+MVIMG_20261123_182407.jpg,11/23,V3G45,U1123_MVIMG_20261123_182407,PASS,FAIL,OK,0.71666,0.28334,False,FP,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,test,test,test
+MVIMG_20261123_182459.jpg,11/23,V3G49,U1123_MVIMG_20261123_182459,PASS,FAIL,OK,0.808442,0.191558,False,FP,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,test,test,test

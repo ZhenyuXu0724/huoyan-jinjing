@@ -1,0 +1,89 @@
+{
+  "verified_at": "2026-11-05T16:04:38.461346+08:00",
+  "run_directory": "members/member06_research/runs/pretrained_final",
+  "evidence_status": "SMOKE_ONLY",
+  "data": "8 synthetic train / 4 synthetic val, no real or test data",
+  "weights": "IMAGENET1K_V1",
+  "image_size": 224,
+  "epochs": 2,
+  "official_weights_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+  "checkpoint_sha256": "a24c663f48554c89168b3573a4f8c0670a379572391e7976b33a73e987a802b9",
+  "device": "cpu",
+  "cuda_tested": false,
+  "backbone_parameters_and_bn_buffers_equal_to_loaded_official_reference_after_training": true,
+  "reference_loading_note": "Official historical state omits BN num_batches_tracked; PyTorch strict loader initializes these to zero. Compare complete loaded reference state.",
+  "linear_head_updated": true,
+  "reloaded_logits_bitwise_equal_same_cpu": true,
+  "reloaded_validation_loss_equal": true,
+  "module_source_hashes_match_training_record": true,
+  "synthetic_best_val_metrics": {
+    "epoch": 2,
+    "evidence_status": "SMOKE_ONLY",
+    "class_to_idx": {
+      "PASS": 0,
+      "FAIL": 1
+    },
+    "loss": 0.342935711145401,
+    "n": 4,
+    "accuracy": 1.0,
+    "confusion_matrix": [
+      [
+        2,
+        0
+      ],
+      [
+        0,
+        2
+      ]
+    ],
+    "matrix_axes": "rows=true, columns=predicted, class index order",
+    "fail_precision": 1.0,
+    "fail_recall": 1.0,
+    "fail_f1": 1.0
+  },
+  "geometry": {
+    "status": "OK",
+    "features": {
+      "length_px": 100.0,
+      "width_px": 30.0,
+      "aspect_ratio": 3.3333333333333335,
+      "contour_area_px2": 3000.0,
+      "perimeter_px": 260.0,
+      "rect_center_roi_px": [
+        80.0,
+        50.0
+      ],
+      "rect_sides_px": [
+        30.0,
+        100.0
+      ],
+      "opencv_rect_angle_deg": 90.0,
+      "rect_corners_roi_px": [
+        [
+          30.0,
+          35.0
+        ],
+        [
+          130.0,
+          35.0
+        ],
+        [
+          130.0,
+          65.0
+        ],
+        [
+          30.0,
+          65.0
+        ]
+      ]
+    },
+    "units": "pixels",
+    "contour_count": 1,
+    "calibration_status": "NOT_CALIBRATED",
+    "threshold": 0.0
+  },
+  "cnn_dimension": 512,
+  "curves_file_bytes": 74559,
+  "real_baseline_status": "NOT_TRAINED",
+  "stage3_final_status": "NOT_DECIDED"
+}
