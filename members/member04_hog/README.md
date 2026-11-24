@@ -1,81 +1,92 @@
 # 成员 4 · HOG 基线交付指南
 
-本模块交付 baseline1 整图 PASS/FAIL 判定、训练消融和共同图像级评价。默认旧版为 **HOG + PASS-only MLP 自编码器**，遵循旧版当时的“训练只使用 PASS”约束；其 FAIL 仅进入验证阈值选择和冻结后的评测。
-
-2026-11-19 新增独立的 **baseline1_supervised_v2（HOG＋监督式MLP）**，使用133 PASS＋52 FAIL训练，完成全部11组×3种子×200轮及新旧比较。新训练没有合成FAIL，没有把验证集加入权重学习；旧模型、代码、33次实验与默认入口保留。
-
-- [新旧完整对比报告](docs/COMPARISON_V2.md)：同组对照、误拒/漏放、分组错误、消融和同机计时。
-- [分区识别结果与解释](docs/SPLIT_RESULTS_V2.md)：train/valid/test百分比、分子分母，以及学习、选型、检验的区别。
-- [错误分析与改进建议](docs/IMPROVEMENT_ANALYSIS_V2.md)：阈值诊断、新旧组合候选及有限单因素实验建议，尚未部署或重训。
-- [新版运行与交付说明](supervised_v2/README.md)：独立入口、数据合并、冻结和完整复现命令。
-- [GitHub上传位置与目录关系](docs/UPLOAD_V2.md)：代码与Release附件的对应位置及解压层次。
-
-新版按平均平衡准确率选择B2（CLAHE）seed42；验证漏放16、误拒2，旧A2 seed42为漏放4、误拒5。历史test新版漏放1、误拒3，旧版为漏放1、误拒10。全部11个同名组的新版平均F1和平衡准确率均低于旧版，不能宣称新版全面提升；默认仍使用旧版。
+本模块交付 baseline1 的整图 PASS/FAIL 判定、训练消融和共同图像级评价。当前活动版本为 **Baseline1_HOGMLP_v4_FinalDataset_Rebuild**：在固定数据版本 `final_training_v4` 上完整重做 HOG + MLP 的三个方法（仅 PASS 自编码器、监督 MLP、监督容量/L2/选轮次），75 次正式训练全部从随机初始化学习，旧权重、旧阈值和旧默认入口不参与。
 
 ## 从哪里开始
 
-本次接手诊断见 [第一阶段报告](docs/STAGE1.md)。保持 A2 seed42 权重与阈值不变；新增诊断和真实接口自检，不新增正式训练。上传与验收状态见 progress.md。
-
 | 需要了解的内容 | 说明文件 |
 |---|---|
-| 有哪些数据、标签如何产生、哪些内容待审核 | [数据说明](docs/DATA.md) |
-| 安装、训练、冻结、测试的完整顺序 | [复现步骤](docs/WORKFLOW.md) |
-| 每个实验改了什么、为什么比较 | [实验分组](configs/groups/README.md) |
-| 指标怎么读、如何理解模型限制 | [方法与结果解读](docs/INTERPRETATION.md) |
-| 完整实测表、消融和冻结后失败记录 | [2026-11-15 结果报告](docs/RESULTS.md) |
-| 本轮实际数值、选择依据、待办 | [进度与交接](progress.md) |
-| 交哪些文件、如何确认接收成功 | [交付清单](docs/DELIVERY.md) |
+| 数据来源、恢复范围与审计 | [数据审计](docs/DATA.md) |
+| 预处理、11 组、阈值与选型规则 | [方法与实验协议](docs/PROTOCOL.md) |
+| 75 次完整结果、消融与改进 | [结果报告](docs/RESULTS.md) |
+| 三方法对照与默认选择 | [方法对照](docs/COMPARISON.md) |
+| train/val/test 逐分区混淆 | [分区结果](docs/SPLIT_RESULTS.md) |
+| 错误 ID、S/H 未见件与分组 | [错误分析](docs/ERROR_ANALYSIS.md) |
+| 21 变体稳定性与离线成本 | [稳定性与成本](docs/STABILITY_COST.md) |
+| 复现、续跑、验证与打包 | [复现与交接](docs/WORKFLOW.md) |
+| 版本命名 | [版本说明](docs/VERSIONS.md) |
+| 旧版归档位置与映射 | [归档映射](docs/ARCHIVE_MAPPING.md) |
+| 本轮实际状态与待办 | [进度与交接](progress.md) |
+
+## 当前结论
+
+- 验证集 34 张（20 PASS、14 FAIL）。默认改进 R0 seed42 在 val 上漏放 0、误拒 4；监督主实验 A2 seed42 漏放 1、误拒 1；AE A1 seed42 漏放 2、误拒 4。
+- 冻结后一次性 test 30 张（15/15）：AE 漏放 4、误拒 7，FAIL F1 0.6667；监督主实验漏放 10、误拒 3，FAIL F1 0.4348；默认 R0 漏放 6、误拒 4，FAIL F1 0.6429。
+- 默认按“验证集平均漏放优先”的规则选中 R0，不代表现场合格；test 仍是历史接触分区，11 张未见件图混有缺件，HOG 不输出框或实际数量。
+- 旧 v1/v2/v3 已移入仓库同级归档，旧成绩不进入本报告，也不能与 v4 混表或当作性能增量。
 
 ## 文件与产物位置
 
 ```text
 members/member04_hog/
-  features.py          # 方向校正、补白、变换、HOG
-  data.py              # 清单及跨分区重复检查
-  train.py             # 训练入口
-  one_class/           # 数据准备、训练、重建得分、报告
-  model.py             # 加载模型与单图 predict
-  inference.py         # 接收数量要求的批量推理
-  evaluate.py          # 指标、冻结、冻结后测试
-  compare.py           # 多模型共同图像级评价
-  delivery.py          # 生成与校验便携交付包
-  configs/             # 上游文件校验索引、实验分组
-  examples/            # 清单及推理请求样例
-  tests/               # 数据隔离、指标与接口回归检查
-  docs/                # 数据、复现与解释
-data/member04_hog/dataset/          # 原始数据、相对路径清单、来源记录
-weights/member04_hog/experiments/   # 按组/seed 保存的模型
-weights/member04_hog/baseline1.joblib
-outputs/member04_hog/experiments/   # 按组/seed 保存配置、历史、验证预测
-outputs/member04_hog/assessment/    # 冻结、访问记录、提供分区评测
+  model.py                  # 公共单图入口，读取 configs/active_model.json
+  inference.py              # 批量入口（image_id + expected_counts）
+  train.py                  # final_v4.train 兼容包装
+  evaluate.py               # 通用指标/JSON/CSV
+  compare.py                # 共同图像级评价器
+  delivery.py               # 便携包校验与打包委托
+  features.py / data.py     # HOG 预处理、清单与重复检查
+  final_v4/                 # 数据恢复、审计、66+9 训练、冻结、诊断、评价、报告、验证、打包
+  configs/final_v4/         # 来源锁与 75 次任务单
+  configs/active_model.json # 冻结后的默认模型指针
+  docs/                     # 当前版本文档
+  plans/                    # v4 重建计划与规划审计
+data/member04_hog/final_training_v4/       # 本地忽略目录，按固定 commit 恢复
+weights/member04_hog/final_v4/              # 84 份检查点 + 三个代表/默认副本
+outputs/member04_hog/final_v4/              # 审计、运行记录、冻结、诊断、评价、报告、验证
 ```
 
-后三类目录均为本地忽略目录，Git 克隆不会自动附带权重或图片。运行记录入口为 `outputs/member04_hog/experiments/REPORT.md`，原始数字在相邻的 `ablation_table.csv` 与各组 `metrics.json`。迁移时应连同这些本地产物复制，或按复现步骤重新生成。
+`data/`、`weights/`、`outputs/` 在 Git 忽略范围内，克隆不会自动附带；迁移时重新恢复数据并生成模型，或使用独立交付包。
 
-本轮完成 11 组 × 3 种子 × 200 轮，选择 A2 seed42。验证平均 FAIL F1 为 0.9417；提供的 test 仅 1 张 FAIL，漏放 1 张、误拒 10 张，F1 为 0。当前是可复现的实验基线，尚不具备可靠现场检测的证据，不能只引用验证分数。
+## 安装与单图预测
 
-## 最小安装与预测
-
-以下命令均从仓库根目录执行，使用 Python 3.11。迁移后重建虚拟环境，不要复制旧 `.venv/`。
+从仓库根目录执行，Python 3.11：
 
 ```powershell
 py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r members/member04_hog/requirements.txt
-.\.venv\Scripts\python.exe -m members.member04_hog.evaluate predict --model weights/member04_hog/baseline1.joblib --image "data/member04_hog/dataset/new/补强数据(训练）/example.jpg"
+python -m members.member04_hog.final_v4.prepare --source-commit bde8ea7116761bc8ee7fca1d47c336126daa995f
+python -m members.member04_hog.final_v4.audit --scope development
 ```
 
-将最后的示例图片路径替换成实际文件。程序也可调用 `from members.member04_hog.model import predict`，再执行 `predict(image_path)`。
+然后用完整流程训练/冻结/评价，或直接使用随交付包提供的默认权重：
 
-返回 `status`、`predicted_label`、`prediction_score`、`score_type`。正常状态为 `OK`；图片失败为 `INPUT_ERROR`；默认权重缺失为 `MODEL_UNAVAILABLE`。得分是 HOG 重建均方误差，**不是 FAIL 概率**，越高越支持 FAIL。
+```powershell
+.\.venv\Scripts\python.exe -m members.member04_hog.evaluate predict --model weights/member04_hog/final_v4/representatives/default.joblib --image your_image.jpg
+```
 
-批量入口缺失权重时抛出 FileNotFoundError 并非零退出，不生成输出；这与单图默认入口的 MODEL_UNAVAILABLE 返回方式不同。当前公共 predict.py 仅注册模型，批量联通仍由成员 7 完成。
+程序也可调用 `from members.member04_hog.model import predict`，再执行 `predict(image_path)`。返回 `status`、`predicted_label`、`prediction_score`、`score_type`：
+
+- 正常为 `OK`；坏图/缺图为 `INPUT_ERROR`；默认权重缺失、摘要不符或版本不匹配为 `MODEL_UNAVAILABLE`。
+- 默认模型是未校准 FAIL 输出，`score_type=uncalibrated_fail_probability`；AE 代表为 `hog_reconstruction_mse`。两者数值不可直接比较。
+- 判定固定为 `score >= threshold → FAIL`。阈值、轮次、版本和摘要记录在 `configs/active_model.json` 与 `freeze.json`。
+
+## 批量入口与数量规则
+
+```powershell
+.\.venv\Scripts\python.exe -m members.member04_hog.inference --input_dir IMAGES --counts_file counts.json --output_dir RESULT
+```
+
+`counts.json` 是非空列表，每项只有 `image_id` 与 `expected_counts`；只接受五类各 2。数量不支持返回 `UNSUPPORTED_COUNTS`，坏图/缺图返回 `INPUT_ERROR`，均不输出判定和分数；缺权重时启动失败且不创建输出目录。批量输出 `images.csv` 与 `run_config.json`，不伪造对象、框或实际数量。
 
 ## 数量与协作边界
 
-当前模型只支持类别 1–5 各 2 个的候选规则；最终规格与数量仍需组长确认。单图 `predict` 默认使用模型内置数量，批量入口检查请求数量，不支持时返回 `UNSUPPORTED_COUNTS`。不输出零件框或实际数量，不能把空值当作“没有目录外零件”。
+当前模型只支持类别 1–5 各 2 个的候选规则；最终规格与数量仍以组长确认为准。单图入口默认使用模型内置数量；不输出零件框或实际数量，不能把空值当作“没有目录外零件”。
 
-成员 3 负责场景、规格和标注审核；成员 4 负责基线与图像评价；成员 6 对齐共同指标；成员 7 接入摄像头并测端到端耗时。公共接口及其他成员目录由组长整合。提交前更新本说明与进度。
+成员3负责场景、规格与标注审核；成员4负责基线与图像评价；成员6对齐共同指标；成员7接入摄像头并测端到端耗时。公共接口及其他成员目录由组长整合，本轮未修改共享注册表、其他成员目录或公共检查规则。
 
-## 新研究与统一版本名称
+## 版本与归档
 
-参见[版本对应](docs/VERSIONS.md)及[v3研究入口](supervised_v3_study/README.md)。旧版和v2冻结产物不改名、不覆盖；新交付名称按Baseline1_HOGMLP_v版本号_方法命名。
+统一名称规则见 [版本说明](docs/VERSIONS.md)。旧 v1/v2/v3 的代码、权重、运行记录和文档保存在仓库同级 `Project/delivery/member04_history_before_v4_20261124/`，映射见 [归档映射](docs/ARCHIVE_MAPPING.md)。旧 Release 的标签、附件名、下载地址与摘要不变。
+
+本轮 GitHub 提交：[PR #14](https://github.com/ZhenyuXu0724/huoyan-jinjing/pull/14) 已合并；预发布 [Baseline1_HOGMLP_v4_FinalDataset_Rebuild](https://github.com/ZhenyuXu0724/huoyan-jinjing/releases/tag/Baseline1_HOGMLP_v4_FinalDataset_Rebuild) 含 ZIP、三个代表权重及验证/测试附件。上传记录与限制见 [progress.md](progress.md)。
