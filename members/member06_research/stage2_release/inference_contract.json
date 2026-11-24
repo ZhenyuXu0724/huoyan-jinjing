@@ -1,0 +1,77 @@
+{
+  "schema_version": "member06.stage2_inference_contract.v1",
+  "model_id": "baseline2",
+  "model_version": "baseline2_final_v4_seed42_ep7",
+  "architecture": "FrozenResNet18 (IMAGENET1K_V1, backbone+BN frozen) + Linear(512, 2)",
+  "weights_relpath": "members/member06_research/stage2_release/weights/baseline2_v4_seed42_best_within_20.pt",
+  "weights_sha256": "c38c270ae8eb5ab1dd02d4903c553a7d11fa47735b46bff55302413826b2e7a4",
+  "weights_bytes": 44809257,
+  "class_to_idx": {
+    "PASS": 0,
+    "FAIL": 1
+  },
+  "idx_to_class": {
+    "0": "PASS",
+    "1": "FAIL"
+  },
+  "positive_class": "FAIL",
+  "supported_expected_counts_list": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "supported_expected_counts_dict": {
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 2
+  },
+  "unsupported_counts_status": "UNSUPPORTED_COUNTS",
+  "invalid_image_status": "INPUT_ERROR",
+  "preprocessing": {
+    "color_space": "RGB (no EXIF auto-rotation; BGR camera arrays explicitly reversed to RGB before PIL conversion)",
+    "image_size": 224,
+    "resize_mode": "letterbox",
+    "interpolation": "PIL.Image.Resampling.BILINEAR",
+    "pad_rgb": [
+      0,
+      0,
+      0
+    ],
+    "pad_placement": "centered ((224 - width) // 2, (224 - height) // 2)",
+    "tensor_scale": "[0.0, 1.0] float32 CHW",
+    "normalize_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalize_std": [
+      0.229,
+      0.224,
+      0.225
+    ]
+  },
+  "inference_mode": {
+    "model_eval": true,
+    "grad_enabled": false,
+    "batchnorm_running_stats_frozen": true,
+    "internet_pretrained_download_on_load": false
+  },
+  "decision_rule": {
+    "type": "argmax_uncalibrated_softmax",
+    "probabilities": "softmax(logits, dim=1) -> [P(PASS), P(FAIL)]",
+    "fail_score_definition": "P(FAIL) = softmax(logits)[1] (uncalibrated FAIL probability in [0, 1])",
+    "predict_fail_condition": "P(FAIL) > P(PASS) (strictly > 0.5)",
+    "tie_break_rule": "P(FAIL) == P(PASS) chooses class index 0 (PASS), matching max(range(2), key=probs.__getitem__)",
+    "threshold_tuning_used": false
+  },
+  "honest_capability_boundaries": {
+    "outputs_bounding_boxes": false,
+    "outputs_per_class_counts": false,
+    "outputs_non_catalogue_count": false,
+    "non_catalogue_count_value_in_csv": null
+  }
+}

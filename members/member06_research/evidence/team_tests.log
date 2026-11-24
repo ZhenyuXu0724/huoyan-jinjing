@@ -1,0 +1,11 @@
+test_changing_requirement_changes_only_decision (test_contracts.ContractTests.test_changing_requirement_changes_only_decision) ... ok
+test_invalid_counts (test_contracts.ContractTests.test_invalid_counts) ... ok
+test_member_and_integration_scope (test_contracts.ContractTests.test_member_and_integration_scope) ... ok
+test_registered_modules_have_predict (test_contracts.ContractTests.test_registered_modules_have_predict) ... ok
+test_review_cannot_pass (test_contracts.ContractTests.test_review_cannot_pass) ... ok
+test_unknown_forces_fail_even_when_target_counts_match (test_contracts.ContractTests.test_unknown_forces_fail_even_when_target_counts_match) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK

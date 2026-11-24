@@ -1,0 +1,10 @@
+# Stage 2 Verified Dependencies — Member 6 Baseline 2 (Python 3.11)
+# For CPU-only machines, install torch & torchvision first via:
+#   pip install --index-url https://download.pytorch.org/whl/cpu torch==2.7.1 torchvision==0.22.1
+# Note: Loading the frozen Stage 2 checkpoint does NOT download ImageNet weights from the internet.
+torch==2.7.1
+torchvision==0.22.1
+numpy==2.2.6
+Pillow==11.2.1
+opencv-python-headless==4.11.0.86
+matplotlib==3.10.3

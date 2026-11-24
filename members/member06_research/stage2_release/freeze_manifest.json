@@ -1,0 +1,197 @@
+{
+  "schema_version": "member06.stage2_freeze.v1",
+  "status": "FROZEN_PRE_TEST",
+  "frozen_at_utc": "2026-11-24T12:30:03Z",
+  "test_used_for_training_or_selection": false,
+  "test_evaluated_prior_to_freeze": false,
+  "post_test_modification_forbidden": true,
+  "selected_model": {
+    "model_id": "baseline2",
+    "version_tag": "baseline2_final_v4_seed42_ep7",
+    "experiment_id": "V4-R2_RAW_WEIGHTED_CE_SEED42",
+    "strategy_id": "V4-R2_RAW_WEIGHTED_CE",
+    "seed": 42,
+    "max_budget_epochs": 20,
+    "selected_epoch": 7,
+    "selection_criterion": "minimum unweighted Val CrossEntropyLoss within 20-epoch budget; earliest epoch wins ties",
+    "source_checkpoint_relpath": "members/member06_research/runs/final_training_v4_20261124_192110_PJSHyF/V4-R2_RAW_WEIGHTED_CE_SEED42/model/best_within_20.pt",
+    "frozen_checkpoint_relpath": "members/member06_research/stage2_release/weights/baseline2_v4_seed42_best_within_20.pt",
+    "checkpoint_sha256": "c38c270ae8eb5ab1dd02d4903c553a7d11fa47735b46bff55302413826b2e7a4",
+    "checkpoint_size_bytes": 44809257,
+    "sibling_best_pt_state_verified_identical": true,
+    "parameter_counts": {
+      "total": 11177538,
+      "frozen_backbone": 11176512,
+      "trainable_linear_head": 1026
+    },
+    "state_dict_sha256": {
+      "full_model_state_sha256": "47729b375043ec63658526d4fd782c1ba4ecd8994b7354dc21b1b867ef28a70f",
+      "backbone_state_sha256": "b3b9896ad9efa14f33c6b3c3a084719503f1955b1d81e17df18e482e47e714d9",
+      "linear_head_state_sha256": "7847cca3d9461393110661ffec441d5c201efc35779c3cc5b84e5de10a1878d8"
+    }
+  },
+  "training_and_loss_protocol": {
+    "architecture": "FrozenResNet18 + Linear(512, 2)",
+    "pretrained_backbone": {
+      "weights_enum": "ResNet18_Weights.IMAGENET1K_V1",
+      "official_url": "https://download.pytorch.org/models/resnet18-f37072fd.pth",
+      "checkpoint_sha256": "f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec",
+      "backbone_and_bn_frozen": true
+    },
+    "train_loss": "Weighted CrossEntropyLoss",
+    "train_class_weights_pass0_fail1": [
+      0.75,
+      1.5
+    ],
+    "val_loss": "Unweighted CrossEntropyLoss mean",
+    "optimizer": "Adam(lr=0.001, weight_decay=0.0)",
+    "batch_size": 16,
+    "drop_last": false,
+    "online_or_offline_augmentation": "none (249 raw training originals only)",
+    "exposures_per_epoch": 249,
+    "optimizer_steps_per_epoch": 16,
+    "total_budget_exposures": 4980,
+    "total_budget_optimizer_steps": 320,
+    "selected_epoch_cumulative_steps": 112
+  },
+  "class_and_decision_protocol": {
+    "class_to_idx": {
+      "PASS": 0,
+      "FAIL": 1
+    },
+    "positive_class": "FAIL",
+    "supported_expected_counts": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "counts_rule_status": "CONFIRMED",
+    "decision_rule": "argmax over uncalibrated 2-class softmax [P(PASS), P(FAIL)]; ties at 0.5 choose index 0 (PASS)"
+  },
+  "dataset_and_git_identity": {
+    "dataset_id": "final_training_v4",
+    "dataset_relpath": "members/member03_data/final_training_v4",
+    "upstream_v4_commit": "bde8ea7116761bc8ee7fca1d47c336126daa995f",
+    "member06_git_head_at_training": "e809b20eaa9a07f853c4f42e06d32a7bc66a50ed",
+    "member06_git_head_at_freeze": "e809b20eaa9a07f853c4f42e06d32a7bc66a50ed",
+    "manifests_sha256": {
+      "train_csv": "8e77e41fc3da98f829d1cd65466daf58e3acdb8c5e6c4f1df0a8716be6115f3b",
+      "val_csv": "4d5a04fdfe9a1b53a3c8aeb5bd9f8ea00ccafa15c29d3b46b8575914965e9c05",
+      "test_csv": "b9b101f4d9948a8d75ca4a87797922860ca83e5f87d65c45838eb7e8382a455b",
+      "split_manifest_csv": "80b4e7500c0ff88236ba4a5252eba735cc9bad8ac001442507265726d7fccc42"
+    },
+    "partition_counts": {
+      "train_raw_originals": {
+        "total": 249,
+        "PASS": 166,
+        "FAIL": 83
+      },
+      "val_raw_originals": {
+        "total": 34,
+        "PASS": 20,
+        "FAIL": 14
+      },
+      "test_raw_originals": {
+        "total": 30,
+        "PASS": 15,
+        "FAIL": 15
+      }
+    }
+  },
+  "validation_and_train_reference_metrics": {
+    "val_34_metrics": {
+      "loss": 0.353494067402447,
+      "n": 34,
+      "support": {
+        "PASS": 20,
+        "FAIL": 14
+      },
+      "confusion_matrix": [
+        [
+          16,
+          4
+        ],
+        [
+          0,
+          14
+        ]
+      ],
+      "matrix_axes": "rows=true [PASS=0, FAIL=1], cols=pred [PASS=0, FAIL=1]",
+      "accuracy": 0.8823529411764706,
+      "balanced_accuracy": 0.9,
+      "fail_precision": 0.7777777777777778,
+      "fail_recall": 1.0,
+      "fail_f1": 0.875,
+      "false_pass": 0,
+      "false_fail": 4,
+      "false_pass_rate": 0.0,
+      "false_fail_rate": 0.2,
+      "roc_auc": 0.9678571428571429,
+      "score_median_PASS": 0.24135833978652954,
+      "score_median_FAIL": 0.7789137959480286,
+      "optimizer_steps": 0,
+      "cumulative_optimizer_steps": 112,
+      "wall_seconds": 0.0006
+    },
+    "train_249_fixed_checkpoint_metrics": {
+      "loss": 0.30198249831257096,
+      "n": 249,
+      "support": {
+        "PASS": 166,
+        "FAIL": 83
+      },
+      "confusion_matrix": [
+        [
+          161,
+          5
+        ],
+        [
+          18,
+          65
+        ]
+      ],
+      "matrix_axes": "rows=true [PASS=0, FAIL=1], cols=pred [PASS=0, FAIL=1]",
+      "accuracy": 0.9076305220883534,
+      "balanced_accuracy": 0.8765060240963856,
+      "fail_precision": 0.9285714285714286,
+      "fail_recall": 0.7831325301204819,
+      "fail_f1": 0.8496732026143791,
+      "false_pass": 18,
+      "false_fail": 5,
+      "false_pass_rate": 0.21686746987951808,
+      "false_fail_rate": 0.030120481927710843,
+      "roc_auc": 0.9629844679924517,
+      "score_median_PASS": 0.15415769815444946,
+      "score_median_FAIL": 0.7305481433868408,
+      "optimizer_steps": 0,
+      "cumulative_optimizer_steps": 0,
+      "wall_seconds": 0.0014
+    }
+  },
+  "selection_rationale": {
+    "ruling_1_strategy": "Across 3 seeds (42/43/44) on final_training_v4 (20-epoch budget), V4-R2_RAW_WEIGHTED_CE ([0.75, 1.50]) improved mean Val Balanced Accuracy from 0.8643 +- 0.0357 (V4-R1 unweighted CE) to 0.8881 +- 0.0206, and reduced mean False PASS (FN) from 1.00 +- 1.00 to 0.33 +- 0.58 without worsening mean FP (4.00).",
+    "ruling_2_budget": "Retained 20-epoch max budget with minimum unweighted Val CE checkpoint selection: improved Seed 43 (Epoch 14 vs Epoch 8, BA 0.8393 -> 0.8643, FP 5 -> 4) while keeping Seed 42 (Epoch 7) and Seed 44 (Epoch 10) unchanged.",
+    "ruling_3_resolution": "Controlled 384x384 experiment (V4-R4_RAW_WEIGHTED_CE_384, seeds 42/43/44) failed all 4 pre-registered upgrade criteria: mean Val BA dropped -0.0405 (0.8881 -> 0.8476), mean FN worsened (0.33 -> 1.00), mean FP worsened (4.00 -> 4.67), Seed 42 regressed (BA 0.9000 -> 0.8393, FN 0 -> 1, FP 4 -> 5), and offline single-image CPU median latency increased 1.28x (161.76 ms -> 207.25 ms).",
+    "ruling_4_precommitted_seed": "Representative delivery seed was pre-committed to seed=42 prior to comparing seeds (no post-hoc cherry-picking). V4-R2_RAW_WEIGHTED_CE_SEED42 achieved best Val CE=0.353494 at Epoch 7 (Val Acc=88.24%, Val BA=90.00%, FN=0, FP=4, ROC-AUC=0.9679)."
+  },
+  "software_environment_at_freeze": {
+    "python": "3.11.17 (main, Oct  1 2026, 20:17:42) [GCC 14.3.0]",
+    "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+    "packages": {
+      "torch": "2.7.1+cpu",
+      "torchvision": "0.22.1+cpu",
+      "numpy": "2.2.6",
+      "Pillow": "11.2.1",
+      "opencv-python-headless": "4.11.0.86",
+      "matplotlib": "3.10.3"
+    },
+    "device": "cpu",
+    "cuda_available": false
+  },
+  "training_comparison_references": {
+    "v4_224_suite_report": "members/member06_research/runs/final_training_v4_20261124_192110_PJSHyF/comparison_repaired_v1/COMPARISON_V4_CN.md",
+    "v4_224_vs_384_report": "members/member06_research/runs/final_training_v4_384_20261124_195746_Rg1Mug/comparison/COMPARISON_V4_FINAL_RESOLUTION_CN.md"
+  }
+}

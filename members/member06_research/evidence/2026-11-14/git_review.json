@@ -1,0 +1,21 @@
+{
+  "review_date": "2026-11-14",
+  "root": "/home/grace/projects/AI/member06",
+  "branch": "member06/resnet-baseline",
+  "head": "90c77fa1091f780150f900a3a8db2cef14fda1bd",
+  "upstream_main_local_ref": "f0126f5b349c34caf2cbbc8519c95d0cb25d79c2",
+  "origin_main_local_ref": "f0126f5b349c34caf2cbbc8519c95d0cb25d79c2",
+  "upstream_contained": true,
+  "unmerged_index_entries": "",
+  "remote_refs_refreshed_this_turn": false,
+  "initial_untracked_preserved": "Net18 baseline and research tools\"",
+  "initial_tracked_modifications": [],
+  "root_data_directory_presence": {
+    "data": false,
+    "datasets": false,
+    ".venv": false
+  },
+  "data_management": "487 full_dataset_upload files tracked directly in Git; 485 are under parts_v1. No .gitattributes; inspected development PNGs are complete binaries. Test contents not checked.",
+  "upstream_diff_summary": "491 files changed, 55591 insertions(+), 7 deletions(-)",
+  "upstream_nonmedia_changed_files": "members/member02_setup/README.md\nmembers/member02_setup/progress.md\nmembers/member03_data/README.md\n\"members/member03_data/full_dataset_upload/README_\\344\\270\\212\\344\\274\\240\\350\\257\\264\\346\\230\\216.md\"\nmembers/member03_data/progress.md"
+}

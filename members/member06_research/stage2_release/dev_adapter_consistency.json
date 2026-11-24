@@ -1,0 +1,66 @@
+{
+  "schema_version": "member06.stage2_adapter_consistency.v1",
+  "verified_at_utc": "2026-11-24T12:50:11Z",
+  "evaluation_split_used": "final_training_v4/manifests/resnet/val.csv (34 real development images; Test NOT touched)",
+  "checkpoint_sha256": "c38c270ae8eb5ab1dd02d4903c553a7d11fa47735b46bff55302413826b2e7a4",
+  "n_val_images_verified": 34,
+  "all_34_labels_identical_offline_vs_single_vs_batch": true,
+  "max_abs_prob_diff_batch_vs_offline": 1.4901161193847656e-07,
+  "max_abs_prob_diff_single_vs_batch": 1.4901161193847656e-07,
+  "max_abs_prob_diff_raw_bytes_vs_path": 0.0,
+  "max_abs_prob_diff_rgb_and_bgr_ndarray_vs_path": 0.0,
+  "cv2_imread_bgr_labels_match_path": true,
+  "member07_server_py_spec_loader_and_validate_result_passed": true,
+  "member07_live_sample_png_result": {
+    "kind": "image",
+    "decision": "PASS",
+    "fixed_expected": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "score": 0.06348
+  },
+  "member07_live_canvas_jpeg95_result": {
+    "kind": "image",
+    "decision": "PASS",
+    "fixed_expected": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "score": 0.064894
+  },
+  "unsupported_counts_contract_verified": {
+    "status": "UNSUPPORTED_COUNTS",
+    "predicted_label": null,
+    "prediction_score": null,
+    "fail_probability": null,
+    "pass_probability": null,
+    "score_type": "uncalibrated_fail_softmax_prob",
+    "non_catalogue_count": null,
+    "supported_counts": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ]
+  },
+  "invalid_image_contract_verified": {
+    "status": "INPUT_ERROR",
+    "predicted_label": null,
+    "prediction_score": null,
+    "fail_probability": null,
+    "pass_probability": null,
+    "score_type": "uncalibrated_fail_softmax_prob",
+    "non_catalogue_count": null,
+    "error": "invalid or corrupted image bytes: cannot identify image file <_io.BytesIO object at 0x7e35b811bbf0>"
+  },
+  "batch_export_34_val_verified": true,
+  "test_data_accessed": false
+}

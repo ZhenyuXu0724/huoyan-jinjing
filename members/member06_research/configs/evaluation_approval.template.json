@@ -1,0 +1,15 @@
+{
+  "schema_version": "member06.evaluation-approval.v1",
+  "status": "PENDING",
+  "approved_by": null,
+  "decision_reference": null,
+  "dataset_version": null,
+  "labels_reviewed": false,
+  "scene_split_verified": false,
+  "split": "test",
+  "evaluation_scope": "PUBLIC_PARTITION_EVALUATION",
+  "sealed_until_freeze": false,
+  "freeze_sha256": null,
+  "manifest_sha256": null,
+  "expected_counts": null
+}

@@ -1,0 +1,316 @@
+{
+  "model_id": "baseline2",
+  "model_version": "baseline2_final_v4_seed42_ep7",
+  "evaluated_at_utc": "2026-11-24T13:14:41Z",
+  "freeze_manifest_sha256": "b72cf9bdaabc4962a102beb2abb346ab83ff55f8e760babd0b82ff638ea10416",
+  "model_sha256": "c38c270ae8eb5ab1dd02d4903c553a7d11fa47735b46bff55302413826b2e7a4",
+  "selected_epoch": 7,
+  "config": {
+    "class_to_idx": {
+      "PASS": 0,
+      "FAIL": 1
+    },
+    "fail_label": "FAIL",
+    "image_size": 224,
+    "resize_mode": "letterbox",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "pad_rgb": [
+      0,
+      0,
+      0
+    ],
+    "weights": "IMAGENET1K_V1",
+    "data_kind": "REAL",
+    "training_tier": "FORMAL_READY",
+    "supported_counts": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "counts_rule_status": "CONFIRMED",
+    "train_manifest": "members/member03_data/final_training_v4/manifests/resnet/train.csv",
+    "val_manifest": "members/member03_data/final_training_v4/manifests/resnet/val.csv",
+    "data_provenance": "members/member06_research/data/final_training_v4_intake/provenance.json",
+    "seed": 42,
+    "epochs": 20,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "train_class_weight": "balanced",
+    "weight_decay": 0.0,
+    "num_workers": 0,
+    "device": "auto",
+    "cpu_threads": 2
+  },
+  "device": "cpu",
+  "supported_expected_counts": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "input_expected_counts": {
+    "IMG_20261114_160244.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "IMG_7206.png": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "IMG_7207.png": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "IMG_7208.png": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "IMG_7209.png": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "IMG_7210.png": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "IMG_7211.png": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "IMG_7212.png": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "IMG_7213.png": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "IMG_7214.png": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_165941.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_170000.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_170018.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_170042.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_170120.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_170149.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_171618.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_171632.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_171652.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_171704.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_172012.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_172032.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_172048.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_172104.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261120_172407.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261123_182054.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261123_182155.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261123_182407.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261123_182459.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    },
+    "MVIMG_20261123_182619.jpg": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    }
+  },
+  "image_sha256": {
+    "IMG_20261114_160244.jpg": "23e99658a3b6f6b0ac97b053a821269af4efd45f937561b3264989e4ab33528e",
+    "IMG_7206.png": "f9c7ad0824c3aada68446950a21a1056b0238c34944168864b91782dfbbb15a2",
+    "IMG_7207.png": "3e6fcfa291f34f3cc2ee8ae4b40bafb0ae7d90fe29f4c9d5e7d692a3bd0009f7",
+    "IMG_7208.png": "ba7375af576a8056cb7e3dc254d28fa25af16819b2ede2501cf611256adda5f0",
+    "IMG_7209.png": "ebc5bca41459adf735a5d054b5e4ba824096830c4544bc82316b73b5ccdeea38",
+    "IMG_7210.png": "3596c808fa301798035608ea0ffd45ac89fe6bde0d2a8134084141fda3bdae8b",
+    "IMG_7211.png": "5323666a334b34d795436338143181fd8d74fabc98e8ed698173e12f1aeb5d13",
+    "IMG_7212.png": "6df2b7317d7708997c688e0378cc9d5282c422f59714074c9ad75264d5ea632b",
+    "IMG_7213.png": "68290e06699bf55fec4a7dab8f4e3f79a0fec9ea3de53ecffeecfe28462f60cb",
+    "IMG_7214.png": "ead28e3cf4276a6941cb3a9288aad304c01b1f5317a4020dff6c5c2b2276b4b1",
+    "MVIMG_20261120_165941.jpg": "0abd53c99b1af86b94a065c740ab53228f62770c2060df8ab895dd9c1c3a0935",
+    "MVIMG_20261120_170000.jpg": "bea2adae8808fa172acabe48feef97d800d99d7495f8a59d3d2b37cd46ea52bb",
+    "MVIMG_20261120_170018.jpg": "091e2a49474c8dbc93df1f6d92b4dc6e8560a76129d971937a5b18b23355f51c",
+    "MVIMG_20261120_170042.jpg": "b4cf6faf76dbcdf37b2dfd8b4530e1686f9768e5a700d32deebeddb8411a002f",
+    "MVIMG_20261120_170120.jpg": "0d03476f9fd6b43a2b61951aacc28e088dc8212c7c07a94083b3aec0333462de",
+    "MVIMG_20261120_170149.jpg": "341ff177b9514a8a5d849c4ffe641eef210bdadd55b648ca2032cd479b77f538",
+    "MVIMG_20261120_171618.jpg": "dd5c44d0851e8c7b42b912c55a235a5a5fb1f1f3c4b39b121fc825f5813c1fa5",
+    "MVIMG_20261120_171632.jpg": "3cf70077e373a40799590569f961348c56eab3824e4c0947be95e2771867f315",
+    "MVIMG_20261120_171652.jpg": "166755720c29621de5556b232f0dc05dcecdbec0af25d77bdd8d95114456183f",
+    "MVIMG_20261120_171704.jpg": "035b3c882692af64efce413acb5b30ef16c6cabcda4aaa4103b9fbda811f14b0",
+    "MVIMG_20261120_172012.jpg": "969d7ca591dc697333c6e1cf29961f12499fa565835ba5e15921cb30a87dedf5",
+    "MVIMG_20261120_172032.jpg": "46367960f452ae4abc32c92eb0d87c371dbda5ce8572f24170b6c541aeef2eae",
+    "MVIMG_20261120_172048.jpg": "b94ac30ddb8e15a979828f057c06fe2c9d4ed6effbb5444db485d1eab7419876",
+    "MVIMG_20261120_172104.jpg": "1eb5f371d920489d37218a28cd72ec4b50272ef90c5c5644650502fd013a3f61",
+    "MVIMG_20261120_172407.jpg": "22e551d483ac2eeb80a1d32ad7701e4fa89a01de8812b8e648178e82bba1d9ce",
+    "MVIMG_20261123_182054.jpg": "6c1f9d3f057a7a5d65868ac9ee5d086a085da01da115a37ec55e33d3603f3469",
+    "MVIMG_20261123_182155.jpg": "fea77717ef07805d6f4d435fe3f86fcdc7237c73cf2deeb1d5733a4c29776a31",
+    "MVIMG_20261123_182407.jpg": "0ab19829ead37e2dbce71710d8c2cdeb7cb5838f93048dbebe0712548b18da62",
+    "MVIMG_20261123_182459.jpg": "b52423c5f663479423d2862d2916b862ae1d33cacce1c48f4ab24fc0a256df11",
+    "MVIMG_20261123_182619.jpg": "05a68e6b3395cd26e1d21c71ee6a503561b8c60e6b72f2f4cbb3c0c72fc64d9a"
+  },
+  "score_type": "uncalibrated_fail_softmax_prob",
+  "score_semantics": "uncalibrated softmax probability of FAIL class P(FAIL) in [0, 1]",
+  "decision_rule": "argmax over [P(PASS), P(FAIL)]; ties at 0.5 choose class index 0 (PASS)",
+  "capabilities": {
+    "boxes": false,
+    "actual_counts": false,
+    "non_catalogue_count": false
+  },
+  "gt_accessed_during_inference": false
+}
