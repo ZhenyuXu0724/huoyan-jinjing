@@ -88,3 +88,5 @@ python -m members.member04_hog.final_v4.audit --scope development
 ## 版本与归档
 
 统一名称规则见 [版本说明](docs/VERSIONS.md)。旧 v1/v2/v3 的代码、权重、运行记录和文档保存在仓库同级 `Project/delivery/member04_history_before_v4_20261124/`，映射见 [归档映射](docs/ARCHIVE_MAPPING.md)。旧 Release 的标签、附件名、下载地址与摘要不变。
+
+本轮 GitHub 提交：[PR #14](https://github.com/ZhenyuXu0724/huoyan-jinjing/pull/14) 已合并；预发布 [Baseline1_HOGMLP_v4_FinalDataset_Rebuild](https://github.com/ZhenyuXu0724/huoyan-jinjing/releases/tag/Baseline1_HOGMLP_v4_FinalDataset_Rebuild) 含 ZIP、三个代表权重及验证/测试附件。上传记录与限制见 [progress.md](progress.md)。

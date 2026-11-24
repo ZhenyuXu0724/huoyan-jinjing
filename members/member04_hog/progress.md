@@ -2,7 +2,7 @@
 
 ## 当前状态：Baseline1_HOGMLP_v4_FinalDataset_Rebuild（2026-11-24）
 
-在固定数据版本 `final_training_v4` 上完整重建 HOG+MLP 基线。旧版先归档到仓库同级 `Project/delivery/member04_history_before_v4_20261124/`，逐文件 SHA256 核对后清理活动目录；新流程 75 次正式训练、冻结、诊断、一次性 test 评价和本地交付均已完成。**本轮尚未取得 GitHub 上传许可，未 push、未建 PR、未发布 Release。**
+在固定数据版本 `final_training_v4` 上完整重建 HOG+MLP 基线。旧版先归档到仓库同级 `Project/delivery/member04_history_before_v4_20261124/`，逐文件 SHA256 核对后清理活动目录；新流程 75 次正式训练、冻结、诊断、一次性 test 评价和本地交付均已完成。**已获本轮上传许可并完成 GitHub 提交：PR #14 已由组长合并，Release `Baseline1_HOGMLP_v4_FinalDataset_Rebuild` 已上传并核验 10 个附件；未删除或改写旧 Release。**
 
 | 阶段 | 当前状态 | 放行条件 |
 |---|---|---|
@@ -13,7 +13,7 @@
 | 9次有限改进 | 已完成 | R0末轮复现、固定规则选型 |
 | 冻结/开发诊断 | 已完成 | 3代表＋新默认冻结、无test选型 |
 | 最终评价/迁移验证 | 已完成 | test按门槛访问、指标可追溯、真实接口和包可用 |
-| 本地交付/等待上传 | 进行中 | 提供完整成果清单，等待用户本次上传许可 |
+| 本地交付/GitHub 提交 | 已完成 | PR #14 已合并；Release 附件已核验 |
 
 - 数据：训练 249（166 PASS、83 FAIL）、验证 34（20/14）、test 30（15/15）；开发范围 862 文件、全量 1260 文件，`verify_dataset.py` 与自有 54+ 项审计均通过。
 - 66 次主实验：AE 入选 A1（平均验证漏放 2.33、误拒 4.00）；监督入选 A2（0.33、2.67）。两对等价组 B2/C_without_geometry、A2/C_without_clahe 逐位一致。
@@ -48,7 +48,16 @@
 - `.github/check_scope.py` 以 exit 1 结束，原因为 main 已跟踪成员3媒体；本地记录“成员范围通过、仓库框架未通过”，未修改他人数据或公共规则。
 - 单图 OK/INPUT_ERROR/MODEL_UNAVAILABLE、批量 OK/INPUT_ERROR/UNSUPPORTED_COUNTS、缺权重启动失败且不建输出目录、旧 bundle 拒载均通过。
 - 交付包 `Project/delivery/Baseline1_HOGMLP_v4_FinalDataset_Rebuild.zip`：928,957,751 字节、592 个条目，SHA256 `4449706dba29d50deb5ae745a84dc71224e63cdd6fd0479f81110955411223a3`；ZIP 内逐文件校验与解压迁移（模块测试、单图、批量、缺权重）全部通过，证据在同名 `_verification.json`、`_tests.txt`。ZIP 为打包时快照；打包后的 progress 变更不再重打包，最新交接状态以 Git 为准。
-- 三个代表权重已作为拟上传附件放在 `Project/delivery/`（各带 `.sha256`）：AE `1ab77d31…87e4`、监督 `62436641…d916`、改进 `cc24c24b…037e`。本轮未上传。
+- 三个代表权重已作为附件放在 `Project/delivery/`（各带 `.sha256`）：AE `1ab77d31…87e4`、监督 `62436641…d916`、改进 `cc24c24b…037e`。
+
+## GitHub 提交记录（2026-11-24）
+
+- 分支：`member04/hog-v4-final-dataset`，commit `197b94e`，与本地提交逐字节一致（tree `9de409e9…`）。本机对 `github.com:443` 的 Git 传输被网络策略阻断，分支与 commit 通过 GitHub Git Data API 创建；SHA 与本地完全相同。
+- PR：[#14](https://github.com/ZhenyuXu0724/huoyan-jinjing/pull/14)，88 文件变更，base `bde8ea7`；由 `ZhenyuXu0724` 于 2026-11-24 20:08:53（+08）合并，merge commit `33d6751`。
+- Release：[Baseline1_HOGMLP_v4_FinalDataset_Rebuild](https://github.com/ZhenyuXu0724/huoyan-jinjing/releases/tag/Baseline1_HOGMLP_v4_FinalDataset_Rebuild)，预发布，tag 指向 `197b94e`。
+- 附件 10 个：Rebuild ZIP（928,957,751 字节，SHA256 `4449706d…23a3`）及 `.sha256`；AE、监督、改进三个代表 `.joblib` 及各自 `.sha256`；Rebuild 验证 JSON 与测试记录 TXT。远端 size/digest 已逐个核验。
+- PR 的 `framework` 检查为 failure，原因是 main 已跟踪的成员3媒体；本地记录仍为“成员范围通过、框架未通过”，未修改他人数据或公共规则。
+- ZIP 为打包时快照，不包含本上传记录；最新交接状态以 Git 与本页为准。
 
 ## 失败与修复记录
 
@@ -65,7 +74,7 @@
 - `audit --scope full` 解码 30 张 test 并核验 415 组三联，`verify_dataset.py --all` 通过。
 - `evaluate --frozen` 只评价三个冻结代表一次；`evaluation/test_access.json` 记录时间与冻结摘要。之后没有重训、换阈值、换种子或利用 test 选型。
 
-## 下一条命令
+## 复现与打包命令（已执行）
 
 ```powershell
 python -m members.member04_hog.final_v4.verify
@@ -74,7 +83,7 @@ python -m members.member04_hog.final_v4.package --out ../delivery/Baseline1_HOGM
 
 ## 待交接
 
-- 组长：本轮上传许可；公共 `baseline1` 注册映射不变，新默认由本模块 `configs/active_model.json` 指向。main 已跟踪成员3媒体，`.github/check_scope.py` 预期仍被公共媒体规则阻断；本地记录“成员范围通过/框架未通过”。
+- 组长：PR #14 已合并、Release 已上传；公共 `baseline1` 注册映射不变，新默认由本模块 `configs/active_model.json` 指向。main 已跟踪成员3媒体，`.github/check_scope.py` 仍被公共媒体规则阻断；本地记录“成员范围通过/框架未通过”。
 - 成员3：物理场景独立性与标签来源；本模块未修改划分或标注。
 - 成员6/7：共同图像级评价和摄像头端到端耗时；本轮只做离线开发评价，不伪造其他成员预测。
 - 旧 Release/PR：#5、#7、#8 与三个旧 Release 保持原地址、附件名和摘要；归档映射见 [ARCHIVE_MAPPING](docs/ARCHIVE_MAPPING.md)。

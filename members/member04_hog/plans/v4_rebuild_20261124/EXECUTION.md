@@ -42,6 +42,13 @@
 4. S/H 子集曾把评价增强计入 44 张；修正为 11 张 primary test 图，仅从已保存预测重算。
 5. `evaluate.py` 的分组统计与 `delivery.py` 目录校验容错在冻结后做过报告/验证代码修复；没有重算 test、没有改模型或阈值。冻结摘要保留冻结时记录，差异在 progress.md 说明。
 
+## GitHub 提交
+
+- 分支 `member04/hog-v4-final-dataset` / commit `197b94e` 通过 GitHub Git Data API 创建（本机 `github.com:443` 的 Git 传输被网络策略阻断），远端 commit SHA 与本地完全相同（tree `9de409e9…`）。
+- [PR #14](https://github.com/ZhenyuXu0724/huoyan-jinjing/pull/14) 于 2026-11-24 20:08:53（+08）由 `ZhenyuXu0724` 合并，merge commit `33d6751`；PR 的 `framework` 检查 failure 仍源于 main 已跟踪的成员3媒体。
+- [Release `Baseline1_HOGMLP_v4_FinalDataset_Rebuild`](https://github.com/ZhenyuXu0724/huoyan-jinjing/releases/tag/Baseline1_HOGMLP_v4_FinalDataset_Rebuild) 为预发布，tag 指向 `197b94e`；10 个附件（ZIP、ZIP 摘要、3 代表权重及摘要、验证 JSON、测试 TXT）远端 size/digest 已逐个核验。
+- 未删除或改写任何历史 Release；本记录由后续 docs 提交补入，ZIP 为打包时快照。
+
 ## 当前停止点
 
-本地交付完成，**等待用户对本次 GitHub 上传的明确许可**。未 push、未创建/更新 PR、未创建标签、未发布/编辑 Release，也未上传附件。下一步（获许可后）才推送成员4分支、创建 PR 并按需上传交付包附件；不删除或改写历史 Release。
+本地交付与 GitHub 提交均已完成，等待组内按正常评审流程处理；后续如需修正，应新建分支和小 PR，不回写已合并提交或已发布 Release 的资产。
