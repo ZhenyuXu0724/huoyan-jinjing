@@ -273,7 +273,7 @@
       "mask": null
     },
     {
-      "label": "M4x10",
+      "label": "non_catalogue",
       "points": [
         [
           1047.6,
@@ -291,7 +291,7 @@
       "mask": null
     },
     {
-      "label": "non_catalogue",
+      "label": "M4x10",
       "points": [
         [
           2332.8,
