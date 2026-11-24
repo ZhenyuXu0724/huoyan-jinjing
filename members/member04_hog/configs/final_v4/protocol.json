@@ -1,0 +1,1501 @@
+{
+  "schema_version": 1,
+  "name": "Baseline1_HOGMLP_v4_FinalDataset_Rebuild",
+  "created_at": "2026-11-24T10:10:27.331625+00:00",
+  "source": {
+    "repository": "ZhenyuXu0724/huoyan-jinjing",
+    "commit": "bde8ea7116761bc8ee7fca1d47c336126daa995f",
+    "dataset_path": "members/member03_data/final_training_v4",
+    "dataset_tree": "c6882fd823b1f458105b47fea2f52af0b357ef9c",
+    "tree_listing_sha256": "46ef3302688a7112555e16e5b72545c6a44e83b04dda84b4cfe79262c73443df",
+    "source_lock_sha256": "30ae202a834ad15782e05753df846b2b9b91549145ce70b48388d13d0a409770"
+  },
+  "audit": {
+    "path": "outputs/member04_hog/final_v4/audit/dataset_audit_development.json",
+    "sha256": "ce5ced79d7e49f0851e0d340720f0e429d9b438fd3110fd37aa3c9d826988287"
+  },
+  "data": {
+    "manifests_sha256": {
+      "manifests/hog/train.csv": "8e71ca011ffaf7afaf0973e96d0189fba7dad1e4fd4b411d8f6b256a2dea45f5",
+      "manifests/hog/train_pass.csv": "a24ae41cd379cb5beba45599e56a6ec65dea040b954d451ce0c05694e43d48ce",
+      "manifests/hog/val.csv": "6fa3e41ff626b65b8cd0d6ef8cf538de2e30d5a7297fba3d108fd4d5b9b70adc",
+      "manifests/hog/test.csv": "7ca2a9ee82fbb64575a91b06c5c1dfad126988a37831e731926fbc0ed2d3d755"
+    },
+    "counts": {
+      "train": {
+        "images": 249,
+        "labels": {
+          "PASS": 166,
+          "FAIL": 83
+        },
+        "boxes": 2602,
+        "scenes": 22,
+        "source_scenes": 23,
+        "anomalies": {
+          "non_catalogue_only_1": 5,
+          "non_catalogue_only_3": 35,
+          "non_catalogue_plus_missing": 42,
+          "none": 166,
+          "pure_missing": 1
+        }
+      },
+      "val": {
+        "images": 34,
+        "labels": {
+          "PASS": 20,
+          "FAIL": 14
+        },
+        "boxes": 330,
+        "scenes": 11,
+        "source_scenes": 11,
+        "anomalies": {
+          "empty_scene": 1,
+          "non_catalogue_only_3": 8,
+          "non_catalogue_plus_missing": 4,
+          "none": 20,
+          "pure_missing": 1
+        }
+      },
+      "test": {
+        "images": 30,
+        "labels": {
+          "PASS": 15,
+          "FAIL": 15
+        },
+        "boxes": null,
+        "scenes": 11,
+        "source_scenes": 11,
+        "anomalies": {
+          "non_catalogue_only_1": 1,
+          "non_catalogue_plus_missing": 13,
+          "none": 15,
+          "pure_missing": 1
+        }
+      },
+      "unused": {
+        "images": 86,
+        "labels": {
+          "PASS": 0,
+          "FAIL": 86
+        },
+        "boxes": null,
+        "scenes": 13,
+        "source_scenes": 14,
+        "anomalies": {
+          "non_catalogue_only_6": 51,
+          "non_catalogue_only_7": 20,
+          "non_catalogue_plus_missing": 15
+        }
+      }
+    },
+    "expected_counts": {
+      "1": 2,
+      "2": 2,
+      "3": 2,
+      "4": 2,
+      "5": 2
+    }
+  },
+  "preprocessing": {
+    "size": 256,
+    "cell": 16,
+    "orientations": 9,
+    "pixels_per_cell": [
+      16,
+      16
+    ],
+    "cells_per_block": [
+      2,
+      2
+    ],
+    "block_norm": "L2-Hys",
+    "dimension": 8100,
+    "clahe_clip_limit": 0.01,
+    "gammas": [
+      0.8,
+      1.0,
+      1.2
+    ]
+  },
+  "training": {
+    "epochs": 200,
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "alpha": 0.0001,
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "single_thread": true,
+    "shuffle": false,
+    "early_stopping": false,
+    "sample_weights": {
+      "PASS": 0.75,
+      "FAIL": 1.5
+    },
+    "checkpoint": "main runs use epoch 200 only"
+  },
+  "groups": {
+    "A0": {
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": false,
+      "views": 1,
+      "augmentations": 0
+    },
+    "A1": {
+      "geometry": "A1",
+      "gamma": false,
+      "clahe": false,
+      "views": 2,
+      "augmentations": 1
+    },
+    "A2": {
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2,
+      "augmentations": 1
+    },
+    "A3": {
+      "geometry": "A3",
+      "gamma": false,
+      "clahe": false,
+      "views": 4,
+      "augmentations": 1
+    },
+    "A4": {
+      "geometry": "A4",
+      "gamma": false,
+      "clahe": false,
+      "views": 4,
+      "augmentations": 1
+    },
+    "A5": {
+      "geometry": "A5",
+      "gamma": false,
+      "clahe": false,
+      "views": 8,
+      "augmentations": 1
+    },
+    "B1": {
+      "geometry": "A0",
+      "gamma": true,
+      "clahe": false,
+      "views": 3,
+      "augmentations": 1
+    },
+    "B2": {
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1,
+      "augmentations": 1
+    },
+    "C0": {
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": true,
+      "views": 2,
+      "augmentations": 2
+    },
+    "C_without_geometry": {
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1,
+      "augmentations": 1
+    },
+    "C_without_clahe": {
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2,
+      "augmentations": 1
+    }
+  },
+  "tasks": [
+    {
+      "id": "ae/A0/seed42",
+      "method": "ae",
+      "group": "A0",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": false,
+      "views": 1
+    },
+    {
+      "id": "ae/A0/seed43",
+      "method": "ae",
+      "group": "A0",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": false,
+      "views": 1
+    },
+    {
+      "id": "ae/A0/seed44",
+      "method": "ae",
+      "group": "A0",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": false,
+      "views": 1
+    },
+    {
+      "id": "ae/A1/seed42",
+      "method": "ae",
+      "group": "A1",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A1",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "ae/A1/seed43",
+      "method": "ae",
+      "group": "A1",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A1",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "ae/A1/seed44",
+      "method": "ae",
+      "group": "A1",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A1",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "ae/A2/seed42",
+      "method": "ae",
+      "group": "A2",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "ae/A2/seed43",
+      "method": "ae",
+      "group": "A2",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "ae/A2/seed44",
+      "method": "ae",
+      "group": "A2",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "ae/A3/seed42",
+      "method": "ae",
+      "group": "A3",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A3",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "ae/A3/seed43",
+      "method": "ae",
+      "group": "A3",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A3",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "ae/A3/seed44",
+      "method": "ae",
+      "group": "A3",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A3",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "ae/A4/seed42",
+      "method": "ae",
+      "group": "A4",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A4",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "ae/A4/seed43",
+      "method": "ae",
+      "group": "A4",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A4",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "ae/A4/seed44",
+      "method": "ae",
+      "group": "A4",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A4",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "ae/A5/seed42",
+      "method": "ae",
+      "group": "A5",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A5",
+      "gamma": false,
+      "clahe": false,
+      "views": 8
+    },
+    {
+      "id": "ae/A5/seed43",
+      "method": "ae",
+      "group": "A5",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A5",
+      "gamma": false,
+      "clahe": false,
+      "views": 8
+    },
+    {
+      "id": "ae/A5/seed44",
+      "method": "ae",
+      "group": "A5",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A5",
+      "gamma": false,
+      "clahe": false,
+      "views": 8
+    },
+    {
+      "id": "ae/B1/seed42",
+      "method": "ae",
+      "group": "B1",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": true,
+      "clahe": false,
+      "views": 3
+    },
+    {
+      "id": "ae/B1/seed43",
+      "method": "ae",
+      "group": "B1",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": true,
+      "clahe": false,
+      "views": 3
+    },
+    {
+      "id": "ae/B1/seed44",
+      "method": "ae",
+      "group": "B1",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": true,
+      "clahe": false,
+      "views": 3
+    },
+    {
+      "id": "ae/B2/seed42",
+      "method": "ae",
+      "group": "B2",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "ae/B2/seed43",
+      "method": "ae",
+      "group": "B2",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "ae/B2/seed44",
+      "method": "ae",
+      "group": "B2",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "ae/C0/seed42",
+      "method": "ae",
+      "group": "C0",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": true,
+      "views": 2
+    },
+    {
+      "id": "ae/C0/seed43",
+      "method": "ae",
+      "group": "C0",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": true,
+      "views": 2
+    },
+    {
+      "id": "ae/C0/seed44",
+      "method": "ae",
+      "group": "C0",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": true,
+      "views": 2
+    },
+    {
+      "id": "ae/C_without_geometry/seed42",
+      "method": "ae",
+      "group": "C_without_geometry",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "ae/C_without_geometry/seed43",
+      "method": "ae",
+      "group": "C_without_geometry",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "ae/C_without_geometry/seed44",
+      "method": "ae",
+      "group": "C_without_geometry",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "ae/C_without_clahe/seed42",
+      "method": "ae",
+      "group": "C_without_clahe",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "ae/C_without_clahe/seed43",
+      "method": "ae",
+      "group": "C_without_clahe",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "ae/C_without_clahe/seed44",
+      "method": "ae",
+      "group": "C_without_clahe",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16,
+        64
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "supervised/A0/seed42",
+      "method": "supervised",
+      "group": "A0",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": false,
+      "views": 1
+    },
+    {
+      "id": "supervised/A0/seed43",
+      "method": "supervised",
+      "group": "A0",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": false,
+      "views": 1
+    },
+    {
+      "id": "supervised/A0/seed44",
+      "method": "supervised",
+      "group": "A0",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": false,
+      "views": 1
+    },
+    {
+      "id": "supervised/A1/seed42",
+      "method": "supervised",
+      "group": "A1",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A1",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "supervised/A1/seed43",
+      "method": "supervised",
+      "group": "A1",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A1",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "supervised/A1/seed44",
+      "method": "supervised",
+      "group": "A1",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A1",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "supervised/A2/seed42",
+      "method": "supervised",
+      "group": "A2",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "supervised/A2/seed43",
+      "method": "supervised",
+      "group": "A2",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "supervised/A2/seed44",
+      "method": "supervised",
+      "group": "A2",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "supervised/A3/seed42",
+      "method": "supervised",
+      "group": "A3",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A3",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "supervised/A3/seed43",
+      "method": "supervised",
+      "group": "A3",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A3",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "supervised/A3/seed44",
+      "method": "supervised",
+      "group": "A3",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A3",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "supervised/A4/seed42",
+      "method": "supervised",
+      "group": "A4",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A4",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "supervised/A4/seed43",
+      "method": "supervised",
+      "group": "A4",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A4",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "supervised/A4/seed44",
+      "method": "supervised",
+      "group": "A4",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A4",
+      "gamma": false,
+      "clahe": false,
+      "views": 4
+    },
+    {
+      "id": "supervised/A5/seed42",
+      "method": "supervised",
+      "group": "A5",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A5",
+      "gamma": false,
+      "clahe": false,
+      "views": 8
+    },
+    {
+      "id": "supervised/A5/seed43",
+      "method": "supervised",
+      "group": "A5",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A5",
+      "gamma": false,
+      "clahe": false,
+      "views": 8
+    },
+    {
+      "id": "supervised/A5/seed44",
+      "method": "supervised",
+      "group": "A5",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A5",
+      "gamma": false,
+      "clahe": false,
+      "views": 8
+    },
+    {
+      "id": "supervised/B1/seed42",
+      "method": "supervised",
+      "group": "B1",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": true,
+      "clahe": false,
+      "views": 3
+    },
+    {
+      "id": "supervised/B1/seed43",
+      "method": "supervised",
+      "group": "B1",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": true,
+      "clahe": false,
+      "views": 3
+    },
+    {
+      "id": "supervised/B1/seed44",
+      "method": "supervised",
+      "group": "B1",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": true,
+      "clahe": false,
+      "views": 3
+    },
+    {
+      "id": "supervised/B2/seed42",
+      "method": "supervised",
+      "group": "B2",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "supervised/B2/seed43",
+      "method": "supervised",
+      "group": "B2",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "supervised/B2/seed44",
+      "method": "supervised",
+      "group": "B2",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "supervised/C0/seed42",
+      "method": "supervised",
+      "group": "C0",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": true,
+      "views": 2
+    },
+    {
+      "id": "supervised/C0/seed43",
+      "method": "supervised",
+      "group": "C0",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": true,
+      "views": 2
+    },
+    {
+      "id": "supervised/C0/seed44",
+      "method": "supervised",
+      "group": "C0",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": true,
+      "views": 2
+    },
+    {
+      "id": "supervised/C_without_geometry/seed42",
+      "method": "supervised",
+      "group": "C_without_geometry",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "supervised/C_without_geometry/seed43",
+      "method": "supervised",
+      "group": "C_without_geometry",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "supervised/C_without_geometry/seed44",
+      "method": "supervised",
+      "group": "C_without_geometry",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A0",
+      "gamma": false,
+      "clahe": true,
+      "views": 1
+    },
+    {
+      "id": "supervised/C_without_clahe/seed42",
+      "method": "supervised",
+      "group": "C_without_clahe",
+      "seed": 42,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "supervised/C_without_clahe/seed43",
+      "method": "supervised",
+      "group": "C_without_clahe",
+      "seed": 43,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    },
+    {
+      "id": "supervised/C_without_clahe/seed44",
+      "method": "supervised",
+      "group": "C_without_clahe",
+      "seed": 44,
+      "epochs": 200,
+      "layers": [
+        64,
+        16
+      ],
+      "alpha": 0.0001,
+      "geometry": "A2",
+      "gamma": false,
+      "clahe": false,
+      "views": 2
+    }
+  ],
+  "refinement": {
+    "configs": {
+      "R0": {
+        "layers": [
+          64,
+          16
+        ],
+        "alpha": 0.0001
+      },
+      "R1": {
+        "layers": [
+          32,
+          8
+        ],
+        "alpha": 0.0001
+      },
+      "R2": {
+        "layers": [
+          64,
+          16
+        ],
+        "alpha": 0.01
+      }
+    },
+    "tasks": [
+      {
+        "id": "refinement/R0/seed42",
+        "config": "R0",
+        "base": "selected supervised group",
+        "seed": 42,
+        "epochs": 200,
+        "layers": [
+          64,
+          16
+        ],
+        "alpha": 0.0001
+      },
+      {
+        "id": "refinement/R0/seed43",
+        "config": "R0",
+        "base": "selected supervised group",
+        "seed": 43,
+        "epochs": 200,
+        "layers": [
+          64,
+          16
+        ],
+        "alpha": 0.0001
+      },
+      {
+        "id": "refinement/R0/seed44",
+        "config": "R0",
+        "base": "selected supervised group",
+        "seed": 44,
+        "epochs": 200,
+        "layers": [
+          64,
+          16
+        ],
+        "alpha": 0.0001
+      },
+      {
+        "id": "refinement/R1/seed42",
+        "config": "R1",
+        "base": "selected supervised group",
+        "seed": 42,
+        "epochs": 200,
+        "layers": [
+          32,
+          8
+        ],
+        "alpha": 0.0001
+      },
+      {
+        "id": "refinement/R1/seed43",
+        "config": "R1",
+        "base": "selected supervised group",
+        "seed": 43,
+        "epochs": 200,
+        "layers": [
+          32,
+          8
+        ],
+        "alpha": 0.0001
+      },
+      {
+        "id": "refinement/R1/seed44",
+        "config": "R1",
+        "base": "selected supervised group",
+        "seed": 44,
+        "epochs": 200,
+        "layers": [
+          32,
+          8
+        ],
+        "alpha": 0.0001
+      },
+      {
+        "id": "refinement/R2/seed42",
+        "config": "R2",
+        "base": "selected supervised group",
+        "seed": 42,
+        "epochs": 200,
+        "layers": [
+          64,
+          16
+        ],
+        "alpha": 0.01
+      },
+      {
+        "id": "refinement/R2/seed43",
+        "config": "R2",
+        "base": "selected supervised group",
+        "seed": 43,
+        "epochs": 200,
+        "layers": [
+          64,
+          16
+        ],
+        "alpha": 0.01
+      },
+      {
+        "id": "refinement/R2/seed44",
+        "config": "R2",
+        "base": "selected supervised group",
+        "seed": 44,
+        "epochs": 200,
+        "layers": [
+          64,
+          16
+        ],
+        "alpha": 0.01
+      }
+    ]
+  },
+  "selection_rules": {
+    "threshold": "unique-score cuts; require FP<=4/20; fewest FN, then FP, then larger representative threshold; all-PASS and all-FAIL included",
+    "validation_budget": {
+      "false_pass_max": 4,
+      "validation_pass": 20
+    },
+    "group": "mean FN, mean FP, fewer augmentation types, fewer views, table order; single-factor group wins exact duplicates",
+    "checkpoint": "refinement: fewest FN, then FP, then earliest epoch",
+    "refinement_group": "mean FN, mean FP, fewer parameters, smaller alpha, table order",
+    "default_model": "mean FN, mean FP, fewer trainable parameters, fewer training views, then supervised main > supervised refinement > AE",
+    "representative_seed": 42,
+    "equivalent_pairs": [
+      [
+        "B2",
+        "C_without_geometry"
+      ],
+      [
+        "A2",
+        "C_without_clahe"
+      ]
+    ]
+  },
+  "versions": {
+    "ae": "Baseline1_HOGMLP_v4_FinalDataset_PASSOnly_Autoencoder",
+    "supervised": "Baseline1_HOGMLP_v4_FinalDataset_Supervised_MLP",
+    "refinement": "Baseline1_HOGMLP_v4_FinalDataset_Supervised_Capacity_L2_EpochSelection"
+  },
+  "code_sha256": {
+    "members/member04_hog/data.py": "b523ae5e0a5c78c5a8967403f48a860bc04968575eb38f38350e4bf554527665",
+    "members/member04_hog/features.py": "ba48e91d4caeab7d27895005c09222c493d134a95fd3a8c33310c2d0fef6c04b",
+    "members/member04_hog/final_v4/audit.py": "aaf1a7423350c7f5868100cddb4a5bf2fdbe8bdbe38bd2fcd84b488130fea94f",
+    "members/member04_hog/final_v4/common.py": "d0cb766fb2a8c46dab671b745f1e9b8bb9626001ca6d2bf8442f5286b951d532",
+    "members/member04_hog/final_v4/groups.py": "af65b83b7a8faca2cb49eaa05a765b52414be5595c49f5df460b742b6ae0a1ad",
+    "members/member04_hog/final_v4/prepare.py": "debbe0bc2a4cc59e777e3341c97b6935fd724163c9fb856c519c42ada56a9690",
+    "members/member04_hog/final_v4/refine.py": "634147c344469d7e92d26810b9fb1d1ff62ade841dd7905d6b18577c99195702",
+    "members/member04_hog/final_v4/train.py": "693ad5590fc2a97da1024a1f7cf15a96b76550397961eeca956b884fd0344e2f"
+  },
+  "dependencies": {
+    "python": "3.11.18",
+    "numpy": "2.2.6",
+    "Pillow": "11.3.0",
+    "scikit-image": "0.25.2",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.3",
+    "scipy": "1.17.1",
+    "threadpoolctl": "3.8.0"
+  },
+  "metadata_refresh": [
+    {
+      "at": "2026-11-24T10:22:37.820859+00:00",
+      "reason": "audit.py full-scope augmentation box/label aggregation fix; no model, threshold, group, seed or split change"
+    },
+    {
+      "at": "2026-11-24T10:22:50.107707+00:00",
+      "reason": "audit.py full-scope augmentation box/label aggregation fix; no model, threshold, group, seed or split change"
+    }
+  ]
+}

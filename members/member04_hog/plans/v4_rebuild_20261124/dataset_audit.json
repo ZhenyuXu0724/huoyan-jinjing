@@ -1,0 +1,230 @@
+{
+  "checked_date": "2026-11-24",
+  "scope": "Planning-only GitHub metadata, tree and manifest audit; no physical image decoding or test prediction",
+  "source_repository": "ZhenyuXu0724/huoyan-jinjing",
+  "repository_snapshot": "bde8ea7116761bc8ee7fca1d47c336126daa995f",
+  "dataset_directory": "members/member03_data/final_training_v4",
+  "dataset_introduction_commit": "f5dad94b9a79243ce2f3f83041d62de118b8ed08",
+  "dataset_tree": "c6882fd823b1f458105b47fea2f52af0b357ef9c",
+  "readme_declared_raw_source_commit": "755e038cc8f05b9701cceb28e3381d5fa3bc6a81",
+  "metadata_files": {
+    "README.md": {
+      "bytes": 6024,
+      "sha256": "cfd60c7c07464f2cf99c1a90152826c5e4b5fcb2056d8da44dadd942d7a125e8",
+      "git_blob": "4c4ae12104e2f289a9b527c13955fc128386f50c"
+    },
+    "classes.json": {
+      "bytes": 1057,
+      "sha256": "100a9f14d4d6dec42028466fd981910e8bdb7603e91d04110d7dfb45b542b479",
+      "git_blob": "b75363d72debf744fe22a2ee20edf5629a4b2a20"
+    },
+    "data.yaml": {
+      "bytes": 159,
+      "sha256": "55daefb7e444197a09bd410b0dbc2894c6bbf5802cf81029a2936e348af7127d",
+      "git_blob": "0f4d02fd68fe0863fb0a14f83158945f73f0e8d3"
+    },
+    "verify_dataset.py": {
+      "bytes": 6859,
+      "sha256": "5523c2371a7081d54a545f8e874c02725238c4b65ea7d6341916bd351519cade",
+      "git_blob": "982b279885c7c512a3812bc52cc9174dca41c2f4"
+    },
+    "split_manifest.csv": {
+      "bytes": 476217,
+      "sha256": "80b4e7500c0ff88236ba4a5252eba735cc9bad8ac001442507265726d7fccc42",
+      "git_blob": "706afc7a66a448f4f9a01a0d8bd57e1081ebb4da"
+    },
+    "原图明细.csv": {
+      "bytes": 58383,
+      "sha256": "4a92e1fc93d4143673d2ceb0fab945127c91af606731e4896c8155e106af840e",
+      "git_blob": "d78da552396019c76dfc8cb1be77d62d86392d6f"
+    },
+    "manifests/hog/train.csv": {
+      "bytes": 13226,
+      "sha256": "b27b497c0010645a12b43c2c72d01173c1d1fe1d7fb6d4d3536807631b1125a3",
+      "git_blob": "67162902561cdc8b1546f68fa79ca5b937842012"
+    },
+    "manifests/hog/train_pass.csv": {
+      "bytes": 8261,
+      "sha256": "6d2d2626ed0424e99a31f63e0294b73f7de13bcf18215e7030002c92d652be4b",
+      "git_blob": "23b6415b9d6c7eff61ed9696a6d3579b0686ccb0"
+    },
+    "manifests/hog/val.csv": {
+      "bytes": 1902,
+      "sha256": "da2a55e7d9b98ad3c19635691ee8f740ccde168f033e2bfbf76e3cbf9d51734b",
+      "git_blob": "ba503c4fd88b962a630f1de9e0fe5274d0818bfe"
+    },
+    "manifests/hog/test.csv": {
+      "bytes": 1707,
+      "sha256": "9409cd64f648ec00950742148620a5f951b4b9c7f637cb3be7f6093e4c3778f0",
+      "git_blob": "743063e076b0ee02104c2fae8db860ccc8ce9f22"
+    }
+  },
+  "file_count": 1260,
+  "dataset_bytes": 1789463157,
+  "physical_triples": 415,
+  "originals": 399,
+  "selected_originals": 313,
+  "optional_training_augmentations": 102,
+  "excluded_eval_augmentations": 63,
+  "unused_originals": 86,
+  "unused_augmentations": 45,
+  "splits": {
+    "train": {
+      "images": 249,
+      "labels": {
+        "PASS": 166,
+        "FAIL": 83
+      },
+      "scenes": 22,
+      "source_scenes": 23,
+      "anomalies": {
+        "none": 166,
+        "non_catalogue_only_1": 5,
+        "non_catalogue_plus_missing": 42,
+        "non_catalogue_only_3": 35,
+        "pure_missing": 1
+      },
+      "family_image_support": {
+        "N": 55,
+        "B": 44,
+        "S": 0,
+        "W": 77,
+        "H": 0
+      },
+      "boxes": 2602
+    },
+    "val": {
+      "images": 34,
+      "labels": {
+        "PASS": 20,
+        "FAIL": 14
+      },
+      "scenes": 11,
+      "source_scenes": 11,
+      "anomalies": {
+        "none": 20,
+        "non_catalogue_only_3": 8,
+        "non_catalogue_plus_missing": 4,
+        "empty_scene": 1,
+        "pure_missing": 1
+      },
+      "family_image_support": {
+        "N": 8,
+        "B": 8,
+        "S": 0,
+        "W": 12,
+        "H": 0
+      },
+      "boxes": 330
+    },
+    "test": {
+      "images": 30,
+      "labels": {
+        "PASS": 15,
+        "FAIL": 15
+      },
+      "scenes": 11,
+      "source_scenes": 11,
+      "anomalies": {
+        "none": 15,
+        "pure_missing": 1,
+        "non_catalogue_only_1": 1,
+        "non_catalogue_plus_missing": 13
+      },
+      "family_image_support": {
+        "N": 2,
+        "B": 0,
+        "S": 9,
+        "W": 13,
+        "H": 3
+      },
+      "boxes": 304
+    },
+    "unused": {
+      "images": 86,
+      "labels": {
+        "FAIL": 86
+      },
+      "scenes": 13,
+      "source_scenes": 14,
+      "anomalies": {
+        "non_catalogue_only_6": 51,
+        "non_catalogue_only_7": 20,
+        "non_catalogue_plus_missing": 15
+      },
+      "family_image_support": {
+        "N": 73,
+        "B": 78,
+        "S": 81,
+        "W": 86,
+        "H": 2
+      },
+      "boxes": 1308
+    }
+  },
+  "batch_counts": {
+    "11/11": 160,
+    "11/14": 98,
+    "11/23": 19,
+    "11/18": 52,
+    "11/20": 70
+  },
+  "batch_split_counts": {
+    "11/11/train": 143,
+    "11/14/train": 21,
+    "11/23/train": 7,
+    "11/18/train": 44,
+    "11/20/train": 34,
+    "11/11/val": 8,
+    "11/14/val": 5,
+    "11/23/val": 7,
+    "11/18/val": 8,
+    "11/20/val": 6,
+    "11/11/test": 9,
+    "11/20/test": 15,
+    "11/23/test": 5,
+    "11/14/test": 1,
+    "11/14/unused": 71,
+    "11/20/unused": 15
+  },
+  "checks": {
+    "cross_split_scene_group": 0,
+    "cross_split_source_scene_group": 0,
+    "cross_split_image_sha256": 0,
+    "missing_files": 0,
+    "extra_files": 0,
+    "blob_or_size_mismatches": 0,
+    "manifest_label_rule_mismatches": 0,
+    "hog_train_matches": true,
+    "hog_val_matches": true,
+    "hog_test_matches": true,
+    "training_or_image_evaluation_run": false
+  },
+  "member04_previous_dataset_overlap": {
+    "previous_originals": 310,
+    "matched_by_sha256": 310,
+    "label_changes": 0,
+    "old_to_v4": {
+      "train->train": 172,
+      "valid->train": 24,
+      "test->train": 12,
+      "valid->val": 2,
+      "test->val": 6,
+      "train->val": 13,
+      "valid->test": 4,
+      "test->test": 6,
+      "valid->unused": 71
+    },
+    "v4_test_previous_roles": {
+      "valid": 4,
+      "test": 6,
+      "not_in_member04_previous_dataset": 20
+    }
+  },
+  "limitations": [
+    "Image and annotation SHA256 values not yet recomputed from downloaded physical files; Git blobs and sizes match inventory.",
+    "Scene-group fields are disjoint; actual physical independence has not been independently established.",
+    "No test images or dedicated per-test annotation table were opened; test metadata and historical exposure are already known.",
+    "Dataset prior_split/v3_split refer to data versions, not member04 model training history."
+  ]
+}

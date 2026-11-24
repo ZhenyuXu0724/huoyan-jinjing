@@ -1,81 +1,80 @@
-# 从安装到交接的操作顺序
+# 复现、续跑与交接
 
-全部命令从仓库根目录执行。已有产物可先阅读报告，不必重复训练。Python 使用 3.11，环境安装见 [模块入口](../README.md)。不要把虚拟环境直接搬到新机器。
+所有命令从仓库根目录执行，使用 Python 3.11 和成员4锁定的依赖。`data/`、`weights/`、`outputs/` 为本地忽略目录，Git 克隆不会自动附带；按固定 commit 恢复数据后重新生成。
 
-## 1. 开发数据准备
-
-```powershell
-.\.venv\Scripts\python.exe -m members.member04_hog.one_class.prepare --out data/member04_hog/dataset --phase development
-```
-
-需要联网，只下载固定版本的开发数据，核验后生成清单和来源记录。确认训练 133 PASS，验证 24 PASS + 77 FAIL。此时不接入 test 内容。
-
-## 2. 训练基础组与消融
+## 环境
 
 ```powershell
-$env:OMP_NUM_THREADS='1'
-$env:OPENBLAS_NUM_THREADS='1'
-$env:MKL_NUM_THREADS='1'
-.\.venv\Scripts\python.exe -u -m members.member04_hog.train --train data/member04_hog/dataset/train.csv --valid data/member04_hog/dataset/valid.csv --out outputs/member04_hog/experiments --weights weights/member04_hog/experiments --epochs 200 --stage all
+py -3.11 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r members/member04_hog/requirements.txt
 ```
 
-每组种子 42、43、44，先 A0，再 A1–A5、B1–B2，符合预定条件才运行 C 组。`--stage baseline` 仅跑 A0。短训练只验证程序，不能替代正式 200 轮结果。全部保存最后一轮，标准化器和权重只学习 PASS train。
+不使用旧虚拟环境或旧版本库；重新生成模型需要本机 Python 3.11.18 与 `requirements.txt` 中的版本。
 
-同命令可核验并复用完整运行；不完整的中断目录会报错，应另建运行目录或明确移走该次未完成产物。数据、代码、轮数或配置不匹配时必须新建版本，不能拼接不同实验的记录。
-
-## 3. 汇总与冻结
+## 完整顺序
 
 ```powershell
-.\.venv\Scripts\python.exe -m members.member04_hog.one_class.report --results outputs/member04_hog/experiments --weights weights/member04_hog/experiments --data data/member04_hog/dataset --destination weights/member04_hog/baseline1.joblib
+# 1. 恢复开发数据（283 原图三联 + 13 元数据，862 文件）
+python -m members.member04_hog.final_v4.prepare --source-commit bde8ea7116761bc8ee7fca1d47c336126daa995f
+
+# 2. 开发数据审计并锁定协议（66 + 9 任务单）
+python -m members.member04_hog.final_v4.audit --scope development
+
+# 3. 66 次主实验（11 组 × 3 种子 × 2 方法）
+python -m members.member04_hog.final_v4.train --method ae --protocol members/member04_hog/configs/final_v4/protocol.json
+python -m members.member04_hog.final_v4.train --method supervised --protocol members/member04_hog/configs/final_v4/protocol.json
+
+# 4. 9 次有限改进
+python -m members.member04_hog.final_v4.refine --protocol members/member04_hog/configs/final_v4/protocol.json
+
+# 5. 冻结三个代表与默认模型（必须在任何 test 解码之前）
+python -m members.member04_hog.final_v4.freeze
+
+# 6. 开发稳定性诊断（21 设置）
+python -m members.member04_hog.final_v4.diagnose --splits train val
+
+# 7. 恢复全量数据并执行全量审计（必须已有 freeze）
+python -m members.member04_hog.final_v4.prepare --scope full
+python -m members.member04_hog.final_v4.audit --scope full
+
+# 8. 冻结后一次性 test 评价
+python -m members.member04_hog.final_v4.evaluate --frozen
+
+# 9. 报告、验证与打包
+python -m members.member04_hog.final_v4.report
+python -m members.member04_hog.final_v4.verify
+python -m members.member04_hog.final_v4.package --out ../delivery/Baseline1_HOGMLP_v4_FinalDataset_Rebuild.zip
 ```
 
-查看 `summary.json` 的 `selected_group`、`REPORT.md` 和 `selection.json`。集成固定为该组 seed42；不选最佳种子。测试对照预先固定为 A0 seed42 与所选组 seed42。把以下 `SELECTED_GROUP` 替换成实际组名；若所选就是 A0，只传一个模型。
+ZIP 校验与解压迁移：
 
 ```powershell
-.\.venv\Scripts\python.exe -m members.member04_hog.evaluate freeze --out outputs/member04_hog/assessment/freeze.json --models weights/member04_hog/experiments/A0/seed42/model.joblib weights/member04_hog/experiments/SELECTED_GROUP/seed42/model.joblib
+python -m members.member04_hog.delivery --verify ../delivery/Baseline1_HOGMLP_v4_FinalDataset_Rebuild.zip
+Expand-Archive ../delivery/Baseline1_HOGMLP_v4_FinalDataset_Rebuild.zip ../delivery/v4_relocation
+python -m members.member04_hog.delivery --verify ../delivery/v4_relocation
+python -m unittest discover -s members/member04_hog/tests -v
 ```
 
-冻结保存权重、阈值、配置、开发数据身份与推理评价代码校验值。之后修改受检内容会使校验失败，不能覆盖记录掩盖版本变化。
+## 断点、失败与禁止事项
 
-## 4. 冻结后接入提供的 test
+- 训练命令按 run 目录和权重摘要复用已完成 run；中断的 run 移入 `outputs/member04_hog/final_v4/failed_attempts/` 后按同配置同种子从头重跑，不保留一半优化器状态、不算额外候选。
+- R0 第 200 轮必须精确复现主实验入选组；等价组必须逐位一致。不一致时停止调查，不换候选掩盖。
+- 冻结后只允许修复报告文本，不重算 test、不重选模型。若发现影响模型或选择的程序错误，本轮标记无效并停止。
+- 数据、来源、清单或训练代码摘要变化时协议失效，必须先重新审计；不能把旧训练目录直接当新结果。
+- 不追加容量搜索、L2 网格、学习率搜索、特征截断、前景分割或离线增强训练；75 次之外不增加正式候选。
+- 单图入口 `predict(image_path)` 返回 `status`、`predicted_label`、`prediction_score`、`score_type`；缺权重或版本不匹配返回 `MODEL_UNAVAILABLE`，坏图/缺图返回 `INPUT_ERROR`。批量入口只接受 `image_id` 与 `expected_counts`，五类各 2；缺权重启动失败且不创建输出目录。
 
-```powershell
-.\.venv\Scripts\python.exe -m members.member04_hog.one_class.prepare --out data/member04_hog/dataset --phase test --freeze outputs/member04_hog/assessment/freeze.json
-.\.venv\Scripts\python.exe -m members.member04_hog.evaluate test --freeze outputs/member04_hog/assessment/freeze.json --test data/member04_hog/dataset/test.csv --out outputs/member04_hog/assessment/test
-.\.venv\Scripts\python.exe -m members.member04_hog.one_class.audit --data data/member04_hog/dataset --freeze outputs/member04_hog/assessment/freeze.json --out outputs/member04_hog/assessment/data_audit.json
-.\.venv\Scripts\python.exe -m members.member04_hog.one_class.report --results outputs/member04_hog/experiments --weights weights/member04_hog/experiments --data data/member04_hog/dataset --destination weights/member04_hog/baseline1.joblib --test-results outputs/member04_hog/assessment/test
-```
+## 证据位置
 
-测试输出目录须不存在，避免覆盖访问证据。结果仅汇报，不改阈值或方案。先看实际 PASS/FAIL 支持数，缺少某类时不能声称测得该类能力。公开 test 的限制见 [数据说明](DATA.md)。审计核对全部源文件、图片与框、对象计数及分区重复，不替代人工审核。
+| 内容 | 路径 |
+|---|---|
+| 来源与审计 | `outputs/member04_hog/final_v4/audit/` |
+| 协议与状态 | `configs/final_v4/protocol.json`、`outputs/member04_hog/final_v4/{protocol,state}.json` |
+| 66 次主实验 | `outputs/member04_hog/final_v4/experiments/`、`weights/member04_hog/final_v4/{ae,supervised}/` |
+| 9 次改进 | `outputs/member04_hog/final_v4/refinement/`、`weights/member04_hog/final_v4/refinement/` |
+| 冻结与代表 | `outputs/member04_hog/final_v4/freeze.json`、`configs/active_model.json`、`weights/.../representatives/` |
+| 诊断与评价 | `outputs/member04_hog/final_v4/{diagnosis,evaluation}/` |
+| 报告与验证 | `outputs/member04_hog/final_v4/{reports,verification}/` |
+| 历史归档 | 仓库同级 `Project/delivery/member04_history_before_v4_20261124/` |
 
-## 5. 成员 7 批量推理
-
-复制 [数量请求示例](../examples/expected_counts.json)，把 `image_id` 改成真实文件名。请求只含文件名与要求数量，不能含真值。
-
-```powershell
-.\.venv\Scripts\python.exe -m members.member04_hog.inference --input_dir data/member04_hog/dataset/old/test --counts_file members/member04_hog/examples/expected_counts.json --output_dir outputs/member04_hog/camera_trial
-```
-
-递归搜索图片，重复文件名会拒绝。输出 `images.csv` 和 `run_config.json`；数量不支持为 `UNSUPPORTED_COUNTS`，图片缺失为 `INPUT_ERROR`。离线处理时间不包含摄像头或显示。
-
-成员 6 使用 `compare.py --help` 查看共同评价入口；真值表、数量请求与模型导出格式见 [评价解释](INTERPRETATION.md)。
-
-## 6. 检查与打包
-
-第一阶段修订使用归档名 `../delivery/member04_hog_stage1_20261115.zip`，不覆盖原始归档。诊断命令见 [第一阶段报告](STAGE1.md)。真实权重接口验收可运行：
-
-```powershell
-.\.venv\Scripts\python.exe -m members.member04_hog.verify_stage1 --image "data/member04_hog/dataset/new/补强数据(训练）/IMG_20261114_160608.jpg" --out outputs/member04_hog/assessment/stage1_interface_repeat.json
-```
-
-```powershell
-.\.venv\Scripts\python.exe -m unittest discover -s members/member04_hog/tests -v
-.\.venv\Scripts\python.exe .github/check_scope.py
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
-.\.venv\Scripts\python.exe predict.py --list-models
-.\.venv\Scripts\python.exe -m pip check
-.\.venv\Scripts\python.exe -m members.member04_hog.delivery --out ../delivery/member04_hog_20261115.zip
-.\.venv\Scripts\python.exe -m members.member04_hog.delivery --verify ../delivery/member04_hog_20261115.zip
-```
-
-单元测试只验证程序逻辑，不是模型效果。ZIP 包含代码、默认与冻结对照权重、配置和运行证据，不包含原始图片、全部消融权重及虚拟环境。完整原始数据与全部实验权重仍保留在本地标准目录；完整迁移时请一并复制。ZIP 解压后按其中 `DELIVERY_README.md` 重建环境和校验。
+`state.json` 记录当前阶段、已完成实验、失败原因、test 是否访问和下一条命令；接手时先读它和 `progress.md`。
