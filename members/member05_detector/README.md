@@ -1,5 +1,19 @@
 # 成员 5 · 完整检测基线与对象级评价
 
+## 最终版 v4 · 纯 YOLOv8n
+
+小组选择纯 YOLO 作为展示方案。版本 `member05-final-v4-pure-yolo`，数据采用 [final_training_v4 固定划分](https://github.com/ZhenyuXu0724/huoyan-jinjing/tree/bde8ea7116761bc8ee7fca1d47c336126daa995f/members/member03_data/final_training_v4)。使用 249 张训练原图、34 张验证原图和 30 张测试原图，从官方 YOLOv8n 预训练权重训练 40 轮。置信阈值 0.50，NMS IoU 0.70，输入尺寸 640。
+
+验证集整图判对 34/34，测试集整图判对 29/30。15 张 FAIL 中误放行 1 张，15 张 PASS 全部通过。测试集六类数量全对 17/30，干扰件正确检出 26/41。现场展示仍需验收。
+
+权重包已打包并通过解压推理验证，GitHub Release 附件待发布。包名 `member05-final-v4-pure-yolo.zip`，发布状态见[仓库 Releases](https://github.com/ZhenyuXu0724/huoyan-jinjing/releases)。解压后在 Python 3.11 和 ultralytics 8.3.230 环境运行以下命令。
+
+```sh
+python predict.py --image example.jpg
+```
+
+权重 `best.pt` 的 SHA-256 为 `6669be04c689e210a1593ae825ae5190cfc8cfb986ce964031c2a249a5e87abe`。压缩包 SHA-256 为 `ad674c5e68a8a680863f5a97433d6d69d605adfa16c9847cdf1728c2c0868728`。[冻结推理配置](experiments/final-v4-pure-yolo/inference.json)
+
 ## 职责
 
 YOLOv8n 训练、类别映射、基本尺寸拒绝/必要候选补查、计数、对象框匹配及计数指标。
