@@ -1,3 +1,18 @@
+## 2026-11-24 Stage 2 最终模型冻结、正式 Test 评价与 GitHub 提交准备完成
+
+- **权威数据集切换与完成实验**：采用上游 `upstream/main` 提交 `bde8ea7116761bc8ee7fca1d47c336126daa995f` 之 `members/member03_data/final_training_v4/`（`Train=249, Val=34, Test=30`）；已完成 `V4-R1` vs `V4-R2 Weighted CE [0.75, 1.50]` × `10/20轮` × `Seed 42/43/44` 六组真实训练（`runs/final_training_v4_20261124_192110_PJSHyF`）及 `V4-R4 384×384` 三组最终分辨率对照（`runs/final_training_v4_384_20261124_195746_Rg1Mug`）。
+- **最终科学裁决与模型冻结**：`384` 四项预设升级判据全部未满足，正式锁定并冻结 `V4-R2_RAW_WEIGHTED_CE_SEED42`（`224×224`, `Epoch=7`, `best_within_20.pt`, SHA-256 `c38c270ae8eb5ab1dd02d4903c553a7d11fa47735b46bff55302413826b2e7a4`, `Val Acc=88.24%`, `Val BA=90.00%`, `FN=0, FP=4`），冻结档案见 `stage2_release/freeze_manifest.json`，终止全部训练优化。
+- **正式 Test（30 张原图）实测完成**：由成员 6 本人运行 `scripts/run_stage2_final_test.sh`，产物保存于 `stage2_release/test_evaluation_v4_official/`。实测 `Accuracy=70.00%`（`21/30`）、`Balanced Accuracy=70.00%`、`FAIL Precision=68.75%`、`FAIL Recall=73.33%`、`FAIL F1=70.97%`、`ROC-AUC=0.6667`、`FN=4, FP=5`、混淆矩阵 `[[10, 5], [4, 11]]`、有效覆盖率 `100.00%`。
+- **工程打包与提交准备**：归档九次 v4 实验（`stage2_release/experiments_v4/`），补齐 `ENVIRONMENT.md`、`requirements-lock.txt`、15 步操作手册 `USER_GUIDE_CN.md`、GitHub Release 发布说明 `WEIGHT_RELEASE_NOTES_CN.md` 及成员 7 适配交付；完成干净隔离目录导入与推理核验。
+
+## 2026-11-19 新数据接入（工程，不是真实训练实验）
+
+- HEAD 5babd06，包含上游PR6/12c85c2；保留原工作区，仅改成员6，无commit/push/删除。
+- 完整310图来源审计：原Train133PASS+52FAIL、Val24PASS+77FAIL、Test23PASS+1FAIL。截图分区缺逐图映射，不能认证82训练FAIL与181/129统计。
+- DEV_ONLY入口/模型加载显式开关、分组指标及实时训练进度已实现；FORMAL_READY仍待真实审核/场景/规则确认。
+- 本轮公开Test仅做来源审计，无训练、模型选择或测试预测；真实训练由用户执行。
+- 详见 TRAINING_GUIDE_CN.md 与 evidence/2026-11-19/REVIEW.md；以下历史记录保留原时点含义。
+
 # 个人时间线
 
 成员 6｜ResNet18 基线与第三阶段研究
@@ -38,3 +53,14 @@
 - 新增 TRAINING_GUIDE_CN.md，整理 README/旧学习指南中的真实数据入口；保留历史证据、环境和 Stage 3 工具，无文件删除。
 - 实测成员模块 47 项：46 通过、CUDA 1 跳过；团队 6 项通过。现有 ImageNet 缓存初始化通过，CPU 环境与依赖保留。证据见 evidence/2026-11-14/。
 - 待成员 3/组长：真实批准、逐图人工复核和场景分区、实物规格、可信 FAIL 样本及数据使用范围；待成员 7：统一导出集成。Stage 3 研究决策未推进。
+
+
+## 2026-11-17 新数据和 HOG 衔接工程
+
+- 已核验主仓库main 5dbb81a，当前本地520d17c。新增21训练/77验证接入，开发数据总Train133/Val101，完整性通过；未改变上游分区。
+- 新增development v2多包来源/审核/准备及preflight兼容；Train缺FAIL、真实审核/scene/规格/固定数量仍待交接，正式训练未启动。
+- 审查成员4 HOG PASS-only autoencoder；新增共同Val交接和共享CSV批量导出，实际用其compare消费合成输出。
+- 新增用户手动实验plan/select/freeze与显式冻结后评测，完善Val逐图身份、误放/误拒指标；分步执行书已重写。
+- 旧test已公开，成员4文档包含测试信息，本轮审查文档时已接触；未读取Test图片/标注或执行真实评测，不据此调参。
+- 本轮仅工程合成测试与真实开发数据完整性审查；训练、Val选型/调参、正式测试留用户手动执行。验收见evidence/2026-11-17/REVIEW.md。
+- 不修改其他成员、不提交推送、不删除环境/缓存/历史证据/Stage3工具；最终研究算法仍待baseline3真实错误。

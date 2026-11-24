@@ -41,9 +41,9 @@ def write_new_json(path, value):
         stream.write("\n")
 
 
-def development_path(root, relative, split):
+def development_path(root, relative, split, *, allow_public_test_audit=False):
     """Validate the partition BEFORE opening a path, including through symlinks."""
-    if split not in {"train", "val"}:
+    if split not in ({"train", "val", "test"} if allow_public_test_audit else {"train", "val"}):
         raise ValueError("only train/val content access is allowed")
     if not isinstance(relative, str) or "\\" in relative:
         raise ValueError("expected a POSIX relative path")
@@ -60,8 +60,8 @@ def development_path(root, relative, split):
     return candidate
 
 
-def _gt_path(root, relative, split):
-    path = development_path(Path(root) / "统一GT", relative, split).with_suffix(".json")
+def _gt_path(root, relative, split, *, allow_public_test_audit=False):
+    path = development_path(Path(root) / "统一GT", relative, split, allow_public_test_audit=allow_public_test_audit).with_suffix(".json")
     if not path.resolve().is_relative_to((Path(root).resolve() / "统一GT" / split)):
         raise ValueError("GT path resolves outside its development partition")
     return path
@@ -105,7 +105,7 @@ def classify_reviewed_gt(gt, expected_counts, review):
     return {"status": "OK", "label": "PASS" if passed else "FAIL", "actual_counts": counts}
 
 
-def audit_dataset(root=DEFAULT_ROOT, catalogue_path=DEFAULT_CATALOGUE):
+def audit_dataset(root=DEFAULT_ROOT, catalogue_path=DEFAULT_CATALOGUE, *, include_public_test=False):
     root = Path(root).resolve()
     manifest = root / "split_manifest.csv"
     with manifest.open(encoding="utf-8-sig", newline="") as stream:
@@ -133,21 +133,21 @@ def audit_dataset(root=DEFAULT_ROOT, catalogue_path=DEFAULT_CATALOGUE):
               "split_counts": dict(Counter(row["split"] for row in rows)),
               "reference_expected_counts": expected, "reference_counts_status": catalogue.get("reference_counts_status"),
               "unverified_catalogue_ids": [i for i, item in mapped.items() if item.get("physical_specification_verified") is False],
-              "test_content_read": False, "formal_labels_generated": 0,
+              "test_content_read": include_public_test, "formal_labels_generated": 0,
               "errors": [], "images": [], "per_split": {}}
     raw_hashes, rgb_hashes = defaultdict(list), defaultdict(list)
     for row in rows:
         # Hash strings from the partition manifest are metadata, not test file reads.
         raw_hashes[row["sha256"]].append({"split": row["split"], "path": row["destination"]})
     seen_paths = set()
-    for split in ("train", "val"):
+    for split in (("train", "val", "test") if include_public_test else ("train", "val")):
         totals = Counter()
         vectors = Counter()
         subset = [row for row in rows if row["split"] == split]
         for row in subset:
             relative = row["destination"]
             try:
-                path = development_path(root, relative, split)
+                path = development_path(root, relative, split, allow_public_test_audit=include_public_test)
                 if relative in seen_paths:
                     raise ValueError("duplicate destination in split manifest")
                 seen_paths.add(relative)
@@ -161,7 +161,7 @@ def audit_dataset(root=DEFAULT_ROOT, catalogue_path=DEFAULT_CATALOGUE):
                 raw_path = path.with_suffix(".json").resolve()
                 if not raw_path.is_relative_to(root / split):
                     raise ValueError("annotation symlink escapes development partition")
-                raw, gt_path = read_json(raw_path), _gt_path(root, relative, split)
+                raw, gt_path = read_json(raw_path), _gt_path(root, relative, split, allow_public_test_audit=include_public_test)
                 gt = read_json(gt_path)
                 if gt.get("schema_version") != GT_SCHEMA or gt.get("bbox_convention") != "original_pixel_xyxy_continuous_half_open":
                     raise ValueError("unsupported GT schema/bbox convention")

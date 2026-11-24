@@ -1,24 +1,46 @@
 {
-  "class_to_idx": {"PASS": 0, "FAIL": 1},
+  "class_to_idx": {
+    "PASS": 0,
+    "FAIL": 1
+  },
   "fail_label": "FAIL",
-  "weights": "IMAGENET1K_V1",
-  "data_kind": "REAL",
   "image_size": 224,
   "resize_mode": "letterbox",
-  "mean": [0.485, 0.456, 0.406],
-  "std": [0.229, 0.224, 0.225],
-  "pad_rgb": [0, 0, 0],
-  "supported_counts": [2, 2, 2, 2, 2],
+  "mean": [
+    0.485,
+    0.456,
+    0.406
+  ],
+  "std": [
+    0.229,
+    0.224,
+    0.225
+  ],
+  "pad_rgb": [
+    0,
+    0,
+    0
+  ],
+  "weights": "IMAGENET1K_V1",
+  "data_kind": "REAL",
+  "training_tier": "DEV_ONLY",
+  "supported_counts": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
   "counts_rule_status": "PROVISIONAL_PENDING_PILOT",
-  "train_manifest": "members/member06_research/data/team_parts_v1/train.csv",
-  "val_manifest": "members/member06_research/data/team_parts_v1/val.csv",
-  "data_provenance": "members/member06_research/data/team_parts_v1/provenance.json",
+  "train_manifest": "members/member06_research/data/dev_20261119_v1/train.csv",
+  "val_manifest": "members/member06_research/data/dev_20261119_v1/val.csv",
+  "data_provenance": "members/member06_research/data/dev_20261119_v1/provenance.json",
   "seed": 42,
   "epochs": 10,
   "batch_size": 16,
   "learning_rate": 0.001,
   "weight_decay": 0.0,
   "num_workers": 0,
-  "cpu_threads": 2,
-  "device": "auto"
+  "device": "auto",
+  "cpu_threads": 2
 }

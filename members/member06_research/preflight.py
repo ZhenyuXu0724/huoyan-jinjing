@@ -46,7 +46,21 @@ def _real_provenance(config):
 def check_training_inputs(config):
     """Return datasets and a summary, preserving the requirement for BOTH Train/Val."""
     config.__post_init__()
-    provenance = _real_provenance(config) if config.data_kind == "REAL" else None
+    provenance = None
+    dev_record = None
+    source_record = None
+    if config.data_kind == "REAL":
+        if config.training_tier == "DEV_ONLY":
+            from .development import verify_dev
+            dev_record = verify_dev(config)
+            source_record = dev_record
+        elif config.data_provenance and Path(config.data_provenance).exists() and read_json(config.data_provenance).get("schema_version") == "member06.prepared-dev.v1":
+            raise ValueError("DEV_ONLY data cannot be promoted by changing config tier")
+        elif config.counts_rule_status == "CONFIRMED" and config.data_provenance and read_json(config.data_provenance).get("schema_version") == "member06.prepared-data.v2":
+            from .development import verify
+            source_record = verify(config)
+        else:
+            provenance = _real_provenance(config)
     train = ManifestDataset(config.train_manifest, config, "train")
     val = ManifestDataset(config.val_manifest, config, "val")
     check_disjoint(train, val)
@@ -84,6 +98,15 @@ def check_training_inputs(config):
                 checked.add(relative)
         if checked != set(lineage):
             raise ValueError("unaccounted images in provenance")
+    if source_record:
+        from .corpus_audit import describe
+        source={r["image_path"]:r for r in source_record["audit"]["images"]}
+        for dataset in (train,val):
+            for row in dataset.rows:
+                original=source[str(row["path"])]
+                row.update(describe(original,config.supported_counts))
+                row["source_package"]=original["source_package"]
+                row["capture_condition"]=original.get("capture_condition","UNRECORDED")
     # Real image loading and input normalization without creating a model or updating weights.
     loader = DataLoader(train, batch_size=min(config.batch_size, len(train)), num_workers=0,
                         shuffle=False, generator=torch.Generator().manual_seed(config.seed))
@@ -98,4 +121,10 @@ def check_training_inputs(config):
                "val_labels": dict(Counter(row["label"] for row in val.rows)),
                "batch_shape": list(images.shape), "target_dtype": str(targets.dtype),
                "model_initialized": False, "weights_updated": False, "test_content_read": False}
+    summary["training_tier"] = config.training_tier
+    summary["formal_readiness"] = "NOT_READY" if dev_record else ("FORMAL_READY" if config.data_kind=="REAL" else "NOT_APPLICABLE")
+    if dev_record:
+        summary["status"] = "DEV_ONLY"
+        summary["limitations"] = dev_record["limitations"]
+        summary["scene_independence_verified"] = False
     return train, val, summary

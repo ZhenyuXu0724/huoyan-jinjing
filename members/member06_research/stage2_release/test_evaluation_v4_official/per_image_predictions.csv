@@ -1,0 +1,31 @@
+image_id,source_batch,scene_group,source_scene_group,true_label,predicted_label,status,fail_probability,pass_probability,correct,outcome,primary_scenario,primary_scenario_cn,reason_cn,unseen_distractors_cn,seen_distractors_cn,target_counts,S_unseen_screw,H_unseen_hex_standoff,N_seen_nut,W_seen_washer,B_seen_bearing,non_catalogue_total,prior_v1_split,prior_v2_split,prior_v3_split
+IMG_20261114_160244.jpg,11/14,V3G01,G_1114_FAIL_B01,FAIL,FAIL,OK,0.591705,0.408295,True,TP,seen_distractor_no_unseen,已见干扰件场景（仅含训练/验证已见类 N/W/B，不含未见类 S/H）,目标件配齐，混入目录外零件,无,目录外螺母×1,2|2|2|2|2,0,0,1,0,0,1,val,val,test
+IMG_7206.png,11/11,V3G18,G_1111_标准光正视_VAL,PASS,PASS,OK,0.386808,0.613192,True,TN,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,val,val,train
+IMG_7207.png,11/11,V3G18,G_1111_标准光正视_VAL,PASS,PASS,OK,0.190839,0.809161,True,TN,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,val,val,train
+IMG_7208.png,11/11,V3G18,G_1111_标准光正视_VAL,PASS,PASS,OK,0.16031,0.83969,True,TN,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,val,val,train
+IMG_7209.png,11/11,V3G18,G_1111_标准光正视_VAL,FAIL,PASS,OK,0.111764,0.888236,False,FN,pure_missing,纯缺件场景（无任何目录外干扰件）,仅缺目标件,无,无,2|1|2|2|2,0,0,0,0,0,0,val,val,train
+IMG_7210.png,11/11,V3G18,G_1111_标准光正视_VAL,PASS,PASS,OK,0.201489,0.798511,True,TN,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,val,val,train
+IMG_7211.png,11/11,V3G18,G_1111_标准光正视_VAL,PASS,PASS,OK,0.137418,0.862582,True,TN,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,val,val,train
+IMG_7212.png,11/11,V3G18,G_1111_标准光正视_VAL,PASS,PASS,OK,0.217665,0.782335,True,TN,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,val,val,train
+IMG_7213.png,11/11,V3G18,G_1111_标准光正视_VAL,PASS,PASS,OK,0.176083,0.823916,True,TN,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,val,val,train
+IMG_7214.png,11/11,V3G18,G_1111_标准光正视_VAL,PASS,PASS,OK,0.174159,0.825841,True,TN,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,val,val,train
+MVIMG_20261120_165941.jpg,11/20,V3G27,G_1120_B03,FAIL,FAIL,OK,0.652125,0.347875,True,TP,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×1,目录外垫圈×2,2|2|1|2|0,1,0,0,2,0,3,train,train,train
+MVIMG_20261120_170000.jpg,11/20,V3G27,G_1120_B03,FAIL,FAIL,OK,0.685532,0.314468,True,TP,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×2,目录外垫圈×2,2|2|0|2|0,2,0,0,2,0,4,train,train,train
+MVIMG_20261120_170018.jpg,11/20,V3G27,G_1120_B03,FAIL,PASS,OK,0.454659,0.545341,False,FN,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×1,目录外垫圈×2,2|1|2|2|0,1,0,0,2,0,3,train,train,train
+MVIMG_20261120_170042.jpg,11/20,V3G27,G_1120_B03,FAIL,PASS,OK,0.410281,0.589719,False,FN,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×2,目录外垫圈×2,2|0|2|2|0,2,0,0,2,0,4,train,train,train
+MVIMG_20261120_170120.jpg,11/20,V3G27,G_1120_B03,FAIL,PASS,OK,0.445816,0.554184,False,FN,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×1,目录外垫圈×2,1|2|2|2|0,1,0,0,2,0,3,train,train,train
+MVIMG_20261120_170149.jpg,11/20,V3G27,G_1120_B03,FAIL,FAIL,OK,0.619342,0.380658,True,TP,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×2,目录外垫圈×2,0|2|2|2|0,2,0,0,2,0,4,train,train,train
+MVIMG_20261120_171618.jpg,11/20,V3G32,G_1120_B08,FAIL,FAIL,OK,0.619218,0.380782,True,TP,seen_distractor_no_unseen,已见干扰件场景（仅含训练/验证已见类 N/W/B，不含未见类 S/H）,有目录外零件，且缺目标件,无,目录外垫圈×1,2|2|2|2|1,0,0,0,1,0,1,train,train,test
+MVIMG_20261120_171632.jpg,11/20,V3G32,G_1120_B08,FAIL,FAIL,OK,0.631529,0.368471,True,TP,seen_distractor_no_unseen,已见干扰件场景（仅含训练/验证已见类 N/W/B，不含未见类 S/H）,有目录外零件，且缺目标件,无,目录外垫圈×1,2|2|2|2|1,0,0,0,1,0,1,train,train,test
+MVIMG_20261120_171652.jpg,11/20,V3G32,G_1120_B08,PASS,FAIL,OK,0.691063,0.308937,False,FP,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,train,train,test
+MVIMG_20261120_171704.jpg,11/20,V3G32,G_1120_B08,PASS,FAIL,OK,0.677892,0.322108,False,FP,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,train,train,test
+MVIMG_20261120_172012.jpg,11/20,V3G33,G_1120_B09,FAIL,FAIL,OK,0.850149,0.149851,True,TP,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,黄铜色六角长柱×1,目录外垫圈×2,2|2|2|2|0,0,1,0,2,0,3,test,test,test
+MVIMG_20261120_172032.jpg,11/20,V3G33,G_1120_B09,FAIL,FAIL,OK,0.628093,0.371907,True,TP,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×1,目录外垫圈×2,2|2|2|2|0,1,0,0,2,0,3,test,test,test
+MVIMG_20261120_172048.jpg,11/20,V3G33,G_1120_B09,FAIL,FAIL,OK,0.627504,0.372496,True,TP,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×1,目录外垫圈×2,2|2|2|2|0,1,0,0,2,0,3,test,test,test
+MVIMG_20261120_172104.jpg,11/20,V3G33,G_1120_B09,FAIL,FAIL,OK,0.698191,0.301809,True,TP,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,黄铜色六角长柱×1,目录外垫圈×2,2|2|2|2|0,0,1,0,2,0,3,test,test,test
+MVIMG_20261120_172407.jpg,11/20,V3G34,G_1120_B10,FAIL,FAIL,OK,0.603129,0.396871,True,TP,unseen_mixed_anomaly,含未见干扰件的混合场景（含未见类 S/H，且同时存在缺件或已见干扰件）,有目录外零件，且缺目标件,目录外螺钉×1、黄铜色六角长柱×1,目录外螺母×1、目录外垫圈×2,2|1|1|1|0,1,1,1,2,0,5,test,test,test
+MVIMG_20261123_182054.jpg,11/23,V3G37,U1123_MVIMG_20261123_182054,PASS,PASS,OK,0.188895,0.811105,True,TN,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,test,test,val
+MVIMG_20261123_182155.jpg,11/23,V3G41,U1123_MVIMG_20261123_182155,PASS,FAIL,OK,0.671046,0.328954,False,FP,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,train,train,train
+MVIMG_20261123_182407.jpg,11/23,V3G45,U1123_MVIMG_20261123_182407,PASS,FAIL,OK,0.71666,0.28334,False,FP,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,test,test,test
+MVIMG_20261123_182459.jpg,11/23,V3G49,U1123_MVIMG_20261123_182459,PASS,FAIL,OK,0.808442,0.191558,False,FP,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,test,test,test
+MVIMG_20261123_182619.jpg,11/23,V3G53,U1123_MVIMG_20261123_182619,PASS,PASS,OK,0.393921,0.606079,True,TN,normal_pass,正常场景（五类各2件、无目录外件）,合格,无,无,2|2|2|2|2,0,0,0,0,0,0,test,test,test

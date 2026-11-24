@@ -28,6 +28,7 @@ class Config:
     pad_rgb: list = field(default_factory=lambda: [0, 0, 0])
     weights: str = "IMAGENET1K_V1"
     data_kind: str = "REAL"
+    training_tier: str = "FORMAL_READY"
     supported_counts: list = field(default_factory=lambda: [2, 2, 2, 2, 2])
     counts_rule_status: str = "PROVISIONAL_PENDING_PILOT"
     train_manifest: str = "data/member06/train.csv"
@@ -37,12 +38,15 @@ class Config:
     epochs: int = 10
     batch_size: int = 16
     learning_rate: float = 0.001
+    train_class_weight: str = "none"
     weight_decay: float = 0.0
     num_workers: int = 0
     device: str = "auto"
     cpu_threads: int = 2
 
     def __post_init__(self):
+        if self.train_class_weight not in {"none", "balanced"}:
+            raise ValueError("train_class_weight must be none or balanced")
         if set(self.class_to_idx) != {"PASS", "FAIL"} or any(
             type(x) is not int for x in self.class_to_idx.values()
         ) or set(self.class_to_idx.values()) != {0, 1}:
@@ -66,6 +70,10 @@ class Config:
             raise ValueError("pad_rgb must contain three bytes")
         if self.weights not in {"IMAGENET1K_V1", "RANDOM_SMOKE_ONLY"}:
             raise ValueError("invalid weights")
+        if self.training_tier not in {"DEV_ONLY", "FORMAL_READY"}:
+            raise ValueError("training_tier must be DEV_ONLY or FORMAL_READY")
+        if self.training_tier == "DEV_ONLY" and self.data_kind != "REAL":
+            raise ValueError("DEV_ONLY refers to real development data, not SMOKE_ONLY")
         if self.data_kind not in {"REAL", "SMOKE_ONLY"}:
             raise ValueError("invalid data_kind")
         if self.weights == "RANDOM_SMOKE_ONLY" and self.data_kind != "SMOKE_ONLY":
@@ -82,7 +90,9 @@ class Config:
 
     @property
     def evidence_status(self):
-        return "SMOKE_ONLY" if self.data_kind == "SMOKE_ONLY" else "TRAIN_VAL_ONLY"
+        if self.data_kind == "SMOKE_ONLY":
+            return "SMOKE_ONLY"
+        return "DEV_ONLY" if self.training_tier == "DEV_ONLY" else "TRAIN_VAL_ONLY"
 
     def to_dict(self):
         return asdict(self)

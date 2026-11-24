@@ -1,357 +1,220 @@
-# Baseline 2 中文训练操作指南
+# 成员 6 分步执行书（2026-11-19）
 
-更新日期：2026-11-14。操作目录：`/home/grace/projects/AI/member06`。
+你负责启动真实训练、Val 选型和后续评测。本轮只执行来源审查、无权重更新的 preflight、模型结构检查及隔离合成测试。所有命令从仓库根目录运行；已有输出目录不覆盖，重跑请换版本名。
 
-本轮没有执行真实数据训练或正式 Val 选型。本指南对应当前分支 `member06/resnet-baseline`、HEAD `90c77fa`；它已包含本地获取的 upstream/main `f0126f5`。不需要再次 pull/merge。
+## 1. 当前能做什么
 
-**先看当前结论：数据状态为 D，等待上游。** 真实 Train/Val 图片和对象框已在本地，但缺已批准的固定数量、可信整图标签和场景独立性记录，还有自动标注复核与规格问题。现在可以做环境检查、数据检查和工程测试；不能开始可信的二分类训练。下文提供带条件检查的完整训练入口，条件不满足时会停在训练之前。
+本地分支 `member06/resnet-baseline`，HEAD `5babd06ccc5e4e852a53aac02be806968e0ecef0`，包含上游 PR #6 `12c85c23bc3a57dea51f39915278f31d9133ce74` 及 11.18 新数据。只改成员 6，没有 commit/push。
 
-## 1. 打开正确的终端和环境
+按原始分区与暂定规则“五类合法件各 2，目录外件 0”推导：
 
-在 Ubuntu VS Code 中打开终端，逐行执行：
+| 原始分区 | PASS | FAIL | 总计 |
+|---|---:|---:|---:|
+| Train | 133 | 52 | 185 |
+| Val | 24 | 77 | 101 |
+| Test（仅来源审计） | 23 | 1 | 24 |
+| 合计 | 180 | 130 | 310 |
+
+**当前可以显式选择 DEV_ONLY 开发训练；尚未 FORMAL_READY。** 这些是真实图片、对象标注推导的开发标签；不是最终人工核准的实物规格结论。`FAIL` 指画面不满足约定，例如出现目录外件或合法件数量不符，不是图片文件损坏。损坏图片属于输入错误。
+
+截图的 227/46/37 分区没有逐图清单，181/129 也与标注推导不一致。因此不采用它，不猜“82 张训练 FAIL”的成员，不挪 77 张历史 Val 到 Train。旧 Test 的 IMG_7209.png 标注 M5×10 少 1 个，仍为 FAIL。完整来源报告见 [本轮审计与验收](evidence/2026-11-19/REVIEW.md)。
+
+Train 的 133 PASS 全来自旧批次，52 FAIL 全来自 11.18；Val 的 PASS/FAIL 也按批次分开。高分可能利用背景、相机或拍摄条件，不能证明计数/规格理解。新增 52 张全有 3 个目录外件；其中 9 张同时标注合法件少 1 个，需排查漏标。没有核实的物理场景台账；不同文件/hash 不等于独立摆放。
+
+## 2. 进入目录、激活现有环境
 
 ```bash
 cd /home/grace/projects/AI/member06
 source members/member06_research/.venv/bin/activate
-python -c 'import sys; print(sys.executable); print(sys.version)'
-```
-
-`source` 让当前终端的 python 指向成员 6 虚拟环境，不会重新安装软件。成功时第一行应为 `/home/grace/projects/AI/member06/members/member06_research/.venv/bin/python`，版本为 Python 3.11.17。若不是，先检查当前目录和激活路径，不要在错误环境安装包。
-
-设置本模块使用的可写缓存目录：
-
-```bash
-export TORCH_HOME="$PWD/members/member06_research/.venv/torch"
-export MPLCONFIGDIR="$PWD/members/member06_research/.venv/matplotlib"
-```
-
-TORCH_HOME 指向已下载的 ImageNet 权重，避免尝试在默认缓存中重新下载。MPLCONFIGDIR 用于画图缓存，在当前受限环境中应设置。训练不需要设置 MEMBER06_CHECKPOINT；只有公共推理入口需要它。所有命令都从仓库根目录运行，不能 cd 到模块目录后继续照抄 `python -m members...`。
-
-检查软件和设备：
-
-```bash
+export M6=members/member06_research
+export TORCH_HOME="$PWD/$M6/.venv/torch"
+export MPLCONFIGDIR="$PWD/$M6/.venv/matplotlib"
 python -m pip check
-python -c 'import torch, torchvision; print("torch:",torch.__version__); print("torchvision:",torchvision.__version__); print("CUDA:",torch.cuda.is_available()); print("device:",torch.cuda.get_device_name(0) if torch.cuda.is_available() else "CPU")'
-nvidia-smi
-df -h .
+python -c 'import sys,torch,torchvision; print(sys.version); print(torch.__version__,torchvision.__version__,"CUDA:",torch.cuda.is_available())'
 ```
 
-pip check 应输出 No broken requirements found。本轮实测 torch=2.7.1+cpu、torchvision=0.22.1+cpu，CUDA=False。nvidia-smi 无法连接驱动，实际 GPU 名称与显存无法确认，所以当前使用 CPU/auto。磁盘剩余约 267 GiB，足以容纳现有约 907 MiB 数据和约 45 MB 的模型工件；每个实验仍应使用独立输出目录。
+现有 Python 3.11、torch 2.7.1+cpu、torchvision 0.22.1+cpu 可运行。不要覆盖环境。默认 device=auto；CUDA 不可用时走 CPU。成员目录的 requirements.txt 才是本工程依赖。官方预训练缓存已可用；下载失败会报 PRETRAINED_WEIGHTS_UNAVAILABLE，绝不静默换随机权重。
 
-不要因为存在 nvidia-smi 命令就覆盖 PyTorch。GPU 环境需先由设备负责人确认驱动，再选择匹配 wheel；本轮保留原 .venv，没有安装或升级依赖。
+## 3. 检查新数据、查看各异常数量
 
-权重检查命令：
+本轮已保存完整 310 图审计到 `data/corpus_audit_20261119/`，逐图来源在 images.csv，详细记录在 audit.json。该次审计**经本轮要求读取了公开 Test 图片和标注**，没有模型预测；不能再声称未接触旧 Test。
+
+日常开发只审查 Train/Val：
 
 ```bash
-sha256sum members/member06_research/.venv/torch/hub/checkpoints/resnet18-f37072fd.pth
+python -m members.member06_research.corpus_audit --output "$M6/data/corpus_manual_v1"
+python -m members.member06_research.development audit --output "$M6/data/review_manual_v1"
 ```
 
-预期 SHA256 为 `f37072fd47e89c5e827621c5baffa7500819f7896bbacec160b1a16c560e07ec`。本轮已从该缓存成功初始化官方预训练 ResNet18，仅用零张量检查输出形状 `[1,2]`，没有拿真实图像做模型选型。
+前者输出来源、标签、异常、SHA、重复候选，默认不读取 Test；后者还生成待填写的审核/批准模板。审查退出 0 表示格式完整，不等于正式批准。需要重做全 310 张的**来源审计**时，才显式加 `--include-public-test-audit`；不用于选择模型、参数或阈值。
 
-根目录 requirements.txt 仍是团队框架说明，不会安装完整训练依赖。需要重建环境时，用 Python 3.11 在**新环境目录**创建，不删除当前环境；依赖来源是 `members/member06_research/requirements.txt`，历史完整版本快照是 `evidence/environment.freeze.txt`。安装方法见模块 README，不需要在已通过 pip check 的环境重复安装。
+```bash
+python - <<'PY'
+import json,collections
+r=json.load(open('members/member06_research/data/corpus_audit_20261119/audit.json'))
+print(r['original_split_label_counts'])
+for split in ('train','val'):
+    rows=[x for x in r['images'] if x['original_split']==split]
+    print(split,'异常类型=',dict(collections.Counter(x['anomaly_type'] for x in rows)))
+    print(split,'目录外件数=',dict(collections.Counter(x['non_catalogue_count'] for x in rows)))
+print('分批次/条件支持数:',r['source_condition_support'])
+PY
+```
 
-## 2. 真实数据在哪里、现在有什么
+新 11.18 文件清单 `configs/nov18_sources.json` 是成员6根据已提交源文件生成的 SHA256 索引，不是成员3审核批准。原图/JSON 未修改。所有分组中的数量来自标注，不是分类模型预测数量。
 
-数据根目录已经存在：
+## 4. 准备开发清单与 Preflight
+
+本轮已经生成 `data/dev_20261119_v1/`；默认 `configs/baseline2.json` 已绑定这套真实数据，可直接使用，不需要重复 prepare：
+
+```bash
+export M6_CONFIG="$M6/configs/baseline2.json"
+python -u -m members.member06_research.train --config "$M6_CONFIG" --check-only
+```
+
+预期输出 `status=DEV_ONLY`、Train185（PASS133/FAIL52）、Val101（PASS24/FAIL77）、`formal_readiness=NOT_READY`、`model_initialized=false`、`weights_updated=false`。扫描图片可能需要数分钟（本轮约137秒），此步骤不运行 CNN。
+
+在另一个工作区或需新建版本时执行：
+
+```bash
+python -m members.member06_research.development prepare-dev --output "$M6/data/dev_manual_v1"
+export M6_CONFIG="$M6/data/dev_manual_v1/config.json"
+python -u -m members.member06_research.train --config "$M6_CONFIG" --check-only
+```
+
+输出 train.csv、val.csv、provenance.json、config.json；原图保持在成员3目录。清单示意：
 
 ```text
-members/member03_data/full_dataset_upload/datasets/parts_v1/
-  split_manifest.csv
-  README.txt
-  train/拍摄条件/IMG_*.png + 同名 Labelme.json
-  val/拍摄条件/IMG_*.png + 同名 Labelme.json
-  test/ ...                         本模块不读取其图片或标注内容
-  统一GT/
-    class_mapping.json
-    train/拍摄条件/同名.json
-    val/拍摄条件/同名.json
-    test/ ...                       本模块不读取
+image_path,label,scene_id,split,data_kind
+/实际来源/图片.jpg,FAIL,UNVERIFIED:实际图像SHA256,train,REAL
 ```
 
-拍摄条件为标准光正视、暗光正视图、暗光侧视图、标准光侧视图。**条件目录不是零件类别。** 来源是成员 2 的 iPhone 7 白底采集，由成员 3 整理“完整数据集上传包”。开发使用范围与正式数据版本仍须由团队确认。
+`UNVERIFIED:*` 是显式“场景未知”占位，不是场景隔离证明。可用 `--scene-ledger /实际台账.json` 提交覆盖全部开发图的真实场景：`{"schema_version":"member06.scene-ledger.v1","images":[{"image_path":"绝对路径","scene_id":"真实摆放ID"}]}`。已知同场景跨 Train/Val 将拒绝；不要用文件名伪造场景 ID。标注、来源或清单有冲突也会拒绝开发训练。
 
-| 分区 | 图片 | 每种条件 | 当前状态 |
-|---|---:|---:|---|
-| Train | 112 | 28 | 全部已读图、校验哈希和对象标注；无可信整图标签 |
-| Val | 24 | 6 | 全部已检查格式/完整性；未进行模型推理或选型 |
-| Test | 24 | 6 | 数量来自 split_manifest 元数据；未读取标签、图片内容或结果 |
+## 5. 由你开始一次真实开发训练
 
-Train/Val 图片可以完整解码，图像 SHA256、原始标注来源哈希、框坐标、原始框与统一 GT 一致，未发现完整 RGB 内容重复。这个检查只能排除完全重复，不能证明相似帧或拍摄场景独立。
-
-对象标注统计如下。这是**标注清单中的数量**，不是模型预测或经复核的物理规格保证：
-
-| ID | 公共名称/规格 | Train 对象 | Val 对象 |
-|---|---|---:|---:|
-| 0 | non_catalogue | 0 | 0 |
-| 1 | long_screw / M4×25 | 224 | 48 |
-| 2 | thick_screw / M5×10 | 224 | 48 |
-| 3 | thin_screw / M4×10 | 224 | 48 |
-| 4 | hex_nut / M4 | 224 | 48 |
-| 5 | flat_washer / M5，实物规格待核实 | 224 | 48 |
-
-原始 Labelme 是 shapes/label/points；统一 GT 是 `member03.gt.v1`，包含 objects/class_id/bbox/actual_counts 和原始标注 SHA256。框是原图像素 xyxy 半开区间。它们都不是 ResNet 的整图分类清单。
-
-本轮发现的阻塞：
-
-1. 公共 catalogue 的数量规则仍为 PROPOSED_CONFIRM_AFTER_PILOT；不能自动把 `[2,2,2,2,2]` 作为正式标签规则。
-2. 136 张开发图均缺 scene_id、expected_counts 和整图 PASS/FAIL。原分区按文件名分段，成员 3 明确说明尚不保证场景独立；本模块不重新分区，也不把文件名伪装成已审核 scene_id。
-3. 109 张 Train、24 张 Val 的原始标注仍含 auto_label_review 或 human review required。统一 GT 没有保留这些草稿标记，不能仅看 GT 文件存在就当已人工验收。
-4. 平垫片的实物规格未确认；没有尺度标定，不能从像素判断毫米规格。
-5. 全部开发图的已注数量相同，ID 0 均为零。仅按固定数量规则无法形成 PASS/FAIL 两类监督；需要团队补充或审核真实 FAIL 场景。不能故意换 expected_counts、删对象、复制图片改标签来补负类。
-6. 上游提交含测试数据/真值，与公共封存规则冲突。组长须处理该事实；本轮仍保持测试内容隔离。
-
-因此 A（可信 Train+Val）、B（可信 Train）、C（规则已获批、只差转换）都尚不成立，当前是 D。也没有可报告的真实二分类类别数量；不能把图片数量表换写成 PASS/FAIL 数量。
-
-## 3. 现在可以执行的数据检查
-
-本轮已生成以下本地文件，位于被忽略的 data 目录，不提交 Git：
-
-- `members/member06_research/data/team_audit_20261114.json`：完整 Train/Val 审查。
-- `members/member06_research/data/team_approval_20261114.json`：PENDING 的批准记录模板。
-- `members/member06_research/data/team_reviews_20261114.json`：逐图 PENDING 的复核/scene_id 模板。
-
-查看现有结果：
+确认接受上面的开发限制后，由你执行以下命令。它会在真实 Train 上更新 Linear Head，并在绑定 Val 上选择最佳 Epoch。本轮交付没有执行这条真实训练命令。
 
 ```bash
-python -c 'import json; p="members/member06_research/data/team_audit_20261114.json"; d=json.load(open(p)); print(d["status"], d["readiness"]); print(d["per_split"]); print("errors:", d["errors"]); print("test_content_read:",d["test_content_read"])'
+mkdir -p "$M6/runs"
+set -o pipefail
+python -u -m members.member06_research.train \
+  --config "$M6_CONFIG" --allow-dev-only \
+  --output "$M6/runs/dev_baseline_v1" \
+  2>&1 | tee "$M6/runs/dev_baseline_v1.console.log"
 ```
 
-这条命令只读已经生成的 JSON。当前应看到 NOT_READY、D、errors=[]、test_content_read=False。errors=[] 表示文件/格式检查通过，**不表示标签已经批准**。
+输出目录必须不存在。`--allow-dev-only` 是你的显式选择，缺少时会在模型创建前拒绝。日志先显示证据等级和限制，随后实时显示 epoch、train/val、batch进度和 running_loss，每轮汇总 train_loss/val_loss。CPU 可以较慢；不要把数据审查阶段误认为已开始训练。
 
-需要重新检查新上游交付时：
+模型保持预训练 ResNet18、冻结 backbone/BatchNorm、只训练 Linear(512,2)，CE+Adam；默认 PASS=0、FAIL=1，224 letterbox 保留整图边缘。默认 epochs/lr/batch_size 以生成 config 为准。可在开始前把 config 复制为同目录内的新文件（例如 config_run2.json）并更新 M6_CONFIG，再调整 epochs、learning_rate、weight_decay、batch_size；不要改来源、标签规则或 training_tier 来冒充正式数据。预处理变更属于新实验，记录原因。
+
+每轮 Val loss 最小则保存 best.pt；平局保留较早 epoch。没有自动阈值调参、校准或自动续训。Ctrl+C 后可能已有最佳 checkpoint，但未完成实验不能进入自动候选 select；使用新目录重跑，保留旧记录。
+
+## 6. 找到模型、曲线、混淆矩阵与错误
+
+训练目录包含：
+
+- `best.pt`：模型和完整配置，证据等级 DEV_ONLY。
+- `config.json`、`run_config.json`：环境、源码/数据哈希、预训练来源与开发限制。
+- `history.json/csv`：各轮 Train/Val loss 和指标。
+- `best_metrics.json`、`best_val_predictions.json`：最佳 Val 指标与逐图预测。
+- `best_val_groups.json`：异常类型、目录外件数、来源、拍摄条件的支持数/指标及错误图片。
+- `checkpoint_manifest.json`：完整实验状态与 checkpoint 哈希。
+
+训练后由你运行：
 
 ```bash
-M6_AUDIT_DIR=$(mktemp -d "$PWD/members/member06_research/data/recheck-XXXXXXXX")
-python -m members.member06_research.team_data audit --output "$M6_AUDIT_DIR/audit.json" --approval-template "$M6_AUDIT_DIR/approval.json" --review-template "$M6_AUDIT_DIR/reviews.json"
+python -m members.member06_research.plot_history \
+  --run-dir "$M6/runs/dev_baseline_v1" --output "$M6/runs/dev_baseline_v1/curves.png"
+export M6_VAL=$(python -c 'import json,os; print(json.load(open(os.environ["M6_CONFIG"]))["val_manifest"])')
+python -u -m members.member06_research.validate \
+  --checkpoint "$M6/runs/dev_baseline_v1/best.pt" \
+  --manifest "$M6_VAL" --allow-dev-only \
+  --output "$M6/runs/dev_baseline_v1/validation.json"
 ```
 
-运行文件为 `team_data.py`。输入是当前 split_manifest、Train/Val 图片、原始标注、统一 GT 和类别表；输出三个新 JSON 文件，不写 PASS/FAIL 标签、不加载 CNN、不读测试内容。图片全量解码可能需要几十秒到数分钟。成功时打印 Audit complete，具体错误列在 audit.json 的 errors；错误时退出码为 2。每次 mktemp 创建新目录，保留旧证据，不覆盖上轮审查。
+PNG 同时包含 loss、accuracy、最佳 Val 混淆矩阵。validate 重新加载同一权重和预处理，只允许配置绑定的 Val，输出包含 `groups`。分组矩阵顺序明确为 `[PASS, FAIL]`；原始 epoch 矩阵按 class_to_idx，不能把类别编号当零件类别 ID。
 
-用 `source_manifest_sha256` 区分源数据版本。本轮值为 `a3eac3429ab3f759c952c0fd7ece58019f0c65da4717918987c16dfdad8d1ed6`。文件或标注更新后必须重新审查并取得对应哈希的复核，不要把旧复核直接套到新数据。
+```bash
+python - <<'PY'
+import json
+r=json.load(open('members/member06_research/runs/dev_baseline_v1/best_val_groups.json'))
+print(r['evidence_status'],r['overall'])
+print('按干扰数分组:',r['groups']['non_catalogue_count'])
+for row in r['errors']:
+    print(row['image_path'],row['label'],'->',row['predicted_label'],row['anomaly_type'],row['fail_softmax'])
+PY
+```
 
-## 4. 上游怎样交接可训练的标签
+FAIL 是阳性：False PASS=真实FAIL判PASS（漏报），False FAIL=真实PASS判FAIL（误报）。同时看 precision/recall/F1、支持数、覆盖率；无分母时为 null，不填成假分数。3 个干扰的训练图不是“模型最多识别3个”的数量上限，因为输出始终只有 PASS/FAIL；验证不同数量也不能单凭数量不同就称未知物体泛化。
 
-目前没有可访问的成员 3 Python 转换器。本轮新增的是成员 6 **本地适配格式**，不是擅自宣布新的公共协议。组长/成员 3 可以提供等价批准证据，再通过本地适配器接入。
+Train loss 降而 Val loss 上升通常提示过拟合；两边高要检查标签和任务可分性。反复根据同一 Val 改设置也会对 Val 过拟合。批次混杂、只有某类异常、物理场景未确认等限制，不能被较高 accuracy 消除。
 
-`team_approval_20261114.json` 现在的 status=PENDING、fixed_expected_counts=null，确认字段为 false。真正完成审核后，交接需要包含：
+## 7. 有限调参、正式训练与冻结
 
-| 字段 | 含义 |
+开发阶段可先建立小网格，plan 只写配置：
+
+```bash
+python -m members.member06_research.experiments plan --config "$M6_CONFIG" \
+  --output "$M6/runs/dev_plan_v1" --learning-rates 0.001 0.0001 --weight-decays 0 --epochs 10
+```
+
+生成 candidate_00.json、candidate_01.json 及 plan.json。你分别用 train 指定它们和对应 run_00/run_01，加 `--allow-dev-only`；全部完成后才执行：
+
+```bash
+python -m members.member06_research.experiments select --plan "$M6/runs/dev_plan_v1/plan.json" \
+  --output "$M6/runs/dev_plan_v1/selection.json" --allow-dev-only
+```
+
+选择规则仍是最小 Val CE；源码变更后要新建计划。**DEV_ONLY 禁止正式 freeze、正式评测和导出 VERIFIED 真值。** 不能只改 JSON 等级来升级。
+
+正式路径需要组长/成员3给出固定数量批准、逐图标签/实物规格审核、真实 scene_id 与场景隔离、数据用途与历史接触记录。在第3步生成的 approval.json/reviews.json 中填真实证据，不把模板直接改 APPROVED。然后：
+
+```bash
+python -m members.member06_research.development prepare \
+  --approval "$M6/data/review_manual_v1/approval.json" \
+  --reviews "$M6/data/review_manual_v1/reviews.json" --output "$M6/data/formal_v1"
+python -m members.member06_research.train --config "$M6/data/formal_v1/config.json" --check-only
+```
+
+通过后使用该正式 config 新建实验、重新训练；正式入口不需要开发开关。plan/select 后 `experiments freeze --selection /实际selection.json --output /新freeze.json` 才可生成正式冻结记录。后续 `evaluate_frozen --freeze ... --manifest ... --approval ... --check-only --output ...` 检查交接，再由你显式去掉 check-only 评测；具体参数见 `python -m members.member06_research.evaluate_frozen --help` 和 `configs/evaluation_approval.template.json`。旧 Test 只能 PUBLIC_PARTITION_EVALUATION；独立测试需要新的封存场景证据，不从截图拼新测试集。
+
+## 8. UI、单图与 HOG 衔接
+
+开发模型调用也要显式选择开发模式：
+
+```bash
+python -m members.member06_research.inference --checkpoint "$M6/runs/dev_baseline_v1/best.pt" \
+  --image /替换成实际图片.jpg --expected-counts '[2,2,2,2,2]' --allow-dev-only \
+  --output "$M6/runs/dev_prediction_v1.json"
+```
+
+Python：`create_adapter(checkpoint, allow_dev_only=True)` 后调用 `predict(image, counts)` / `predict_batch(images, counts)`。返回 `status=DEV_ONLY`、predicted_label、class_scores、未经校准 softmax；数量不同返回 UNSUPPORTED_COUNTS。不会输出假框/实际件数。公共 baseline2.py 默认拒绝 DEV_ONLY，成员7若要开发演示应显式通过适配器选择，不自动修改公共协议。
+
+`batch_export --checkpoint ... --input_dir ... --counts_file ... --output_dir ... --allow-dev-only` 输出共享 images.csv/run_config.json；counts 文件格式 `[{"image_id":"真实文件名.jpg","expected_counts":[2,2,2,2,2]}]`，不传标签给模型。
+
+成员4实际 HOG+PASS-only MLP自编码器，使用重建误差；不能与 softmax 相加/平均。其比较器只把 status=OK 计为已判定，DEV_ONLY/SMOKE_ONLY 会保留为未判定，不能改成 OK 来刷覆盖率。开发分组指标由本成员输出并注明证据等级；正式共同评价要获批的同一批 Val、相同数量规则和完整状态。`handoff` 仅给获批数据生成 VERIFIED 真值。本轮只合成验证接口，未跑 HOG 真实模型。
+
+成员5当前公开代码仍是占位；截图 YOLO/YOLO+OpenCV 结果缺原始日志，不能当作本成员成绩或据此决定 Stage3。
+
+## 9. 回归测试和排错
+
+```bash
+python -m unittest discover -s members/member06_research/tests -v
+python -m unittest discover -s tests -v
+```
+
+上述unittest仅是维护者的自动测试，不是日常训练命令。实际训练使用第5节REAL配置；不需要生成任何合成数据。测试夹具和历史SMOKE_ONLY工件保留隔离状态，不能改标记充当真实模型。
+
+| 提示 | 处理 |
 |---|---|
-| status / approved_by / decision_reference | 实际批准状态、负责人、可核对的团队决策出处 |
-| dataset_version / source_manifest_sha256 / catalogue_sha256 | 批准针对的版本和文件，不是任意新图片 |
-| fixed_expected_counts | 实际确认的五类固定数量；不能按默认值猜 |
-| scene_split_verified | 成员 3 核实场景级分区，没有跨 Train/Val 场景 |
-| catalogue_specs_verified | 五类实物规格已确认，包括平垫片 |
-| dataset_usage_approved | 数据来源与使用范围已明确 |
+| DEV_ONLY requires allow-dev-only | 阅读限制后显式选择；正式freeze不接受该开关 |
+| source/hash/manifest changed | 保留旧版，重新审查和prepare新版本，不手改哈希绕过 |
+| known scene crosses / duplicate | 核查真实摆放与来源，交成员3修正，不重命名绕过 |
+| WAITING_UPSTREAM | 正式确认不足；开发模式走独立prepare-dev，不能伪造批准 |
+| PRETRAINED_WEIGHTS_UNAVAILABLE | 检查TORCH_HOME/缓存/下载真实错误，不能用随机模型冒充基线 |
+| output exists / code changed | 新输出版本/新实验计划，保留历史 |
+| CUDA unavailable / OOM | CPU或训练前减batch；不要换Test调参数 |
+| INPUT_ERROR / UNSUPPORTED_COUNTS | 图片输入或规则问题，不算PASS |
 
-逐图 reviews 需要真实 scene_id、APPROVED、judgeable、annotation_complete、physical_specifications_verified、reviewer 和 review_reference，以及匹配当前图片/原始标注/GT 的哈希。**不要仅为跑通程序把 PENDING 改成 APPROVED。** 哈希用于发现变动，不会替代人工真值审核或证明批准人的身份。
-
-每张图必须有复核记录；无法判断、ignore/unjudgeable 或未知规格的图会被排除并记录原因，不猜二分类标签。原始自动草稿只有在针对同一哈希的明确人工复核记录成立后才能用于转换；已有 unknown/ignore 状态不会被静默当成 FAIL。
-
-只有审批和逐图复核完整后，转换才按对象标注执行：五类实际数量全部等于已批准 expected_counts 且 ID 0 为零 → PASS；已可判断的缺失、多出或目录外 → FAIL。未知 ID 不硬映射。模型预测从不参与真值生成。
-
-团队补齐后，由你手动执行下面的准备命令；**当前执行会明确提示 WAITING_UPSTREAM，不创建输出目录**：
-
-```bash
-python -m members.member06_research.team_data prepare --approval members/member06_research/data/team_approval_20261114.json --reviews members/member06_research/data/team_reviews_20261114.json --output members/member06_research/data/team_parts_v1
-```
-
-输入是已实际审核的批准记录/复核记录和团队源数据。成功才生成 train.csv、val.csv、approval.json、reviews.json、provenance.json；保留原始图像路径，不移动图片、不重新分区、不生成测试清单。provenance 记录来源、标签、场景数、排除项和哈希。
-
-转换后的 CSV 为 `image_path,label,scene_id,split,data_kind`；label 为 PASS/FAIL，data_kind=REAL。每份 Train/Val 都必须包含两类。如果 Val 缺失或只剩一类，本工程保持等待，不用 Train Loss 选“最佳”模型。被排除图无监督标签，不能算作 FAIL。当前所有数量相同的数据，即使只补批准，也仍不足以通过两类检查。
-
-源数据新增/纠正后，应先重新 audit，把新批准和复核记录放到上述明确路径；已有 team_parts_v1 时使用新版本目录，并同步修改下一节三个配置路径。本工具不会覆盖旧交接。若导出中断、缺少完整 provenance，训练前检查会拒绝使用它。
-
-## 5. 配置检查：不会开始训练
-
-当前真实配置就是 `members/member06_research/configs/baseline2.json`，已指向成员 6 接入后的本地清单，而不是不存在的根 data 示例目录：
-
-```json
-{
-  "train_manifest": "members/member06_research/data/team_parts_v1/train.csv",
-  "val_manifest": "members/member06_research/data/team_parts_v1/val.csv",
-  "data_provenance": "members/member06_research/data/team_parts_v1/provenance.json"
-}
-```
-
-上述是完整配置中的三个字段，其余字段保留，不要用这三行覆盖整个文件。当前 counts_rule_status=PROVISIONAL_PENDING_PILOT，是真实的待批准状态。
-
-上游真实确认并成功 prepare 后，在同一配置中：把 supported_counts 改为实际获批向量，把 counts_rule_status 改为 CONFIRMED。保持 weights=IMAGENET1K_V1、data_kind=REAL、class_to_idx 的 PASS=0/FAIL=1、224、letterbox、device=auto。审批与配置数量不一致会被拒绝。
-
-```bash
-python -m members.member06_research.train --config members/member06_research/configs/baseline2.json --check-only
-```
-
-该命令运行 `train.py` 的检查分支，内部调用 `preflight.py`：核对审批、清单和源文件哈希、标签、Train/Val 隔离、输入形状，加载一个图像批次。没有 CNN 初始化、optimizer、反向传播或模型选型，不需要 --output。
-
-**当前应退出 2 并显示“REAL training requires confirmed fixed counts”**；这是等待上游的准确结果。条件满足后才输出 READY_TRAIN_VAL_ONLY、Train/Val 两类数量、batch_shape 等，退出 0。READY 只表示数据和工程检查通过，不是课程冻结或科学效果合格。
-
-## 6. 由你本人启动正式训练
-
-本轮没有运行这一节。上游补齐、prepare 成功、配置已按依据确认后，在终端复制以下整块。它会先检查；等待状态下不会创建实验目录或训练：
-
-```bash
-if python -m members.member06_research.train --config members/member06_research/configs/baseline2.json --check-only; then
-  mkdir -p members/member06_research/runs
-  M6_RUN_DIR=$(mktemp -d "$PWD/members/member06_research/runs/real-XXXXXXXX")
-  echo "本次实验目录：$M6_RUN_DIR"
-  python -u -m members.member06_research.train --config members/member06_research/configs/baseline2.json --output "$M6_RUN_DIR" > "$M6_RUN_DIR/../$(basename "$M6_RUN_DIR").console.log" 2>&1
-  M6_TRAIN_EXIT=$?
-  cat "$M6_RUN_DIR/../$(basename "$M6_RUN_DIR").console.log"
-  echo "训练退出码：$M6_TRAIN_EXIT"
-else
-  echo "等待上游：数据/批准/配置尚未通过，未启动训练。"
-fi
-```
-
-运行文件为 train.py；输入是配置和经过复核的真实 Train/Val；输出目录由 mktemp 唯一生成，初始为空。console.log 放在实验目录旁边，避免日志先占用目录导致“output directory must be empty”。本命令以前台方式运行，直到训练结束；这段终端会暂时没有实时打印。
-
-想看进度，在 VS Code 新开另一个终端，把上一终端打印出的目录复制进 VS Code 文件浏览器，打开旁边同名 `.console.log`；也可在原终端开始训练后，在新终端运行：
-
-```bash
-cd /home/grace/projects/AI/member06
-M6_LOG=$(ls -t members/member06_research/runs/real-*.console.log 2>/dev/null | head -n 1)
-if [ -n "$M6_LOG" ]; then tail -f "$M6_LOG"; else echo "尚未开始真实训练，没有真实日志。"; fi
-```
-
-这条命令查看最近创建的真实训练日志，不参与训练或选型。Ctrl+C 只停止这个查看日志的终端，不会停止另一个终端的训练。训练终端通常每个 epoch 输出 TRAIN_VAL_ONLY、epoch、train_loss、val_loss；退出码 0 且 checkpoint_manifest.json 存在表示正常完成。出错时看 console.log；不要根据“文件夹存在”判断训练完成。
-
-实际优化行为仍是 Frozen ResNet18 + Linear：backbone.requires_grad_(False)，train() 后保持 backbone.eval()，仅 Adam(model.head.parameters()) 更新头。保留完整视野的 letterbox 预处理使用 ImageNet mean/std；没有新增增强、阈值调整或 Stage 3 算法。
-
-程序按最小 Val CrossEntropyLoss 选择 best.pt，相同保留较早 epoch。Train Loss 不是替代 Val 的指标。当前实现没有 train-only 模式；Val 未完成时等待，不会把最后训练 epoch 伪装成验证最佳。
-
-## 7. 输出文件与训练后的操作
-
-同一个训练终端中的 M6_RUN_DIR 保留本次路径。若终端已关闭，先从 VS Code 文件浏览器找到该次真实实验路径，再在终端设置 `M6_RUN_DIR`；不要把别的实验或历史 SMOKE_ONLY 目录当成本轮结果。
-
-| 文件 | 学习时如何使用 |
-|---|---|
-| config.json / run_config.json | 记录实际参数、种子、环境、源数据与源码哈希、准备记录哈希 |
-| history.csv / history.json | 看每个 epoch 的 Train/Val loss、accuracy，JSON 另有 FAIL P/R/F1 和混淆矩阵 |
-| best.pt | 完整 backbone+head、配置、optimizer 状态、最佳 epoch/Val 指标 |
-| best_metrics.json | 看实际选中了哪个 epoch；行真值、列预测，按配置编号排列 |
-| best_val_predictions.json | 找具体 Val 错误场景；不用于读取封存测试标签 |
-| checkpoint_manifest.json | best.pt SHA256；用于交接，不是正式冻结签字 |
-
-训练结束且数据未变化时，手动重新验证同一个已批准 Val：
-
-```bash
-if [ -n "${M6_RUN_DIR:-}" ] && [ -f "$M6_RUN_DIR/checkpoint_manifest.json" ]; then
-  python -m members.member06_research.validate --checkpoint "$M6_RUN_DIR/best.pt" --manifest members/member06_research/data/team_parts_v1/val.csv --output "$M6_RUN_DIR/reloaded_val.json"
-else
-  echo "尚无已完成的真实实验，请先完成训练。"
-fi
-```
-
-validate.py 读取 checkpoint 中的模型设置和获批 Val，不更新权重。它重新核对 provenance，只接受该 checkpoint 配置中的 Val 路径。源数据或清单变化时应建立新版本，而非覆盖旧验证输出。当前没有真实 checkpoint，所以本轮未执行此验证。
-
-查看曲线：
-
-```bash
-if [ -n "${M6_RUN_DIR:-}" ] && [ -f "$M6_RUN_DIR/checkpoint_manifest.json" ]; then
-  python -m members.member06_research.plot_history --run-dir "$M6_RUN_DIR" --output "$M6_RUN_DIR/curves.png"
-else
-  echo "尚无已完成的真实实验，当前没有真实训练曲线。"
-fi
-```
-
-plot_history.py 从历史/最佳指标绘制 loss、accuracy 和混淆矩阵，输出独立 PNG，可在 VS Code 打开。已有 curves.png 时换新文件名，不覆盖。历史的 runs/pretrained_final 曲线是合成数据，不代表本轮训练。
-
-加载已完成模型，给一张现有 Train 图片演示推理的命令如下；这只用于学接口，不作为泛化评价：
-
-```bash
-if [ -n "${M6_RUN_DIR:-}" ] && [ -f "$M6_RUN_DIR/checkpoint_manifest.json" ]; then
-  python -m members.member06_research.inference --checkpoint "$M6_RUN_DIR/best.pt" --image members/member03_data/full_dataset_upload/datasets/parts_v1/train/标准光正视/IMG_7174.png --output "$M6_RUN_DIR/example_inference.json"
-else
-  echo "尚无真实 checkpoint，未执行真实推理。"
-fi
-```
-
-inference.py 不读取该图片的标签，默认按 checkpoint 的固定数量要求推理；结果包含 PASS/FAIL 和未经校准的 softmax 分数，不提供实际计数或框。没有加 --allow-smoke，防止误加载示例模型。新图片可换成你有权使用的路径；单张格式是 --image，批量是 --input-dir；参数命名与根 predict.py 不同。根 predict.py 的 CSV 导出仍待成员 7。
-
-## 8. 读懂实验结果
-
-| 名称 | 在本工程中的含义 |
-|---|---|
-| Epoch | 完整遍历一次 Train；每轮结束再跑一次 Val |
-| Batch Size | 每次梯度更新的图像数，当前模板 16；内存不足可在正式训练前减小并记录新配置 |
-| Learning Rate | 头参数每次更新的步长，模板 0.001；只在 Train/Val 上决定，不看封存 Test |
-| Train Loss | 训练样本交叉熵的平均值，越低说明拟合训练标签更好，并不保证泛化 |
-| Validation Loss | 不更新参数时计算的 Val 交叉熵，本工程用它选择最佳 epoch |
-| Accuracy | 全部判对的比例，类别单一时会误导，因此需要可信 PASS/FAIL 两类 |
-| FAIL Precision | 预测 FAIL 中实际 FAIL 的比例 |
-| FAIL Recall | 实际 FAIL 中检出 FAIL 的比例；错误 PASS 是本项目重点错误 |
-| FAIL F1 | Precision/Recall 的调和平均；分母为零时记录 null |
-| Checkpoint | 保存模型状态和配置，可重载推理；本工程不提供中断续训命令 |
-
-默认标签 PASS=0、FAIL=1，因此混淆矩阵左下角是实际 FAIL 却预测 PASS。head 输出 logits，CrossEntropyLoss 直接接收 logits；推理才 softmax/argmax。prediction_score 是被预测类别的未校准分数，不是“模型判断一定正确的概率”。
-
-Train loss 下降而 Val loss 上升、Val 错误增多，可能过拟合。先检查场景泄漏、近重复、标注质量、类别平衡和条件差异，再在 Train/Val 上比较学习率、epoch 等。保存每次独立配置和负结果，不能用测试集反复挑选。
-
-SMOKE_ONLY 表示人工合成工程测试；TRAIN_VAL_ONLY 表示真实 Train/Val 工件仍处于开发阶段；READY 也只是前置检查状态。正式冻结还需要组长确认数量/接口/评价器、数据版本、模型与预处理哈希，以及正式冻结记录。本轮没有新增任何真实模型结果。
-
-## 9. 常见问题
-
-| 现象 | 操作 |
-|---|---|
-| 找不到路径/No module named members | 先 pwd，必须在 /home/grace/projects/AI/member06；配置中的清单路径相对启动目录，清单内图像路径相对清单或为绝对路径 |
-| .venv 激活失败 | 检查 .venv/bin/python 的符号链接与 Python 3.11 是否还存在；不删旧环境，可按 README 在新路径重建 |
-| No module named torch | 确认 sys.executable，使用成员环境；不要在根 requirements.txt 上期待获得 torch |
-| CUDA 不可用 | 当前 CPU wheel 和驱动状态如此；使用 auto/cpu，不反复重装或强制 cuda |
-| 权重下载失败 | 确认 TORCH_HOME 和 SHA256；缺失时按 README 从官方来源下载，失败保留真实异常，不随机降级 |
-| 清单/来源哈希不匹配 | 源数据或审核记录变化，重新审查并取得对应批准；不要修改哈希绕过 |
-| PASS/FAIL 不足/只有一类 | 需要真实复核的 FAIL/PASS 场景，不能生成假标签；当前数据正受此阻塞 |
-| 输出目录已存在/非空 | 保留旧实验，换新目录；日志放在目录外；不用 git clean 或批量删除 |
-| 内存/显存不足 | 停止该次实验，按 Train/Val 规则记录后调整 batch_size，另起新实验；不偷偷改变图像裁剪以省内存 |
-| 训练中断 | Ctrl+C 退出 130。已完成的 best.pt 若已原子写入会保留，best.tmp 不能当正式 checkpoint；没有自动续训。检查日志后使用新目录重跑，不把半轮当完整训练 |
-| UNSUPPORTED_COUNTS | 请求与 checkpoint 支持向量不同；整图模型不能适配任意数量，也不能通过改 checkpoint 获得新能力 |
-| 训练完成却不能叫正式冻结 | best.pt 是 Val 选型产物；需要组长的冻结清单、评价协议和团队验收 |
-| audit 无错误但训练被拒绝 | 文件完整性不等于数量规则、人工标注、场景分区和规格已批准 |
-| reviews 模板仍是 PENDING | 等待成员 3 和组长的真实审核，不是让初学者自己猜 scene_id 和判定 |
-
-## 10. 最简速查：按顺序执行
-
-当前可以完整复制下面的环境/检查块；它只读现有审查和配置检查，最后明确等待，不启动训练：
-
-```bash
-cd /home/grace/projects/AI/member06
-source members/member06_research/.venv/bin/activate
-export TORCH_HOME="$PWD/members/member06_research/.venv/torch"
-export MPLCONFIGDIR="$PWD/members/member06_research/.venv/matplotlib"
-python -c 'import sys,torch,torchvision; print(sys.executable); print(torch.__version__,torchvision.__version__,torch.cuda.is_available())'
-python -m pip check
-python -c 'import json; d=json.load(open("members/member06_research/data/team_audit_20261114.json")); print(d["status"],d["readiness"],d["errors"])'
-if python -m members.member06_research.train --config members/member06_research/configs/baseline2.json --check-only; then
-  echo "数据/配置检查通过，可按本指南第 6 节由你启动训练。"
-else
-  echo "等待上游：当前未开始真实训练。详见本指南第 2、4 节。"
-fi
-```
-
-只有取得真实批准、逐图复核和两类 Train/Val 后，再依次执行：第 4 节 prepare → 第 5 节根据批准修改两个数量字段及实际版本路径 → 第 6 节带检查的训练块 → 第 7 节验证/曲线/推理。所有路径和参数已经给出；当前不会出现“表面训练成功、实际使用假标签”的结果。
-
-审批完成后，先按第 5 节把配置中的 supported_counts 写成获批向量、counts_rule_status 写成 CONFIRMED。使用当前明确的 team_parts_v1 路径时，准备和训练也可以一次按顺序执行：
-
-```bash
-cd /home/grace/projects/AI/member06
-source members/member06_research/.venv/bin/activate
-export TORCH_HOME="$PWD/members/member06_research/.venv/torch"
-export MPLCONFIGDIR="$PWD/members/member06_research/.venv/matplotlib"
-if [ -f members/member06_research/data/team_parts_v1/provenance.json ] || python -m members.member06_research.team_data prepare --approval members/member06_research/data/team_approval_20261114.json --reviews members/member06_research/data/team_reviews_20261114.json --output members/member06_research/data/team_parts_v1; then
-  if python -m members.member06_research.train --config members/member06_research/configs/baseline2.json --check-only; then
-    mkdir -p members/member06_research/runs
-    M6_RUN_DIR=$(mktemp -d "$PWD/members/member06_research/runs/real-XXXXXXXX")
-    echo "本次目录：$M6_RUN_DIR"
-    python -u -m members.member06_research.train --config members/member06_research/configs/baseline2.json --output "$M6_RUN_DIR" > "$M6_RUN_DIR/../$(basename "$M6_RUN_DIR").console.log" 2>&1
-    M6_TRAIN_EXIT=$?
-    cat "$M6_RUN_DIR/../$(basename "$M6_RUN_DIR").console.log"
-    echo "训练退出码：$M6_TRAIN_EXIT"
-  else
-    echo "数据或配置仍待上游，未开始训练。"
-  fi
-else
-  echo "审批/数据准备尚未通过，未开始训练。"
-fi
-```
-
-现阶段这块命令停在 PENDING 审批检查，不会更新模型。这里的存在判断只用于避免覆盖已准备目录，随后 preflight 仍完整核对哈希和批准，绝不会以“文件存在”替代就绪检查。
+Stage3仍是ROI/局部CNN/像素几何通用工具，见 MEMBER6_LEARNING_GUIDE.md。没有尺度标定不输出毫米。本轮没有删除环境、历史、真实数据或其他成员文件。

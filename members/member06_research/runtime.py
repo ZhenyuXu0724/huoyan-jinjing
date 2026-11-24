@@ -70,7 +70,7 @@ def write_json(path, value):
     Path(path).write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
 
 
-def load_checkpoint(path, device="auto", *, allow_smoke=False):
+def load_checkpoint(path, device="auto", *, allow_smoke=False, allow_dev_only=False):
     # Only load trusted project checkpoints. weights_only restricts pickle globals.
     payload = torch.load(path, map_location="cpu", weights_only=True)
     if payload.get("format_version") != 1 or payload.get("architecture") != "frozen_resnet18_linear":
@@ -80,6 +80,8 @@ def load_checkpoint(path, device="auto", *, allow_smoke=False):
         raise ValueError("checkpoint evidence status disagrees with config")
     if config.evidence_status == "SMOKE_ONLY" and not allow_smoke:
         raise ValueError("SMOKE_ONLY checkpoint requires explicit allow_smoke=True / --allow-smoke")
+    if config.training_tier == "DEV_ONLY" and not allow_dev_only:
+        raise ValueError("DEV_ONLY checkpoint requires explicit --allow-dev-only; not a formal model")
     seed_everything(config.seed, config.cpu_threads)
     selected = choose_device(device)
     model = FrozenResNet18(config.weights, initialize=False)

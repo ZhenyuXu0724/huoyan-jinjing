@@ -1,0 +1,13 @@
+dimension,slice_key,slice_title_cn,n_total,support_pass,support_fail,slice_nature,tp,tn,fp,fn,accuracy,fail_recall,pass_specificity
+primary_scenario,normal_pass,正常场景（PASS：五类各2件、无干扰件）,15,15,0,SINGLE_CLASS_SLICE_PASS_ONLY,0,10,5,0,0.6666666666666666,,0.6666666666666666
+primary_scenario,pure_missing,纯缺件场景（FAIL：无目录外件、仅缺目标件）,1,0,1,SINGLE_CLASS_SLICE_FAIL_ONLY,0,0,0,1,0.0,0.0,
+primary_scenario,seen_distractor_no_unseen,已见干扰件场景（FAIL：含已见类 N/W/B，不含未见类 S/H）,3,0,3,SINGLE_CLASS_SLICE_FAIL_ONLY,3,0,0,0,1.0,1.0,
+primary_scenario,unseen_mixed_anomaly,含未见干扰件的混合场景（FAIL：含未见类 S/H，且伴随缺件/已见件）,11,0,11,SINGLE_CLASS_SLICE_FAIL_ONLY,8,0,0,3,0.7272727272727273,0.7272727272727273,
+source_batch,11/11,拍摄批次 11/11,9,8,1,TWO_CLASS_SLICE,0,8,0,1,0.8888888888888888,0.0,1.0
+source_batch,11/14,拍摄批次 11/14,1,0,1,SINGLE_CLASS_SLICE_FAIL_ONLY,1,0,0,0,1.0,1.0,
+source_batch,11/20,拍摄批次 11/20,15,2,13,TWO_CLASS_SLICE,10,0,2,3,0.6666666666666666,0.7692307692307693,0.0
+source_batch,11/23,拍摄批次 11/23,5,5,0,SINGLE_CLASS_SLICE_PASS_ONLY,0,2,3,0,0.4,,0.4
+detailed_anomaly_subtype,has_unseen_S,含未见目录外螺钉 S（混合场景）,9,0,9,SINGLE_CLASS_SLICE_FAIL_ONLY,6,0,0,3,0.6666666666666666,0.6666666666666666,
+detailed_anomaly_subtype,has_unseen_H,含未见黄铜六角长柱 H（混合场景）,3,0,3,SINGLE_CLASS_SLICE_FAIL_ONLY,3,0,0,0,1.0,1.0,
+detailed_anomaly_subtype,seen_distractor_target_complete,已见干扰件且目标件齐全（2|2|2|2|2）,1,0,1,SINGLE_CLASS_SLICE_FAIL_ONLY,1,0,0,0,1.0,1.0,
+detailed_anomaly_subtype,seen_distractor_plus_missing,已见干扰件且同时缺目标件,2,0,2,SINGLE_CLASS_SLICE_FAIL_ONLY,2,0,0,0,1.0,1.0,

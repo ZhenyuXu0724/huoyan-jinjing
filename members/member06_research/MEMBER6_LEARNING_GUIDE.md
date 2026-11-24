@@ -1,8 +1,8 @@
+> 当前操作全部使用真实Train/Val和ImageNet预训练权重。DEV_ONLY是真实数据开发实验；尚未具备正式冻结资格。完整操作顺序见 [TRAINING_GUIDE_CN.md](TRAINING_GUIDE_CN.md)。
+
 # 成员 6 学习指南：从图像到可复现的 PASS/FAIL 基线
 
-2026-11-14 更新：真实数据接入与当前可执行步骤请优先阅读 [TRAINING_GUIDE_CN.md](TRAINING_GUIDE_CN.md)。下文的合成数据例子用于学习；11-05 的验收是历史 SMOKE_ONLY 证据。当前真实数据缺可信双类标签、场景/规格与数量批准，尚未训练。
-
-这份指南对应本目录的实际代码。现有实跑全部是 **SMOKE_ONLY**；工程能训练不等于已经学会检查真实机械零件。先读懂和复现工程，再接成员 3 的正式 Train/Val。
+这份指南对应本目录的实际代码。真实数据已接入，下面的训练命令会更新分类头；训练由你执行，当前尚未产生真实模型成绩。历史合成验收只能说明工程可运行。
 
 ## 1. 先知道每个文件负责什么
 
@@ -13,7 +13,7 @@
 | `data.py:ManifestDataset/check_disjoint` | 标签和 scene_id 从哪里读？如何拒绝跨集重叠？ |
 | `model.py:FrozenResNet18`（第 7 行起） | backbone、512 维特征和 Linear 头如何连接？ |
 | `runtime.py:seed_everything/choose_device/load_checkpoint` | 如何固定随机性、选 CPU/GPU、恢复同一个模型？ |
-| `train.py:run_epoch`、`fit`（第 69 行起） | 梯度在哪更新？最佳模型依据是什么？ |
+| `train.py:run_epoch`、`fit` | 梯度在哪更新？最佳模型依据是什么？ |
 | `validate.py:main` | 如何用保存的配置重新计算 Val，而非重新训练？ |
 | `adapter.py:ClassifierBackend/ClassificationAdapter` | UI 能调用什么？哪些输入必须拒绝？ |
 | `inference.py:ResNetBackend/create_adapter/main` | 模型如何批量生成分数，并经适配器输出？ |
@@ -25,6 +25,10 @@
 | `tests/test_member06.py` | 如何用实际参数更新、重载与 CLI 证明工程工作？ |
 | `evidence/` | 原始测试日志、环境快照、预训练验收与状态，不是正式研究结果 |
 | `requirements.txt`、`README.md`、`progress.md` | 安装、操作、交接和团队时间线 |
+| `corpus_audit.py:audit_corpus/audit_flat` | 核对来源、原分区与可选新分区，310张计数不等于截图分区已确认 |
+| `development.py:prepare_dev/verify_dev` | 带限制的开发标签与来源绑定，和正式prepare隔离 |
+| `group_metrics.py:grouped_validation` | 从标注元数据分组评价，数量不来自CNN预测 |
+| `tests/test_dev_tier.py` | 开发开关、禁止升级、场景冲突和分组指标的合成测试 |
 | `final_model.py` | 团队原有占位入口，未实现；须等待 Stage 3 决策 |
 
 数据流为：CSV → Dataset → DataLoader → 完整视野预处理 → 冻结 ResNet18 → 512 维向量 → Linear(512,2) → logits。训练时 logits 进入 CrossEntropyLoss，推理时 logits 经 softmax 得到分数。
@@ -71,166 +75,120 @@ optimizer.step()                       # optimizer 只包含 model.head.paramete
 
 不要在 CrossEntropyLoss 前自己做 softmax。该损失直接接收 logits，内部采用数值稳定的计算。推理才调用 `logits.softmax(1)`。本模型用 argmax 判定，没有用测试集选择阈值，也没有概率校准。
 
-## 4. 先用示例跑完整流程
+## 4. 使用真实数据训练
 
-本机环境已安装。打开终端，从 Fork 根目录运行：
+从仓库根目录执行。默认配置 `configs/baseline2.json` 已绑定185张真实Train和101张真实Val，`data_kind=REAL`、`weights=IMAGENET1K_V1`、`training_tier=DEV_ONLY`。数据不来自合成生成器。
 
 ```bash
 cd /home/grace/projects/AI/member06
-M6_PY=members/member06_research/.venv/bin/python
-export TORCH_HOME="$PWD/members/member06_research/.venv/torch"
-export MPLCONFIGDIR="$PWD/members/member06_research/.venv/matplotlib"
-# 新名字避免覆盖本轮 acceptance 工件
-$M6_PY -m members.member06_research.smoke_data --output members/member06_research/data/learn01
-$M6_PY -m members.member06_research.train --config members/member06_research/data/learn01/smoke_config.json --output members/member06_research/runs/learn_random01
-$M6_PY -m members.member06_research.train --config members/member06_research/data/learn01/pretrained_smoke_config.json --output members/member06_research/runs/learn_pretrained01
+source members/member06_research/.venv/bin/activate
+export M6=members/member06_research
+export TORCH_HOME="$PWD/$M6/.venv/torch"
+export MPLCONFIGDIR="$PWD/$M6/.venv/matplotlib"
+export M6_CONFIG="$M6/configs/baseline2.json"
+python -u -m members.member06_research.train --config "$M6_CONFIG" --check-only
 ```
 
-第一条训练使用随机权重、64×64；第二条使用真预训练权重、224×224，都是两轮合成数据冒烟。终端每轮输出类似 `SMOKE_ONLY epoch=1 train_loss=... val_loss=...`。实际数值查看 `evidence/pretrained_train.log`；不要把示例的 loss 或准确率写成真实实验结果。
-
-最佳权重在 `runs/learn_pretrained01/best.pt`。验证只做前向计算，不 backward：
+check-only会读取真实数据检查哈希、标签、分区和输入，不创建CNN或更新权重。通过后，由你启动实际训练：
 
 ```bash
-$M6_PY -m members.member06_research.validate --checkpoint members/member06_research/runs/learn_pretrained01/best.pt --manifest members/member06_research/data/learn01/val.csv --allow-smoke --output members/member06_research/runs/learn_pretrained01/recheck.json
+python -u -m members.member06_research.train --config "$M6_CONFIG" \
+  --allow-dev-only --output "$M6/runs/dev_baseline_v1"
 ```
 
-重新部署机器先按 README 安装 Python 3.11 和依赖；不要使用本机默认的 Python 3.14 直接启动。
+这条命令默认训练10轮，每轮实际计算Train梯度、更新Linear Head、评估Val并保存最佳模型。日志应显示`DEV_ONLY epoch=...`，不是SMOKE_ONLY。开发标记表示场景/规格/固定规则尚未正式批准，不代表模拟训练。输出目录不得覆盖已有实验；重跑请换版本名并同步后续路径。
 
-## 5. 单图、批量推理和数量规则
+## 5. 重新验证、单张和批量推理
+
+以下命令依赖你已经训练生成的 `runs/dev_baseline_v1/best.pt`；没有这个文件就先完成训练，不能替换成旧合成checkpoint。
 
 ```bash
-$M6_PY -m members.member06_research.inference --checkpoint members/member06_research/runs/learn_pretrained01/best.pt --image members/member06_research/data/learn01/val/synthetic_0.png --expected-counts '[2,2,2,2,2]' --allow-smoke --output members/member06_research/runs/learn_pretrained01/one.json
-$M6_PY -m members.member06_research.inference --checkpoint members/member06_research/runs/learn_pretrained01/best.pt --input-dir members/member06_research/data/learn01/val --allow-smoke --output members/member06_research/runs/learn_pretrained01/batch.json
+export M6_VAL=$(python -c 'import json,os; print(json.load(open(os.environ["M6_CONFIG"]))["val_manifest"])')
+python -m members.member06_research.validate --checkpoint "$M6/runs/dev_baseline_v1/best.pt" \
+  --manifest "$M6_VAL" --allow-dev-only --output "$M6/runs/dev_baseline_v1/validation.json"
+export M6_IMAGE=$(python -c 'import csv,os; print(next(csv.DictReader(open(os.environ["M6_VAL"]))) ["image_path"])')
+python -m members.member06_research.inference --checkpoint "$M6/runs/dev_baseline_v1/best.pt" \
+  --image "$M6_IMAGE" --expected-counts '[2,2,2,2,2]' --allow-dev-only \
+  --output "$M6/runs/dev_baseline_v1/one.json"
 ```
 
-输出 JSON 的 results 有 image_id、status、predicted_label、prediction_score、score_type、class_scores 等。示例 status 是 SMOKE_ONLY。prediction_score 是被选中类别的未校准 softmax，不是“模型有这么高概率正确”。查看 FAIL 的分数用 class_scores.FAIL，不能把 PASS 的 prediction_score 当作 FAIL 分数。
-
-把 expected-counts 改为 `[1,2,2,2,2]`，应得到：
-
-```json
-{"status":"UNSUPPORTED_COUNTS","predicted_label":null,"prediction_score":null,"score_type":"uncalibrated_softmax","supported_counts":[2,2,2,2,2]}
-```
-
-这是可复现的拒绝规则，不需要模型猜实际数量。整图头不能提供框或五类计数；UI 不应依据它虚构这些信息。[2,2,2,2,2] 仍是 Pilot 前暂定规则。
-
-Python 调用示例：
+M6_IMAGE取真实Val清单第一张，仅用于演示调用，不作为新的独立测试。批量调用可用下面Python接口，传入你要检查的真实图像路径列表：
 
 ```python
+import os
 from members.member06_research.inference import create_adapter
-adapter = create_adapter("members/member06_research/runs/pretrained_final/best.pt", allow_smoke=True)
-print(adapter.predict("members/member06_research/data/acceptance/val/synthetic_0.png", [2]*5))
+adapter = create_adapter("members/member06_research/runs/dev_baseline_v1/best.pt", allow_dev_only=True)
+results = adapter.predict_batch([os.environ["M6_IMAGE"]], [2,2,2,2,2])
+print(results)
 ```
 
-适配器可接收 PIL.Image 或图像路径。正式公共 baseline2.predict 从 MEMBER06_CHECKPOINT 加载，默认拒绝示例 checkpoint。根 predict.py 的 CSV 导出仍待成员 7，当前使用成员 6 独立 CLI。
+返回status=DEV_ONLY、predicted_label、prediction_score和class_scores。softmax未经校准，prediction_score属于预测类别，FAIL分数请读class_scores['FAIL']。不输出实际件数或框。数量规则不同返回UNSUPPORTED_COUNTS；坏图属于INPUT_ERROR，不算零件FAIL。公共baseline2入口默认拒绝开发模型，UI开发演示使用显式适配器。
 
-## 6. 怎样换成真实训练数据
+## 6. 更换真实训练数据
 
-先取得成员 3 冻结的场景级 Train/Val，确认数量规则和整图真值。不要自行把相邻视频帧随机分到两个集合；同一场景增强后的图也应属于同一分区。测试集由成员 3 独立封存，不能传进训练/选型脚本。
+当前Train为133PASS/52FAIL，Val为24PASS/77FAIL。原图来自成员3，不能挪Val/Test补Train。`configs/data_sources.json`记录来源，`configs/nov18_sources.json`记录新批次文件哈希，`development.prepare_dev/verify_dev`生成并验证清单和来源。
 
-2026-11-14 已有真实包：`members/member03_data/full_dataset_upload/datasets/parts_v1/`，Train=112、Val=24，但目前只有对象标注，没有可信整图两类标签和 scene_id。数量仍待确认，标注复核与平垫片规格尚未完成。使用新增 `team_data.py` 审查；取得真实批准和逐图审核后才转换为本地 `data/team_parts_v1/` 下的清单和 provenance。
+新数据由成员3发布后，更新来源描述、重新audit、prepare-dev到新版本目录；使用新生成config，不手工改CSV标签或哈希来绕过检查。正式数据需要真实规则/标签/规格审核和scene_id后执行prepare。默认baseline2.json是当前真实开发配置，不是审批模板。
 
-当前可以运行不更新权重的检查：
+`data.py:Preprocess`的letterbox保留全图，不做中心裁剪；stretch保留全图但改变比例。实际像素几何在原始ROI上测量，不能把224缩放图的像素当成原图尺寸。场景未知时UNVERIFIED标记不等于独立摆放；同场景跨分区必须处理，不能改文件名绕过。
+
+## 7. 曲线、错误与过拟合
 
 ```bash
-$M6_PY -m members.member06_research.train --config members/member06_research/configs/baseline2.json --check-only
+python -m members.member06_research.plot_history --run-dir "$M6/runs/dev_baseline_v1" \
+  --output "$M6/runs/dev_baseline_v1/curves.png"
+python - <<'PYCODE'
+import json
+from pathlib import Path
+run=Path('members/member06_research/runs/dev_baseline_v1')
+groups=json.loads((run/'best_val_groups.json').read_text())
+print(groups['evidence_status'],groups['overall'])
+print(groups['groups']['non_catalogue_count'])
+for row in groups['errors']:
+    print(row['image_path'],row['label'],'->',row['predicted_label'])
+PYCODE
 ```
 
-现阶段会以 WAITING_UPSTREAM 拒绝训练，这是待批准状态。不能通过把合成清单标成 REAL 或把默认数量标成已确认来绕过。完整的审批交接、实际路径和由你手动执行的训练操作见 TRAINING_GUIDE_CN.md。图片按 scene_id 隔离，原划分保持；无法自动判断的近重复和错误场景归属仍需成员 3 管理。
+history.json/csv保存各轮结果，best.pt和best_metrics.json对应最小Val CE，不一定是最后一轮。曲线含loss、accuracy与混淆矩阵。False PASS是真FAIL判PASS；False FAIL是真PASS判FAIL。FAIL precision/recall/F1分母为零时保留null。
 
-默认 letterbox：先保持宽高比缩小/放大，再放到方形画布中填边，桌面两侧不会被中心裁掉。stretch 也保留整图，但会改变长宽比。`data.py:Preprocess` 的 mean/std 与 padding 都可配置。几何长度必须在缩放前原图/ROI 测量，不能用 letterbox 后的像素当原图尺寸。
+Train loss下降而Val loss持续上升提示过拟合，也要检查标签和分布差异。当前PASS/FAIL与采集批次明显混杂，高分不能证明学会数量或规格判断。分组指标中的干扰数量来自标注，不是模型数出来的。反复改设置也会对Val过拟合；不能根据Test选择参数。
 
-## 7. 看曲线、日志和过拟合
+## 8. Stage3工具：使用真实图片和已有标注ROI
 
-```bash
-$M6_PY -m members.member06_research.plot_history --run-dir members/member06_research/runs/learn_pretrained01 --output members/member06_research/runs/learn_pretrained01/curves.png
-```
-
-图片有 Train/Val loss、accuracy 和最佳 Val confusion matrix。也可直接打开 CSV：
-
-```bash
-$M6_PY -c 'import csv; print(list(csv.DictReader(open("members/member06_research/runs/pretrained_final/history.csv"))))'
-```
-
-`history.json` 记录每一轮，`best_metrics.json` 只记录 Val loss 最小的一轮。不要把最后一轮当成最佳模型。矩阵行是真实类别、列是预测类别，顺序按配置编号：默认 `[PASS,FAIL]`，所以左下角是实际 FAIL 却预测 PASS，要特别检查。
-
-如果训练 loss 持续下降、验证 loss 开始上升，且验证错误增多，是过拟合的信号。也要排查分区泄漏、类别不平衡、标注错误和分布差异，不能只看训练准确率。小 Val 上几张图片就能造成很大波动；保存逐图错误、按 scene_id 检查，再依据 Train/Val 比较学习率、正则、epoch 等。实验配置要事先记录，不得用封存测试集反复挑选方案。
-
-`best_val_predictions.json` 保存图像路径、场景、目标和预测编号，可找到具体错误。`fail_precision/recall/f1` 分母为零时是 null，应解释未定义原因；不能为好看而改成 1。
-
-本轮只有合成数据和两轮冒烟，不能用它判断正式模型是否过拟合或哪种研究改进有效。
-
-## 8. Stage 3 工具怎样使用
-
-### ROI：先明确坐标
+这些工具不构成最终研究算法。以下示例从第5节选中的真实图片读取Labelme第一个矩形，使用已有标注坐标，不编造检测框：
 
 ```python
-from members.member06_research.research_tools import crop_roi, geometry_features
-crop = crop_roi("members/member06_research/data/acceptance/geometry_rectangle.png", [0,0,160,100])
-print(crop["status"], crop["raster_xyxy"])   # OK (0, 0, 160, 100)
-geo = geometry_features(crop["roi"], foreground="dark")
-print(geo["features"]["length_px"], geo["features"]["width_px"])  # 100.0 30.0
-```
-
-xyxy 是原图左上角为原点、x 向右、y 向下，半开区间 `[x1,x2) × [y1,y2)`。整个 160×100 图的框为 `[0,0,160,100]`。负坐标、超界、x2≤x1、NaN、bool 都拒绝；不悄悄截断。小数框向外取整，结果附实际 raster_xyxy，方便追溯。
-
-### 几何：阈值、轮廓和像素
-
-`segment_contours` 先转灰度，再用 Otsu 或指定 threshold 二值化；dark 表示暗零件亮背景，light 相反。findContours 提取外轮廓，按 min_area_px2 去除过小区域。单个有效且不触边的轮廓才交给 minAreaRect 计算最小外接矩形。
-
-返回长边 length_px、短边 width_px、面积 px²、周长 px、长宽比和 ROI 内矩形角点。100×30 是本合成矩形的像素轮廓跨度，不是毫米，不是一个真实螺丝规格。空白 NO_CONTOUR、多轮廓 AMBIGUOUS_CONTOURS、触边 BORDER_TOUCHING、异常 INPUT_ERROR 均返回 features=None。
-
-```python
-from PIL import Image
-print(geometry_features(None)["status"])                          # INPUT_ERROR
-print(geometry_features(Image.new("L", (50,50), 255))["status"])   # NO_CONTOUR
-```
-
-阈值结果会受光照、反光、阴影和背景影响；不能把每个轮廓都当作一个零件。无相机标定、透视与误差分析时，不能换算毫米。
-
-### 局部 CNN：512 维描述，不做整图头的局部分类
-
-```python
+import os, json
+from pathlib import Path
+from members.member06_research.research_tools import crop_roi, geometry_features, LocalFeatureExtractor
 from members.member06_research.runtime import load_checkpoint
-from members.member06_research.research_tools import LocalFeatureExtractor
-model, cfg, device, _ = load_checkpoint("members/member06_research/runs/pretrained_final/best.pt", allow_smoke=True)
-extractor = LocalFeatureExtractor(model, cfg, device)
-features = extractor.extract("members/member06_research/data/acceptance/geometry_rectangle.png", [0,0,160,100])
-print(features["status"], features["dimension"])  # SMOKE_ONLY 512
+image = Path(os.environ['M6_IMAGE'])
+annotation = json.loads(image.with_suffix('.json').read_text())
+shape = next(s for s in annotation['shapes'] if s['shape_type'] == 'rectangle')
+(x1,y1),(x2,y2) = shape['points']
+bbox = [min(x1,x2),min(y1,y2),max(x1,x2),max(y1,y2)]
+crop = crop_roi(image,bbox)
+print(crop['status'])
+if crop['status'] == 'OK':
+    print(geometry_features(crop['roi'],foreground='dark'))
+model,cfg,device,_ = load_checkpoint('members/member06_research/runs/dev_baseline_v1/best.pt',allow_dev_only=True)
+features = LocalFeatureExtractor(model,cfg,device).extract(image,bbox)
+print(features['status'],features.get('dimension'))
 ```
 
-这个向量不输出 PASS/FAIL；整图头没经过局部类别训练，不能直接套在 ROI 上做对象分类。CNN 向量也不是毫米尺寸。
+ROI使用原图xyxy坐标。越界或无效框返回明确失败状态；合法裁剪后，局部CNN做配置一致的缩放归一化，输出512维特征。OpenCV阈值、轮廓和最小外接矩形只提供像素尺度；背景、反光和遮挡可能导致几何失效，需检查状态，不能强行填0或称为毫米。局部CNN特征不直接等于局部类别判定。成员2标定和成员5候选接口仍待正式交接，不在此自行决定融合方向。
 
-一条命令同时演示：
+## 9. 常见问题
 
-```bash
-$M6_PY -m members.member06_research.research_demo --image members/member06_research/data/acceptance/geometry_rectangle.png --bbox 0 0 160 100 --checkpoint members/member06_research/runs/pretrained_final/best.pt --allow-smoke --output members/member06_research/runs/learn_pretrained01/roi.json
-```
-
-成员 5 的 CandidateProvider 负责原图候选框，成员 2 的 ScaleCalibration 负责有版本和误差的标定转换；现在只是 Protocol，不能当成已接入。真实 baseline3 冻结并分析错误后，团队再决定唯一改进、固定对照、消融因素和评价口径。
-
-## 9. 常见错误与排查
-
-| 现象 | 检查与处理 |
+| 问题 | 处理 |
 |---|---|
-| No module named torch / cv2 | 使用本目录 .venv/bin/python；按 README 安装，运行 pip check |
-| torchvision 算子不匹配 | torch 与 torchvision wheel 必须匹配；不要混装 CPU/CUDA 来源 |
-| PRETRAINED_WEIGHTS_UNAVAILABLE | 看原始 DNS/网络/证书异常；配置正确 TORCH_HOME 或放入校验过的缓存；随机检查须显式 SMOKE_ONLY |
-| 训练时 BN running_mean 变化 | 不要绕过 FrozenResNet18.train；运行冻结测试，确认 backbone.eval() |
-| expected targets long / label invalid | CSV 标签是 PASS/FAIL；Dataset 映射为 int64，别使用对象类别 ID |
-| train/val overlap | 找出冲突 scene_id/路径/像素，交数据负责人核对；别靠换名字绕过 |
-| output directory must be empty | 新建实验名，保留旧配置/结果；工具不覆盖已有实验 |
-| SMOKE_ONLY checkpoint requires explicit... | 示例加 --allow-smoke；正式接入须使用真实数据模型，不能改 checkpoint 标记 |
-| UNSUPPORTED_COUNTS | 当前模型只支持配置中的固定向量；不是 UI 调一次数量就能适配 |
-| MODEL_NOT_CONFIGURED | 公共入口需要 MEMBER06_CHECKPOINT；可先用独立 inference CLI 验收 |
-| NO_CONTOUR / BORDER_TOUCHING | 检查图像、dark/light、ROI 是否截断；不要把空特征补零后称测量成功 |
-| 根 predict.py 仍报 NOT_IMPLEMENTED | 成员 7 批量导出尚未实现，本轮使用成员 6 CLI |
-| CUDA requested but unavailable | 当前是 CPU wheel；用 cpu/auto；GPU 安装与硬件另行验收 |
+| 看到SMOKE_ONLY或synthetic路径 | 停止该次启动，检查是否选了旧合成config/checkpoint；当前使用configs/baseline2.json |
+| DEV_ONLY | 真实数据开发模式，需显式allow-dev-only，不是模拟训练 |
+| PRETRAINED_WEIGHTS_UNAVAILABLE | 检查缓存/网络真实错误，不切随机权重冒充预训练模型 |
+| best.pt不存在 | 尚未真实训练或未完成首轮验证，先看控制台日志，不取旧示例模型替代 |
+| source/hash/manifest changed | 源文件变化，重新审查准备新数据版本 |
+| output already exists | 使用新实验名，不删除历史来覆盖 |
+| CUDA不可用 | auto使用CPU；当前CPU环境正常可运行 |
+| WAITING_UPSTREAM | 正式审批不足，不伪造记录；开发实验使用独立DEV_ONLY入口 |
 
-自动检查：
-
-```bash
-$M6_PY -m unittest discover -s members/member06_research/tests -v
-$M6_PY -m unittest discover -s tests -v
-```
-
-测试用真实 ResNet 的前向、梯度、状态比较和 checkpoint，不靠固定输出骗过模型验收。适配器协议测试中的小型假后端只验证路由/标签映射，不能充当模型效果证据。具体实测结果与 CUDA 跳过项见 `evidence/ACCEPTANCE.md`。
+`tests/`和`smoke_data.py`仍用于隔离自动测试，不是你日常训练流程的依赖输入。测试中用合成夹具才能验证错误路径，而不污染真实数据；其历史成绩不会转换为真实实验成绩。你只需按第4节启动当前真实配置。

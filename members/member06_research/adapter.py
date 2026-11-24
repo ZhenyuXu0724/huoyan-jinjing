@@ -55,7 +55,7 @@ class ClassificationAdapter:
                 if len(row) != 2 or any(not math.isfinite(x) or not 0 <= x <= 1 for x in row) or abs(sum(row) - 1) > 1e-5:
                     raise RuntimeError("backend returned invalid softmax")
                 pred = max(range(2), key=row.__getitem__)
-                outputs[index] = result("SMOKE_ONLY" if self.backend.evidence_status == "SMOKE_ONLY" else "OK",
+                outputs[index] = result(self.backend.evidence_status if self.backend.evidence_status in {"SMOKE_ONLY", "DEV_ONLY"} else "OK",
                                         predicted_label=labels[pred], prediction_score=row[pred],
                                         class_scores={labels[i]: row[i] for i in range(2)},
                                         evidence_status=self.backend.evidence_status,

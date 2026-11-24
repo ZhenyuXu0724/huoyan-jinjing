@@ -11,10 +11,10 @@ from .runtime import file_sha256, load_checkpoint, write_json
 
 
 class ResNetBackend:
-    def __init__(self, checkpoint, device="auto", allow_smoke=False, batch_size=16):
+    def __init__(self, checkpoint, device="auto", allow_smoke=False, batch_size=16, allow_dev_only=False):
         if type(batch_size) is not int or batch_size < 1:
             raise ValueError("batch_size must be positive")
-        self.model, self.config, self.device, _ = load_checkpoint(checkpoint, device, allow_smoke=allow_smoke)
+        self.model, self.config, self.device, _ = load_checkpoint(checkpoint, device, allow_smoke=allow_smoke, allow_dev_only=allow_dev_only)
         self.class_to_idx = self.config.class_to_idx
         self.evidence_status = self.config.evidence_status
         self.transform = Preprocess(self.config)
@@ -30,8 +30,8 @@ class ResNetBackend:
         return scores
 
 
-def create_adapter(checkpoint, device="auto", allow_smoke=False, batch_size=16):
-    backend = ResNetBackend(checkpoint, device, allow_smoke, batch_size)
+def create_adapter(checkpoint, device="auto", allow_smoke=False, batch_size=16, allow_dev_only=False):
+    backend = ResNetBackend(checkpoint, device, allow_smoke, batch_size, allow_dev_only)
     return ClassificationAdapter(backend, backend.config.supported_counts, backend.config.counts_rule_status)
 
 
@@ -47,6 +47,7 @@ def main():
     parser.add_argument("--device", choices=["auto", "cpu", "cuda"], default="auto")
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--allow-smoke", action="store_true")
+    parser.add_argument("--allow-dev-only", action="store_true")
     parser.add_argument("--output", required=True)
     args = parser.parse_args()
     try:
@@ -59,7 +60,7 @@ def main():
         if not paths:
             raise ValueError("no images found")
         expected = json.loads(args.expected_counts) if args.expected_counts else None
-        adapter = create_adapter(args.checkpoint, args.device, args.allow_smoke, args.batch_size)
+        adapter = create_adapter(args.checkpoint, args.device, args.allow_smoke, args.batch_size, args.allow_dev_only)
         if args.counts_file:
             records = json.loads(Path(args.counts_file).read_text(encoding="utf-8"))
             if not isinstance(records, list) or any(not isinstance(r, dict) or set(r) != {"image_id", "expected_counts"} for r in records):
@@ -74,7 +75,7 @@ def main():
                                  "config": adapter.backend.config.to_dict(),
                                  "results": [{"image_id": p.name, **r} for p, r in zip(paths, results)]})
         print(f"wrote {len(results)} results to {args.output}")
-        return 0 if all(r["status"] in {"OK", "SMOKE_ONLY"} for r in results) else 2
+        return 0 if all(r["status"] in {"OK", "SMOKE_ONLY", "DEV_ONLY"} for r in results) else 2
     except (OSError, ValueError, RuntimeError) as exc:
         parser.exit(2, f"INFERENCE_FAILED: {exc}\n")
 
