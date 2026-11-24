@@ -30,4 +30,4 @@
 
 ## 2026-11-24 · final_training_v4
 
-已选定纯 YOLOv8n，阈值 0.50。测试集整图判对 29/30，误放行 1 张，误拒 0 张。已核对权重校验值并完成发布包单图推理测试，等待发布 Release 附件与组内审核。[模型说明](README.md)
+已选定纯 YOLOv8n，阈值 0.50。测试集整图判对 29/30，误放行 1 张，误拒 0 张。已完成发布包单图推理测试。2026-11-24 已将权重包上传至 [PR #13 附件](https://github.com/ZhenyuXu0724/huoyan-jinjing/pull/13#issuecomment-7131284012)，下载文件与本地原件的 SHA-256 一致。[模型说明](README.md)
