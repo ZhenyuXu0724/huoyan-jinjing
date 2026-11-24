@@ -1,17 +1,18 @@
 import csv
 import json
-import tempfile
 import unittest
 from pathlib import Path
 
 from members.member04_hog.compare import compare
 
+from tmpdirs import workspace_temp
+
 
 class ComparisonTests(unittest.TestCase):
     def setUp(self):
-        temporary = tempfile.TemporaryDirectory()
-        self.addCleanup(temporary.cleanup)
-        self.root = Path(temporary.name)
+        temporary = workspace_temp()
+        self.root = temporary.__enter__()
+        self.addCleanup(lambda: temporary.__exit__(None, None, None))
         self.truth = self.root / "truth.csv"
         self.counts = self.root / "counts.json"
         self.prediction = self.root / "images.csv"

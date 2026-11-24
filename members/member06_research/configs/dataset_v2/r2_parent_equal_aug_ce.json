@@ -1,0 +1,60 @@
+{
+  "schema_version": "member06.v2_experiment.v1",
+  "experiment_id": "R2_PARENT_EQUAL_AUG_CE",
+  "description": "Same 294 Train parents and per-epoch shuffle order as R1; 48 parents with offline augmentations deterministically cycle across [original, A01_lowlight, A02_warm, A03_softnoise] via SHA-256 initial offset; 1 exposure per parent per epoch (149 PASS, 145 FAIL), unweighted CrossEntropyLoss.",
+  "train_mode": "parent_equal_cycle_294",
+  "prepared_dir": "members/member06_research/data/dataset_v2_phase1",
+  "use_feature_cache": true,
+  "cache_dir": "members/member06_research/data/dataset_v2_phase1/feature_cache",
+  "online_augmentation": "none",
+  "lr_scheduler": "none",
+  "threshold_rule": "default_argmax_pass0_fail1_no_threshold_search",
+  "factor_role": "Controlled offline-augmentation replacement test against R1 (identical parent set, parent order, class balance 149/145, loss, head init, and 19 steps/epoch)",
+  "model_config": {
+    "class_to_idx": {
+      "PASS": 0,
+      "FAIL": 1
+    },
+    "fail_label": "FAIL",
+    "image_size": 224,
+    "resize_mode": "letterbox",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "pad_rgb": [
+      0,
+      0,
+      0
+    ],
+    "weights": "IMAGENET1K_V1",
+    "data_kind": "REAL",
+    "training_tier": "DEV_ONLY",
+    "supported_counts": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "counts_rule_status": "PROVISIONAL_PENDING_PILOT",
+    "train_manifest": "members/member06_research/data/dataset_v2_phase1/train_raw_294.csv",
+    "val_manifest": "members/member06_research/data/dataset_v2_phase1/val_raw_74.csv",
+    "data_provenance": "members/member06_research/data/dataset_v2_phase1/provenance.json",
+    "seed": 42,
+    "epochs": 10,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "train_class_weight": "none",
+    "weight_decay": 0.0,
+    "num_workers": 0,
+    "device": "auto",
+    "cpu_threads": 2
+  }
+}

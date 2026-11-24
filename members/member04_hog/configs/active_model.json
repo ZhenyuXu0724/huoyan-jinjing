@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "name": "Baseline1_HOGMLP_v4_FinalDataset_Rebuild",
+  "selected_method": "refinement",
+  "version": "Baseline1_HOGMLP_v4_FinalDataset_Supervised_Capacity_L2_EpochSelection",
+  "model_path": "weights/member04_hog/final_v4/representatives/default.joblib",
+  "model_sha256": "cc24c24ba0e0e77d0e098eb374faf89d6636ecc37b5639fda70f8b245638037e",
+  "threshold": 0.9850894510746002,
+  "epoch": 4,
+  "score_type": "uncalibrated_fail_probability",
+  "expected_counts": {
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 2
+  },
+  "representatives": {
+    "ae": "weights/member04_hog/final_v4/representatives/ae.joblib",
+    "supervised": "weights/member04_hog/final_v4/representatives/supervised.joblib",
+    "refinement": "weights/member04_hog/final_v4/representatives/refinement.joblib"
+  },
+  "frozen_at": "2026-11-24T10:15:07.572145+00:00",
+  "freeze_sha256": "e14a3b0730e2555f9def0b1a04d8b65a07628b40f6d42095faf1d19390e06e5f"
+}

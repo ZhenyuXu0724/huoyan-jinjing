@@ -1,0 +1,10 @@
+{
+  "weights": "best.pt",
+  "weights_sha256": "6669be04c689e210a1593ae825ae5190cfc8cfb986ce964031c2a249a5e87abe",
+  "conf": 0.5,
+  "iou": 0.7,
+  "imgsz": 640,
+  "device": 0,
+  "max_det": 300,
+  "postprocess": {}
+}

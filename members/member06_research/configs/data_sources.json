@@ -1,0 +1,18 @@
+{
+  "schema_version": "member06.sources.v1",
+  "legacy_root": "members/member03_data/full_dataset_upload/datasets/parts_v1",
+  "catalogue": "shared/catalogue.json",
+  "supplements": [
+    {
+      "root": "members/member03_data",
+      "manifest": "members/member03_data/data_20261114_manifest.json",
+      "partitions": {
+        "补强数据(训练）": "train",
+        "验证集_不要训练": "val"
+      }
+    }
+  ],
+  "flat_packages": [
+    "members/member06_research/configs/nov18_sources.json"
+  ]
+}

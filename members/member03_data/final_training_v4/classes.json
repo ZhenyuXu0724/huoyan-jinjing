@@ -1,0 +1,58 @@
+{
+  "classes": [
+    {
+      "id": 0,
+      "name": "non_catalogue",
+      "labelme_label": "non_catalogue",
+      "specification": "不符合任何目标类型或规格"
+    },
+    {
+      "id": 1,
+      "name": "long_screw",
+      "labelme_label": "M4x25",
+      "specification": "M4x25"
+    },
+    {
+      "id": 2,
+      "name": "thick_screw",
+      "labelme_label": "M5x10",
+      "specification": "M5x10"
+    },
+    {
+      "id": 3,
+      "name": "thin_screw",
+      "labelme_label": "M4x10",
+      "specification": "M4x10"
+    },
+    {
+      "id": 4,
+      "name": "hex_nut",
+      "labelme_label": "M4_hex_nut",
+      "specification": "M4"
+    },
+    {
+      "id": 5,
+      "name": "flat_washer",
+      "labelme_label": "flat_washer",
+      "specification": "M5"
+    }
+  ],
+  "expected_target_counts": [
+    2,
+    2,
+    2,
+    2,
+    2
+  ],
+  "distractor_families": {
+    "N": "目录外螺母",
+    "B": "轴承",
+    "S": "目录外螺钉",
+    "W": "目录外垫圈",
+    "H": "黄铜色六角长柱"
+  },
+  "held_out": [
+    "S",
+    "H"
+  ]
+}

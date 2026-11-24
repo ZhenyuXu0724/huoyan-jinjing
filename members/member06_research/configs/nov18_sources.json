@@ -1,0 +1,530 @@
+{
+  "schema_version": "member06.flat-labelme.v1",
+  "source_commit": "474cf354ff489e95ca88c2799a6e11ce316309de",
+  "root": "members/member03_data/数据11.18_补含干扰件训练集",
+  "split": "train",
+  "role_evidence": "members/member03_data/README.md: 2026-11-18 含干扰件的补充训练集",
+  "files": {
+    "IMG_20261118_222627.jpg": {
+      "sha256": "11079a64112e1365b66a8721d41c70ee314200348470ca587fde3c21e43dc6ad",
+      "git_blob": "9deb619410945516f053bd3e3cb0b38567128304",
+      "bytes": 2218122
+    },
+    "IMG_20261118_222627.json": {
+      "sha256": "a8d4efbbce09a1aea8c5a95c867d7cb5010a045640b81007b38b3a201b91e0f3",
+      "git_blob": "98eb089828fa65bd02a01b2cff05be2b75315543",
+      "bytes": 3977
+    },
+    "IMG_20261118_222634.jpg": {
+      "sha256": "081130bc7a4966317a5355f5fe7ebb9addc83ff5aa9c80366b3f14954d3550d6",
+      "git_blob": "4d0b1ce1550333082f67d36400185be2135fa3d8",
+      "bytes": 1940310
+    },
+    "IMG_20261118_222634.json": {
+      "sha256": "f32e26ce278f84e1fb38deb2e9a554150abeea1bd2b9936ea5fd765f3b28b924",
+      "git_blob": "91e72ea9511cebe2c367bd9346a3e69503a8164c",
+      "bytes": 3976
+    },
+    "IMG_20261118_222642.jpg": {
+      "sha256": "4a19ee8dea4b5106df368144dc71f8764b58057ea25659ddd9d409e0cbb2798b",
+      "git_blob": "934257e9515799487d647c7e8738115f1e6c7e03",
+      "bytes": 2393459
+    },
+    "IMG_20261118_222642.json": {
+      "sha256": "2c7cb29fa8c6c888abc1faa11cd93b87e7ce252b09019a52d22563538bc27bf6",
+      "git_blob": "942bb60b954c5a2805081cba9d205cc13ae7fd3b",
+      "bytes": 3978
+    },
+    "IMG_20261118_222656.jpg": {
+      "sha256": "11d1274ebd3a889ca447d6f82e58125ab0db86ca85ff8be100f40fa65cbb6fec",
+      "git_blob": "f4a8ca737a2f21786cb5c06092b372d2283a90e8",
+      "bytes": 1498279
+    },
+    "IMG_20261118_222656.json": {
+      "sha256": "c9380b7b678cc7b505bf682732bfdea6ba9bab8ee2d3e4a36e0fa0d283e35b83",
+      "git_blob": "54543a958e5b5a6b06ee2af5da318b0f634e5201",
+      "bytes": 4013
+    },
+    "IMG_20261118_222707.jpg": {
+      "sha256": "f9c266fbb976999cf97d7f3e215ceca3aed1da97f46163a5776d61e70270c84c",
+      "git_blob": "8adc25d0458907f9e967800033a63a2b8f02fb5a",
+      "bytes": 2471290
+    },
+    "IMG_20261118_222707.json": {
+      "sha256": "af53f34f2afb6772b96b8367938f4b42b615d54e882de9b4bf2efcfabddb8f7e",
+      "git_blob": "eaf2d4b79ed2ea24f8e9c0a1cbba9afa50f13d91",
+      "bytes": 3978
+    },
+    "IMG_20261118_222720.jpg": {
+      "sha256": "8e6cd05238f18aed7ee62eedfd6bdffdac55a0002a2f19bae30147f339b0ae6e",
+      "git_blob": "a72346ccaf7c6015ae9f5b657da15520bee646e7",
+      "bytes": 2200486
+    },
+    "IMG_20261118_222720.json": {
+      "sha256": "ba4f4aa2814114b817cb721e9b74796e17570933d0837a72d0cf5056fd7bd6f3",
+      "git_blob": "3cedfbe2e9e92cb8bb6b2f16fe5d912aa823d671",
+      "bytes": 3978
+    },
+    "IMG_20261118_222734.jpg": {
+      "sha256": "9915135c3911dd8c6e9c21601e5b1c6feccff7bbc304910f3116b4394dccb0c7",
+      "git_blob": "4377d3deefc5f45e5747d20af0640ecebeb65b5b",
+      "bytes": 2380095
+    },
+    "IMG_20261118_222734.json": {
+      "sha256": "d805f8af483b1ddd78bd8375ff754503472d5fd4490ccdd95e185aa7ed47a081",
+      "git_blob": "8883d4fdb5ea09ce3486fa223a0c27686071dff3",
+      "bytes": 3977
+    },
+    "IMG_20261118_222749.jpg": {
+      "sha256": "a8c484828c9d15e8c4c90ff808f534c789164484d2bb137ef66888e52457c322",
+      "git_blob": "5d7966836abfb2a99d75cfe9a54dfe251c36b3f8",
+      "bytes": 2407186
+    },
+    "IMG_20261118_222749.json": {
+      "sha256": "5abdaff215ffb3d922517d459cef2edb29d2c844a25a8762153f1b2f80248a09",
+      "git_blob": "49114106568928950934f1a204352330affa64ec",
+      "bytes": 3977
+    },
+    "IMG_20261118_222803.jpg": {
+      "sha256": "b40d3a093a77c361c787f9a57ec6e8db0aaefcfb0aa06cd9f763cc58520f21ea",
+      "git_blob": "13707954384795a1674093561009935bd5455e5c",
+      "bytes": 2238218
+    },
+    "IMG_20261118_222803.json": {
+      "sha256": "9af4d2aa393a341d7baad900e3c1f91869b713bd67a78e5ca4fd9a7a14e3f5f8",
+      "git_blob": "d5217db2259da8f94a4e0664d70906e0ebdf8f9c",
+      "bytes": 3976
+    },
+    "IMG_20261118_222824.jpg": {
+      "sha256": "91d9e368ec904153618814fd3f15bfa886808f575bbd0dd7ea6d0729dddcb9f9",
+      "git_blob": "2c8747a9e39f5c6e2791ce501df29d885b9bb410",
+      "bytes": 2679543
+    },
+    "IMG_20261118_222824.json": {
+      "sha256": "3b87220719b46d0cb2025fcf595aaba6e1c9503831f4edb47bcbcc608e288a9e",
+      "git_blob": "19b0a8f33a9882b1a5a1c3be2faeebac93fe36d4",
+      "bytes": 4288
+    },
+    "IMG_20261118_222836.jpg": {
+      "sha256": "bf768d3fda7646421cf709dfdb882ea85e575ea1fc86e7ed37a5fd77954e7379",
+      "git_blob": "cacad00a810a488318a558afeadb0058351dcc81",
+      "bytes": 2500748
+    },
+    "IMG_20261118_222836.json": {
+      "sha256": "b7ccf43123c488a8ea1b53a05bf1f1f1c5d4dc55a5fd0cba429d144ee7491fb5",
+      "git_blob": "4f7c620c4e86001b80a227c558048f1f710678ac",
+      "bytes": 4290
+    },
+    "IMG_20261118_222857.jpg": {
+      "sha256": "0bef64c3611bd6f29ece10e066af3c892618b4ae0ecdd20fb9b884e9c65b6046",
+      "git_blob": "7ebbbad1ac82c9bd0953bd492f690d910ec07680",
+      "bytes": 2578284
+    },
+    "IMG_20261118_222857.json": {
+      "sha256": "f38ac04cba0bf09b4a423284a5f92411408b6161a4b9436a4bd635171d91d34c",
+      "git_blob": "47f563c9d324a0770d732ed9deda9d65c3405f80",
+      "bytes": 4289
+    },
+    "IMG_20261118_222926.jpg": {
+      "sha256": "74675ddd2d9d0d954a46d202aeefd879ed71e4256bc7ee268b11292dc5f9333f",
+      "git_blob": "81ff71a8cf6ddfdd35f77084cebe987bcfe486a1",
+      "bytes": 2906979
+    },
+    "IMG_20261118_222926.json": {
+      "sha256": "6c5e281e4758533f8a71b54632bb8650b4eba3ea15f4686d60e3718c8c1258a3",
+      "git_blob": "15b70f3831359050e1fe822de054b3333b1bf707",
+      "bytes": 4285
+    },
+    "IMG_20261118_222947.jpg": {
+      "sha256": "698dd20c8d588edc7a679bce4b6accd8142949124294958a69d485911eb38790",
+      "git_blob": "c4a9a3eb07db0fe92ab4d39a17cc2763dc3f0c65",
+      "bytes": 2234048
+    },
+    "IMG_20261118_222947.json": {
+      "sha256": "8e79fbc8d226583e6eb553c5cf19eb393be7dd0c753e801e25724d2c50da924a",
+      "git_blob": "eb25928d97fe724302f2f0390f81987fd4fe2bde",
+      "bytes": 4290
+    },
+    "IMG_20261118_223001.jpg": {
+      "sha256": "debe73c414a1723233df7fda1767872df83e342d87d85ab006b7969f0ddd4ad5",
+      "git_blob": "c2e7a85153fb73b08d7c0318ae8b580d17f29e1a",
+      "bytes": 1449642
+    },
+    "IMG_20261118_223001.json": {
+      "sha256": "b2d4f7677316c9791d16df44e7ad9570fc863cec7d85b2fe3e4ce28c08e7de2e",
+      "git_blob": "051797db814aa91ba390a929bc2d2b302f479ec1",
+      "bytes": 4329
+    },
+    "IMG_20261118_223015.jpg": {
+      "sha256": "c02981d1ecea36f58ea57523c2bfbb2e2ba0c8ae3836849ca705afc6f65b747a",
+      "git_blob": "4746afae0a8184dc7264e54112bdaabc17b61119",
+      "bytes": 1939624
+    },
+    "IMG_20261118_223015.json": {
+      "sha256": "d918af01041b9510d9fa323c0c16d381087a31b021d3b86cecac1bf79ba1bef5",
+      "git_blob": "dd01e67270f49e11b458f020578d83d2795a6d3c",
+      "bytes": 4286
+    },
+    "IMG_20261118_223032.jpg": {
+      "sha256": "45b9f35c3b78efb1b8de793d16f5d0c478792f4a6a00bf52c49146b2a357ddb1",
+      "git_blob": "770fcc28acd9e7462fee407a33f7c31767cb8cd5",
+      "bytes": 2551097
+    },
+    "IMG_20261118_223032.json": {
+      "sha256": "749e2ea26cea09ea906a67f6c9137ebe5663e03e56c41ede337bd4046f5fb1db",
+      "git_blob": "7edce8b379cb695e7f171f713711119c47061022",
+      "bytes": 4288
+    },
+    "IMG_20261118_223055.jpg": {
+      "sha256": "98e294b59c4bc2c4e3fbe14e9105cfa966c650618665557ae86c0b5c4ff3167c",
+      "git_blob": "42ea422234e9001f58b0fe3396633de9db77a9fa",
+      "bytes": 1446437
+    },
+    "IMG_20261118_223055.json": {
+      "sha256": "a7f7269483a34bb4590f3b4ac59ac03869cd08e1e47ccd1beae0e3ef4293895c",
+      "git_blob": "77ee9cc9708a04848bf4a1b04a00e309dbf48eb2",
+      "bytes": 4334
+    },
+    "IMG_20261118_223115.jpg": {
+      "sha256": "2a99a56a56b07546daee99a410266a6b8a1f6341c4eaafb739c64fc532e28272",
+      "git_blob": "202181a599813148f3da58c1f6a1c1cb9b73ebf6",
+      "bytes": 1350935
+    },
+    "IMG_20261118_223115.json": {
+      "sha256": "5c0acc6dae0aefe8f751d61709cb4b651909664aaa5ff217f87d99b5ad6d7272",
+      "git_blob": "790234d544d5b74bf905514518dfe0512c5adbab",
+      "bytes": 4330
+    },
+    "IMG_20261118_223128.jpg": {
+      "sha256": "154812414e2a2e7429cbf85f0edfebaed932545cdbd7b51ee5a2c5ee8a071cf7",
+      "git_blob": "329e0c157de84f55a71bf5364bffcc8b92b0dab1",
+      "bytes": 1398715
+    },
+    "IMG_20261118_223128.json": {
+      "sha256": "407aad82ebd8ecff129ae41a29e8d9c9f2692449d7c31cc03bc315a86a6f26fc",
+      "git_blob": "f14f3366064f5cd7bca50f33ce05e9958929632a",
+      "bytes": 4329
+    },
+    "IMG_20261118_223146.jpg": {
+      "sha256": "def7f2b9d08c809a99c06d8976e336d146123763dce1fd1857ea150329415c79",
+      "git_blob": "aedade02a6d1bd39dec976d18062e986b06dfbf6",
+      "bytes": 1391405
+    },
+    "IMG_20261118_223146.json": {
+      "sha256": "16e3b8076d702ce14ed5f0f3ac181d297bf3e1300b6f9d87d4d2a5c2c2c5e5d7",
+      "git_blob": "1789d622cfaf1264ab10a0f32ec1f4e45188378b",
+      "bytes": 4329
+    },
+    "IMG_20261118_223201.jpg": {
+      "sha256": "dc3bfaf74f2081d03ea001865ad96848f6cb315da297853625144694146059c4",
+      "git_blob": "20b37222b017dd0f1647c5163854d70269505d06",
+      "bytes": 1348835
+    },
+    "IMG_20261118_223201.json": {
+      "sha256": "edbac1466d0daa0356ff4d04d94b6ea16804f9a63b932381fcc8f13dc8b4f6c2",
+      "git_blob": "b2923d4012ac5cd5c8112b5113e550e4d8ac9ab3",
+      "bytes": 4332
+    },
+    "IMG_20261118_223216.jpg": {
+      "sha256": "1a99ed9644837211a555b61df50dee61ba325ca15a178beecfcc8a5be0ba2172",
+      "git_blob": "115893e8986a2f04896c087eb277cbf2f0f67f2e",
+      "bytes": 1387993
+    },
+    "IMG_20261118_223216.json": {
+      "sha256": "3de490d72a16bce2c4cf3092bb69f74c739f86f66269b815613a2517fdaf6f36",
+      "git_blob": "06c59b7e65c16a8c83c405470b463cab8ba4cb54",
+      "bytes": 4326
+    },
+    "IMG_20261118_223237.jpg": {
+      "sha256": "41f360e2607dcb52bbbf4683bd9a333473921251cc86c25b42f68b9b54a140df",
+      "git_blob": "6a8ef7497dec09cc1d36746809495f83c8001b05",
+      "bytes": 1404785
+    },
+    "IMG_20261118_223237.json": {
+      "sha256": "ed15299244fc9446e8cd0a5200419248eadb43be6317516aafe1212d71c212a3",
+      "git_blob": "79a1fe1c3bbc436623fa1ab54d400e89e7ec1841",
+      "bytes": 4328
+    },
+    "IMG_20261118_223305.jpg": {
+      "sha256": "30906a717245dd87ecba5e4ff9919579a87e0ef07ecafe2624468303a28b8203",
+      "git_blob": "c161fd69faf3ac8eb6901f11d5dadd368a75d1d6",
+      "bytes": 1556026
+    },
+    "IMG_20261118_223305.json": {
+      "sha256": "119ce92c16cafeb258264257311671369b8c45912953bbafccc09e94421c9095",
+      "git_blob": "0b3f025fe0d13354dd4a332059993a05f65adae2",
+      "bytes": 4327
+    },
+    "IMG_20261118_223319.jpg": {
+      "sha256": "52daabaca0c473802c54f51e890c50bf5390bc0f91f6729effae507f352f09f3",
+      "git_blob": "38f72596256b6f5cdcd5e68610362a92a1828a8a",
+      "bytes": 1484658
+    },
+    "IMG_20261118_223319.json": {
+      "sha256": "acbf7d5383e78994f95f5584ddb8989a19603a11a5d6a80ac1108f600d4d728b",
+      "git_blob": "ad0e8c922fbf241535f4b63ce0c56df558f6a464",
+      "bytes": 4333
+    },
+    "IMG_20261118_223332.jpg": {
+      "sha256": "433025ab4fe46cdcf54e7664e184284c77b1e87ddf22564795a524f4f2793137",
+      "git_blob": "8098bb68f4f3192a8805a409b84dac9e3c729891",
+      "bytes": 1440961
+    },
+    "IMG_20261118_223332.json": {
+      "sha256": "428d7c4dd34c99fa80da1c4acc7a8ce42d16395fe91c0ff302057c6b177b9c60",
+      "git_blob": "2966f17004ed696ea970707d9304c8a050a9f39d",
+      "bytes": 4336
+    },
+    "IMG_20261118_223345.jpg": {
+      "sha256": "addae0faf7a9d71636ca977c08e29203d0f1bee73e63c73926fd676b783c2be4",
+      "git_blob": "54512c7fb2b2e69ac57b4fbfbb31411499ce88e6",
+      "bytes": 1458589
+    },
+    "IMG_20261118_223345.json": {
+      "sha256": "f682a9ddcbbdd170507165a86c087eab9cda3b9ff3b56e44226bd32656c2acbd",
+      "git_blob": "098dfbaf011618ba11941a2b6f0576c39b2285bb",
+      "bytes": 4334
+    },
+    "IMG_20261118_223404.jpg": {
+      "sha256": "8a46e0b254da99731d18fa76c1c75f249a224bf00739b18c3af5795be9280a63",
+      "git_blob": "99bd6b30423623f59b801520c7dbee95b15b399b",
+      "bytes": 1481020
+    },
+    "IMG_20261118_223404.json": {
+      "sha256": "80519b39f119bc867e510fbdb97ed18bff77aa3dc5964dd6ad5b6fe2aa3802da",
+      "git_blob": "d47cec5f68e0ce44e66525401f1c662522b5a697",
+      "bytes": 4331
+    },
+    "IMG_20261118_223424.jpg": {
+      "sha256": "19c9df69eb351180d17b3f60e2e09bcefdfb6def5c6f0f3f7ece83fd267ab5ec",
+      "git_blob": "fe0bb684e49766e6d09c44ec2d3e5c7efd6ea62a",
+      "bytes": 1484667
+    },
+    "IMG_20261118_223424.json": {
+      "sha256": "fed691ac82bb696d6298084cffc9eb2a47c0a418a61d6a978818b8e389ed9a38",
+      "git_blob": "78b56a16a36f1909469bccea2ed9669dea91a644",
+      "bytes": 4331
+    },
+    "IMG_20261118_223445.jpg": {
+      "sha256": "25cb54db19d9fb68f2c7965d22a9ac46f76e160fd1657218a4cf80de895a75ef",
+      "git_blob": "3e34bed94d9a08ed06f5b2218d760a9c244f24bd",
+      "bytes": 1441047
+    },
+    "IMG_20261118_223445.json": {
+      "sha256": "b07210d6b25bf2214eecf85b97da00f1d955b213b91aeb044e0ac35561ce5be4",
+      "git_blob": "d3caa89e82cabe58be71d578025e097cd48bb9f7",
+      "bytes": 4334
+    },
+    "IMG_20261118_223502.jpg": {
+      "sha256": "1cddf7edf48d35f6763ed1c5c031e52b0a83d4d76b05a7f58fa73faaa926d21e",
+      "git_blob": "4b6efd22df5cc2994d96391da126a18576a8d4e4",
+      "bytes": 1399558
+    },
+    "IMG_20261118_223502.json": {
+      "sha256": "8fced427609aa155a5f635fa52b005960c961ba9c3fa8cf0a357e6d7ad0e580b",
+      "git_blob": "bfc3f3944375e3ec3ceda846c9bfd5446778068a",
+      "bytes": 4331
+    },
+    "IMG_20261118_223518.jpg": {
+      "sha256": "59d3098f1f51da77cfbc3aabaacf54ddc7ea812fd4130078808055d683979b96",
+      "git_blob": "f9adc71641171953a7515417b7d75a7e2894b29b",
+      "bytes": 1509043
+    },
+    "IMG_20261118_223518.json": {
+      "sha256": "c02b1f9db102afcdd89b1e6c66b17c26a1fc4955acdee935591d5a94d6d4f6d4",
+      "git_blob": "b0ea784b934415ea4909b2e4d2822340ecbcc8d2",
+      "bytes": 4329
+    },
+    "IMG_20261118_223533.jpg": {
+      "sha256": "08d655115461cd172d031eda365a8e313575baf19147e82285f28fd862934568",
+      "git_blob": "89b0da5c960c9523ccba7516acd6922f15f3e90d",
+      "bytes": 1448863
+    },
+    "IMG_20261118_223533.json": {
+      "sha256": "08fc47d68bdbca69a97d3ee9402dc4ef40af64157a4a655533481c8da26556df",
+      "git_blob": "7692f8987339822850ffcf69b4fefe6a4edbb05c",
+      "bytes": 4333
+    },
+    "IMG_20261118_223547.jpg": {
+      "sha256": "8b3d3c19190fbfe501edf94d57dec1122b3e5881664cfe52c4c8c5d10d427a6d",
+      "git_blob": "c140771ed006e03bf93a319d6d1c1c13dc5a1051",
+      "bytes": 1447940
+    },
+    "IMG_20261118_223547.json": {
+      "sha256": "1a48ce633de254b87a5558ceeaaf4630b2adc85a7f3716490cda37496af4d222",
+      "git_blob": "5a5380c441b3146a383321cbd6719dec42f24a0e",
+      "bytes": 4336
+    },
+    "IMG_20261118_223557.jpg": {
+      "sha256": "840b72a41b1fb019db56a171d3ad21badbd3154feedf86595a93870a95b44dd6",
+      "git_blob": "408cc05db186045ca5714db6d6c4829da71fc93c",
+      "bytes": 1463167
+    },
+    "IMG_20261118_223557.json": {
+      "sha256": "b29e9f7382e9c53587757e69cff003cc48c49c76178e76ad366418a1cb0c443b",
+      "git_blob": "1a45b959efca87ae53459f2f92be9372232d2661",
+      "bytes": 4331
+    },
+    "IMG_20261118_223632.jpg": {
+      "sha256": "e00e3e433b028d390317d405b6a21b0c36fe31c02770fb175194d461fe77ec13",
+      "git_blob": "b59c466c68c39c24bff11353115240e44953b99a",
+      "bytes": 1491719
+    },
+    "IMG_20261118_223632.json": {
+      "sha256": "6c5be22c072986a5b8b898548d478349e2f1c7528b52b7888a2ed139a65c4469",
+      "git_blob": "eaea5fe20b3b14785ad89c0693f7b53e253f24e8",
+      "bytes": 4333
+    },
+    "IMG_20261118_223644.jpg": {
+      "sha256": "a7ef9260aa5b9b1141b8279f85c2122d9aa49ec177915350027acfde16ddcdae",
+      "git_blob": "304a3463fe78acb7712d892c86a61429a89ec0b3",
+      "bytes": 1393995
+    },
+    "IMG_20261118_223644.json": {
+      "sha256": "cfd195b8aa0c4a7832743b0c2c8d243aad09fa1a612059f0980c33fed1396bfc",
+      "git_blob": "f45e06d8127e34cde0aee66394610b63fd1328a3",
+      "bytes": 4329
+    },
+    "IMG_20261118_223658.jpg": {
+      "sha256": "6a8bb541ff2bc2dbd2fcf26a12193e2951280c682e01f07266f494067de5dfdd",
+      "git_blob": "a06c7fe55b84700a144a27d4c9728d488fac8150",
+      "bytes": 1433058
+    },
+    "IMG_20261118_223658.json": {
+      "sha256": "c222906d0b9260a59753c4f854b3cd2cb85d01a245479cb6ba5d37d1f64a54f3",
+      "git_blob": "9c1bf2ecddff4b6ef66d68cb9d63b2648474c591",
+      "bytes": 4338
+    },
+    "IMG_20261118_223714.jpg": {
+      "sha256": "55cacdb1ce493f23dea7dc2ab6175afda71cec2722c2da97e9687f5379a663c1",
+      "git_blob": "59f195f41a311d83a06f13c183e2a12e46b9c796",
+      "bytes": 1537642
+    },
+    "IMG_20261118_223714.json": {
+      "sha256": "cf4c57cebc7cb4808503f2b317c2c82f4603f892c5c5ce6afd37d13b280ae12a",
+      "git_blob": "b511589005c5197cc45f6b51dae886075e201a24",
+      "bytes": 4327
+    },
+    "IMG_20261118_223724.jpg": {
+      "sha256": "820826f3a589ce8366705b390d06af7a64986b1e028e1bb73cd7adc4706ac822",
+      "git_blob": "2c3b07bff93d9fce04c69b8093ea14a286db9900",
+      "bytes": 1450449
+    },
+    "IMG_20261118_223724.json": {
+      "sha256": "0258d50ad343b876f76d135a10e85676e9169ebbf9dbe65feae8dadb129aba07",
+      "git_blob": "de472ecad0a6860c811622cc933f658b4f95c21c",
+      "bytes": 4329
+    },
+    "IMG_20261118_223742.jpg": {
+      "sha256": "785e986d41a6aaae760b7dccfb85c652234023901b19a2813af89169e7519e93",
+      "git_blob": "85cee8462bd222a39be9f92883c50f354665cdd8",
+      "bytes": 1441208
+    },
+    "IMG_20261118_223742.json": {
+      "sha256": "c880c471e594508aead6e36c6d177affc3ef0adfd9e1f0a2fbba51ad68f9d766",
+      "git_blob": "09a1bbc60415b8cc088ec6ae6598a277954df891",
+      "bytes": 4328
+    },
+    "IMG_20261118_223758.jpg": {
+      "sha256": "deb924f8952db114345351c4123b41b7030b723a6f8f41201386dfc869a542e5",
+      "git_blob": "23ca43014635ef52c9e5f6f79b56574cd37b1d00",
+      "bytes": 1375866
+    },
+    "IMG_20261118_223758.json": {
+      "sha256": "1289bc32c2d639946ac0c34cecb35e45eebefac95c42aae3cec9312003bec713",
+      "git_blob": "ce11e7f55e761193d99b23fd05c053040cd423d5",
+      "bytes": 4334
+    },
+    "IMG_20261118_223819.jpg": {
+      "sha256": "e8405e6ac48ae80cca394291583ced63b4f0c9cd3942cd598a40d852703cafc4",
+      "git_blob": "60c2bb2467e4fad5c78af27965c404ae8f1aac7a",
+      "bytes": 1404381
+    },
+    "IMG_20261118_223819.json": {
+      "sha256": "60b43b48c59a2042d7cce0df7cce8f8996f1347bbb88a10772a7df252ad41c1f",
+      "git_blob": "e2268bc86eac24a6c26feedd193d1f6ee0ab15b9",
+      "bytes": 4330
+    },
+    "IMG_20261118_223848.jpg": {
+      "sha256": "916ffcc7b476873e46215f3ff8ec48e12b152df93302d131ee047e26f97d7821",
+      "git_blob": "f03c055026ee247ba95e0d2cd199bfad690cdf86",
+      "bytes": 1474866
+    },
+    "IMG_20261118_223848.json": {
+      "sha256": "a8a9e7020d8fe20899b7ae2825614118f1eeacb87c28d2e3cd2f98bcb3e9a2b2",
+      "git_blob": "fe790665d9b385b521e2f4b0105d2ac055ab4542",
+      "bytes": 4331
+    },
+    "IMG_20261118_223903.jpg": {
+      "sha256": "247cd702daff21b8564b42fa93b3adff4a1026bc81066828cd97b4bfb8a428a6",
+      "git_blob": "a2fc45c51177c125388bd3716c6e17f2eb865228",
+      "bytes": 1466667
+    },
+    "IMG_20261118_223903.json": {
+      "sha256": "ff3e9f41be6162cbb38e7437f4e7f17d3155fd86322f052b84a6ae5b8cf99428",
+      "git_blob": "ea7778377f78791fbda95febacdda5bd26c25ead",
+      "bytes": 4334
+    },
+    "IMG_20261118_223921.jpg": {
+      "sha256": "0c9b35c604cb4f42916009fe8cc092d3374fbe122cb625479c4c403cc71f30e9",
+      "git_blob": "3aa67fd7c7c4d572672f095fb6ca38ba57d071da",
+      "bytes": 1528893
+    },
+    "IMG_20261118_223921.json": {
+      "sha256": "bea9513479db138346bd5f95d016e6a71551f8319f9d22e85bbd4a5f227a6959",
+      "git_blob": "ec3c62c04d13b9a45a42c94d0e5a8ec39ba71c6f",
+      "bytes": 4333
+    },
+    "IMG_20261118_223939.jpg": {
+      "sha256": "20ff3a5a6f71f71f19f8c190ca82b0069f30a8f9b3b4e0adf3aec375b7fea641",
+      "git_blob": "76a98c1475c11f10334a784038e58a34b615f685",
+      "bytes": 1445037
+    },
+    "IMG_20261118_223939.json": {
+      "sha256": "d4b621f42870a60323c91a6bad47c1e135d298bf7ceec97df71a06d43bb72ca9",
+      "git_blob": "2f4df839fa29089bc9e900ea36ec36ff0b29ee01",
+      "bytes": 4334
+    },
+    "IMG_20261118_223955.jpg": {
+      "sha256": "a1e164c5b0c15c86697bf480903189f45eadf2b7ec8ad81707fc523dae3cb0d3",
+      "git_blob": "8a75a0caae7f0538639a1bf8d1ba7fdffbafc75f",
+      "bytes": 1428576
+    },
+    "IMG_20261118_223955.json": {
+      "sha256": "e764e1a17ee9092817a33abe254985e1e2899db0977fb3e513b2d5029b640472",
+      "git_blob": "a5eb5b479f7ab9764e269c99c918fe9ca28d75d1",
+      "bytes": 4331
+    },
+    "IMG_20261118_224009.jpg": {
+      "sha256": "a67e9c88eb3f7544210e3490a5b6ea274313b23e73fd7433c4deec914b6b9eb3",
+      "git_blob": "d6ee4f8c9ef444a92509429e441ec313e1398fb2",
+      "bytes": 1479759
+    },
+    "IMG_20261118_224009.json": {
+      "sha256": "403d711c75f2af5f21a2b744e66ce2f873df855dfa06201d4a6591bacca0f3b9",
+      "git_blob": "9bc63c094bc43e327dead8cfeb43df433124b91d",
+      "bytes": 4333
+    },
+    "IMG_20261118_224025.jpg": {
+      "sha256": "f479d33b480eae722378dfc75595180e37c3a34aefa79a0f63e051742f8dc769",
+      "git_blob": "e598bd774747f3a2c6e21b0e78d64ea60ad1574e",
+      "bytes": 1391096
+    },
+    "IMG_20261118_224025.json": {
+      "sha256": "81393db42aed8e67818c998f79fbb62d26a7994b868fcbcbfe2ba6cb54927d98",
+      "git_blob": "419fd17cf801fdaee77b17642f12b4aab6396e38",
+      "bytes": 4331
+    },
+    "IMG_20261118_224042.jpg": {
+      "sha256": "f8b6a0cf8be3d1747b3b2e55d6d1b4468611ae51f212c8bdbdd32de965fbd1f8",
+      "git_blob": "dfef8c3edb148a9f8e2433ebc7e2f58987676aca",
+      "bytes": 2464757
+    },
+    "IMG_20261118_224042.json": {
+      "sha256": "de25844c2f71173674c59e2bd5c23a8bd66b2da7bb827213ba4f3c0570193e71",
+      "git_blob": "5d5429bd01f4b281deeaf45756173aeebad00f89",
+      "bytes": 4290
+    }
+  },
+  "note": "Member06 derived byte index, verified against Git commit; not annotation approval."
+}

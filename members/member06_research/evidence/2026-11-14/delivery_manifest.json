@@ -1,0 +1,133 @@
+{
+  "review_date": "2026-11-14",
+  "head": "90c77fa1091f780150f900a3a8db2cef14fda1bd",
+  "tracked_modified_files": [
+    "members/member06_research/MEMBER6_LEARNING_GUIDE.md",
+    "members/member06_research/README.md",
+    "members/member06_research/config.py",
+    "members/member06_research/configs/baseline2.json",
+    "members/member06_research/progress.md",
+    "members/member06_research/train.py",
+    "members/member06_research/validate.py"
+  ],
+  "new_files": [
+    "members/member06_research/TRAINING_GUIDE_CN.md",
+    "members/member06_research/evidence/2026-11-14/REVIEW.md",
+    "members/member06_research/evidence/2026-11-14/data_audit_summary.json",
+    "members/member06_research/evidence/2026-11-14/environment.json",
+    "members/member06_research/evidence/2026-11-14/git_review.json",
+    "members/member06_research/evidence/2026-11-14/pending_prepare.log",
+    "members/member06_research/evidence/2026-11-14/pip_check.log",
+    "members/member06_research/evidence/2026-11-14/real_preflight.log",
+    "members/member06_research/evidence/2026-11-14/static_checks.json",
+    "members/member06_research/evidence/2026-11-14/team_tests.log",
+    "members/member06_research/evidence/2026-11-14/tests.log",
+    "members/member06_research/preflight.py",
+    "members/member06_research/team_data.py",
+    "members/member06_research/tests/test_team_data.py"
+  ],
+  "deleted_files": [],
+  "scope": "members/member06_research only; original untracked root file left untouched",
+  "files": {
+    "members/member06_research/MEMBER6_LEARNING_GUIDE.md": {
+      "sha256": "84d0bafcb954e4a51587ff69dd9bd0e67427c876912d72ba070e14e057f6b769",
+      "bytes": 17551
+    },
+    "members/member06_research/README.md": {
+      "sha256": "785460a99613ca77546455076e4bb2838de6e38a030dc234abe2960725d8a649",
+      "bytes": 9306
+    },
+    "members/member06_research/TRAINING_GUIDE_CN.md": {
+      "sha256": "8d8ac21f8eb599648e74ee3d85cff34fc810b85e4618883a1510c53340d4289b",
+      "bytes": 26822
+    },
+    "members/member06_research/config.py": {
+      "sha256": "a148648997f007272081ef44d95e0d320a216f915a910967bb8aa64b2bfecb6e",
+      "bytes": 4305
+    },
+    "members/member06_research/configs/baseline2.json": {
+      "sha256": "9156f98ef9ca2157f4be580d575355273321ee69f3ed4690d04cde37f0cb8eb4",
+      "bytes": 750
+    },
+    "members/member06_research/evidence/2026-11-14/REVIEW.md": {
+      "sha256": "f8e6f2807af5892d790c7106bd55d68a490d31624bfb57c6468c28d81e251cbb",
+      "bytes": 13147
+    },
+    "members/member06_research/evidence/2026-11-14/data_audit_summary.json": {
+      "sha256": "31b8fc14412656f4497752e19b722304b8ee16fb758ff7465117c9a87abbf8eb",
+      "bytes": 2267
+    },
+    "members/member06_research/evidence/2026-11-14/environment.json": {
+      "sha256": "b96726d18ff28cdf80077f5fd009ec88aba3e5d7492838776afa8810257e45f8",
+      "bytes": 2842
+    },
+    "members/member06_research/evidence/2026-11-14/git_review.json": {
+      "sha256": "e4a615f8237e65bffc3a3d8354a50c558eaf66093e69adb8a0c1d1baa9df1d49",
+      "bytes": 1216
+    },
+    "members/member06_research/evidence/2026-11-14/pending_prepare.log": {
+      "sha256": "9795fb8947d3a3cdb63aa509f474cf76fd36be2d8a3ec5bcc956180b63a1fc7f",
+      "bytes": 89
+    },
+    "members/member06_research/evidence/2026-11-14/pip_check.log": {
+      "sha256": "4e9bea74986bf32883cc1b670978cc156695a87965d12961e5a3a264320d9c06",
+      "bytes": 294
+    },
+    "members/member06_research/evidence/2026-11-14/real_preflight.log": {
+      "sha256": "ecca36f9ad779f7a2803c8bd082255196edf7196a5aadcfa5b709eb51a423ed5",
+      "bytes": 122
+    },
+    "members/member06_research/evidence/2026-11-14/static_checks.json": {
+      "sha256": "8c82d28404d22f22def86f1f9132cc188b758799d33272c670c311ccce185edc",
+      "bytes": 510
+    },
+    "members/member06_research/evidence/2026-11-14/team_tests.log": {
+      "sha256": "4ec957373feff9f4c80d9230bbb141140953f3e5b6244b429919b3481f4074ab",
+      "bytes": 762
+    },
+    "members/member06_research/evidence/2026-11-14/tests.log": {
+      "sha256": "9a016f706aa8e1d232dc733ae9990d8a08c68772515d565052b947247118f3fa",
+      "bytes": 6287
+    },
+    "members/member06_research/preflight.py": {
+      "sha256": "f63e9811c92fc60a9c78e5043c853e5d2365454d357926a0a9d3dd966c6d3182",
+      "bytes": 6625
+    },
+    "members/member06_research/progress.md": {
+      "sha256": "aa302835a8b48f51f5252d56f2cce743ca16baa3d9dec2de252de5607554be8e",
+      "bytes": 4782
+    },
+    "members/member06_research/team_data.py": {
+      "sha256": "9c913b32f8b21f329ade2cc2fc0a80290795dd92a8e08c6b9de64e999db9c41a",
+      "bytes": 22313
+    },
+    "members/member06_research/tests/test_team_data.py": {
+      "sha256": "e532746cf7f1a8c181175314bf6376a2c967754ca1763d158abf68ab99c66a04",
+      "bytes": 13656
+    },
+    "members/member06_research/train.py": {
+      "sha256": "dc1c61e22e6fe24588179a397f6053a7834ff8eb28b845937c5d81c81f059099",
+      "bytes": 8608
+    },
+    "members/member06_research/validate.py": {
+      "sha256": "0459bd9e98149470e9c81f27cf7da06da7950856df00868b8d991994a2ee0a63",
+      "bytes": 1788
+    }
+  },
+  "local_ignored_artifacts": [
+    "members/member06_research/data/team_audit_20261114.json",
+    "members/member06_research/data/team_approval_20261114.json",
+    "members/member06_research/data/team_reviews_20261114.json"
+  ],
+  "tests": {
+    "member06_run": 47,
+    "member06_passed": 46,
+    "member06_cuda_skipped": 1,
+    "team_passed": 6
+  },
+  "real_data_state": "D / NOT_READY",
+  "formal_training_executed": false,
+  "real_val_selection_executed": false,
+  "test_content_read": false,
+  "git_commit_or_push_this_turn": false
+}

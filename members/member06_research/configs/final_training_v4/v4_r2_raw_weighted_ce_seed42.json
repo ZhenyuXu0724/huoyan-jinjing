@@ -1,0 +1,64 @@
+{
+  "schema_version": "member06.v4_experiment.v1",
+  "experiment_id": "V4-R2_RAW_WEIGHTED_CE_SEED42",
+  "strategy_id": "V4-R2_RAW_WEIGHTED_CE",
+  "description": "Primary v4 raw originals balanced CrossEntropyLoss (PASS=0.75, FAIL=1.50); seed=42; 20 epochs saving 10-epoch and 20-epoch budget checkpoints.",
+  "allow_optional_aug": false,
+  "use_feature_cache": true,
+  "cache_dir": "members/member06_research/data/final_training_v4_intake/feature_cache",
+  "verified_donor_cache_root": "members/member06_research/data/dataset_v2_phase1/feature_cache",
+  "online_augmentation": "none",
+  "lr_scheduler": "none",
+  "threshold_rule": "default_argmax_pass0_fail1_no_threshold_search",
+  "budget_milestones": [
+    10,
+    20
+  ],
+  "model_config": {
+    "class_to_idx": {
+      "PASS": 0,
+      "FAIL": 1
+    },
+    "fail_label": "FAIL",
+    "image_size": 224,
+    "resize_mode": "letterbox",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "pad_rgb": [
+      0,
+      0,
+      0
+    ],
+    "weights": "IMAGENET1K_V1",
+    "data_kind": "REAL",
+    "training_tier": "FORMAL_READY",
+    "supported_counts": [
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "counts_rule_status": "CONFIRMED",
+    "train_manifest": "members/member03_data/final_training_v4/manifests/resnet/train.csv",
+    "val_manifest": "members/member03_data/final_training_v4/manifests/resnet/val.csv",
+    "data_provenance": "members/member06_research/data/final_training_v4_intake/provenance.json",
+    "seed": 42,
+    "epochs": 20,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "train_class_weight": "balanced",
+    "weight_decay": 0.0,
+    "num_workers": 0,
+    "device": "auto",
+    "cpu_threads": 2
+  }
+}

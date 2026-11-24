@@ -1,0 +1,71 @@
+{
+  "schema_version": "member06.team-audit.v1",
+  "dataset_root": "/home/grace/projects/AI/member06/members/member03_data/full_dataset_upload/datasets/parts_v1",
+  "source_manifest_sha256": "a3eac3429ab3f759c952c0fd7ece58019f0c65da4717918987c16dfdad8d1ed6",
+  "catalogue_sha256": "832ff517223045967f71cadd4b19012160fc2b0c7449c80be7cbfd22483f77f3",
+  "class_mapping_sha256": "436ad4caba8de32b896af1016906e832a91724cb2b70c3efe1765ac62de50732",
+  "split_counts": {
+    "train": 112,
+    "val": 24,
+    "test": 24
+  },
+  "reference_expected_counts": {
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 2
+  },
+  "reference_counts_status": "PROPOSED_CONFIRM_AFTER_PILOT",
+  "unverified_catalogue_ids": [
+    5
+  ],
+  "test_content_read": false,
+  "formal_labels_generated": 0,
+  "errors": [],
+  "per_split": {
+    "train": {
+      "class_0": 0,
+      "class_1": 224,
+      "class_2": 224,
+      "class_3": 224,
+      "class_4": 224,
+      "class_5": 224,
+      "images_checked": 112,
+      "raw_auto_review_pending_images": 109,
+      "missing_scene_id": 112,
+      "missing_expected_counts": 112,
+      "missing_image_label": 112,
+      "annotation_count_vectors_id_0_to_5": {
+        "0,2,2,2,2,2": 112
+      }
+    },
+    "val": {
+      "class_0": 0,
+      "class_1": 48,
+      "class_2": 48,
+      "class_3": 48,
+      "class_4": 48,
+      "class_5": 48,
+      "images_checked": 24,
+      "raw_auto_review_pending_images": 24,
+      "missing_scene_id": 24,
+      "missing_expected_counts": 24,
+      "missing_image_label": 24,
+      "annotation_count_vectors_id_0_to_5": {
+        "0,2,2,2,2,2": 24
+      }
+    }
+  },
+  "duplicate_raw_hash_metadata": [],
+  "duplicate_development_rgb": [],
+  "readiness": "D",
+  "status": "NOT_READY",
+  "readiness_reason": "Audit alone does not establish approved counts, scene independence, human review, specifications or binary labels.",
+  "as_of": "2026-11-14",
+  "notes": [
+    "No test image/annotation content accessed. Test counts and hash strings came only from split_manifest metadata.",
+    "Annotation counts are not approved image-level labels. No formal training manifests were generated.",
+    "Same annotation count vector in all Train/Val rows cannot supply two binary classes under one fixed-count rule."
+  ]
+}
