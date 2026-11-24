@@ -1,0 +1,282 @@
+{
+  "schema_version": "dataset_v2.statistics.v1",
+  "reference_expected_counts": {
+    "1": 2,
+    "2": 2,
+    "3": 2,
+    "4": 2,
+    "5": 2,
+    "0_non_catalogue": 0
+  },
+  "totals": {
+    "all_images": 609,
+    "original_images": 399,
+    "augmented_images": 210,
+    "total_copied_files_images_plus_jsons": 1218,
+    "original_PASS": 201,
+    "original_FAIL": 198,
+    "augmented_PASS": 6,
+    "augmented_FAIL": 204
+  },
+  "splits": {
+    "train": {
+      "partition_status": "DEVELOPMENT_TRAIN",
+      "total_images": 440,
+      "original_images": 296,
+      "augmented_images": 144,
+      "original_PASS": 151,
+      "original_FAIL": 145,
+      "augmented_PASS": 6,
+      "augmented_FAIL": 138,
+      "total_PASS": 157,
+      "total_FAIL": 283,
+      "original_by_source_batch": {
+        "11/14_PASS": 16,
+        "11/11_parts_v1": 127,
+        "11/20": 48,
+        "11/23_PASS": 6,
+        "11/14_FAIL": 59,
+        "11/18_FAIL": 40
+      },
+      "original_anomaly_categories": {
+        "none": 151,
+        "non_catalogue_only_1": 5,
+        "non_catalogue_only_6": 40,
+        "non_catalogue_only_7": 14,
+        "non_catalogue_plus_missing": 54,
+        "non_catalogue_only_3": 31,
+        "pure_missing": 1
+      },
+      "augmented_by_type": {
+        "A01_lowlight": 48,
+        "A02_warm": 48,
+        "A03_softnoise": 48
+      },
+      "object_instances_original_only": {
+        "0": 571,
+        "1": 567,
+        "2": 585,
+        "3": 585,
+        "4": 589,
+        "5": 502
+      },
+      "object_instances_including_augmented": {
+        "0": 895,
+        "1": 807,
+        "2": 852,
+        "3": 852,
+        "4": 868,
+        "5": 520
+      }
+    },
+    "val": {
+      "partition_status": "DEVELOPMENT_VAL",
+      "total_images": 92,
+      "original_images": 74,
+      "augmented_images": 18,
+      "original_PASS": 37,
+      "original_FAIL": 37,
+      "augmented_PASS": 0,
+      "augmented_FAIL": 18,
+      "total_PASS": 37,
+      "total_FAIL": 55,
+      "original_by_source_batch": {
+        "11/14_PASS": 5,
+        "11/11_parts_v1": 33,
+        "11/14_FAIL": 18,
+        "11/18_FAIL": 12,
+        "11/20": 6
+      },
+      "original_anomaly_categories": {
+        "none": 37,
+        "non_catalogue_only_1": 1,
+        "non_catalogue_only_6": 11,
+        "non_catalogue_only_7": 6,
+        "non_catalogue_only_3": 12,
+        "pure_missing": 1,
+        "non_catalogue_plus_missing": 6
+      },
+      "augmented_by_type": {
+        "A01_lowlight": 6,
+        "A02_warm": 6,
+        "A03_softnoise": 6
+      },
+      "object_instances_original_only": {
+        "0": 164,
+        "1": 148,
+        "2": 147,
+        "3": 148,
+        "4": 140,
+        "5": 136
+      },
+      "object_instances_including_augmented": {
+        "0": 221,
+        "1": 184,
+        "2": 183,
+        "3": 184,
+        "4": 152,
+        "5": 136
+      }
+    },
+    "test": {
+      "partition_status": "PROVISIONAL_HOLDOUT",
+      "total_images": 77,
+      "original_images": 29,
+      "augmented_images": 48,
+      "original_PASS": 13,
+      "original_FAIL": 16,
+      "augmented_PASS": 0,
+      "augmented_FAIL": 48,
+      "total_PASS": 13,
+      "total_FAIL": 64,
+      "original_by_source_batch": {
+        "11/23_PASS": 13,
+        "11/20": 16
+      },
+      "original_anomaly_categories": {
+        "none": 13,
+        "non_catalogue_plus_missing": 14,
+        "empty_scene": 1,
+        "pure_missing": 1
+      },
+      "augmented_by_type": {
+        "A01_lowlight": 16,
+        "A02_warm": 16,
+        "A03_softnoise": 16
+      },
+      "object_instances_original_only": {
+        "0": 44,
+        "1": 50,
+        "2": 45,
+        "3": 48,
+        "4": 49,
+        "5": 26
+      },
+      "object_instances_including_augmented": {
+        "0": 176,
+        "1": 122,
+        "2": 102,
+        "3": 114,
+        "4": 118,
+        "5": 26
+      }
+    }
+  },
+  "original_source_allocation_matrix": {
+    "11/11_parts_v1": {
+      "train_PASS": 127,
+      "train_FAIL": 0,
+      "val_PASS": 32,
+      "val_FAIL": 1,
+      "test_PASS": 0,
+      "test_FAIL": 0,
+      "total_originals": 160
+    },
+    "11/14_PASS": {
+      "train_PASS": 16,
+      "train_FAIL": 0,
+      "val_PASS": 5,
+      "val_FAIL": 0,
+      "test_PASS": 0,
+      "test_FAIL": 0,
+      "total_originals": 21
+    },
+    "11/14_FAIL": {
+      "train_PASS": 0,
+      "train_FAIL": 59,
+      "val_PASS": 0,
+      "val_FAIL": 18,
+      "test_PASS": 0,
+      "test_FAIL": 0,
+      "total_originals": 77
+    },
+    "11/18_FAIL": {
+      "train_PASS": 0,
+      "train_FAIL": 40,
+      "val_PASS": 0,
+      "val_FAIL": 12,
+      "test_PASS": 0,
+      "test_FAIL": 0,
+      "total_originals": 52
+    },
+    "11/20": {
+      "train_PASS": 2,
+      "train_FAIL": 46,
+      "val_PASS": 0,
+      "val_FAIL": 6,
+      "test_PASS": 0,
+      "test_FAIL": 16,
+      "total_originals": 70
+    },
+    "11/23_PASS": {
+      "train_PASS": 6,
+      "train_FAIL": 0,
+      "val_PASS": 0,
+      "val_FAIL": 0,
+      "test_PASS": 13,
+      "test_FAIL": 0,
+      "total_originals": 19
+    }
+  },
+  "integrity_summary": {
+    "byte_identical_copies_verified": 1218,
+    "unique_image_sha256_count": 609,
+    "parent_child_split_mismatches": 0,
+    "cross_split_layout_similarity_audit": {
+      "11/11_parts_v1": {
+        "original_images": 160,
+        "same_split_pairs_gt_035": 1,
+        "max_same_split_rot_inv_iou": 0.3963,
+        "cross_split_pairs_gt_035_count": 0,
+        "max_cross_split_rot_inv_iou": 0.1994,
+        "cross_split_pairs_gt_035": []
+      },
+      "11/14_FAIL": {
+        "original_images": 77,
+        "same_split_pairs_gt_035": 53,
+        "max_same_split_rot_inv_iou": 0.9238,
+        "cross_split_pairs_gt_035_count": 0,
+        "max_cross_split_rot_inv_iou": 0.1355,
+        "cross_split_pairs_gt_035": []
+      },
+      "11/14_PASS": {
+        "original_images": 21,
+        "same_split_pairs_gt_035": 3,
+        "max_same_split_rot_inv_iou": 0.4766,
+        "cross_split_pairs_gt_035_count": 0,
+        "max_cross_split_rot_inv_iou": 0.1182,
+        "cross_split_pairs_gt_035": []
+      },
+      "11/18_FAIL": {
+        "original_images": 52,
+        "same_split_pairs_gt_035": 0,
+        "max_same_split_rot_inv_iou": 0.2262,
+        "cross_split_pairs_gt_035_count": 0,
+        "max_cross_split_rot_inv_iou": 0.1224,
+        "cross_split_pairs_gt_035": []
+      },
+      "11/20": {
+        "original_images": 70,
+        "same_split_pairs_gt_035": 0,
+        "max_same_split_rot_inv_iou": 0.1475,
+        "cross_split_pairs_gt_035_count": 0,
+        "max_cross_split_rot_inv_iou": 0.1748,
+        "cross_split_pairs_gt_035": []
+      },
+      "11/23_PASS": {
+        "original_images": 19,
+        "same_split_pairs_gt_035": 0,
+        "max_same_split_rot_inv_iou": 0.1149,
+        "cross_split_pairs_gt_035_count": 0,
+        "max_cross_split_rot_inv_iou": 0.1039,
+        "cross_split_pairs_gt_035": []
+      }
+    }
+  },
+  "quality_and_provenance_notes": {
+    "MVIMG_20261120_172557.jpg": "Visually inspected; genuine empty white tabletop with zero components. Shapes=[] is valid FAIL (plus 3 derived augmented copies in test/FAIL/augmented).",
+    "IMG_20261114_162432.json": "Uses upstream commit 16d9239 corrected Labelme JSON (sha256 recorded in dataset_manifest.csv and SHA256SUMS.txt; legacy data_20261114_manifest.json left untouched).",
+    "IMG_7209.png": "Legacy 11/11 test sample with 1 M5x10 missing; placed in val/FAIL/original, pending manual ground-truth confirmation.",
+    "test_partition_status": "PROVISIONAL_HOLDOUT (29 real originals: 13 PASS from 11/23 Block 02 + 16 FAIL from 11/20 Blocks 09-11; plus 48 derived FAIL augmentations). Does NOT yet meet the >=30 independent physical scene / >=15 PASS formal blind test target."
+  }
+}

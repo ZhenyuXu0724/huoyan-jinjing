@@ -1,0 +1,19 @@
+{
+  "augmentation_mapping.csv": "4831a57f3d851e2c8e50913b04d583a5e81b5353d5f53ea2abe6a8e1fdfa202b",
+  "test_acceptance.py": "616dcc930e39a797880cd3503b5647433ba6f82946b89c268bd4f14a29abfb96",
+  "independent_acceptance.py": "0dba33e87bb6216267e6cff491633fb71f191f42abe78ecc3489e37e0a5e654c",
+  "SPLIT_REPORT_CN.md": "39e4c2a3c1f69125d9dbd1217f5d777cc2e8707ff8e6a5998cefc23dcf8b317b",
+  "verify_dataset_v2.py": "50bccb97a6525b8f868b3157e29b23e222aac37862a07ff3cdf5fa0fa793e74e",
+  "source_snapshot_lock.json": "4600637b66887aae8453121eae2f8d6179003a28c41e8bf9031939a832919415",
+  "dataset_manifest.csv": "f35f40798ef8442d9269d79218afadb70fa974c3cb87c456dc9ea2aa11cf4dc6",
+  "SHA256SUMS.txt": "bf16dcb1c9e0909100914ed5faab4d17a7ae4aee729ce167d1338a2735ed76c9",
+  "evaluation_eligibility.json": "37d59bd7e1a5009d4ef978c8c5ec0f6e02406751030c44c11bf69587d7a21d5a",
+  "README.md": "19ff074a4822bcf64793112a77e754483fcb6906433c27c3977acf0e4f089183",
+  "build_safety.py": "a742d9134575a9b80d304af4635b75fa84a56dc6793174f3e84d27b5592f62aa",
+  "scene_groups.json": "fedee0d8262691d9c39a50709a2dd996c1283e557abd892464bba37ff91be980",
+  "scene_audit.py": "357203731733fe164132f10460047bc1547a64d266b8632abab12e071a88c5ec",
+  "INDEPENDENT_ACCEPTANCE_CN.md": "e53eb1448b08cb78ea434d0381ad61fe54384a0e62c41b01da25b91435be5975",
+  "build_dataset_v2.py": "e687d4a33a70fcf52d380f69ad87940ab78eeeaac3b0bbcb692397e68ee64241",
+  "dataset_statistics.json": "fc97c17ce05c67bbd3c6850fef1f578411eaf0b4a035996307f189abd9d4bd78",
+  "plan_recheck.py": "ea45abb7b2c37d41ae5e1ca5989662f57a61cafbd147e151f017a3fc8bd2caf7"
+}

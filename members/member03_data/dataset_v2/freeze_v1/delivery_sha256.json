@@ -1,0 +1,27 @@
+{
+  "version": "freeze_v1",
+  "root_management_files": {
+    "FINAL_FREEZE_CN.md": "8346d79d8daa3324266cc548d8356125c269669bc6fcd3394d8bc769bd8c3427",
+    "FINAL_REVISION_CN.md": "f7c5db2193a77b58d1e0f85962bfb4c07a7e08eb3c3342302d6082715f6d34f9",
+    "INDEPENDENT_ACCEPTANCE_CN.md": "e53eb1448b08cb78ea434d0381ad61fe54384a0e62c41b01da25b91435be5975",
+    "README.md": "be5a8bae6b4710b6ac592473bc59ac3e2828ec974841ec8a2182e8750621ef90",
+    "SHA256SUMS.txt": "8c85439824a941563179a498a7aa26c916848167fb2607eaad017ef9f567f33b",
+    "SPLIT_REPORT_CN.md": "b72e53ea8f5182db9ca9d54113749b23679a31f7c1498fcfff70cfaebdc87ce9",
+    "USER_CONFIRMATIONS.json": "ff08e0c8f5e9c09bb7cdcf073a372e50b481bbac27ebf397d89ff826deddfc88",
+    "augmentation_mapping.csv": "59ae0c212f579b0ac0d37dc4279164ad313557ce6b192b5afdaac9ecc32467c1",
+    "build_dataset_v2.py": "7509297f000a4453923d583d6d244f716244613406db2b12c5cd72c76ebb82fb",
+    "build_safety.py": "a742d9134575a9b80d304af4635b75fa84a56dc6793174f3e84d27b5592f62aa",
+    "dataset_manifest.csv": "b6a7335518d6c8d7ccdc8904490d1d7a25ce9b85aa57f2da62aa6db06e8c0c8e",
+    "dataset_statistics.json": "1c7e489ab9c4fc47ca2f107117eaa69b960a1c1465ebb8ec472e7a44d75debde",
+    "evaluation_eligibility.json": "f4c8d864688e8bd466a2347fb6d60602ec20d2e58c5f6176d5758027a3e50e97",
+    "final_review_policy.json": "7270d1ec64b70f9d250cb1a4ae1e05532825364a366225904d4db50c9b85cd4b",
+    "final_revision_checks.py": "7520fc0f5b65e68fa53a9eda15875de56764d4bfcd68465bb2f5bfd4f4e73790",
+    "independent_acceptance.py": "2dace57893c1f3b1f3ba6eb0fcf4e19faf682860a2dd1fabd4bc4c80197b61e9",
+    "plan_recheck.py": "071025fba083903bc7f5898d4b766e639e49b5b89979d99b78c825678f68b02c",
+    "scene_audit.py": "357203731733fe164132f10460047bc1547a64d266b8632abab12e071a88c5ec",
+    "scene_groups.json": "e008d0d2ad65cf21ca849bf75a33bef96f460d051a5cff7442bd2c2e37344083",
+    "source_snapshot_lock.json": "9083480eaac3d0081ae392ef6baa4e00ee8d8c48f3667f389b01aacd272cbc40",
+    "test_acceptance.py": "531a67faeb167dd59fcd8978102c2a767fb7b1460e09aa7567f7cea65dc87773",
+    "verify_dataset_v2.py": "56b936c61d449441b1ccade2a3176aa37fb2fda0192c85d22234055ad5cfbc1a"
+  }
+}

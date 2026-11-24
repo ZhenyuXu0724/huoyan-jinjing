@@ -1,0 +1,23 @@
+test_all_three_children_keep_restriction (test_acceptance.FinalRevisionTests.test_all_three_children_keep_restriction) ... /home/grace/projects/AI/member06/members/member03_data/dataset_v2/test_acceptance.py:76: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/grace/projects/AI/member06/members/member03_data/dataset_v2/dataset_manifest.csv' mode='r' encoding='UTF-8'>
+  self.rows=list(csv.DictReader((ROOT/'dataset_manifest.csv').open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_no_silent_train_to_test_promotion (test_acceptance.FinalRevisionTests.test_no_silent_train_to_test_promotion) ... ok
+test_qualified_status_not_inferred_from_counts (test_acceptance.FinalRevisionTests.test_qualified_status_not_inferred_from_counts) ... ok
+test_added_removed_objects_containment (test_acceptance.GeometryTests.test_added_removed_objects_containment) ... ok
+test_cross_source_screened (test_acceptance.GeometryTests.test_cross_source_screened) ... ok
+test_different_labels_negative (test_acceptance.GeometryTests.test_different_labels_negative) ... ok
+test_empty_not_independent (test_acceptance.GeometryTests.test_empty_not_independent) ... ok
+test_identity_rotation_landscape_portrait (test_acceptance.GeometryTests.test_identity_rotation_landscape_portrait) ... ok
+test_one_to_one_no_reused_object (test_acceptance.GeometryTests.test_one_to_one_no_reused_object) ... ok
+test_translation_scale_screening (test_acceptance.GeometryTests.test_translation_scale_screening) ... ok
+test_existing_directory_preserved (test_acceptance.SafetyTests.test_existing_directory_preserved) ... ok
+test_explicit_checks_not_assert (test_acceptance.SafetyTests.test_explicit_checks_not_assert) ... ok
+test_missing_changed_extra_sources_and_plan (test_acceptance.SafetyTests.test_missing_changed_extra_sources_and_plan) ... ok
+test_partial_empty_directory_refused (test_acceptance.SafetyTests.test_partial_empty_directory_refused) ... ok
+test_plan_independent_of_glob_order (test_acceptance.SafetyTests.test_plan_independent_of_glob_order) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.103s
+
+OK

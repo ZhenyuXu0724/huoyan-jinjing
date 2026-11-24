@@ -1,0 +1,364 @@
+{
+  "all_original_pairs": 79401,
+  "scored_pairs": 79003,
+  "empty_pairs_not_evaluable": 398,
+  "cross_split_pairs": 32264,
+  "cross_batch_cross_split_pairs": 25275,
+  "high_absolute_cross_pairs": [],
+  "crossing_candidate_components": [],
+  "top_cross_batch": [
+    {
+      "a": "IMG_7226.png",
+      "b": "MVIMG_20261123_182550.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/23_PASS",
+      "iou_1to1": 0.18837581415104704,
+      "containment": 0.18837581415104704,
+      "relative_iou": 0.04458030559691273,
+      "relative_containment": 0.04458030559691273
+    },
+    {
+      "a": "MVIMG_20261120_171652.jpg",
+      "b": "MVIMG_20261123_182619.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/20",
+      "batch_b": "11/23_PASS",
+      "iou_1to1": 0.1774580001089501,
+      "containment": 0.1774580001089501,
+      "relative_iou": 0.07371415182775512,
+      "relative_containment": 0.07371415182775512
+    },
+    {
+      "a": "IMG_7182.png",
+      "b": "MVIMG_20261123_182603.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/23_PASS",
+      "iou_1to1": 0.13164890667292725,
+      "containment": 0.13164890667292725,
+      "relative_iou": 0.007458824083415907,
+      "relative_containment": 0.007458824083415907
+    },
+    {
+      "a": "IMG_20261118_223533.jpg",
+      "b": "MVIMG_20261120_171704.jpg",
+      "split_a": "val",
+      "split_b": "train",
+      "batch_a": "11/18_FAIL",
+      "batch_b": "11/20",
+      "iou_1to1": 0.12950000085300856,
+      "containment": 0.16835000110891113,
+      "relative_iou": 0.10177772550607735,
+      "relative_containment": 0.13231104315790054
+    },
+    {
+      "a": "IMG_20261114_160617.jpg",
+      "b": "IMG_20261118_223547.jpg",
+      "split_a": "train",
+      "split_b": "val",
+      "batch_a": "11/14_PASS",
+      "batch_b": "11/18_FAIL",
+      "iou_1to1": 0.1294566693065786,
+      "containment": 0.16829367009855217,
+      "relative_iou": 0.0,
+      "relative_containment": 0.0
+    },
+    {
+      "a": "IMG_7334.png",
+      "b": "IMG_20261114_160715.jpg",
+      "split_a": "val",
+      "split_b": "train",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/14_PASS",
+      "iou_1to1": 0.12903338446202342,
+      "containment": 0.12903338446202342,
+      "relative_iou": 0.03346347294943057,
+      "relative_containment": 0.03346347294943057
+    },
+    {
+      "a": "IMG_7332.png",
+      "b": "MVIMG_20261123_182449.jpg",
+      "split_a": "val",
+      "split_b": "test",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/23_PASS",
+      "iou_1to1": 0.12892227824346275,
+      "containment": 0.12892227824346275,
+      "relative_iou": 0.048681127236749666,
+      "relative_containment": 0.048681127236749666
+    },
+    {
+      "a": "IMG_7286.png",
+      "b": "MVIMG_20261123_182459.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/23_PASS",
+      "iou_1to1": 0.1286006818977695,
+      "containment": 0.1286006818977695,
+      "relative_iou": 0.07391270098268685,
+      "relative_containment": 0.07391270098268685
+    },
+    {
+      "a": "IMG_7261.png",
+      "b": "IMG_20261118_223518.jpg",
+      "split_a": "train",
+      "split_b": "val",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/18_FAIL",
+      "iou_1to1": 0.12579544438614831,
+      "containment": 0.1635340777019928,
+      "relative_iou": 0.04082040958662335,
+      "relative_containment": 0.05306653246261035
+    },
+    {
+      "a": "IMG_7242.png",
+      "b": "IMG_20261114_160944.jpg",
+      "split_a": "train",
+      "split_b": "val",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/14_PASS",
+      "iou_1to1": 0.12554547981066166,
+      "containment": 0.12554547981066166,
+      "relative_iou": 0.054547879611848774,
+      "relative_containment": 0.054547879611848774
+    }
+  ],
+  "top_cross_relative": [
+    {
+      "a": "IMG_7282.png",
+      "b": "MVIMG_20261120_172608.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/20",
+      "iou_1to1": 0.023033110636716495,
+      "containment": 0.04606622127343299,
+      "relative_iou": 0.15181011847939968,
+      "relative_containment": 0.30362023695879936
+    },
+    {
+      "a": "IMG_7227.png",
+      "b": "MVIMG_20261120_172638.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/20",
+      "iou_1to1": 0.002093083610813479,
+      "containment": 0.004186167221626958,
+      "relative_iou": 0.12482301663150623,
+      "relative_containment": 0.24964603326301246
+    },
+    {
+      "a": "MVIMG_20261120_171811.jpg",
+      "b": "MVIMG_20261120_172012.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/20",
+      "batch_b": "11/20",
+      "iou_1to1": 0.1665137503929733,
+      "containment": 0.18316512543227065,
+      "relative_iou": 0.21587177655032327,
+      "relative_containment": 0.23745895420535562
+    },
+    {
+      "a": "IMG_20261118_224025.jpg",
+      "b": "MVIMG_20261120_172608.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/18_FAIL",
+      "batch_b": "11/20",
+      "iou_1to1": 0.019254900465990484,
+      "containment": 0.05006274121157526,
+      "relative_iou": 0.09124032006187856,
+      "relative_containment": 0.23722483216088425
+    },
+    {
+      "a": "IMG_20261114_161207.jpg",
+      "b": "MVIMG_20261120_172652.jpg",
+      "split_a": "val",
+      "split_b": "test",
+      "batch_a": "11/14_FAIL",
+      "batch_b": "11/20",
+      "iou_1to1": 0.021218975246783046,
+      "containment": 0.08487590098713219,
+      "relative_iou": 0.0574694555954105,
+      "relative_containment": 0.229877822381642
+    },
+    {
+      "a": "MVIMG_20261120_171019.jpg",
+      "b": "MVIMG_20261120_172608.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/20",
+      "batch_b": "11/20",
+      "iou_1to1": 0.03969326782076495,
+      "containment": 0.0793865356415299,
+      "relative_iou": 0.11217224806941957,
+      "relative_containment": 0.22434449613883914
+    },
+    {
+      "a": "IMG_7248.png",
+      "b": "MVIMG_20261120_172608.jpg",
+      "split_a": "val",
+      "split_b": "test",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/20",
+      "iou_1to1": 0.01783765422629355,
+      "containment": 0.0356753084525871,
+      "relative_iou": 0.11047946913686815,
+      "relative_containment": 0.2209589382737363
+    },
+    {
+      "a": "IMG_20261114_161412.jpg",
+      "b": "MVIMG_20261120_172624.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/14_FAIL",
+      "batch_b": "11/20",
+      "iou_1to1": 0.006501180112722264,
+      "containment": 0.017336480300592705,
+      "relative_iou": 0.08210108483868114,
+      "relative_containment": 0.21893622623648304
+    },
+    {
+      "a": "MVIMG_20261120_164722.jpg",
+      "b": "MVIMG_20261120_172608.jpg",
+      "split_a": "train",
+      "split_b": "test",
+      "batch_a": "11/20",
+      "batch_b": "11/20",
+      "iou_1to1": 0.0,
+      "containment": 0.0,
+      "relative_iou": 0.10923799028259742,
+      "relative_containment": 0.21847598056519485
+    },
+    {
+      "a": "IMG_7252.png",
+      "b": "IMG_20261114_160838.jpg",
+      "split_a": "val",
+      "split_b": "train",
+      "batch_a": "11/11_parts_v1",
+      "batch_b": "11/14_PASS",
+      "iou_1to1": 0.06453059014527433,
+      "containment": 0.06453059014527433,
+      "relative_iou": 0.20666459489140326,
+      "relative_containment": 0.20666459489140326
+    }
+  ],
+  "known_pairs": [
+    {
+      "a": "IMG_20261114_160444.jpg",
+      "b": "IMG_20261114_160608.jpg",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1114_FAIL_B02",
+      "group_b": "G_1114_PASS_TRAIN",
+      "score": [
+        0.35542539634067877,
+        0.3909679359747466
+      ]
+    },
+    {
+      "a": "IMG_7247.png",
+      "b": "IMG_7223.png",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1111_暗光正视图_TRAIN",
+      "group_b": "G_1111_暗光正视图_TRAIN",
+      "score": [
+        0.0202325735489001,
+        0.0202325735489001
+      ]
+    },
+    {
+      "a": "IMG_7285.png",
+      "b": "IMG_7277.png",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1111_暗光侧视图_TRAIN",
+      "group_b": "G_1111_暗光侧视图_TRAIN",
+      "score": [
+        0.04548672738217764,
+        0.04548672738217764
+      ]
+    },
+    {
+      "a": "IMG_7284.png",
+      "b": "IMG_7273.png",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1111_暗光侧视图_TRAIN",
+      "group_b": "G_1111_暗光侧视图_TRAIN",
+      "score": [
+        0.11447615996960367,
+        0.11447615996960367
+      ]
+    },
+    {
+      "a": "IMG_7246.png",
+      "b": "IMG_7233.png",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1111_暗光正视图_TRAIN",
+      "group_b": "G_1111_暗光正视图_TRAIN",
+      "score": [
+        0.019827443047671166,
+        0.019827443047671166
+      ]
+    },
+    {
+      "a": "IMG_7244.png",
+      "b": "IMG_7243.png",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1111_暗光正视图_TRAIN",
+      "group_b": "G_1111_暗光正视图_TRAIN",
+      "score": [
+        0.07761427648314301,
+        0.07761427648314301
+      ]
+    },
+    {
+      "a": "IMG_20261114_162451.jpg",
+      "b": "IMG_20261114_162500.jpg",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1114_FAIL_B10",
+      "group_b": "G_1114_FAIL_B10",
+      "score": [
+        0.9238458455402714,
+        0.9238458455402714
+      ]
+    },
+    {
+      "a": "IMG_20261114_161242.jpg",
+      "b": "IMG_20261114_161317.jpg",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1114_FAIL_B04",
+      "group_b": "G_1114_FAIL_B05",
+      "score": [
+        0.8858227456302575,
+        0.8858227456302575
+      ]
+    },
+    {
+      "a": "IMG_20261114_161714.jpg",
+      "b": "IMG_20261114_161719.jpg",
+      "split_a": "train",
+      "split_b": "train",
+      "group_a": "G_1114_FAIL_B07",
+      "group_b": "G_1114_FAIL_B07",
+      "score": [
+        0.5701214617083152,
+        0.5701214617083152
+      ]
+    }
+  ],
+  "qualification": "INCONCLUSIVE; scores are screening heuristics, no automatically confirmed physical families"
+}

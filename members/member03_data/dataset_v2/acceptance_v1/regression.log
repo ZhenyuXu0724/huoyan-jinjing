@@ -1,0 +1,17 @@
+test_added_removed_objects_containment (test_acceptance.GeometryTests.test_added_removed_objects_containment) ... ok
+test_cross_source_screened (test_acceptance.GeometryTests.test_cross_source_screened) ... ok
+test_different_labels_negative (test_acceptance.GeometryTests.test_different_labels_negative) ... ok
+test_empty_not_independent (test_acceptance.GeometryTests.test_empty_not_independent) ... ok
+test_identity_rotation_landscape_portrait (test_acceptance.GeometryTests.test_identity_rotation_landscape_portrait) ... ok
+test_one_to_one_no_reused_object (test_acceptance.GeometryTests.test_one_to_one_no_reused_object) ... ok
+test_translation_scale_screening (test_acceptance.GeometryTests.test_translation_scale_screening) ... ok
+test_existing_directory_preserved (test_acceptance.SafetyTests.test_existing_directory_preserved) ... ok
+test_explicit_checks_not_assert (test_acceptance.SafetyTests.test_explicit_checks_not_assert) ... ok
+test_missing_changed_extra_sources_and_plan (test_acceptance.SafetyTests.test_missing_changed_extra_sources_and_plan) ... ok
+test_partial_empty_directory_refused (test_acceptance.SafetyTests.test_partial_empty_directory_refused) ... ok
+test_plan_independent_of_glob_order (test_acceptance.SafetyTests.test_plan_independent_of_glob_order) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.086s
+
+OK

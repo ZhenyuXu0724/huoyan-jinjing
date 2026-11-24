@@ -1,0 +1,22 @@
+[
+  {
+    "from": "train/PASS/original/MVIMG_20261123_182036.jpg",
+    "to": "test/PASS/original/MVIMG_20261123_182036.jpg",
+    "sha256": "9c7449c41d372fbaa06fb26d4e4b295a7881e2ff9a52b95709e95e8cbd53b1d1"
+  },
+  {
+    "from": "train/PASS/original/MVIMG_20261123_182036.json",
+    "to": "test/PASS/original/MVIMG_20261123_182036.json",
+    "sha256": "aafbcf055f0bab92a85956ef513df5677294af3e84bb70e9b3b1920e04660393"
+  },
+  {
+    "from": "train/PASS/original/MVIMG_20261123_182054.jpg",
+    "to": "test/PASS/original/MVIMG_20261123_182054.jpg",
+    "sha256": "6c1f9d3f057a7a5d65868ac9ee5d086a085da01da115a37ec55e33d3603f3469"
+  },
+  {
+    "from": "train/PASS/original/MVIMG_20261123_182054.json",
+    "to": "test/PASS/original/MVIMG_20261123_182054.json",
+    "sha256": "589e308b80725005c316273a5b6c44b3a056a81eeaf8557cbfd3e3716f9e3d8b"
+  }
+]

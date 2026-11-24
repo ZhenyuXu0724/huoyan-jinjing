@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/grace/projects/AI/member06/members/member03_data/dataset_v2/build_dataset_v2.py", line 840, in <module>
+    main()
+  File "/home/grace/projects/AI/member06/members/member03_data/dataset_v2/build_dataset_v2.py", line 571, in main
+    refuse_existing(DATASET_V2_DIR)
+  File "/home/grace/projects/AI/member06/members/member03_data/dataset_v2/build_safety.py", line 24, in refuse_existing
+    require(not existing,'EXISTING_DATASET_PROTECTED: '+', '.join(existing)+'; use --plan / verify; no deletion or overwrite')
+  File "/home/grace/projects/AI/member06/members/member03_data/dataset_v2/independent_acceptance.py", line 40, in require
+    if not ok: raise ValueError(msg)
+               ^^^^^^^^^^^^^^^^^^^^^
+ValueError: EXISTING_DATASET_PROTECTED: train, val, test, dataset_manifest.csv, augmentation_mapping.csv, dataset_statistics.json, scene_groups.json, SHA256SUMS.txt; use --plan / verify; no deletion or overwrite
